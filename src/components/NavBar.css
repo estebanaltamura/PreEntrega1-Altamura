@@ -1,0 +1,50 @@
+header{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+        background-color: rgb(24, 155, 89);
+}
+
+.contenedorMenu{
+    display:flex;
+    width: 100%;
+}
+
+.carro{
+    display:flex;
+    position: relative;
+    top: -2px;
+    width: 35px;
+    height: 35px;
+}
+
+.carroDesktop{
+    display: none;
+    position: relative;
+    top: -2px;
+    width: 35px;
+    height: 35px;
+}
+
+.logo{
+    margin: 0;
+}
+
+.itemCartQuantity{
+    position:absolute;
+    font-size: 18px;
+    color: red;
+    top: 32px;
+    right: 4px;
+}
+
+@media (min-width: 992px) {
+.carro{
+    display: none;
+}
+    
+.carroDesktop{
+    display: flex;
+}
+    
+}
