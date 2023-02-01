@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.61b12cc5.css",
+    "main.js": "/static/js/main.c5b6066e.js",
+    "static/media/aether55.jpg": "/static/media/aether55.68765ccabcef0e203645.jpg",
+    "index.html": "/index.html",
+    "main.61b12cc5.css.map": "/static/css/main.61b12cc5.css.map",
+    "main.c5b6066e.js.map": "/static/js/main.c5b6066e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61b12cc5.css",
+    "static/js/main.c5b6066e.js"
+  ]
+}
