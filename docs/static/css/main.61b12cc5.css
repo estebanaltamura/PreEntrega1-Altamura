@@ -1,2 +1,0 @@
-header{background-color:#189b59;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}.contenedorMenu,header{display:flex;width:100%}.carro{display:flex}.carro,.carroDesktop{height:35px;position:relative;top:-2px;width:35px}.carroDesktop{display:none}.logo{margin:0}.itemCartQuantity{color:red;font-size:18px;position:absolute;right:4px;top:32px}@media (min-width:992px){.carro{display:none}.carroDesktop{display:flex}}h1{justify-content:center;margin-top:30px}.card,h1{display:flex}.card{margin:20px auto;width:70%}
-/*# sourceMappingURL=main.61b12cc5.css.map*/
