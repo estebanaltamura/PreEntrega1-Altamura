@@ -1,10 +1,14 @@
 import { BsCart4 } from "react-icons/bs";
 import "../components/NavBar.css"
+import { NavLink } from "react-router-dom";
 
+ 
 
 
 export const NavBar =()=>{
     
+
+
     return(
         <header>
             <nav className="navbar navbar-expand-lg contenedorMenu">
@@ -15,32 +19,40 @@ export const NavBar =()=>{
                 
                     <h1 className="logo">PANDORA</h1>
                     <h3 className="itemCartQuantity">3</h3>
-                    <BsCart4 className="carro" />
+                    <BsCart4 className="carro" /> 
                     
                 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="./index.html">Home</a>
+                            <NavLink className="nav-link active link" aria-current="page" to ="/home">Home</NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className="nav-link dropdown-toggle link" role="button" data-bs-toggle="dropdown" aria-expanded="false" to = "/lineaUrbana">
                             Colecciones
-                            </a>
+                            </div>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Linea urbana</a></li>
-                                    <li><a className="dropdown-item" href="#">Linea viajera</a></li>
-                                    <li><a className="dropdown-item" href="#">Linea alpinismo</a></li>
+                                    <li> 
+                                        <NavLink className="link" to = "/categorias/lineaUrbana">Linea urbana</NavLink>
+                                    </li>
+                                                               
+                                    <li> 
+                                        <NavLink className="link" to = "/categorias/lineaViajera">Linea viajera</NavLink>
+                                    </li>
+
+                                    <li>
+                                        <NavLink className="link" to = "/categorias/lineaAlpinismo">Linea alpinismo</NavLink>
+                                    </li>
                                  </ul>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Novedades</a>
+                            <NavLink className="link" to = "/categorias/novedades">Novedades</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Nosotros</a>
+                            <NavLink className="link" to = "/nosotros">Nosotros</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Contacto</a>
+                            <NavLink className="link" to = "/contacto">Contacto</NavLink>
                         </li>
                     </ul>
                     <BsCart4 className="carroDesktop" />

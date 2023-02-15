@@ -1,13 +1,31 @@
 header{
     display: flex;
+    position: fixed;
+    top: 0px;
     width: 100%;
-    height: fit-content;
-        background-color: rgb(24, 155, 89);
+    height: 56px;
+    z-index: 1;
+    background-color: rgb(24, 155, 89);
+    
 }
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.link:active{
+    color: black;
+}
+
+.link:hover{
+    color: black;
+}
+
 
 .contenedorMenu{
     display:flex;
     width: 100%;
+    background-color: rgb(255, 255, 255);
 }
 
 .carro{

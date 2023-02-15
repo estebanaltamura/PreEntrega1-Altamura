@@ -1,0 +1,70 @@
+h2, p {
+    padding: 0;
+    margin: 0; }
+  
+  .carrusel {
+    grid-area: carrusel; }
+  
+  .titulo {
+    font-size: 22px;
+    grid-area: titulo; }
+  
+  .precio {
+    font-size: 20px;
+    grid-area: precio; }
+  
+  .reviews {
+    grid-area: reviews; }
+  
+  .noPesticidas {
+    width: 100%;
+    margin: 0 auto;
+    grid-area: nopesticidas; }
+  
+  .botonATC, .botonComprar {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 500px;
+    border-radius: 18px;
+    border: none; }
+  
+  .botonATC {
+    background-color: white;
+    color: black;
+    border: 2px solid #68634b;
+    grid-area: botonATC; }
+  
+  .botonComprar {
+    border: 2px solid #68634b;
+    background-color: #68634b;
+    color: white;
+    grid-area: botonComprar; }
+  
+  .tituloDescripcion {
+    margin: 0 auto;
+    grid-area: tituloDescripcion; }
+  
+  .descripcion {
+    font-family: source sans pro;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: justify;
+    grid-area: descripcion; }
+
+
+
+@media screen and (min-width: 768px) {
+    .titulo, .precio, .reviews {
+        padding: 0 20PX; }
+      .noPesticidas {
+        width: 100%; }
+      .botonATC, .botonComprar {
+        width: calc(100% - 40px); }
+      .descripcion {
+        font-size: 22px; } 
+}
+
+
+
+    
