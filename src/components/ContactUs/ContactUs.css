@@ -1,0 +1,37 @@
+.mainContacto {
+    display: grid;
+    position: relative;
+    width: 100%;
+    top: 95px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    grid-template-rows: auto 50px auto auto 30px 30px 50px;
+    grid-template-areas: "titulo" "vacio1" "textoContactUs1" "textoContactUs2" "textoContactUs3" "textoContactUs4" "vacio2"; }
+  
+.tituloContacto {
+    margin: auto;
+    overflow: hidden;
+    font-size: 30px;
+    grid-area: titulo; }
+  
+.textoContacto1, .textoContacto2, .textoContacto3, .textoContacto4 {
+    text-align: left;
+    font-size: 18px;
+    text-align: justify;
+    grid-area: texto;
+    font-family: raleway;
+    font-weight: 600;
+    margin: 0 auto; }
+
+.textoContacto1 {
+    grid-area: textoContactUs1; }
+      
+.textoContacto2 {
+    grid-area: textoContactUs2; }
+      
+.textoContacto3 {
+    grid-area: textoContactUs3; }
+      
+.textoContacto4 {
+    grid-area: textoContactUs4; }

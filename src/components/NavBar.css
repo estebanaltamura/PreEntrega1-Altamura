@@ -7,10 +7,24 @@ header{
     z-index: 1;
     background-color: rgb(24, 155, 89);
     
+    
 }
+
+.contenedorMenu{
+    display:flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
 .link{
+    display: flex;
+    height:100%;
+    align-items: center;
     text-decoration: none;
     color: black;
+    margin: 0 15px;
+    
 }
 
 .link:active{
@@ -22,11 +36,7 @@ header{
 }
 
 
-.contenedorMenu{
-    display:flex;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-}
+
 
 .carro{
     display:flex;

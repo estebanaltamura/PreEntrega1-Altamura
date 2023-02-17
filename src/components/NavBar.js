@@ -1,5 +1,5 @@
 import { BsCart4 } from "react-icons/bs";
-import "../components/NavBar.css"
+import "./NavBar.css"
 import { NavLink } from "react-router-dom";
 
  
@@ -49,10 +49,10 @@ export const NavBar =()=>{
                             <NavLink className="link" to = "/categorias/lineaNovedades">Novedades</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/nosotros">Nosotros</NavLink>
+                            <NavLink className="link" to = "/We">Nosotros</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/contacto">Contacto</NavLink>
+                            <NavLink className="link" to = "/ContactUs">Contact Us</NavLink>
                         </li>
                     </ul>
                     <BsCart4 className="carroDesktop" />

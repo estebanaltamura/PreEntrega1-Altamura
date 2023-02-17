@@ -20,9 +20,3 @@ export const ItemList = ({data})=>{
     )
 }     
 
-/*
-
-
-{data.map((element, index)=>
-                    <h1>culo</h1>
-                )}*/ 

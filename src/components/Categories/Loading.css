@@ -1,0 +1,5 @@
+.loadingIcon {
+    position: absolute !important;
+    width: 50px !important;
+    right: calc(50% - 25px);
+    top: 50vh; }
