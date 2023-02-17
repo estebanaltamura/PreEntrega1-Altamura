@@ -1,6 +1,14 @@
 import "../components/ItemDetails.css"
+import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "./CartContextProvider"
+
+
 
 export const ItemDetails = ({data})=>{
+
+const { prop1 } = useContext(CartContext)
+
     return(
         <>
         <div id="carouselExampleControls" className="carrusel carousel slide" data-bs-ride="carousel">
@@ -29,12 +37,12 @@ export const ItemDetails = ({data})=>{
         </div>
 
         
-        <h2 className="titulo" id="tituloProducto"></h2>
+        <h2 className="titulo" id="tituloProducto">{prop1}</h2>
         <h3 className="precio" id="precioProducto">$21000</h3>
         <img className="reviews" src="../assets/images/iconos-y-logos/reviews.jpg" alt="Imagen que muestra las reviews hechas por los usuarios" />
         <img className="noPesticidas" src="../assets/images/iconos-y-logos/noPesticidas.jpg" alt="Imagen que muestra que nuestra marca no usa pesticidas y requiere menos uso de agua que lo " />
-        <button className="botonATC" id="botonATC">Agregar al carrito</button>
-        <button className="botonComprar">Comprar</button>
+        <Link to = "/cart" className="botonATC" id="botonATC">Agregar al carrito</Link>
+        <Link className="botonComprar">Comprar</Link>
         <h3 className="tituloDescripcion">Descripcion</h3>
         <p className="descripcion">Nunca digas que no se puede hacer. Después de eliminar los límites de las tecnologías de fabricación tradicionales, nació la Serie kaiken. Diseñada por el equipo de innovación, la tecnología AntiGravity cambia las reglas del juego en la industria. El torso, el arnés y el cinturón lumbar específicos para mujeres garantizan la máxima eficiencia, comodidad y seguridad, mientras que el innovador soporte lumbar Fitscape™ impreso en 3D con tecnología Carbon DLS™ proporciona una ventilación superior, un soporte ajustado y un agarre antideslizante.</p>
         </>

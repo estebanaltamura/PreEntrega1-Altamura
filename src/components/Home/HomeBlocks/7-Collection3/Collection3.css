@@ -1,0 +1,12 @@
+.coleccionesImagenes {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;}
+
+
+.redondeado {
+    border-radius: 4px;
+    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.75);}
+
+.imagencoleccion3 {
+    grid-area: imagencoleccion3; }

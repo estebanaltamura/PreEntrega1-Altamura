@@ -1,0 +1,8 @@
+.textoFundacion1 {
+    grid-area: textoFundacion1;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700; }

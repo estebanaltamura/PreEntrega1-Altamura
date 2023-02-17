@@ -1,0 +1,4 @@
+.portadaMobile, .portada375, .portadaDesktop{
+    width: 100%;
+    grid-area: portada;
+}

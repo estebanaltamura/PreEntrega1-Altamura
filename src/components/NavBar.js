@@ -46,7 +46,7 @@ export const NavBar =()=>{
                                  </ul>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/categorias/novedades">Novedades</NavLink>
+                            <NavLink className="link" to = "/categorias/lineaNovedades">Novedades</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="link" to = "/nosotros">Nosotros</NavLink>

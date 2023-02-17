@@ -1,0 +1,22 @@
+
+
+.sliderFotosdeUso {
+    display: flex;
+    font-size: 24px;
+    grid-area: fotosuso;
+    width: 100%;}
+
+.sliderIcons{
+    width: 40px;
+    height: 40px; 
+    color: black;
+}
+
+.sliderIcons:active{
+    color: black;
+}
+
+.sliderIcons:hover{
+    color: black;
+}
+

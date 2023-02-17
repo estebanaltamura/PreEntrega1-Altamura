@@ -1,8 +1,8 @@
 import React from "react";
 import { Item } from "./Item";
-import "../components/ItemList.css"
+import "./ItemList.css"
 
-export const Itemlist = ({data})=>{
+export const ItemList = ({data})=>{
 
     
     return(
@@ -10,8 +10,9 @@ export const Itemlist = ({data})=>{
             <main className="itemList">
                 <h2 className="titulonovedadescolecciones">Linea alpinismo</h2>
                 {data.map((element, index)=>
-                    <Item key={index} index={index} nombre={element.nombre} precio={element.precio} imagen={element.imagen} id={element.id}/>
+                    <Item key={index} id={element.id} index={index} nombre={element.nombre} imagen={element.imagen} precio={element.precio}/>
                 )}
+                
             </main> 
             
             
@@ -19,3 +20,9 @@ export const Itemlist = ({data})=>{
     )
 }     
 
+/*
+
+
+{data.map((element, index)=>
+                    <h1>culo</h1>
+                )}*/ 

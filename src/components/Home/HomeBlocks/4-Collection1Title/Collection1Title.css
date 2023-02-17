@@ -1,0 +1,13 @@
+.coleccionesTexto {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 24px; }
+  
+.coleccionesTexto:visited{
+    color: black;}
+
+.titulocoleccion1{
+    grid-area: titulocoleccion1;}

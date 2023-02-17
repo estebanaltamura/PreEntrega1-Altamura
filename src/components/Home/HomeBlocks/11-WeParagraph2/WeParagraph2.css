@@ -1,0 +1,7 @@
+.parrafoNosotros {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    text-align: center; }
+
+.parrafoNosotros2 {
+    grid-area: parrafoNosotros2; }
