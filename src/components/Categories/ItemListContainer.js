@@ -25,7 +25,7 @@ const collectionData = async (idCategoria)=>{
         setData(collection) 
         setIsLoading(false)
     } 
-    console.log(collection)
+    
     }    
 
     catch (error) {
@@ -41,11 +41,13 @@ useEffect(()=>{
         
         <div className="itemListContainer">
             {isLoading == true ? 
-                    <>
-                         <h1>{data.length.toString()}</h1> 
-                    </>
-                : 
-                <ItemList data={data} />
+            
+            <>
+                <h1>LOADING...</h1> 
+            </>
+                                : 
+            
+            <ItemList data={data} />
             }
         </div> 
         

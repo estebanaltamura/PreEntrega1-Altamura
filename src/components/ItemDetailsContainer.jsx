@@ -8,28 +8,58 @@ import "../components/ItemDetailsContainer.css"
 export const ItemDetailsContainer = ()=>{
 
 const {id} = useParams()
-const [data, setData] = useState("")
+const [productData, setProductData] = useState({})
+const [isLoading, setIsLoading] = useState(true)
 
 
-useEffect(()=>{
-    const fakeFetchData = (id)=>{
-        const claves = Object.keys(productos)
+const collectionData = async (idProduct)=>{
+
+    const getProduct = (claves, allData, id)=>{
+        let productFounded;
         claves.forEach(element=>{
-            productos[element].forEach(elementx=>{
-                if(elementx.id == id) setData(elementx)
+            allData[element].forEach(elementx=>{
+                if (elementx.id == id)  productFounded = elementx
             })
         })
+        if (productFounded !== ""){
+            return productFounded
+        }  
     }
     
-    fakeFetchData(id)
-})
+    try {
+        const response = await fetch("https://63c98161320a0c4c954a3283.mockapi.io/fakeapi")
+        const json = await response.json()
+        const allData = await json[0]
+        
+        const claves = Object.keys(allData)
+        const product = getProduct(claves, allData, idProduct)
+           
+        setProductData(product) 
+        setIsLoading(false)
+    }    
 
+    catch (error) {
+        console.error(error);
+    }   
+};
 
+useEffect(()=>{
+    collectionData(id)
+},[id])
 
     return(
-        <main className="ItemDetailsContainer">
-            <ItemDetails data={data}/>
-        </main>
-
-    )
+        
+        <div className="ItemDetailsContainer">
+            {isLoading == true ? 
+        
+        <>
+            <h1>LOADING...</h1> 
+        </>
+                                : 
+        
+            <ItemDetails nombre={productData.nombre} precio={productData.precio} imagen={productData.imagen}/>
+            }
+        </div> 
+    
+)   
 }
