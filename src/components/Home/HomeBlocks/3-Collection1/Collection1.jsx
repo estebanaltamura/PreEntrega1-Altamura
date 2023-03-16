@@ -1,7 +1,10 @@
+import {Link} from "react-router-dom"
 import "./Collection1.css"
 
 export const Collection1 = ()=>{
     return(
-        <img src="https://i.postimg.cc/mgJZC1Vt/urban-home.jpg" alt="imagen collecion 1" className="coleccionesImagenes imagencoleccion1 redondeado" />
+        <Link className="coleccionesImagenes imagencoleccion1 redondeado" to="/collections/urbanCollection">
+            <img className="coleccionesImagenes" src="https://i.postimg.cc/mgJZC1Vt/urban-home.jpg" alt="imagen collecion 1" />
+        </Link>
     )
 }

@@ -2,7 +2,8 @@
     display: grid;
     position: relative;
     width: 100%;
-    top: 56px;
+    
+    padding-top: 56px;
     margin: 0 auto;
     padding: 0 15px;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;

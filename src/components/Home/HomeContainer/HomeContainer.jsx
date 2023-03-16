@@ -1,4 +1,3 @@
-import "./HomeContainer.css"
 import { CoverImage } from "../HomeBlocks/1-CoverImage/CoverImage"
 import { CollectionsTitle } from "../HomeBlocks/2-CollectionsTitle/CollectionsTitle"
 import { Collection1 } from "../HomeBlocks/3-Collection1/Collection1"
@@ -15,8 +14,7 @@ import { OurCommunityImage } from "../HomeBlocks/13-OurCommunityImage/OurCommuni
 import { FoundationImage } from "../HomeBlocks/14-FoundationImage/FoundationImage"
 import { FoundationParagraph1 } from "../HomeBlocks/15-FoundationParagraph1/FoundationParagraph1"
 import { FoundationParagraph2 } from "../HomeBlocks/16-FoundationParagraph2/FoundationParagraph2"
-
- 
+import "./HomeContainer.css"
 
 export const HomeContainer = ()=>{
     return(
@@ -36,8 +34,7 @@ export const HomeContainer = ()=>{
             <OurCommunityImage /> 
             <FoundationImage /> 
             <FoundationParagraph1 /> 
-            <FoundationParagraph2 />
-            
+            <FoundationParagraph2 />            
         </div>
     ) 
 } 

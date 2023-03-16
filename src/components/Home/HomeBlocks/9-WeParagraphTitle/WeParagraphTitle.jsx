@@ -2,6 +2,6 @@ import "./WeParagraphTitle.css"
 
 export const WeParagraphTitle = ()=>{
     return(
-        <h2 className="tituloNosotrosPortada">ALTA CALIDAD. BAJO IMPACTO</h2>
+        <h2 className="tituloNosotrosPortada">High quality Low impact</h2>
     )
 }

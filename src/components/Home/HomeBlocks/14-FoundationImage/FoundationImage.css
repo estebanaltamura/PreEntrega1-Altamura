@@ -1,6 +1,6 @@
 .imagenFundacion {
     grid-area: imagenFundacion; 
     display: block;
-    margin: auto;
+    margin: 20px auto 0 auto;
     font-size: 24px;
     width: 250px;}

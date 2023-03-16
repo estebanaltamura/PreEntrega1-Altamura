@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom"
 import "./Collection3Title.css"
 
 export const Collection3Title = ()=>{
     return(
-        <h3 className="coleccionesTexto titulocoleccion3">Alpinismo</h3>
+        <Link to="/collections/climbingCollection" className="coleccionesTexto titulocoleccion3">
+            <h3>Climbing</h3>
+        </Link>
     )
 }

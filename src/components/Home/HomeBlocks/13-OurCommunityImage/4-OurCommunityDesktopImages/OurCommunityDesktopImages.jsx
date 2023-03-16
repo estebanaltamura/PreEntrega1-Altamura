@@ -1,6 +1,4 @@
 import "./OurCommunityDesktopImages.css"
-import { BsChevronCompactLeft } from "react-icons/bs"
-import { BsChevronCompactRight } from "react-icons/bs"
 
 export const OurCommunityDesktopImages = ()=>{
     return(
@@ -11,8 +9,8 @@ export const OurCommunityDesktopImages = ()=>{
         <img src="https://i.postimg.cc/X7xpGvTC/ourcommunity4.jpg" alt="Mujer caminando por una ciudad con una mochila de nuestra linea de viaje" className="fotosdeUso4 redondeado" />
         <img src="https://i.postimg.cc/jjn5F4CH/ourcommunity5.jpg" alt="Mujer de espaldas con una mochila de nuestra linea de viaje mirando al horizonte" className="fotosdeUso5 redondeado" />
         <img src="https://i.postimg.cc/brpwdXgg/ourcommunity6.jpg" alt="Mujer con nuestra mochila de viaje en un bosque" className="fotosdeUso6 redondeado" />
-        <img src="https://i.postimg.cc/Wz8bk9fv/ourcommunity7.jpg" alt="Mujer de espaldas con una mochila mirando al horizonte" class="fotosdeUso7 redondeado" />
-        <img src="https://i.postimg.cc/wxQBZvxG/ourcommunity8.jpg" alt="Hombre escalando una montaña con nuestra mochila de alpinismo" class="fotosdeUso8 redondeado" />
+        <img src="https://i.postimg.cc/Wz8bk9fv/ourcommunity7.jpg" alt="Mujer de espaldas con una mochila mirando al horizonte" className="fotosdeUso7 redondeado" />
+        <img src="https://i.postimg.cc/wxQBZvxG/ourcommunity8.jpg" alt="Hombre escalando una montaña con nuestra mochila de alpinismo" className="fotosdeUso8 redondeado" />
       </>
     )
 }

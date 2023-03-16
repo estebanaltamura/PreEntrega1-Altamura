@@ -2,251 +2,250 @@
     font-size: 18px;
     margin: auto; }
   
-  .precioCard {
-    font-size: 15px;
-    margin: auto; }
-  
-  .imagenCard {
-    width: 100%; }
-  
-  .card {
-    display: grid;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-    margin: auto;
-    box-shadow: 1px 0px 4px 0px black;
-    grid-template-columns: 1fr;
-    grid-template-rows: 228px 40px 40px;
-    /*SAAS USO DE &*/ }
-    .card:visited {
-      color: black; }
-    .card:active {
-      color: black; }
-    .card:hover {
-      color: black; }
-  
-  /*SAAS FOR*/
-  .card1 {
-    grid-template-areas: "foto1" "titulo1" "precio1";
-    grid-area: card1; }
-  
-  .card2 {
-    grid-template-areas: "foto2" "titulo2" "precio2";
-    grid-area: card2; }
-  
-  .card3 {
-    grid-template-areas: "foto3" "titulo3" "precio3";
-    grid-area: card3; }
-  
-  .card4 {
-    grid-template-areas: "foto4" "titulo4" "precio4";
-    grid-area: card4; }
-  
-  .card5 {
-    grid-template-areas: "foto5" "titulo5" "precio5";
-    grid-area: card5; }
-  
-  .card6 {
-    grid-template-areas: "foto6" "titulo6" "precio6";
-    grid-area: card6; }
+.precioCard {
+  font-size: 15px;
+  margin: auto; }
+  
+.imagenCard {
+  width: 100%; }
+  
+.card {
+  display: grid;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  box-shadow: 1px 0px 4px 0px black;
+  grid-template-columns: 1fr;
+  grid-template-rows: 228px 40px 40px;
+}
+    
+.card:visited {
+  color: black;}
+    
+.card:active {
+  color: black;}
+    
+.card:hover {
+  color: black;}
+  
+  
+.card1 {
+  grid-template-areas: "foto1" "titulo1" "precio1";
+  grid-area: card1; }
+  
+.card2 {
+  grid-template-areas: "foto2" "titulo2" "precio2";
+  grid-area: card2; }
+  
+.card3 {
+  grid-template-areas: "foto3" "titulo3" "precio3";
+  grid-area: card3; }
+  
+.card4 {
+  grid-template-areas: "foto4" "titulo4" "precio4";
+  grid-area: card4; }
   
-  .card7 {
-    grid-template-areas: "foto7" "titulo7" "precio7";
-    grid-area: card7; }
+.card5 {
+  grid-template-areas: "foto5" "titulo5" "precio5";
+  grid-area: card5; }
   
-  .card8 {
-    grid-template-areas: "foto8" "titulo8" "precio8";
-    grid-area: card8; }
+.card6 {
+  grid-template-areas: "foto6" "titulo6" "precio6";
+  grid-area: card6; }
   
-  .card9 {
-    grid-template-areas: "foto9" "titulo9" "precio9";
-    grid-area: card9; }
+.card7 {
+  grid-template-areas: "foto7" "titulo7" "precio7";
+  grid-area: card7; }
   
-  .card10 {
-    grid-template-areas: "foto10" "titulo10" "precio10";
-    grid-area: card10; }
+.card8 {
+  grid-template-areas: "foto8" "titulo8" "precio8";
+  grid-area: card8; }
   
-  .card11 {
-    grid-template-areas: "foto11" "titulo11" "precio11";
-    grid-area: card11; }
+.card9 {
+  grid-template-areas: "foto9" "titulo9" "precio9";
+  grid-area: card9; }
   
-  .card12 {
-    grid-template-areas: "foto12" "titulo12" "precio12";
-    grid-area: card12; }
+.card10 {
+  grid-template-areas: "foto10" "titulo10" "precio10";
+  grid-area: card10; }
   
-  .card13 {
-    grid-template-areas: "foto13" "titulo13" "precio13";
-    grid-area: card13; }
+.card11 {
+  grid-template-areas: "foto11" "titulo11" "precio11";
+  grid-area: card11; }
   
-  .card14 {
-    grid-template-areas: "foto14" "titulo14" "precio14";
-    grid-area: card14; }
+.card12 {
+  grid-template-areas: "foto12" "titulo12" "precio12";
+  grid-area: card12; }
   
-  .card15 {
-    grid-template-areas: "foto15" "titulo15" "precio15";
-    grid-area: card15; }
+.card13 {
+  grid-template-areas: "foto13" "titulo13" "precio13";
+  grid-area: card13; }
   
-  .card16 {
-    grid-template-areas: "foto16" "titulo16" "precio16";
-    grid-area: card16; }
+.card14 {
+  grid-template-areas: "foto14" "titulo14" "precio14";
+  grid-area: card14; }
   
-  /*SAAS FOR*/
-  .imagenCard1 {
-    grid-area: foto1; }
+.card15 {
+  grid-template-areas: "foto15" "titulo15" "precio15";
+  grid-area: card15; }
   
-  .imagenCard2 {
-    grid-area: foto2; }
+.card16 {
+  grid-template-areas: "foto16" "titulo16" "precio16";
+  grid-area: card16; }
   
-  .imagenCard3 {
-    grid-area: foto3; }
+.imagenCard1 {
+  grid-area: foto1; }
   
-  .imagenCard4 {
-    grid-area: foto4; }
+.imagenCard2 {
+  grid-area: foto2; }
   
-  .imagenCard5 {
-    grid-area: foto5; }
+.imagenCard3 {
+  grid-area: foto3; }
   
-  .imagenCard6 {
-    grid-area: foto6; }
+.imagenCard4 {
+  grid-area: foto4; }
   
-  .imagenCard7 {
-    grid-area: foto7; }
+.imagenCard5 {
+  grid-area: foto5; }
   
-  .imagenCard8 {
-    grid-area: foto8; }
+.imagenCard6 {
+  grid-area: foto6; }
   
-  .imagenCard9 {
-    grid-area: foto9; }
+.imagenCard7 {
+  grid-area: foto7; }
   
-  .imagenCard10 {
-    grid-area: foto10; }
+.imagenCard8 {
+  grid-area: foto8; }
   
-  .imagenCard11 {
-    grid-area: foto11; }
+.imagenCard9 {
+  grid-area: foto9; }
   
-  .imagenCard12 {
-    grid-area: foto12; }
+.imagenCard10 {
+  grid-area: foto10; }
   
-  .imagenCard13 {
-    grid-area: foto13; }
+.imagenCard11 {
+  grid-area: foto11; }
   
-  .imagenCard14 {
-    grid-area: foto14; }
+.imagenCard12 {
+  grid-area: foto12; }
   
-  .imagenCard15 {
-    grid-area: foto15; }
+.imagenCard13 {
+  grid-area: foto13; }
   
-  .imagenCard16 {
-    grid-area: foto16; }
+.imagenCard14 {
+  grid-area: foto14; }
   
-  /*SAAS FOR*/
-  .tituloCard1 {
-    grid-area: titulo1; }
+.imagenCard15 {
+  grid-area: foto15; }
   
-  .tituloCard2 {
-    grid-area: titulo2; }
+.imagenCard16 {
+  grid-area: foto16; }
   
-  .tituloCard3 {
-    grid-area: titulo3; }
+.tituloCard1 {
+  grid-area: titulo1; }
   
-  .tituloCard4 {
-    grid-area: titulo4; }
+.tituloCard2 {
+  grid-area: titulo2; }
   
-  .tituloCard5 {
-    grid-area: titulo5; }
+.tituloCard3 {
+  grid-area: titulo3; }
   
-  .tituloCard6 {
-    grid-area: titulo6; }
+.tituloCard4 {
+  grid-area: titulo4; }
   
-  .tituloCard7 {
-    grid-area: titulo7; }
+.tituloCard5 {
+  grid-area: titulo5; }
   
-  .tituloCard8 {
-    grid-area: titulo8; }
+.tituloCard6 {
+  grid-area: titulo6; }
   
-  .tituloCard9 {
-    grid-area: titulo9; }
+.tituloCard7 {
+  grid-area: titulo7; }
   
-  .tituloCard10 {
-    grid-area: titulo10; }
+.tituloCard8 {
+  grid-area: titulo8; }
   
-  .tituloCard11 {
-    grid-area: titulo11; }
+.tituloCard9 {
+  grid-area: titulo9; }
   
-  .tituloCard12 {
-    grid-area: titulo12; }
+.tituloCard10 {
+  grid-area: titulo10; }
   
-  .tituloCard13 {
-    grid-area: titulo13; }
+.tituloCard11 {
+  grid-area: titulo11; }
   
-  .tituloCard14 {
-    grid-area: titulo14; }
+.tituloCard12 {
+  grid-area: titulo12; }
   
-  .tituloCard15 {
-    grid-area: titulo15; }
+.tituloCard13 {
+  grid-area: titulo13; }
   
-  .tituloCard16 {
-    grid-area: titulo16; }
+.tituloCard14 {
+  grid-area: titulo14; }
   
-  /*SAAS FOR*/
-  .precioCard1 {
-    grid-area: precio1; }
+.tituloCard15 {
+  grid-area: titulo15; }
   
-  .precioCard2 {
-    grid-area: precio2; }
+.tituloCard16 {
+  grid-area: titulo16; }
   
-  .precioCard3 {
-    grid-area: precio3; }
+.precioCard1 {
+  grid-area: precio1; }
   
-  .precioCard4 {
-    grid-area: precio4; }
+.precioCard2 {
+  grid-area: precio2; }
   
-  .precioCard5 {
-    grid-area: precio5; }
+.precioCard3 {
+  grid-area: precio3; }
   
-  .precioCard6 {
-    grid-area: precio6; }
+.precioCard4 {
+  grid-area: precio4; }
   
-  .precioCard7 {
-    grid-area: precio7; }
+.precioCard5 {
+  grid-area: precio5; }
   
-  .precioCard8 {
-    grid-area: precio8; }
+.precioCard6 {
+  grid-area: precio6; }
   
-  .precioCard9 {
-    grid-area: precio9; }
+.precioCard7 {
+  grid-area: precio7; }
   
-  .precioCard10 {
-    grid-area: precio10; }
+.precioCard8 {
+  grid-area: precio8; }
   
-  .precioCard11 {
-    grid-area: precio11; }
+.precioCard9 {
+  grid-area: precio9; }
   
-  .precioCard12 {
-    grid-area: precio12; }
+.precioCard10 {
+  grid-area: precio10; }
   
-  .precioCard13 {
-    grid-area: precio13; }
+.precioCard11 {
+  grid-area: precio11; }
   
-  .precioCard14 {
-    grid-area: precio14; }
+.precioCard12 {
+  grid-area: precio12; }
   
-  .precioCard15 {
-    grid-area: precio15; }
+.precioCard13 {
+  grid-area: precio13; }
   
-  .precioCard16 {
-    grid-area: precio16; }
+.precioCard14 {
+  grid-area: precio14; }
+  
+.precioCard15 {
+  grid-area: precio15; }
+  
+.precioCard16 {
+  grid-area: precio16; }
   
 @media screen and (min-width: 375px) {  
     .card {
         grid-template-rows: 158px 40px 40px; }
 }  
     
-
 @media screen and (min-width: 768px) {
     .card {
         grid-template-rows: 185px 40px 40px; }

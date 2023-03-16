@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom"
 import "./Collection2Title.css"
 
 export const Collection2Title = ()=>{
     return(
-        <h3 className="coleccionesTexto titulocoleccion2">Viajera</h3>
+        <Link className="coleccionesTexto titulocoleccion2" to="/collections/travelCollection">
+            <h3 >Travel</h3>
+        </Link>
     )
 }
