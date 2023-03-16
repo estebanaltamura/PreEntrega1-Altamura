@@ -1,8 +1,13 @@
-.mainContacto {
+.contactUsmainContainer{
+    min-height: calc(100vh - 170px);
+    width: 100%;
+}
+
+.contactUsContainer {
     display: grid;
     position: relative;
     width: 100%;
-    top: 95px;
+    padding-top: 56px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
