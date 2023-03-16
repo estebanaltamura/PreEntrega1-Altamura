@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { CoverImage } from "../HomeBlocks/1-CoverImage/CoverImage"
 import { CollectionsTitle } from "../HomeBlocks/2-CollectionsTitle/CollectionsTitle"
 import { Collection1 } from "../HomeBlocks/3-Collection1/Collection1"
@@ -17,6 +18,10 @@ import { FoundationParagraph2 } from "../HomeBlocks/16-FoundationParagraph2/Foun
 import "./HomeContainer.css"
 
 export const HomeContainer = ()=>{
+
+    useEffect(()=>{
+        window.scrollTo(0,0)   
+    })
     return(
         <div className="mainContainer">
             <CoverImage />

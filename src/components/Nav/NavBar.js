@@ -10,20 +10,20 @@ export const NavBar =()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
     const [totalQuantityItemsCart, setTotalQuantityItemsCart] = useState(0)
-    
-    
-
     const URLchanges = useLocation()
     const togglerButtonMenu = useRef()
+    const lastPath = useRef(URLchanges)
+    
+
     
 
     useEffect(()=>{
-        togglerButtonMenu.current.classList==="navbar-toggler" && togglerButtonMenu.current.click()        
+        if(lastPath.current.pathname !== URLchanges.pathname && !togglerButtonMenu.current.className.includes("collapsed")) togglerButtonMenu.current.click()                
+        lastPath.current.pathname = URLchanges.pathname
     },[URLchanges]) 
     
     useEffect(()=>{
         const quantityItems = itemsCartAdded.length > 1 ? itemsCartAdded.reduce((accumulator, partial)=>{return accumulator+partial.quantity},0) : itemsCartAdded.length == 1 ? itemsCartAdded[0].quantity : 0
-        console.log(quantityItems)
         setTotalQuantityItemsCart(quantityItems)
     },[itemsCartAdded]) 
 

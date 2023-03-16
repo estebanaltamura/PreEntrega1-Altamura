@@ -44,10 +44,14 @@ const collectionData = async ()=>{
 };
 
 useEffect(()=>{
-    window.scrollTo(0,0)
-    collectionData(id)
-    
+    collectionData(id)    
 },[id])
+
+useEffect(()=>{
+    window.scrollTo(0,0)     
+},[])
+
+
 
     return(
         
