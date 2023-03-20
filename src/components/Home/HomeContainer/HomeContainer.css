@@ -1,8 +1,31 @@
+.hiddenHome{
+    position: relative;
+    display: none;
+    min-height: 100vh;
+}
+
+.hidden{
+    display: none;
+   
+}
+.mainContainerHidden {
+    display: none;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 56px;
+    margin: 0 auto;
+    padding: 0 15px;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    gap: none;
+    grid-template-areas: "portada" "titulocolecciones" "imagencoleccion1" "titulocoleccion1" "imagencoleccion2" "titulocoleccion2" "imagencoleccion3" "titulocoleccion3" "tituloNosotrosPortada" "parrafoNosotros1" "parrafoNosotros2" "ourCommunity" "fotosuso" "imagenFundacion" "textoFundacion1" "textoFundacion2"; }
+
+
 .mainContainer {
     display: grid;
     position: relative;
     width: 100%;
-    
+    min-height: 100vh;
     padding-top: 56px;
     margin: 0 auto;
     padding: 0 15px;
