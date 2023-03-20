@@ -19,9 +19,21 @@
     border: 1px solid black;
 }
 
+.redondeado {
+    border-radius: 4px;
+    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.75);
+}
 
 .emptyCartMessageAndButtonContainer{
     margin-top: 70px;
+}
+
+.paymentButtonsContainer{
+    margin: 15px auto;
+    width: calc(100% - 30px);
+    min-width: 250px;
+    max-width: 350px;
+    height: fit-content;
 }
 
 
@@ -31,9 +43,7 @@
     align-items: center;
     justify-content: center;
     top: 0px;
-    width: calc(100% - 30px);
-    min-width: 250px;
-    max-width: 350px;
+    width: 100%;
     height: 50px;
     border: none;
     border-radius: 6px;
@@ -45,31 +55,40 @@
     box-shadow: 0 0 0 #fff;
 }
 
-.botonesCarroConItems {
-    margin: 10px auto;
-}
 
-.botonesCarroSinItems {
-    margin: 10px auto;
-}
 
-.redondeado {
-    border-radius: 4px;
-    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.75);
-}
 
 .botonesCarro:hover {
     color: white;
 }
 
-.pagarConMPButton {
-    margin-top: 30px;
+.MPButton {
+    
+    margin-bottom: 25px;
     background-color: #009EE3;
+}
+
+.customOrderButton{
+    background-color: black;
+    margin-bottom: 45px;
 }
 
 .mercadopagoicono {
     margin-right: 15px;
     width: 50px;
+}
+
+.line{
+    margin-bottom: 10px;
+    height: 1px;
+    border: 1px solid #4C4C4C;
+}
+
+.bankIcon{
+    margin-right: 15px;
+    width: 35px;
+    height: 35px;
+   
 }
 
 
