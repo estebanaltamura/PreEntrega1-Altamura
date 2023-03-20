@@ -52,9 +52,10 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
     return(
         <>
         <div id="carouselExampleControls" className="carrusel carousel slide" data-bs-ride="carousel">
+          
             <div className="carousel-inner">
               {
-                images.length > 0 && images.map((image, index)=>{
+                images.map((image, index)=>{
                   return (index == 0 ?
                   <div className="carousel-item active" key={index}>
                     <img id="carrousel1" src={image} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
@@ -64,15 +65,9 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
                     <img id="carrousel1" src={image} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
                   </div>)
                 })
-              }
-
-              <div className="carousel-item">
-                <img src={images[1]} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
-              </div>
-              <div className="carousel-item">
-                <img src={images[2]} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
-              </div>
+              }              
             </div>
+
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <img src="https://i.postimg.cc/RFzMbrkm/icons8-chevron-left-96.png" className="carousel-control-prev-icon" aria-hidden="true" alt="Boton para retroceder a la imagen anterior" />
                 <span className="visually-hidden">Previous</span>

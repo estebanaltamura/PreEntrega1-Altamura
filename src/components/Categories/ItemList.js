@@ -2,7 +2,7 @@ import React from "react";
 import { Item } from "./Item";
 import "./ItemList.css"
 
-export const ItemList = ({collectionName, collectionProducts})=>{    
+export const ItemList = ({ collectionProducts, collectionName})=>{    
     return(
         <>
             <div className="itemList">

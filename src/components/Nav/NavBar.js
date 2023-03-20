@@ -59,20 +59,20 @@ export const NavBar =()=>{
                             </div>
                                 <ul className="dropdown-menu">
                                     <li> 
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/urbanCollection">Urban Collection</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks">Urban backpacks</NavLink>
                                     </li>
                                                                
                                     <li> 
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/travelCollection">Travel Collection</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks">Travel backpacks</NavLink>
                                     </li>
 
                                     <li>
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/climbingCollection">Climbing Collection</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks">Climbing backpacks</NavLink>
                                     </li>
                                  </ul>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/collections/newArrivals">New Arrivals</NavLink>
+                            <NavLink className="link" to = "/collections/New arrivals - Backpacks">New arrivals</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="link" to = "/We">We</NavLink>

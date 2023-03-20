@@ -66,6 +66,13 @@ header{
     height:27px;
 }
 
+
+.desplegableMenuItem{    
+    white-space:nowrap;
+    height: 24px;
+    width: fit-content;
+}
+
 .quantityIconplus{
     position: absolute;
     top: 34px;

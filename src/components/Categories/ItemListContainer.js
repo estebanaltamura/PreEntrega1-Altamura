@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import {useParams, useNavigate} from 'react-router-dom';
+import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
 import Spinner from 'react-bootstrap/Spinner';
 import { ItemList } from "./ItemList";
 import "./ItemListContainer.css"
@@ -13,13 +14,14 @@ export const ItemListContainer = ()=>{
 
 
     const getCollectionData = async (idCollection)=>{
-        try {
-            setIsLoading(true)  
-            const response = await fetch("https://63c98161320a0c4c954a3283.mockapi.io/fakeapi")
-            const json = await response.json()
-            const collection = await json[0]?.[idCollection]
-            collection !== undefined ? setCollectionData(collection) : history("/")
-            setIsLoading(false) 
+        try {                                 
+            setIsLoading(true) 
+            const db = getFirestore()
+            const queryDoc = doc(db, "products", "backpack collections")
+            const queryCollection = collection(queryDoc, idCollection)
+            const queryFilter = query(queryCollection, orderBy("id"), where("isActive", "==", true))          
+            getDocs(queryFilter).then( res=> setCollectionData(res.docs.length == 0 ? history("/home") :res.docs.map(product=>product.data())) )
+            setIsLoading(false)            
         } 
         catch (error) {
             console.error(error);
@@ -28,8 +30,12 @@ export const ItemListContainer = ()=>{
 
     useEffect(()=>{
         window.scrollTo(0,0)
-        getCollectionData(idCollection)
+        getCollectionData(idCollection) 
     },[idCollection])
+
+    useEffect(()=>{
+        
+    },[isLoading])
 
     return(        
         <main className="itemListContainer">
@@ -39,7 +45,9 @@ export const ItemListContainer = ()=>{
                         </Spinner> 
                 </div> 
                                : 
-                <ItemList collectionProducts={collectionData.products} collectionName={collectionData.collectionName}/>
+
+                
+                <ItemList collectionProducts={collectionData} collectionName={idCollection} />
             }
         </main>         
     )
