@@ -10,17 +10,13 @@ export const NavBar =()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
     const [totalQuantityItemsCart, setTotalQuantityItemsCart] = useState(0)
-    const URLchanges = useLocation()
+    const URLPath = useLocation()
     const togglerButtonMenu = useRef()
-    const lastPath = useRef(URLchanges)
     
-
-    
-
     useEffect(()=>{
-        if(lastPath.current.pathname !== URLchanges.pathname && !togglerButtonMenu.current.className.includes("collapsed")) togglerButtonMenu.current.click()                
-        lastPath.current.pathname = URLchanges.pathname
-    },[URLchanges]) 
+           !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()               
+    },[URLPath])
+
     
     useEffect(()=>{
         const quantityItems = itemsCartAdded.length > 1 ? itemsCartAdded.reduce((accumulator, partial)=>{return accumulator+partial.quantity},0) : itemsCartAdded.length == 1 ? itemsCartAdded[0].quantity : 0
@@ -28,14 +24,11 @@ export const NavBar =()=>{
     },[itemsCartAdded]) 
 
     
-
-    
-    
     return(
         <header>
             <nav className="navbar navbar-expand-lg contenedorMenu">
             <div className="container-fluid menuExpandible">
-                <button className="navbar-toggler"  ref={togglerButtonMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler collapsed"  ref={togglerButtonMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                     <NavLink className="link logoLink" to ="/home">
