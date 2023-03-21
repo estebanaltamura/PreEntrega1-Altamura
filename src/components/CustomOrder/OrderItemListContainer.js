@@ -6,10 +6,12 @@ import "./OrderItemListContainer.css"
 export const OrderItemListContainer = ()=> {
     return(
         <div className="orderItemListContainer">
-            <h2 className="mb-4">Items</h2>
-            <CustomOrderItemListHeader />
-            <OrderItemList />
-            <CustomOrderItemListTotal />
+            <div className="orderItemListd">
+                <h2 className="mb-4">Items</h2>
+                <CustomOrderItemListHeader />
+                <OrderItemList />
+                <CustomOrderItemListTotal />
+            </div>
         </div>
     )
 }
