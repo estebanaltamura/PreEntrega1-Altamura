@@ -1,6 +1,4 @@
 import { useState } from "react"
-import swal from '@sweetalert/with-react';
-
 
 export const useLoginValidator = (e)=>{
     
