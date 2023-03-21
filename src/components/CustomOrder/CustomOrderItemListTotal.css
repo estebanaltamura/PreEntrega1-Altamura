@@ -4,9 +4,9 @@
     text-align: center;
     height: 30px;
     width: 100%;
-    grid-template-columns: 100px 1fr 70px 70px 70px;
+    grid-template-columns: 100px 1fr 1fr 1fr;
     grid-template-rows: 30px;
-    grid-template-areas: "empty empty empty title total";
+    grid-template-areas: "empty empty title total";
 }
 
 .customOrderTotal{

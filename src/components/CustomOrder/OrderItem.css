@@ -2,19 +2,27 @@
     display: grid;
     align-items: center;
     text-align: center;
-    height: 100px;
+    height: 102px;
     width: 100%;
-    grid-template-columns: 100px 1fr 70px 70px 70px;
-    grid-template-rows: 100px;
-    grid-template-areas: "image name quantity price subTotal";
+    grid-template-columns: 100px 1fr 1fr 1fr;
+    grid-template-rows: 25px 25px 25px 25px;
+    grid-template-areas: "image name name name"
+                        "image name name name"
+                        "image quantityTitle priceTitle subTotalTitle "
+                        "image quantity price subTotal ";
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
 }
 
 .customOrderImage{
     width: 100%;
     grid-area: image;
+    border-right: 1px solid black;
 }
 
 .customOrderName{
+    border-bottom: 1px solid black;
     grid-area: name;
 }
 
@@ -28,4 +36,18 @@
 
 .customOrderSubTotal{
     grid-area: subTotal;
+}
+
+
+.customOrderQuantityTitle{
+    grid-area: quantityTitle;
+}
+
+                
+.customOrderPriceTitle{
+    grid-area: priceTitle;
+}
+
+.customOrderSubTotalTitle{
+    grid-area: subTotalTitle;
 }
