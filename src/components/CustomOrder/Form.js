@@ -4,7 +4,8 @@ import { useContext } from "react";
 import { CartContext } from "../Contexts/CartContextProvider";
 import { TbHelp } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
-import swal from '@sweetalert/with-react'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import "./Form.css"
 
 export const Form = ()=>{
@@ -12,6 +13,7 @@ export const Form = ()=>{
     const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useLoginValidator()
     const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
     const history = useNavigate()
+    const MySwal = withReactContent(Swal)
 
     const onSubmitHandler = (e)=>{
         e.preventDefault()
@@ -42,7 +44,7 @@ export const Form = ()=>{
                    history(`/orderCreated/${lastOrderIdNumber || 1}`)                   
                 }).catch(error=>{
                     console.log(error)
-                    swal("We can't process your order at this time")
+                    MySwal.fire("We can't process your order at this time")
                 })    
             }).catch(error=>console.log(error))
            
@@ -55,8 +57,8 @@ export const Form = ()=>{
     }
 
     const onClickHandlerHelpIcon = ()=> {
-        swal({
-            content: <div>
+        MySwal.fire({
+            html: <div>
                 <h4>US phone number formats:</h4>
                 <span>555-555-5555</span><br/>
                 <span>1 555-555-5555</span><br/>
@@ -64,8 +66,7 @@ export const Form = ()=>{
                 <span>15555555555</span><br/>
                 <span>5555555555</span>
 
-            </div>,
-            cancel: true
+            </div>            
         })
     }
 
