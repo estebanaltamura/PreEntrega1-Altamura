@@ -1,5 +1,6 @@
 .customOrderItem{
     display: grid;
+    margin-top: -1px;
     align-items: center;
     text-align: center;
     height: 102px;
