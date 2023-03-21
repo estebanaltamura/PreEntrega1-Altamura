@@ -1,0 +1,8 @@
+.orderCreatedContainer{
+    margin: 50px auto 0 auto;
+    text-align: center;
+    padding-top: 56px;
+    width: 100%;
+    max-width: 700px;
+    min-height: calc(100vh - 250px);
+}

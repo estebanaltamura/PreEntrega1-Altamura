@@ -29,8 +29,7 @@ export const CartItemsContainer = ()=>{
                                 </Link>
 
                                 <h4>Bank transfer payment method</h4>
-                                <Link className="botonesCarro customOrderButton" to="/home">
-                                    
+                                <Link className="botonesCarro customOrderButton" to="/customOrder">                                    
                                     CREATE CUSTOM ORDER
                                 </Link>
 
@@ -45,8 +44,8 @@ export const CartItemsContainer = ()=>{
 
                     <>
                         <main className="mainContainerCart">
-                            <div className="emptyCartMessageAndButtonContainer">
-                                <h2>Your cart is currently empty</h2>
+                            <div className="paymentButtonsContainer">
+                                <h3>Your cart is currently empty</h3>
                                 <Link className="botonesCarro" to="/home">CONTINUE SHOPPING</Link>                    
                             </div>
                         </main>

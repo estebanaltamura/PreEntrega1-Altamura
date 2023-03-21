@@ -9,8 +9,11 @@ import { HomeContainer } from './components/Home/HomeContainer/HomeContainer';
 import { We } from './components/We/We';
 import { ContactUs } from './components/ContactUs/ContactUs';
 import { Footer } from './components/Footer/Footer';
+import { CustomOrder } from './components/CustomOrder/CustomOrder';
+import { OrderCreated } from './components/OrderCreated/OrderCreated';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+
 
 function App() {
 
@@ -44,6 +47,8 @@ function App() {
               <Route path="/ContactUs" element = {<ContactUs />}/>
               <Route path="/products/:idCollection/:idProduct" element = {<ItemDetailsContainer />}/>
               <Route path="/cart" element = {<CartItemsContainer />}/>
+              <Route path="/customOrder" element = {<CustomOrder />}/>
+              <Route path="/orderCreated/:orderId" element = {<OrderCreated />}/>
               <Route path="/payment" element = {<Payment />}/>
           </Routes>
           <Footer />

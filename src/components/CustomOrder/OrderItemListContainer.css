@@ -1,0 +1,15 @@
+.orderItemListContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto;
+    width: 100vw;
+    max-width: 580px;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #6c6c6c;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+    user-select: none;
+}
