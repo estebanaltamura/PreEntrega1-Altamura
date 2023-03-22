@@ -21,8 +21,11 @@ export const ItemListContainer = ()=>{
             const queryDoc = doc(db, "products", "backpack collections")
             const queryCollection = collection(queryDoc, idCollection)
             const queryFilter = query(queryCollection, orderBy("id"), where("isActive", "==", true))          
-            getDocs(queryFilter).then( res=> setCollectionData(res.docs.length == 0 ? history("/home") :res.docs.map(product=>product.data())) )
-            setIsLoading(false)            
+            getDocs(queryFilter).then( res=> {
+                setCollectionData(res.docs.length == 0 ? history("/home") :res.docs.map(product=>product.data())) 
+                setIsLoading(false)
+            })
+                       
         } 
         catch (error) {
             console.error(error);

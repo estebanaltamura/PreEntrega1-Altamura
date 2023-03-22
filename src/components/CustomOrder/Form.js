@@ -36,8 +36,7 @@ export const Form = ()=>{
             const db = getFirestore()
             const queryCollection = collection(db, "orders")
             const queryFilter = query(queryCollection, orderBy("orderId", "desc"))
-            console.log(queryFilter)
-            
+                        
             getDocs(queryFilter).then(res=>{
                 let lastOrderIdNumber
                 if (res.docs.length > 0){
