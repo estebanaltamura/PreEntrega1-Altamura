@@ -25,14 +25,15 @@ export const HomeContainer = ()=>{
     const mainContainer = useRef()
     const spinner = useRef()
     const componentsLoaded = useRef([])
+    const isLoadingLocal = useRef(isLoading)
 
     useEffect(()=>{
-        setIsLoading(true)
         window.scrollTo(0,0)   
     }, [])
 
   
     useEffect(()=>{
+        
         isLoading === false && mainContainer.current.classList.replace("hiddenHome", "mainContainer")
         isLoading === false && spinner.current.classList.replace("spinnerContainer", "hidden")
     }, [isLoading])
@@ -40,8 +41,8 @@ export const HomeContainer = ()=>{
     const onLoadHandler = (e)=>{
         componentsLoaded.current.push(e.target.classList[0])
         const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element == "coleccionesImagenes" || element == "portadaMobile" || element == "portada375" || element == "portadaDesktop")
-        if(componentsLoadedFiltered.length == 4 && isLoading == true){
-            console.log("cargaron los 4")
+        if(componentsLoadedFiltered.length == 4 && isLoadingLocal.current === true){
+            isLoadingLocal.current = false
             setIsLoading(false)
         } 
         
