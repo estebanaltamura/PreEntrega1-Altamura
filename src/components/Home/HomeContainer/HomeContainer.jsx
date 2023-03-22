@@ -32,17 +32,13 @@ export const HomeContainer = ()=>{
     }, [])
 
   
-    useEffect(()=>{
-        
-        isLoading === false && mainContainer.current.classList.replace("hiddenHome", "mainContainer")
-        isLoading === false && spinner.current.classList.replace("spinnerContainer", "hidden")
-    }, [isLoading])
-
     const onLoadHandler = (e)=>{
         componentsLoaded.current.push(e.target.classList[0])
         const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element == "coleccionesImagenes" || element == "portadaMobile" || element == "portada375" || element == "portadaDesktop")
         if(componentsLoadedFiltered.length == 4 && isLoadingLocal.current === true){
             isLoadingLocal.current = false
+            isLoading === false && mainContainer.current.classList.replace("hiddenHome", "mainContainer")
+            isLoading === false && spinner.current.classList.replace("spinnerContainer", "hidden")
             setIsLoading(false)
         } 
         
