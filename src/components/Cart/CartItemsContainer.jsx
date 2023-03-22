@@ -1,7 +1,7 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../Contexts/CartContextProvider"
-import { BsBank } from "react-icons/bs";
+import { isLoadingContext } from "../Contexts/IsLoadingContextProvider"
 import "./CartItemsContainer.css"
 
 import { ItemListCart } from "./ItemListCart"
@@ -9,7 +9,12 @@ import { ItemListCart } from "./ItemListCart"
 export const CartItemsContainer = ()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
+    const { setIsLoading } = useContext(isLoadingContext)
    
+    useEffect(()=>{
+        setIsLoading(true)
+        window.scrollTo(0, 0)        
+    },[])
 
     return(
         <>  

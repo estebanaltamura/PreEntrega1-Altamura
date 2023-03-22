@@ -1,12 +1,20 @@
 import { useContext } from "react"
+import { isLoadingContext } from "../Contexts/IsLoadingContextProvider"
 import { CartContext } from "../Contexts/CartContextProvider"
-
+import Spinner from 'react-bootstrap/Spinner';
 import "./ItemCart.css"
 
-export const ItemCart = ({product})=> {
+export const ItemCart = ({product, index})=> {
 
     const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
+    const { isLoading, setIsLoading } = useContext(isLoadingContext)
     
+
+    const onLoadHandler = ()=> {
+        index == itemsCartAdded.length - 1 && setIsLoading(false)
+    }
+
+
     const indexOfProductToUpdate = (itemsCartAdded, e)=>{
         return itemsCartAdded.findIndex((product)=>product.id==e.target.parentNode.id)     
     }
@@ -50,11 +58,22 @@ export const ItemCart = ({product})=> {
 
     return(
 
-        <>
-            {
+        
+            
+            <>
+                {isLoading &&
+                <div className="spinnerContainer" >
+                    <Spinner animation="border" role="status" className="spinner">
+                    </Spinner> 
+                </div>
+                }
+                
+                
+
+                {
                 window.innerWidth > 768 ?
                     <div className="item" id={product.id}>
-                        <img className="imagenCartItem" src={product.images[0]} />
+                        <img onLoad={onLoadHandler} className="imagenCartItem" src={product.images[0]} />
                         <span className="tituloCartItem">{product.name}</span>
                         <span className="priceCartItem">{`$${product.price}`}</span>
                         <span className="quantityCartItem">{product.quantity}</span>
@@ -65,7 +84,7 @@ export const ItemCart = ({product})=> {
                     </div>
                                         :
                     <div className="itemMobile" id={product.id}>
-                        <img className="imagenCartItem" src={product.images[0]} />
+                        <img  onLoad={onLoadHandler} className="imagenCartItem" src={product.images[0]} />
                         <span className="tituloCartItem">{product.name}</span>
                         <span className="subTituloCartItem">{product.shortDescription}</span>
                         <p className="descripcion"></p>                
@@ -76,8 +95,10 @@ export const ItemCart = ({product})=> {
                         <span className="removeIconMobile" id="removeIcon" onClick={onClickHandlerRemove}>Eliminar</span>
                         <div className="line"></div>
                     </div>
-            }        
-        </>
+                }
+            </>
+                   
+        
     )
 }
 

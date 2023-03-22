@@ -26,30 +26,29 @@ export const ItemListCart = ()=> {
         <>
             {
                 window.innerWidth > 768 &&
-                <>
-                    <div className="itemHeader" id="itemHeader">
-                        <span className="productNameHeaderCart">Product</span>
-                        <span className="priceHeaderCart">Price</span>
-                        <span className="quantityHeaderCart">Quantity</span>
-                        <span className="subTotalHeaderCart">Sub Total</span>
-                    </div>
-                </>
+                
+                <div className="itemHeader" id="itemHeader">
+                    <span className="productNameHeaderCart">Product</span>
+                    <span className="priceHeaderCart">Price</span>
+                    <span className="quantityHeaderCart">Quantity</span>
+                    <span className="subTotalHeaderCart">Sub Total</span>
+                </div>                
             }
 
             
             {
-                itemsCartAdded.length > 0 && itemsCartAdded.map((product, index)=>{
-                    return <ItemCart product={product} key={index}/>
+                itemsCartAdded.map((product, index)=>{
+                    return <ItemCart product={product} index={index} key={index}/>
                 })
             }
             
             
             {
-                itemsCartAdded.length > 0 && 
-                    <div id="totalCart" className={window.innerWidth > 768 ? "totalCartContainer" : "totalCartContainerMobile"}> 
-                        <span className="totalCartTitle">TOTAL</span>
-                        <span className="totalCartNumber" id="totalCartNumber">{`$${totalCart}`}</span>
-                    </div>
+                
+                <div id="totalCart" className={window.innerWidth > 768 ? "totalCartContainer" : "totalCartContainerMobile"}> 
+                    <span className="totalCartTitle">TOTAL</span>
+                    <span className="totalCartNumber" id="totalCartNumber">{`$${totalCart}`}</span>
+                </div>
             }
         </>
     )
