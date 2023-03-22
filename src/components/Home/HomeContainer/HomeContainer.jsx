@@ -28,6 +28,7 @@ export const HomeContainer = ()=>{
     const isLoadingLocal = useRef(isLoading)
 
     useEffect(()=>{
+        setIsLoading(true)
         window.scrollTo(0,0)   
     }, [])
 
