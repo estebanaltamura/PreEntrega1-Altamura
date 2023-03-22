@@ -18,7 +18,7 @@ export const CartItemsContainer = ()=>{
     },[])
 
     useEffect(()=>{
-        !isLoading && mainContainer.current.classList.replace("hidden", "mainContainerCart")        
+        (!isLoading && itemsCartAdded.length > 0) && mainContainer.current.classList.replace("hidden", "mainContainerCart")        
     },[isLoading])
 
     return(
