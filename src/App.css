@@ -5,11 +5,12 @@
     user-select: none;
 }
 
-
+button, a{
+    cursor: pointer;
+}
 a{
     color: black;
     text-decoration: none;
-    cursor: pointer;
 }
 
 a:active{

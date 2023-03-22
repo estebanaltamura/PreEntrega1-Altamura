@@ -31,9 +31,10 @@ export const HomeContainer = ()=>{
         window.scrollTo(0,0)   
     }, [])
 
+  
     useEffect(()=>{
-        !isLoading && mainContainer.current.classList.replace("hiddenHome", "mainContainer")
-        !isLoading && spinner.current.classList.replace("spinnerContainer", "hidden")
+        isLoading === false && mainContainer.current.classList.replace("hiddenHome", "mainContainer")
+        isLoading === false && spinner.current.classList.replace("spinnerContainer", "hidden")
     }, [isLoading])
 
     const onLoadHandler = (e)=>{
