@@ -1,7 +1,6 @@
 .customOrderItem{
     display: grid;
     margin-top: -1px;
-    align-items: center;
     text-align: center;
     height: 102px;
     width: 100%;
@@ -22,7 +21,13 @@
     border-right: 1px solid black;
 }
 
-.customOrderName{
+.orderCustomSpan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.customOrderName{    
     border-bottom: 1px solid black;
     grid-area: name;
 }

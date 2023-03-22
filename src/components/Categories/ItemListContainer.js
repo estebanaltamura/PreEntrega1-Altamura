@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import {useParams, useNavigate} from 'react-router-dom';
 import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
+import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
 import Spinner from 'react-bootstrap/Spinner';
 import { ItemList } from "./ItemList";
 import "./ItemListContainer.css"
@@ -9,13 +10,13 @@ export const ItemListContainer = ()=>{
 
     const {idCollection} = useParams() 
     const [collectionData, setCollectionData] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const {isLoading, setIsLoading} = useContext(isLoadingContext)
     const history = useNavigate()
 
 
     const getCollectionData = async (idCollection)=>{
         try {                                 
-            setIsLoading(true) 
+            
             const db = getFirestore()
             const queryDoc = doc(db, "products", "backpack collections")
             const queryCollection = collection(queryDoc, idCollection)
@@ -30,6 +31,7 @@ export const ItemListContainer = ()=>{
 
     useEffect(()=>{
         window.scrollTo(0,0)
+        setIsLoading(true) 
         getCollectionData(idCollection) 
     },[idCollection])
 
@@ -44,10 +46,8 @@ export const ItemListContainer = ()=>{
                         <Spinner animation="border" role="status" className="spinner">
                         </Spinner> 
                 </div> 
-                               : 
-
-                
-                <ItemList collectionProducts={collectionData} collectionName={idCollection} />
+            : 
+               <ItemList collectionProducts={collectionData} collectionName={idCollection} />
             }
         </main>         
     )

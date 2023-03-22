@@ -1,10 +1,12 @@
 import { useLoginValidator } from "./useLoginValidator"
 import { getFirestore, collection, addDoc, getDocs, getDoc, where, orderBy, query } from "firebase/firestore";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../Contexts/CartContextProvider";
+import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
 import { TbHelp } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+
 import withReactContent from 'sweetalert2-react-content'
 import "./Form.css"
 
@@ -12,12 +14,15 @@ export const Form = ()=>{
 
     const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useLoginValidator()
     const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
+    const {setIsLoading} = useContext(isLoadingContext)
+
     const history = useNavigate()
     const MySwal = withReactContent(Swal)
 
     const onSubmitHandler = (e)=>{
         e.preventDefault()
         
+
         const fullNameValue = e.target.fullName.value
         const phoneValue = e.target.phone.value
         const mailValue = e.target.mail.value
@@ -27,6 +32,7 @@ export const Form = ()=>{
         mailValidator(mailValue)
         //console.log(fullNameValidator(fullNameValue), telephoneValidator(phoneValue), mailValidator(mailValue))
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValue) && mailValidator(mailValue)){
+            setIsLoading(true)
             const db = getFirestore()
             const queryCollection = collection(db, "orders")
             const queryFilter = query(queryCollection, orderBy("orderId", "desc"))
@@ -41,17 +47,18 @@ export const Form = ()=>{
                 
                 addDoc(queryCollection, {orderId: lastOrderIdNumber || 1, fullname: fullNameValue,  phoneNumber: phoneValue, isActive: true, email: mailValue, ...itemsCartAdded}).then(res=>{
                    setItemsCartAdded([])
-                   history(`/orderCreated/${lastOrderIdNumber || 1}`)                   
+                   history(`/orderCreated/${lastOrderIdNumber || 1}`)   
+                   setIsLoading(false)                
                 }).catch(error=>{
-                    console.log(error)
+                    setIsLoading(false)  
                     MySwal.fire("We can't process your order at this time")
                 })    
-            }).catch(error=>console.log(error))
+            }).catch(error=>{
+                console.log(error)
+                setIsLoading(false)
+            })
            
             
-            
-
-
         }
         
     }
@@ -72,34 +79,35 @@ export const Form = ()=>{
 
     return(
             <>
-                <div className="loginContainer"> 
-                    <div className="form-container"> 
-                        <form action="/action_page.php" onSubmit={onSubmitHandler}> 
-                        
-                            <div className="inputContainer">
-                                <span className="subtitle">NAME:</span>
-                                <input type="text" name="fullName" onKeyUp={resetAlerts} />
-                                <span className="inputAlerts">{fullNameAlert}</span>
-                            </div>
-
-                            <div className="inputContainer">
-                                <span className="subtitle">PHONE:</span>  
-                                <input type="text" name="phone" onKeyUp={resetAlerts} />
-                                {phoneAlert && <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon}/>}
-                                <span className="inputAlerts">{phoneAlert}</span>
-                            </div>
-                            
-                            <div className="inputContainer">
-                                <span className="subtitle">MAIL:</span>  
-                                <input type="text" name="mail" onKeyUp={resetAlerts} />
-                                <span className="inputAlerts">{mailAlert}</span>
-                            </div>
-                            
-                            <button type="submit"  className="submit-btn">CREATE ORDER</button>
-                        </form>
-                    </div>  
-                </div>  
                 
+                        <div className="loginContainer"> 
+                            <div className="form-container"> 
+                                <form action="/action_page.php" onSubmit={onSubmitHandler}> 
+                                
+                                    <div className="inputContainer">
+                                        <span className="subtitle">NAME:</span>
+                                        <input type="text" name="fullName" onKeyUp={resetAlerts} />
+                                        <span className="inputAlerts">{fullNameAlert}</span>
+                                    </div>
+
+                                    <div className="inputContainer">
+                                        <span className="subtitle">PHONE:</span>  
+                                        <input type="text" name="phone" onKeyUp={resetAlerts} />
+                                        {phoneAlert && <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon}/>}
+                                        <span className="inputAlerts">{phoneAlert}</span>
+                                    </div>
+                                    
+                                    <div className="inputContainer">
+                                        <span className="subtitle">MAIL:</span>  
+                                        <input type="text" name="mail" onKeyUp={resetAlerts} />
+                                        <span className="inputAlerts">{mailAlert}</span>
+                                    </div>
+                                    
+                                    <button type="submit"  className="submit-btn">CREATE ORDER</button>
+                                </form>
+                            </div>  
+                        </div>                   
+                          
                 
             </>
     )
