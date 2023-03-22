@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider"
 import { CartContext } from "../Contexts/CartContextProvider"
 import Spinner from 'react-bootstrap/Spinner';
@@ -8,10 +8,20 @@ export const ItemCart = ({product, index})=> {
 
     const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
     const { isLoading, setIsLoading } = useContext(isLoadingContext)
+    const itemElement = useRef()
+    const itemMobileElement = useRef()
+
     
+  
 
     const onLoadHandler = ()=> {
         index == 0 && setIsLoading(false)
+        if(window.innerWidth > 768){
+            itemElement.current.classList.replace("hidden", "item")
+        } 
+        else itemMobileElement.current.classList.replace("hidden", "itemMobile")
+            
+        
     }
 
 
@@ -72,7 +82,7 @@ export const ItemCart = ({product, index})=> {
 
                 {
                 window.innerWidth > 768 ?
-                    <div className="item" id={product.id}>
+                    <div ref={itemElement} className="hidden" id={product.id}>
                         <img onLoad={onLoadHandler} className="imagenCartItem" src={product.images[0]} />
                         <span className="tituloCartItem">{product.name}</span>
                         <span className="priceCartItem">{`$${product.price}`}</span>
@@ -83,7 +93,7 @@ export const ItemCart = ({product, index})=> {
                         <img className="removeIcon" onClick={onClickHandlerRemove} id="removeIcon" src="https://i.postimg.cc/prsRTmpV/icons8-multiply-64.png" />
                     </div>
                                         :
-                    <div className="itemMobile" id={product.id}>
+                    <div ref={itemMobileElement} className="hidden" id={product.id}>
                         <img  onLoad={onLoadHandler} className="imagenCartItem" src={product.images[0]} />
                         <span className="tituloCartItem">{product.name}</span>
                         <span className="subTituloCartItem">{product.shortDescription}</span>
