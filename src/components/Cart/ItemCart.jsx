@@ -16,10 +16,7 @@ export const ItemCart = ({product, index})=> {
 
     const onLoadHandler = ()=> {
         index == 0 && setIsLoading(false)
-        if(window.innerWidth > 768){
-            itemElement.current.classList.replace("hidden", "item")
-        } 
-        else itemMobileElement.current.classList.replace("hidden", "itemMobile")
+       
             
         
     }
@@ -82,7 +79,7 @@ export const ItemCart = ({product, index})=> {
 
                 {
                 window.innerWidth > 768 ?
-                    <div ref={itemElement} className="hidden" id={product.id}>
+                    <div ref={itemElement} className="item" id={product.id}>
                         <img onLoad={onLoadHandler} className="imagenCartItem" src={product.images[0]} />
                         <span className="tituloCartItem">{product.name}</span>
                         <span className="priceCartItem">{`$${product.price}`}</span>
@@ -93,7 +90,7 @@ export const ItemCart = ({product, index})=> {
                         <img className="removeIcon" onClick={onClickHandlerRemove} id="removeIcon" src="https://i.postimg.cc/prsRTmpV/icons8-multiply-64.png" />
                     </div>
                                         :
-                    <div ref={itemMobileElement} className="hidden" id={product.id}>
+                    <div ref={itemMobileElement} className="itemMobile" id={product.id}>
                         <img  onLoad={onLoadHandler} className="imagenCartItem" src={product.images[0]} />
                         <span className="tituloCartItem">{product.name}</span>
                         <span className="subTituloCartItem">{product.shortDescription}</span>

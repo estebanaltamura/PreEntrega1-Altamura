@@ -9,19 +9,23 @@ import { ItemListCart } from "./ItemListCart"
 export const CartItemsContainer = ()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
-    const { setIsLoading } = useContext(isLoadingContext)
+    const { isLoading, setIsLoading } = useContext(isLoadingContext)
    
     useEffect(()=>{
         setIsLoading(true)
         window.scrollTo(0, 0)        
     },[])
 
+    useEffect(()=>{
+        !isLoading && itemElement.current.classList.replace("hidden", "mainContainerCart")        
+    },[isLoading])
+
     return(
         <>  
             {
                 itemsCartAdded.length > 0 ?
                     <>  
-                        <main className="mainContainerCart">
+                        <main className="hidden">
                             <div className="contenedorItems redondeado">
                                 <ItemListCart />
                             </div>
