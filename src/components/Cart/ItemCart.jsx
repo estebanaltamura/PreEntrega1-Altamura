@@ -11,7 +11,7 @@ export const ItemCart = ({product, index})=> {
     
 
     const onLoadHandler = ()=> {
-        index == itemsCartAdded.length - 1 && setIsLoading(false)
+        index == 0 && setIsLoading(false)
     }
 
 
