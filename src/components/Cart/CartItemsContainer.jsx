@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../Contexts/CartContextProvider"
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider"
@@ -10,6 +10,7 @@ export const CartItemsContainer = ()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
     const { isLoading, setIsLoading } = useContext(isLoadingContext)
+    const mainContainer = useRef()
    
     useEffect(()=>{
         setIsLoading(true)
@@ -17,7 +18,7 @@ export const CartItemsContainer = ()=>{
     },[])
 
     useEffect(()=>{
-        !isLoading && itemElement.current.classList.replace("hidden", "mainContainerCart")        
+        !isLoading && mainContainer.current.classList.replace("hidden", "mainContainerCart")        
     },[isLoading])
 
     return(
@@ -25,7 +26,7 @@ export const CartItemsContainer = ()=>{
             {
                 itemsCartAdded.length > 0 ?
                     <>  
-                        <main className="hidden">
+                        <main ref={mainContainer} className="hidden">
                             <div className="contenedorItems redondeado">
                                 <ItemListCart />
                             </div>
