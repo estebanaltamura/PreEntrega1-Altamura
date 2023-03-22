@@ -57,11 +57,15 @@ header{
     margin-left: 0;
 }
 
-.quantityIcon{
+.quantityLink{
     position: absolute;
     top: 30px;
     right: 42px;
     color: rgb(245, 153, 33);
+    
+}
+
+.quantityIcon{
     width:27px;
     height:27px;
 }

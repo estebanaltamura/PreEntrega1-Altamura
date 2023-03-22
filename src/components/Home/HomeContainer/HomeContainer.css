@@ -8,6 +8,11 @@
     display: none;
    
 }
+
+.fofo{
+    height: 100vh;
+
+}
 .mainContainerHidden {
     display: none;
     position: relative;

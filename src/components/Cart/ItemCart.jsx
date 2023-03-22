@@ -15,10 +15,7 @@ export const ItemCart = ({product, index})=> {
   
 
     const onLoadHandler = ()=> {
-        index == 0 && setIsLoading(false)
-       
-            
-        
+        index == 0 && setIsLoading(false)       
     }
 
 

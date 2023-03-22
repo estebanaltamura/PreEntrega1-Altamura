@@ -10,7 +10,7 @@ export const CartItemsContainer = ()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
     const { isLoading, setIsLoading } = useContext(isLoadingContext)
-    const mainContainer = useRef()
+    const mainContainerCart = useRef()
    
     useEffect(()=>{
         setIsLoading(true)
@@ -18,7 +18,7 @@ export const CartItemsContainer = ()=>{
     },[])
 
     useEffect(()=>{
-        (!isLoading && itemsCartAdded.length > 0) && mainContainer.current.classList.replace("hidden", "mainContainerCart")        
+        (!isLoading && itemsCartAdded.length > 0) && mainContainerCart.current.classList.replace("hidden", "mainContainerCart")        
     },[isLoading])
 
     return(
@@ -26,7 +26,7 @@ export const CartItemsContainer = ()=>{
             {
                 itemsCartAdded.length > 0 ?
                     <>  
-                        <main ref={mainContainer} className="hidden">
+                        <main ref={mainContainerCart} className="hidden">
                             <div className="contenedorItems redondeado">
                                 <ItemListCart />
                             </div>

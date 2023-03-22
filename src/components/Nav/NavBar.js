@@ -37,7 +37,18 @@ export const NavBar =()=>{
                     <NavLink to ="/cart">
                         <BsCart4 className="carro" /> 
                     </NavLink>
-                    {totalQuantityItemsCart ==0 ? null : totalQuantityItemsCart ==1 ? <TbBoxMultiple1 className="quantityIcon" /> : totalQuantityItemsCart ==2 ? <TbBoxMultiple2 className="quantityIcon" /> : totalQuantityItemsCart ==3 ? <TbBoxMultiple3 className="quantityIcon" /> : totalQuantityItemsCart ==4 ? <TbBoxMultiple4 className="quantityIcon" /> : totalQuantityItemsCart ==5 ? <TbBoxMultiple5 className="quantityIcon" /> : totalQuantityItemsCart ==6 ? <TbBoxMultiple6 className="quantityIcon" /> : totalQuantityItemsCart ==7 ? <TbBoxMultiple7 className="quantityIcon" /> : totalQuantityItemsCart ==8 ? <TbBoxMultiple8 className="quantityIcon"  /> : totalQuantityItemsCart ==9 ? <TbBoxMultiple9 className="quantityIcon"  /> : <><TbPlus className="quantityIconplus" /> <TbBoxMultiple9 className="quantityIcon"  /></>}
+                    {totalQuantityItemsCart ==0 ? null : 
+                        totalQuantityItemsCart ==1 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple1 className="quantityIcon" /></NavLink> : 
+                        totalQuantityItemsCart ==2 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple2 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart ==3 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple3 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart ==4 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple4 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart ==5 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple5 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart ==6 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple6 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart ==7 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple7 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart ==8 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple8 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart ==9 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple9 className="quantityIcon"   /></NavLink> : 
+                        <NavLink className="quantityLink" to ="/cart"><TbPlus /> <TbBoxMultiple9 className="quantityIcon" /></NavLink>
+                    }
                     
                     
                 
