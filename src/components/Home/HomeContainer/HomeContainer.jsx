@@ -37,8 +37,8 @@ export const HomeContainer = ()=>{
         const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element == "coleccionesImagenes" || element == "portadaMobile" || element == "portada375" || element == "portadaDesktop")
         if(componentsLoadedFiltered.length == 4 && isLoadingLocal.current === true){
             isLoadingLocal.current = false
-            isLoading === false && mainContainer.current.classList.replace("hiddenHome", "mainContainer")
-            isLoading === false && spinner.current.classList.replace("spinnerContainer", "hidden")
+            mainContainer.current.classList.replace("hiddenHome", "mainContainer")
+            spinner.current.classList.replace("spinnerContainer", "hidden")
             setIsLoading(false)
         } 
         
