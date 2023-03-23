@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
-import { useContext, useState } from "react"
+import { useContext, useState, useRef, useEffect } from "react"
 import { CartContext } from "../Contexts/CartContextProvider"
 import { AiOutlinePlusSquare, AiOutlineMinusSquare} from "react-icons/ai";
 import "./ItemDetails.css"
@@ -9,9 +9,21 @@ import "./ItemDetails.css"
 export const ItemDetails = ({name, price, images, description, productData})=>{
   
   const history = useNavigate()
+  const nextButtonCarrousel = useRef()
   const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
   const [quantity, setQuantity] = useState(1)
   
+
+  useEffect(()=>{
+    const interval = setTimeout(()=>nextButtonCarrousel.current.click(), 2500)
+    
+    return (
+      ()=> clearTimeout(interval)
+    )
+    
+  },[])
+
+
   const onClickATChandler = ()=>{    
     //buscar repetidos
     const indexOfRepeatedProduct = (itemsCartAdded)=>{
@@ -72,7 +84,7 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
                 <img src="https://i.postimg.cc/RFzMbrkm/icons8-chevron-left-96.png" className="carousel-control-prev-icon" aria-hidden="true" alt="Boton para retroceder a la imagen anterior" />
                 <span className="visually-hidden">Previous</span>
               </button>
-              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <button ref={nextButtonCarrousel} className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                 <img src="https://i.postimg.cc/ZRFJG7md/icons8-chevron-right-96.png" className="carousel-control-next-icon" alt="Boton para retroceder a la imagen siguiente" />
                 <span className="visually-hidden">Next</span>
               </button>
