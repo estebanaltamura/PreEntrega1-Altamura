@@ -1,5 +1,5 @@
 import { Form } from "./Form"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../Contexts/CartContextProvider";
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
 import { OrderItemListContainer } from "./OrderItemListContainer";
@@ -11,6 +11,9 @@ export const CustomOrder = ()=>{
     const { itemsCartAdded } = useContext(CartContext)
     const { isLoading } = useContext(isLoadingContext)
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return(
         <div className="mainContainerCustomOrder">
 
