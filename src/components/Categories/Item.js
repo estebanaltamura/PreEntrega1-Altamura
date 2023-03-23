@@ -1,3 +1,4 @@
+
 import { Link, useParams } from "react-router-dom";
 import "./Item.css"
 
@@ -5,6 +6,8 @@ import "./Item.css"
 export const Item = ({image, name, price, id, index})=>{     
 
     const {idCollection} = useParams()   
+
+    
 
     return(
         <Link className={`card card${index+1}`} to={`/products/${idCollection}/${id}`}>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useLayoutEffect, useContext } from "react";
 import {useParams, useNavigate} from 'react-router-dom';
 import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
@@ -32,19 +32,20 @@ export const ItemListContainer = ()=>{
         }       
     };
 
-    useEffect(()=>{
+    useEffect(()=>{       
         window.scroll({
             top: 0,
             left: 0,
             behavior: "instant"
         })
-        setIsLoading(true) 
         getCollectionData(idCollection) 
     },[idCollection])
 
-    useEffect(()=>{
-        
-    },[isLoading])
+    useLayoutEffect(()=>{        
+        setIsLoading(true) 
+    },[])
+
+    
 
     return(        
         <main className="itemListContainer">

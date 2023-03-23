@@ -89,20 +89,20 @@ export const Form = ()=>{
                                 
                                     <div className="inputContainer">
                                         <span className="subtitle">NAME:</span>
-                                        <input autocomplete="off" type="text" name="fullName" onKeyUp={resetAlerts} />
+                                        <input autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts} />
                                         <span className="inputAlerts">{fullNameAlert}</span>
                                     </div>
 
                                     <div className="inputContainer">
                                         <span className="subtitle">PHONE:</span>  
-                                        <input autocomplete="off" type="text" name="phone" onKeyUp={resetAlerts} />
+                                        <input autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} />
                                         {phoneAlert && <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon}/>}
                                         <span className="inputAlerts">{phoneAlert}</span>
                                     </div>
                                     
                                     <div className="inputContainer">
                                         <span className="subtitle">MAIL:</span>  
-                                        <input autocomplete="off" type="text" name="mail" onKeyUp={resetAlerts} />
+                                        <input autoComplete="off" type="text" name="mail" onKeyUp={resetAlerts} />
                                         <span className="inputAlerts">{mailAlert}</span>
                                     </div>
                                     
