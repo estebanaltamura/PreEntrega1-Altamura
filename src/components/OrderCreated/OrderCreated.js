@@ -17,9 +17,10 @@ export const OrderCreated = ()=>{
 
         const interval = setInterval(()=>setSeconds(seconds-1), 1000)
         
-        if (seconds == 1){
-            clearInterval(interval)
+        if (seconds == 0){
             history("/home")
+            clearInterval(interval)
+            
         }
     },[seconds])
 
