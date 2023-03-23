@@ -12,7 +12,7 @@ export const ItemList = ({ collectionProducts, collectionName})=>{
         if (itemClass == "imagenCard1" || itemClass == "imagenCard2" || itemClass == "imagenCard3" || itemClass == "imagenCard4" || itemClass == "imagenCard5" ||  itemClass == "imagenCard6"){
             itemsLoaded.current.push(itemClass.current)
         }
-        itemListElement.current.classList.replace("hidden", "itemList")
+        itemsLoaded.current.length == 6 && itemListElement.current.classList.replace("hidden", "itemList")
     }
 
     return(
