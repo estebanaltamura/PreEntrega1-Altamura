@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import "./OrderCreated.css"
 
@@ -7,6 +7,7 @@ export const OrderCreated = ()=>{
     const {orderId} = useParams()
     const [seconds, setSeconds] = useState(5)
     const history = useNavigate()
+    const orderCreatedContainer = useRef()
 
     useEffect(()=>{
         window.scroll({
@@ -18,6 +19,7 @@ export const OrderCreated = ()=>{
         const interval = setInterval(()=>setSeconds(seconds-1), 1000)
         
         if (seconds == 0){
+            orderCreatedContainer.current.classList.replace("orderCreatedContainer", "hidden")
             history("/home")
             clearInterval(interval)
             
@@ -25,7 +27,7 @@ export const OrderCreated = ()=>{
     },[seconds])
 
     return(
-        <div className="orderCreatedContainer">
+        <div className="orderCreatedContainer" ref={orderCreatedContainer}>
 
             <h3>{`Order number ${orderId} created`}</h3>
             <br/> 
