@@ -12,9 +12,9 @@ export const OrderCreated = ()=>{
         window.scroll({
             top: 0,
             left: 0,
-            behavior: instant
+            behavior: "instant"
         })
-        
+
         const interval = setInterval(()=>setSeconds(seconds-1), 1000)
         
         if (seconds == 0){
