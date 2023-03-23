@@ -9,6 +9,7 @@ export const OrderCreated = ()=>{
     const history = useNavigate()
 
     useEffect(()=>{
+        window.scrollTo(0,0)
         const interval = setInterval(()=>setSeconds(seconds-1), 1000)
         
         if (seconds == 0){
