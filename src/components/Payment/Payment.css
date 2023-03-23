@@ -35,7 +35,9 @@
 
 .objectToMPContainer {
     width: 100%;
-    word-break: break-all;
+    word-break:break-word;
+    padding: 0 20px
+    
 }
 
 .pagoSeguirComprando {
@@ -46,3 +48,4 @@
 .pagoSeguirComprando:hover {
     color: black;
 }
+

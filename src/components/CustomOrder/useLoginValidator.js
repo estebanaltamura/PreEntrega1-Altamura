@@ -5,12 +5,18 @@ export const useLoginValidator = (e)=>{
     const [fullNameAlert, setFullNameAlert] = useState("")
     const [mailAlert, setMailAlert] = useState("")
     const [phoneAlert, setPhoneAlert] = useState("")
-
+    
     const fullNameValidator = (fullName)=>{
         const digitRegExp = /\d/
         if(digitRegExp.test(fullName)){
             setFullNameAlert("digits are not allowed")
         } 
+
+        const isThereLettersRegExp = /\w{1,}/
+        if(!isThereLettersRegExp.test(fullName)){
+            setFullNameAlert("please insert your name")
+        } 
+
         else return true
     }
     

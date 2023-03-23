@@ -30,7 +30,7 @@ export const Form = ()=>{
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValue)
         mailValidator(mailValue)
-        //console.log(fullNameValidator(fullNameValue), telephoneValidator(phoneValue), mailValidator(mailValue))
+        
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValue) && mailValidator(mailValue)){
             setIsLoading(true)
             const db = getFirestore()
@@ -50,6 +50,7 @@ export const Form = ()=>{
                    setIsLoading(false)                
                 }).catch(error=>{
                     setIsLoading(false)  
+                    console.log(error)
                     MySwal.fire("We can't process your order at this time")
                 })    
             }).catch(error=>{
@@ -64,13 +65,16 @@ export const Form = ()=>{
 
     const onClickHandlerHelpIcon = ()=> {
         MySwal.fire({
+            showConfirmButton: false,
+            showCancelButton: true,
+            cancelButtonText: 'ok',
             html: <div>
                 <h4>US phone number formats:</h4>
-                <span>555-555-5555</span><br/>
-                <span>1 555-555-5555</span><br/>
-                <span>1 (555) 555-5555</span><br/>
-                <span>15555555555</span><br/>
-                <span>5555555555</span>
+                <span>Option 1: 555-555-5555</span><br/>
+                <span>Option 2: 1 555-555-5555</span><br/>
+                <span>Option 3: 1 (555) 555-5555</span><br/>
+                <span>Option 4: 15555555555</span><br/>
+                <span>Option 5: 5555555555</span>
 
             </div>            
         })
