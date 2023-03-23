@@ -13,6 +13,7 @@ export const ItemList = ({ collectionProducts, collectionName})=>{
             itemsLoaded.current.push(itemClass.current)
         }
         itemsLoaded.current.length == 6 && itemListElement.current.classList.replace("hidden", "itemList")
+        console.log(itemsLoaded.current.length == 6)
     }
 
     return(

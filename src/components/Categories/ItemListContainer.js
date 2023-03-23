@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import {useParams, useNavigate} from 'react-router-dom';
 import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
@@ -16,7 +16,7 @@ export const ItemListContainer = ()=>{
 
     const getCollectionData = async (idCollection)=>{
         try {                                 
-            
+            setIsLoading(true) 
             const db = getFirestore()
             const queryDoc = doc(db, "products", "backpack collections")
             const queryCollection = collection(queryDoc, idCollection)
@@ -41,9 +41,7 @@ export const ItemListContainer = ()=>{
         getCollectionData(idCollection) 
     },[idCollection])
 
-    useLayoutEffect(()=>{        
-        setIsLoading(true) 
-    },[])
+   
 
     
 
