@@ -89,10 +89,13 @@ export const Form = ()=>{
     const onKeyDownHandler = (e)=> {
         
 
-        if (e.code == "Backspace" || "delete"){
+        if (e.code){
             console.log(e.code)
-            phoneString.current.length > 1 && setPhoneInputValue(phoneString.current.pop())
-            phoneString.current.length == 1 && setPhoneInputValue("")
+            if (phoneString.current.length == 1){
+                setPhoneInputValue("")
+                phoneString.current = []
+            } 
+            setPhoneInputValue(e.code)
         }
         
     }
@@ -124,7 +127,7 @@ export const Form = ()=>{
 
                                     <div className="inputContainer">
                                         <span className="subtitle">US PHONE NUMBER:</span>  
-                                        <input onChange={onChangePhoneInputHandler} onKeyDown={onKeyDownHandler}  value={phoneInputValue} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} placeholder="Insert a US phone number"/> 
+                                        <input  onKeyDown={onKeyDownHandler}  value={phoneInputValue} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} placeholder="Insert a US phone number"/> 
                                         <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon} />
                                         <span className="inputAlerts">{phoneAlert}</span>
                                     </div>
