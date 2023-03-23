@@ -89,7 +89,7 @@ export const Form = ()=>{
     const onKeyDownHandler = (e)=> {
         
 
-        if (e.code == "Backspace"){
+        if (e.code == "Backspace" || "delete"){
             console.log(e.code)
             phoneString.current.length > 1 && setPhoneInputValue(phoneString.current.pop())
             phoneString.current.length == 1 && setPhoneInputValue("")
