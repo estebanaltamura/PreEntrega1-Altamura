@@ -12,36 +12,22 @@ export const useLoginValidator = (e)=>{
             setFullNameAlert("digits are not allowed")
         } 
 
-        const isThereLettersRegExp = /\w{1,}/
-        if(!isThereLettersRegExp.test(fullName)){
-            setFullNameAlert("please insert your name")
+        const isThereTwoWords = /\w+\s*\w+/
+        if(!isThereTwoWords.test(fullName)){
+            setFullNameAlert("please insert your full name")
         } 
 
         else return true
     }
     
     const telephoneValidator = (str)=> {
-        const stringSinEspacios = str.replaceAll(" ", "")
-                      
-           const regExpCheck = (cadena)=>{
-               
-               //(555)555-5555
-               const expresion1 = /^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/
+            const regExpCheck = (cadena)=>{              
                //555-555-5555
-               const expresion2 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
-               //1 555-555-5555
-               const expresion3 = /^1[0-9]{3}-[0-9]{3}-[0-9]{4}$/
-               //1 (555) 555-5555
-               const expresion4 = /^1\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/
-               //15555555555
-               const expresion5 = /^1[0-9]{10}$/
-               ///5555555555
-               const expresion6 = /^[0-9]{10}$/
-                    
-               return expresion1.test(cadena) || expresion2.test(cadena) || expresion3.test(cadena) || expresion4.test(cadena) || expresion5.test(cadena) || expresion6.test(cadena)
+               const expresion2 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/                    
+               return expresion2.test(cadena)
            }
            
-           if (regExpCheck(stringSinEspacios) == false){
+           if (regExpCheck(str) == false){
             setPhoneAlert("wrong format. Insert a US phone number")
            } 
            else return true        
@@ -50,7 +36,7 @@ export const useLoginValidator = (e)=>{
     
     const mailValidator = (mail)=>{
         if (mail == ""){
-            setMailAlert("insert a e-mail address"); 
+            setMailAlert("insert a valid e-mail address"); 
             return            
         } 
         
@@ -75,7 +61,7 @@ export const useLoginValidator = (e)=>{
         
         const regExpmail = /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/
         if(!regExpmail.test(mail)){
-            setMailAlert("insert a e-mail address")
+            setMailAlert("insert a valid e-mail address")
             return 
         } 
         return true

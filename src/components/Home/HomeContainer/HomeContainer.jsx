@@ -21,11 +21,11 @@ import "./HomeContainer.css"
 
 export const HomeContainer = ()=>{
 
-    const { isLoading, setIsLoading } = useContext(isLoadingContext)
+    const { setIsLoading } = useContext(isLoadingContext)
     const mainContainer = useRef()
     const spinner = useRef()
     const componentsLoaded = useRef([])
-    const isLoadingLocal = useRef(true)
+    
 
     useLayoutEffect(()=>{
         setIsLoading(true)
@@ -36,8 +36,7 @@ export const HomeContainer = ()=>{
     const onLoadHandler = (e)=>{
         componentsLoaded.current.push(e.target.classList[0])
         const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element == "coleccionesImagenes" || element == "portadaMobile" || element == "portada375" || element == "portadaDesktop")
-        if(componentsLoadedFiltered.length == 4 && isLoadingLocal.current === true){
-            isLoadingLocal.current = false
+        if(componentsLoadedFiltered.length){
             mainContainer.current.classList.replace("hiddenHome", "mainContainer")
             spinner.current.classList.replace("spinnerContainer", "hidden")
             setIsLoading(false)

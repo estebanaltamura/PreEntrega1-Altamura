@@ -1,6 +1,6 @@
+import { useContext, useState, useRef } from "react";
 import { useLoginValidator } from "./useLoginValidator"
-import { getFirestore, collection, addDoc, getDocs, getDoc, where, orderBy, query } from "firebase/firestore";
-import { useContext, useState } from "react";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
 import { CartContext } from "../Contexts/CartContextProvider";
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
 import { TbHelp } from "react-icons/tb";
@@ -15,6 +15,8 @@ export const Form = ()=>{
     const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useLoginValidator()
     const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
     const {setIsLoading} = useContext(isLoadingContext)
+    const [ phoneInputValue, setPhoneInputValue ] = useState("")
+    const phoneString = useRef([])
 
     const history = useNavigate()
     const MySwal = withReactContent(Swal)
@@ -63,19 +65,45 @@ export const Form = ()=>{
         
     }
 
+    const onChangePhoneInputHandler = (e)=> {
+        const value = e.target.value[e.target.value.length-1]
+        const digitRegExp = /\d/
+        
+        if (digitRegExp.test(value)){
+            (phoneString.current.length > 7 && phoneString.current.length < 12) && phoneString.current.push(value)
+            if (phoneString.current.length == 7){
+                phoneString.current.push("-")
+                phoneString.current.push(value)
+            }
+            (phoneString.current.length > 4 && phoneString.current.length < 7) && phoneString.current.push(value)
+            if (phoneString.current.length == 3){
+                phoneString.current.push("-")
+                phoneString.current.push(value)
+            }
+            phoneString.current.length < 3 && phoneString.current.push(value)           
+        }
+        
+        setPhoneInputValue(phoneString.current.join(""))
+    }
+
+    const onKeyDownHandler = (e)=> {
+        console.log(phoneString.current)
+
+        if (e.keyCode == 8){
+            phoneString.current.length > 1 && setPhoneInputValue(phoneString.current.pop())
+            phoneString.current.length == 1 && setPhoneInputValue("")
+        }
+        
+    }
+    
     const onClickHandlerHelpIcon = ()=> {
         MySwal.fire({
             showConfirmButton: false,
             showCancelButton: true,
             cancelButtonText: 'ok',
             html: <div>
-                <h4>US phone number formats:</h4>
-                <span>Option 1: 555-555-5555</span><br/>
-                <span>Option 2: 1 555-555-5555</span><br/>
-                <span>Option 3: 1 (555) 555-5555</span><br/>
-                <span>Option 4: 15555555555</span><br/>
-                <span>Option 5: 5555555555</span>
-
+                <h4>US phone number format:</h4>
+                <span>555-555-5555</span>
             </div>            
         })
     }
@@ -88,21 +116,21 @@ export const Form = ()=>{
                                 <form action="/action_page.php" onSubmit={onSubmitHandler}> 
                                 
                                     <div className="inputContainer">
-                                        <span className="subtitle">NAME:</span>
-                                        <input autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts} />
+                                        <span className="subtitle">FULL NAME:</span>
+                                        <input autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts} placeholder="Insert your full name" />
                                         <span className="inputAlerts">{fullNameAlert}</span>
                                     </div>
 
                                     <div className="inputContainer">
-                                        <span className="subtitle">PHONE:</span>  
-                                        <input autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} />
-                                        {phoneAlert && <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon}/>}
+                                        <span className="subtitle">US PHONE NUMBER:</span>  
+                                        <input onChange={onChangePhoneInputHandler} onKeyDown={onKeyDownHandler}  value={phoneInputValue} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} placeholder="Insert a US phone number"/> 
+                                        <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon} />
                                         <span className="inputAlerts">{phoneAlert}</span>
                                     </div>
                                     
                                     <div className="inputContainer">
                                         <span className="subtitle">MAIL:</span>  
-                                        <input autoComplete="off" type="text" name="mail" onKeyUp={resetAlerts} />
+                                        <input autoComplete="off" type="text" name="mail" onKeyUp={resetAlerts} placeholder="Insert your e-mail address"/>
                                         <span className="inputAlerts">{mailAlert}</span>
                                     </div>
                                     
