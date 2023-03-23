@@ -4,7 +4,7 @@ import { BsChevronCompactRight } from "react-icons/bs"
 
 export const OurCommunityMobileImages = ()=>{
     return(
-        <div id="carouselExampleControls" className="carousel slide sliderFotosdeUso" data-bs-ride="carousel">
+        <div id="carouselExampleControls" className="carousel slide sliderFotosdeUso" data-bs-ride="carousel" data-bs-interval="3000">
             <div className="carousel-inner">
               <div className="carousel-item">
                 <img src="https://i.postimg.cc/rskKWRVS/ourcommunity1.jpg" className="d-block w-100" alt="Mujer con mochila naranja mirando hacia atras en direccion a la camara con una mochila naranja de nuestra linea urbana" />
