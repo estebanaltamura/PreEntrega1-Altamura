@@ -1,10 +1,18 @@
-import "./OurComunnityMobileImages.css"
+import { useEffect, useRef } from "react"
 import { BsChevronCompactLeft } from "react-icons/bs"
 import { BsChevronCompactRight } from "react-icons/bs"
+import "./OurComunnityMobileImages.css"
 
 export const OurCommunityMobileImages = ()=>{
+
+    const nextButtonCarrousel = useRef()
+
+    useEffect(()=>{
+      nextButtonCarrousel.current.click()
+    },[])
+
     return(
-        <div id="carouselExampleControls" className="carousel slide sliderFotosdeUso" data-bs-ride="carousel" data-bs-interval="3000">
+        <div id="carouselExampleControls" className="carousel slide sliderFotosdeUso" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item">
                 <img src="https://i.postimg.cc/rskKWRVS/ourcommunity1.jpg" className="d-block w-100" alt="Mujer con mochila naranja mirando hacia atras en direccion a la camara con una mochila naranja de nuestra linea urbana" />
@@ -47,7 +55,7 @@ export const OurCommunityMobileImages = ()=>{
                 <BsChevronCompactLeft className="sliderIcons" />
                 <span className="visually-hidden">Previous</span>
             </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <button ref={nextButtonCarrousel} className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                 <BsChevronCompactRight className="sliderIcons" />
                 <span className="visually-hidden">Next</span>
             </button>
