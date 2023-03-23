@@ -23,16 +23,13 @@ export const NavBar =()=>{
         setTotalQuantityItemsCart(quantityItems)
     },[itemsCartAdded]) 
 
-    const onCLickHeaderHandler = (e)=>{
-        //e.stopPropagation()
-        console.log(e)
-    }
+   
     
     return(
-        <header onClick={onCLickHeaderHandler}>
+        <header >
             <nav className="navbar navbar-expand-lg contenedorMenu">
             <div className="container-fluid menuExpandible">
-                <button className="navbar-toggler collapsed"  ref={togglerButtonMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler collapsed toggleButton"  ref={togglerButtonMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                     <NavLink className="link logoLink" to ="/home">
