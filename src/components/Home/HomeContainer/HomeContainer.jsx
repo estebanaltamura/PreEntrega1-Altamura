@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from "react"
+import { useLayoutEffect, useContext, useRef } from "react"
 import { isLoadingContext } from "../../Contexts/IsLoadingContextProvider"
 import { CoverImage } from "../HomeBlocks/1-CoverImage/CoverImage"
 import { CollectionsTitle } from "../HomeBlocks/2-CollectionsTitle/CollectionsTitle"
@@ -25,9 +25,9 @@ export const HomeContainer = ()=>{
     const mainContainer = useRef()
     const spinner = useRef()
     const componentsLoaded = useRef([])
-    const isLoadingLocal = useRef(isLoading)
+    const isLoadingLocal = useRef(true)
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         setIsLoading(true)
         window.scrollTo(0,0)   
     }, [])
