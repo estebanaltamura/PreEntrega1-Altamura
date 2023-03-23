@@ -14,7 +14,11 @@ export const CartItemsContainer = ()=>{
    
     useEffect(()=>{
         setIsLoading(true)
-        window.scrollTo(0, 0)        
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+        })       
     },[])
 
     useEffect(()=>{
