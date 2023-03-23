@@ -89,7 +89,7 @@ export const Form = ()=>{
     const onKeyDownHandler = (e)=> {
         console.log(phoneString.current)
 
-        if (e.keyCode == 127 || e.keyCode == 8){
+        if (e.keyCode == 127 || e.keyCode == 8 || e.keyCode == 224){
             phoneString.current.length > 1 && setPhoneInputValue(phoneString.current.pop())
             phoneString.current.length == 1 && setPhoneInputValue("")
         }
