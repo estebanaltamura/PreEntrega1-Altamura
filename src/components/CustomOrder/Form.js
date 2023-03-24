@@ -18,6 +18,7 @@ export const Form = ()=>{
     const [ phoneInputValue, setPhoneInputValue ] = useState("")
     const [ phoneInputValueFormatted, setPhoneInputValueFormatted ] = useState("")
     const [ onChangeValue, setOnChangeValue ] = useState("")
+
     const history = useNavigate()
     const MySwal = withReactContent(Swal)
 
@@ -66,8 +67,12 @@ export const Form = ()=>{
     }
 
     const onChangePhoneInputHandler = (e)=> {    
-        console.log(e.target.value[e.target.value.length-1])    
-        setOnChangeValue(e.target.value[e.target.value.length-1])       
+        
+       
+
+        
+
+        //setOnChangeValue(e.target.value[e.target.value.length-1])       
     }
 
     useEffect(()=>{
@@ -79,8 +84,8 @@ export const Form = ()=>{
 
             if (phoneInputValue.length == 0) setPhoneInputValueFormatted(value)
             if (phoneInputValue.length > 0 && phoneInputValue.length < 3) setPhoneInputValueFormatted([...phoneInputValue, value].join(""))
-            if (phoneInputValue.length == 3) setPhoneInputValueFormatted(phoneInputValue.concat("-", value[value.length-1]))
-            if (phoneInputValue.length > 3 && phoneInputValue.length < 6) setPhoneInputValueFormatted([...phoneInputValueFormatted, value[value.length-1]].join(""))
+            if (phoneInputValue.length == 3) setPhoneInputValueFormatted(phoneInputValue.concat("-", value))
+            if (phoneInputValue.length > 3 && phoneInputValue.length < 6) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
             if (phoneInputValue.length == 6) setPhoneInputValueFormatted(phoneInputValueFormatted.concat("-", value))
             if (phoneInputValue.length > 6 && phoneInputValue.length < 10) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
         }
@@ -89,8 +94,19 @@ export const Form = ()=>{
 
 
     const onKeyDownHandler = (e)=> {    
+        console.log(e.key, e.keyCode, e.code)
+
+        if ( e.key ) setPhoneInputValueFormatted("caso 1")
+        if ( e.keyCode ) setPhoneInputValueFormatted("caso 2")
+        if ( e.code ) setPhoneInputValueFormatted("caso 3")
         
-        if (e.key == "Backspace"){
+
+
+
+
+
+
+        if (e.key == "Bacdkspace"){
             
             if (phoneInputValue.length == 1){
                 setPhoneInputValue("")    
