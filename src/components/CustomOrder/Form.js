@@ -76,9 +76,9 @@ export const Form = ()=>{
     }
 
     useEffect(()=>{
-        const value = Number(onChangeValue)       
+        const value = onChangeValue      
         
-        if( value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9){
+        if( value === "0" || value === "1" || value === "2" || value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8" || value === "9"){
             
             phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join(""))
 
@@ -106,7 +106,7 @@ export const Form = ()=>{
 
 
 
-        if (e.key == "Bacdkspace"){
+        if (e.keyCode == 8){
             
             if (phoneInputValue.length == 1){
                 setPhoneInputValue("")    
