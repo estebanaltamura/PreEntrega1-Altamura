@@ -67,17 +67,13 @@ export const Form = ()=>{
     }
 
     const onChangePhoneInputHandler = (e)=> {    
-        
-       
-
-        
-
-        //setOnChangeValue(e.target.value[e.target.value.length-1])       
+        setOnChangeValue(e.target.value[e.target.value.length-1])       
     }
 
     useEffect(()=>{
         const value = onChangeValue      
-        
+        console.log(value)
+
         if( value === "0" || value === "1" || value === "2" || value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8" || value === "9"){
             
             phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join(""))
@@ -94,17 +90,7 @@ export const Form = ()=>{
 
 
     const onKeyDownHandler = (e)=> {    
-        console.log(e.key, e.keyCode, e.code)
-
-        if ( e.key ) setPhoneInputValueFormatted("caso 1")
-        if ( e.keyCode ) setPhoneInputValueFormatted(e.keyCode)
-        if ( e.code ) setPhoneInputValueFormatted("caso 3")
         
-
-
-
-
-
 
         if (e.keyCode == 8){
             
