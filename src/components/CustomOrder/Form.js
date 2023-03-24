@@ -66,6 +66,7 @@ export const Form = ()=>{
     }
 
     const onChangePhoneInputHandler = (e)=> {
+        
         const value = e.target.value[e.target.value.length-1]
         const digitRegExp = /\d/
         
