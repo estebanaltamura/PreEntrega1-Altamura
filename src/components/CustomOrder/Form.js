@@ -98,7 +98,7 @@ export const Form = ()=>{
             } 
             if (phoneString.current.length > 1){
                 phoneString.current.pop()
-                setPhoneInputValue(phoneString.current)
+                setPhoneInputValue(phoneString.current.join(""))
             }
             
         }
