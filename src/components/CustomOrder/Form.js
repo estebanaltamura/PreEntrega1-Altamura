@@ -97,7 +97,7 @@ export const Form = ()=>{
         console.log(e.key, e.keyCode, e.code)
 
         if ( e.key ) setPhoneInputValueFormatted("caso 1")
-        if ( e.keyCode ) setPhoneInputValueFormatted("caso 2")
+        if ( e.keyCode ) setPhoneInputValueFormatted(e.keyCode)
         if ( e.code ) setPhoneInputValueFormatted("caso 3")
         
 
