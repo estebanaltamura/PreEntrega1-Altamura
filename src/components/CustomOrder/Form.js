@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState } from "react";
 import { useLoginValidator } from "./useLoginValidator"
 import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
 import { CartContext } from "../Contexts/CartContextProvider";
@@ -16,8 +16,7 @@ export const Form = ()=>{
     const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
     const {setIsLoading} = useContext(isLoadingContext)
     const [ phoneInputValue, setPhoneInputValue ] = useState("")
-    const phoneString = useRef([])
-
+    const [ phoneInputValueFormatted, setPhoneInputValueFormatted ] = useState("")
     const history = useNavigate()
     const MySwal = withReactContent(Swal)
 
@@ -67,44 +66,45 @@ export const Form = ()=>{
 
     const onChangePhoneInputHandler = (e)=> {
         
-        const value = e.target.value[e.target.value.length-1]
-        const digitRegExp = /\d/
         
-        if (digitRegExp.test(value)){
-            (phoneString.current.length > 7 && phoneString.current.length < 12) && phoneString.current.push(value)
-            if (phoneString.current.length == 7){
-                phoneString.current.push("-")
-                phoneString.current.push(value)
-            }
-            (phoneString.current.length > 4 && phoneString.current.length < 7) && phoneString.current.push(value)
-            if (phoneString.current.length == 3){
-                phoneString.current.push("-")
-                phoneString.current.push(value)
-            }
-            phoneString.current.length < 3 && phoneString.current.push(value)           
-        }
-        
-        setPhoneInputValue(phoneString.current.join(""))
     }
 
     const onKeyDownHandler = (e)=> {
+        const value = e.key
         
+        if( value== 0 || value== 1 || value== 2 || value== 3 || value== 4 || value== 5 || value== 6 || value== 7 || value== 8 || value== 9){
+            phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join(""))
 
-        if (e.code == "Backspace"){
-            console.log(e.code)
-            if (phoneString.current.length == 1){
-                phoneString.current = []
-                setPhoneInputValue("")                
-            } 
-            if (phoneString.current.length > 1){
-                console.log(phoneString.current)
-                phoneString.current.pop()
-                console.log(phoneString.current.join(""))
-                setPhoneInputValue(phoneString.current.join(""))
-            }
-            
+            if (phoneInputValue.length == 0) setPhoneInputValueFormatted(value)
+            if (phoneInputValue.length > 0 && phoneInputValue.length < 3) setPhoneInputValueFormatted([...phoneInputValue, value].join(""))
+            if (phoneInputValue.length == 3) setPhoneInputValueFormatted(phoneInputValue.concat("-", value[value.length-1]))
+            if (phoneInputValue.length > 3 && phoneInputValue.length < 6) setPhoneInputValueFormatted([...phoneInputValueFormatted, value[value.length-1]].join(""))
+            if (phoneInputValue.length == 6) setPhoneInputValueFormatted(phoneInputValueFormatted.concat("-", value))
+            if (phoneInputValue.length > 6 && phoneInputValue.length < 10) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
         }
         
+        
+        if (e.key == "Backspace"){
+            
+            if (phoneInputValue.length == 1){
+                setPhoneInputValue("")    
+                setPhoneInputValueFormatted("")          
+            } 
+
+            if (phoneInputValue.length > 1){
+                setPhoneInputValue([...phoneInputValue].slice(0,phoneInputValue.length-1).join("")) 
+
+                if (phoneInputValueFormatted.length == 9){
+                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
+                }
+
+                else if (phoneInputValueFormatted.length == 5){
+                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
+                }                                           
+                
+                else setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-1).join(""))              
+            }         
+        }        
     }
     
     const onClickHandlerHelpIcon = ()=> {
@@ -134,7 +134,7 @@ export const Form = ()=>{
 
                                     <div className="inputContainer">
                                         <span className="subtitle">US PHONE NUMBER:</span>  
-                                        <input onChange={onChangePhoneInputHandler} onKeyDown={onKeyDownHandler}  value={phoneInputValue} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} placeholder="Insert a US phone number"/> 
+                                        <input onChange={onChangePhoneInputHandler} onKeyDown={onKeyDownHandler}  value={phoneInputValueFormatted} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} placeholder="Insert a US phone number"/> 
                                         <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon} />
                                         <span className="inputAlerts">{phoneAlert}</span>
                                     </div>
