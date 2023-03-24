@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useLoginValidator } from "./useLoginValidator"
 import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
 import { CartContext } from "../Contexts/CartContextProvider";
@@ -17,6 +17,7 @@ export const Form = ()=>{
     const {setIsLoading} = useContext(isLoadingContext)
     const [ phoneInputValue, setPhoneInputValue ] = useState("")
     const [ phoneInputValueFormatted, setPhoneInputValueFormatted ] = useState("")
+    const [ onChangeValue, setOnChangeValue ] = useState("")
     const history = useNavigate()
     const MySwal = withReactContent(Swal)
 
@@ -64,20 +65,16 @@ export const Form = ()=>{
         
     }
 
-    const onChangePhoneInputHandler = (e)=> {
-        
-        
+    const onChangePhoneInputHandler = (e)=> {    
+        console.log(e.target.value[e.target.value.length-1])    
+        setOnChangeValue(e.target.value[e.target.value.length-1])       
     }
 
-    const onKeyDownHandler = (e)=> {
-        
-        
-        
-        const value = Number(e.code[e.code.length-1])
-        
-       
+    useEffect(()=>{
+        const value = Number(onChangeValue)       
         
         if( value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9){
+            
             phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join(""))
 
             if (phoneInputValue.length == 0) setPhoneInputValueFormatted(value)
@@ -87,7 +84,11 @@ export const Form = ()=>{
             if (phoneInputValue.length == 6) setPhoneInputValueFormatted(phoneInputValueFormatted.concat("-", value))
             if (phoneInputValue.length > 6 && phoneInputValue.length < 10) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
         }
-        
+    },[onChangeValue])
+
+
+
+    const onKeyDownHandler = (e)=> {    
         
         if (e.key == "Backspace"){
             
