@@ -71,9 +71,11 @@ export const Form = ()=>{
 
     const onKeyDownHandler = (e)=> {
         
-        const value = (e.keyCode > 95 && e.keyCode < 106) ? e.keyCode - 96 : ""
-
-        console.log(value !== "" && value)
+        
+        
+        const value = Number(e.code[e.code.length-1])
+        
+       
         
         if( value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9){
             phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join(""))
