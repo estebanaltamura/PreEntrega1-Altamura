@@ -71,17 +71,17 @@ export const Form = ()=>{
         const digitRegExp = /\d/
         
         if (digitRegExp.test(value)){
-            (phoneString.current.length > 7 && phoneString.current.length < 12) && phoneString.current.push(value)
+            (phoneString.current.length > 7 && phoneString.current.length < 12) && phoneString.current.push("caso1")
             if (phoneString.current.length == 7){
                 phoneString.current.push("-")
-                phoneString.current.push(value)
+                phoneString.current.push("caso2")
             }
-            (phoneString.current.length > 4 && phoneString.current.length < 7) && phoneString.current.push(value)
+            (phoneString.current.length > 4 && phoneString.current.length < 7) && phoneString.current.push("caso3")
             if (phoneString.current.length == 3){
                 phoneString.current.push("-")
-                phoneString.current.push(value)
+                phoneString.current.push("caso4")
             }
-            phoneString.current.length < 3 && phoneString.current.push(value)           
+            phoneString.current.length < 3 && phoneString.current.push("caso5")           
         }
         
         setPhoneInputValue(phoneString.current.join(""))
@@ -98,7 +98,7 @@ export const Form = ()=>{
             } 
             if (phoneString.current.length > 1){
                 phoneString.current.pop()
-                setPhoneInputValue("CULO")
+                setPhoneInputValue(phoneString.current)
             }
             
         }
