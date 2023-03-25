@@ -21,16 +21,30 @@ export const useLoginValidator = (e)=>{
     }
     
     const telephoneValidator = (str)=> {
-            const regExpCheck = (cadena)=>{              
-               //555-555-5555
-               const expresion2 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/                    
-               return expresion2.test(cadena)
-           }
-           
-           if (regExpCheck(str) == false){
-            setPhoneAlert("wrong format. Insert a US phone number")
-           } 
-           else return true        
+        const stringSinEspacios = str.replaceAll(" ", "")
+
+        const regExpCheck = (cadena)=>{
+
+            //(555)555-5555
+            const expresion1 = /^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/
+            //555-555-5555
+            const expresion2 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
+            //1 555-555-5555
+            const expresion3 = /^1[0-9]{3}-[0-9]{3}-[0-9]{4}$/
+            //1 (555) 555-5555
+            const expresion4 = /^1\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/
+            //15555555555
+            const expresion5 = /^1[0-9]{10}$/
+            ///5555555555
+            const expresion6 = /^[0-9]{10}$/
+
+            return expresion1.test(cadena) || expresion2.test(cadena) || expresion3.test(cadena) || expresion4.test(cadena) || expresion5.test(cadena) || expresion6.test(cadena)
+        }
+
+        if (regExpCheck(stringSinEspacios) == false){
+         setPhoneAlert("wrong format. Insert a US phone number")
+        } 
+        else return true        
     }
     
     
