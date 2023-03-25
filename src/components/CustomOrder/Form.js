@@ -69,16 +69,16 @@ const history = useNavigate()
     }
 
     const onChangePhoneInputHandler = (e)=> {         
-        console.log(e.keyCode) 
-        const value = e.target.value[e.target.value.length-1] 
-        setOnChangeValue(value)                   
+        
+        //const value = e.target.value[e.target.value.length-1] 
+        //setOnChangeValue(value)                   
     }
 
 
     useEffect(()=>{
         const value = pressedKey
-
-        if( value === "0" || value === "1" || value === "2" || value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8" || value === "9"){
+        console.log(typeof value)
+        if( value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9){
             phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join("")) 
             
             if (phoneInputValue.length == 0) setPhoneInputValueFormatted(value)
@@ -118,7 +118,7 @@ const history = useNavigate()
 
     const onKeyDownHandler = (e)=> { 
         
-        console.log(e.keyCode)
+        
         let pressedKey
 
         switch (e.keyCode){
@@ -207,7 +207,7 @@ const history = useNavigate()
                 pressedKey = false
         }
         
-        
+        console.log(pressedKey)
         setPressedKey(pressedKey)
 
             
