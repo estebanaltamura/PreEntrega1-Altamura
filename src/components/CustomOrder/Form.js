@@ -1,6 +1,6 @@
-import { useContext, useState, useEffect } from "react";
 import { useLoginValidator } from "./useLoginValidator"
-import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, getDoc, where, orderBy, query } from "firebase/firestore";
+import { useContext, useState } from "react";
 import { CartContext } from "../Contexts/CartContextProvider";
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
 import { TbHelp } from "react-icons/tb";
@@ -15,13 +15,8 @@ export const Form = ()=>{
     const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useLoginValidator()
     const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
     const {setIsLoading} = useContext(isLoadingContext)
-    const [ phoneInputValue, setPhoneInputValue ] = useState("")
-    const [ phoneInputValueFormatted, setPhoneInputValueFormatted ] = useState("")
-    const [ onChangeValue, setOnChangeValue ] = useState("")
-    const [ forceUpdate, c ] = useState("")
-    const [ pressedKey, setPressedKey ] = useState("")
-    
-const history = useNavigate()
+
+    const history = useNavigate()
     const MySwal = withReactContent(Swal)
 
     const onSubmitHandler = (e)=>{
@@ -68,159 +63,19 @@ const history = useNavigate()
         
     }
 
-    const onChangePhoneInputHandler = (e)=> {         
-        
-        //const value = e.target.value[e.target.value.length-1] 
-        //setOnChangeValue(value)                   
-    }
-
-
-    useEffect(()=>{
-        const value = pressedKey
-        console.log(typeof value)
-        if( value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9){
-            phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join("")) 
-            
-            if (phoneInputValue.length == 0) setPhoneInputValueFormatted(value)
-            if (phoneInputValue.length > 0 && phoneInputValue.length < 3) setPhoneInputValueFormatted([...phoneInputValue, value].join(""))
-            if (phoneInputValue.length == 3) setPhoneInputValueFormatted(phoneInputValue.concat("-", value))
-            if (phoneInputValue.length > 3 && phoneInputValue.length < 6) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
-            if (phoneInputValue.length == 6) setPhoneInputValueFormatted(phoneInputValueFormatted.concat("-", value))
-            if (phoneInputValue.length > 6 && phoneInputValue.length < 10) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
-
-        }    
-
-        if (value == "Backspace"){
-            
-            if (phoneInputValue.length == 1){
-                setPhoneInputValue("")    
-                setPhoneInputValueFormatted("")          
-            } 
-
-            if (phoneInputValue.length > 1){
-                setPhoneInputValue([...phoneInputValue].slice(0,phoneInputValue.length-1).join("")) 
-
-                if (phoneInputValueFormatted.length == 9){
-                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
-                }
-
-                else if (phoneInputValueFormatted.length == 5){
-                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
-                }                                           
-                
-                else setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-1).join(""))              
-            }         
-        }    
-        
-    },[pressedKey])
-
-
-
-    const onKeyDownHandler = (e)=> { 
-        
-        
-        let pressedKey
-
-        switch (e.keyCode){
-
-            case 48:
-                pressedKey = 0;
-                break;
-
-            case 49:
-                pressedKey = 1;
-                break;
-            
-            case 50:
-                pressedKey = 2;
-                break;
-                        
-            case 51:
-                pressedKey = 3;
-                break;
-
-            case 52:
-                pressedKey = 4;
-                break;
-            
-            case 53:
-                pressedKey = 5;
-                break;
-            
-            case 54:
-                pressedKey = 6;
-                break;
-            
-            case 55:
-                pressedKey = 7;
-                break;
-
-            case 56:
-                pressedKey = 8;
-                break;
-
-            case 57:
-                pressedKey = 0;
-                break;
-
-            case 97:
-                pressedKey = 1;
-                break;
-            
-            case 98:
-                pressedKey = 2;
-                break;
-                        
-            case 99:
-                pressedKey = 3;
-                break;
-
-            case 100:
-                pressedKey = 4;
-                break;
-            
-            case 101:
-                pressedKey = 5;
-                break;
-            
-            case 102:
-                pressedKey = 6;
-                break;
-            
-            case 103:
-                pressedKey = 7;
-                break;
-
-            case 104:
-                pressedKey = 8;
-                break;
-
-            case 105:
-                pressedKey = 9;
-                break;
-
-            case 8:
-                pressedKey = "Backspace";
-                break;
-
-            default:
-                pressedKey = false
-        }
-        
-        console.log(pressedKey)
-        setPressedKey(pressedKey)
-
-            
-    }
-    
     const onClickHandlerHelpIcon = ()=> {
         MySwal.fire({
             showConfirmButton: false,
             showCancelButton: true,
             cancelButtonText: 'ok',
             html: <div>
-                <h4>US phone number format:</h4>
-                <span>555-555-5555</span>
+                <h4>US phone number formats:</h4>
+                <span>Option 1: 555-555-5555</span><br/>
+                <span>Option 2: 1 555-555-5555</span><br/>
+                <span>Option 3: 1 (555) 555-5555</span><br/>
+                <span>Option 4: 15555555555</span><br/>
+                <span>Option 5: 5555555555</span>
+
             </div>            
         })
     }
@@ -233,21 +88,21 @@ const history = useNavigate()
                                 <form action="/action_page.php" onSubmit={onSubmitHandler}> 
                                 
                                     <div className="inputContainer">
-                                        <span className="subtitle">FULL NAME:</span>
-                                        <input autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts} placeholder="Insert your full name" />
+                                        <span className="subtitle">NAME:</span>
+                                        <input autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts} />
                                         <span className="inputAlerts">{fullNameAlert}</span>
                                     </div>
 
                                     <div className="inputContainer">
-                                        <span className="subtitle">US PHONE NUMBER:</span>  
-                                        <input onChange={onChangePhoneInputHandler} onKeyDown={onKeyDownHandler}  value={phoneInputValueFormatted} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} placeholder="Insert a US phone number"/> 
-                                        <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon} />
+                                        <span className="subtitle">PHONE:</span>  
+                                        <input autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts} />
+                                        {phoneAlert && <TbHelp className="helpIcon" onClick={onClickHandlerHelpIcon}/>}
                                         <span className="inputAlerts">{phoneAlert}</span>
                                     </div>
                                     
                                     <div className="inputContainer">
                                         <span className="subtitle">MAIL:</span>  
-                                        <input autoComplete="off" type="text" name="mail" onKeyUp={resetAlerts} placeholder="Insert your e-mail address"/>
+                                        <input autoComplete="off" type="text" name="mail" onKeyUp={resetAlerts} />
                                         <span className="inputAlerts">{mailAlert}</span>
                                     </div>
                                     
