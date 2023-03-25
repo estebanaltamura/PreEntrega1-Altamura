@@ -18,8 +18,10 @@ export const Form = ()=>{
     const [ phoneInputValue, setPhoneInputValue ] = useState("")
     const [ phoneInputValueFormatted, setPhoneInputValueFormatted ] = useState("")
     const [ onChangeValue, setOnChangeValue ] = useState("")
-
-    const history = useNavigate()
+    const [ forceUpdate, c ] = useState("")
+    const [ pressedKey, setPressedKey ] = useState("")
+    
+const history = useNavigate()
     const MySwal = withReactContent(Swal)
 
     const onSubmitHandler = (e)=>{
@@ -66,31 +68,125 @@ export const Form = ()=>{
         
     }
 
-    const onChangePhoneInputHandler = (e)=> {    
-        setOnChangeValue(e.target.value[e.target.value.length-1])       
+    const onChangePhoneInputHandler = (e)=> {         
+        console.log(e.keyCode) 
+        const value = e.target.value[e.target.value.length-1] 
+        setOnChangeValue(value)                   
     }
 
+
     useEffect(()=>{
-        const value = onChangeValue      
-        console.log(value)
+        const value = onChangeValue
 
         if( value === "0" || value === "1" || value === "2" || value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8" || value === "9"){
+            phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join("")) 
             
-            phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join(""))
-
             if (phoneInputValue.length == 0) setPhoneInputValueFormatted(value)
             if (phoneInputValue.length > 0 && phoneInputValue.length < 3) setPhoneInputValueFormatted([...phoneInputValue, value].join(""))
             if (phoneInputValue.length == 3) setPhoneInputValueFormatted(phoneInputValue.concat("-", value))
             if (phoneInputValue.length > 3 && phoneInputValue.length < 6) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
             if (phoneInputValue.length == 6) setPhoneInputValueFormatted(phoneInputValueFormatted.concat("-", value))
             if (phoneInputValue.length > 6 && phoneInputValue.length < 10) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
-        }
+
+        }    
+        
     },[onChangeValue])
 
 
 
-    const onKeyDownHandler = (e)=> {    
+    const onKeyDownHandler = (e)=> { 
         
+        console.log(e.keyCode)
+        let pressedKey
+
+        switch (e.keyCode){
+
+            case 48:
+                pressedKey = 0;
+                break;
+
+            case 49:
+                pressedKey = 1;
+                break;
+            
+            case 50:
+                pressedKey = 2;
+                break;
+                        
+            case 51:
+                pressedKey = 3;
+                break;
+
+            case 52:
+                pressedKey = 4;
+                break;
+            
+            case 53:
+                pressedKey = 5;
+                break;
+            
+            case 54:
+                pressedKey = 6;
+                break;
+            
+            case 55:
+                pressedKey = 7;
+                break;
+
+            case 56:
+                pressedKey = 8;
+                break;
+
+            case 57:
+                pressedKey = 0;
+                break;
+
+            case 97:
+                pressedKey = 1;
+                break;
+            
+            case 98:
+                pressedKey = 2;
+                break;
+                        
+            case 99:
+                pressedKey = 3;
+                break;
+
+            case 100:
+                pressedKey = 4;
+                break;
+            
+            case 101:
+                pressedKey = 5;
+                break;
+            
+            case 102:
+                pressedKey = 6;
+                break;
+            
+            case 103:
+                pressedKey = 7;
+                break;
+
+            case 104:
+                pressedKey = 8;
+                break;
+
+            case 105:
+                pressedKey = 9;
+                break;
+
+            case 8:
+                pressedKey = "Backspace";
+                break;
+
+            default:
+                pressedKey = false
+        }
+        
+        
+        setPressedKey(pressedKey)
 
         if (e.keyCode == 8){
             
