@@ -76,7 +76,7 @@ const history = useNavigate()
 
 
     useEffect(()=>{
-        const value = onChangeValue
+        const value = pressedKey
 
         if( value === "0" || value === "1" || value === "2" || value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8" || value === "9"){
             phoneInputValue.length < 10 && setPhoneInputValue([...phoneInputValue, value].join("")) 
@@ -89,8 +89,30 @@ const history = useNavigate()
             if (phoneInputValue.length > 6 && phoneInputValue.length < 10) setPhoneInputValueFormatted([...phoneInputValueFormatted, value].join(""))
 
         }    
+
+        if (value == "Backspace"){
+            
+            if (phoneInputValue.length == 1){
+                setPhoneInputValue("")    
+                setPhoneInputValueFormatted("")          
+            } 
+
+            if (phoneInputValue.length > 1){
+                setPhoneInputValue([...phoneInputValue].slice(0,phoneInputValue.length-1).join("")) 
+
+                if (phoneInputValueFormatted.length == 9){
+                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
+                }
+
+                else if (phoneInputValueFormatted.length == 5){
+                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
+                }                                           
+                
+                else setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-1).join(""))              
+            }         
+        }    
         
-    },[onChangeValue])
+    },[pressedKey])
 
 
 
@@ -188,27 +210,7 @@ const history = useNavigate()
         
         setPressedKey(pressedKey)
 
-        if (e.keyCode == 8){
             
-            if (phoneInputValue.length == 1){
-                setPhoneInputValue("")    
-                setPhoneInputValueFormatted("")          
-            } 
-
-            if (phoneInputValue.length > 1){
-                setPhoneInputValue([...phoneInputValue].slice(0,phoneInputValue.length-1).join("")) 
-
-                if (phoneInputValueFormatted.length == 9){
-                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
-                }
-
-                else if (phoneInputValueFormatted.length == 5){
-                    setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-2).join(""))
-                }                                           
-                
-                else setPhoneInputValueFormatted([...phoneInputValueFormatted].slice(0, phoneInputValueFormatted.length-1).join(""))              
-            }         
-        }        
     }
     
     const onClickHandlerHelpIcon = ()=> {
