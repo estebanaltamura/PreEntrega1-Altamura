@@ -17,7 +17,7 @@ export const ItemList = ({ collectionProducts, collectionName})=>{
     }
 
     return(
-        <>
+        <> 
             <div onLoad={onLoadItemHandler} ref={itemListElement} className="hidden">
                 <h2 className="titulonovedadescolecciones">{collectionName}</h2>
                 {collectionProducts.map((product, index)=>

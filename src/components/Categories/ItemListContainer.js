@@ -17,7 +17,7 @@ export const ItemListContainer = ()=>{
     const getCollectionData = async (idCollection)=>{
         try {                                 
             setIsLoading(true) 
-            const db = getFirestore()
+            const db = getFirestore() 
             const queryDoc = doc(db, "products", "backpack collections")
             const queryCollection = collection(queryDoc, idCollection)
             const queryFilter = query(queryCollection, orderBy("id"), where("isActive", "==", true))          

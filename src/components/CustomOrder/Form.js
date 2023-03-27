@@ -88,7 +88,7 @@ export const Form = ()=>{
                                 <form action="/action_page.php" onSubmit={onSubmitHandler}> 
                                 
                                     <div className="inputContainer">
-                                        <span className="subtitle">NAME:</span>
+                                        <span className="subtitle">FULL NAME:</span>
                                         <input autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts} />
                                         <span className="inputAlerts">{fullNameAlert}</span>
                                     </div>

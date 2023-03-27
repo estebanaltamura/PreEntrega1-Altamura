@@ -14,7 +14,7 @@ export const useLoginValidator = (e)=>{
 
         const isThereTwoWords = /\w+\s*\w+/
         if(!isThereTwoWords.test(fullName)){
-            setFullNameAlert("please insert your full name")
+            setFullNameAlert("please insert name and lastname")
         } 
 
         else return true
