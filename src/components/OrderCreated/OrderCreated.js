@@ -14,7 +14,7 @@ export const OrderCreated = ()=>{
 
     const [downloadURL, setDownloadURL] = useState("")
 
-    const filePath = "gs://e-commerce-react-5b7de.appspot.com/Vídeo sin título ‐ Hecho con Clipchamp (5).mp4";
+    const filePath = "gs://e-commerce-react-5b7de.appspot.com/plumariiHome.mp4";
     
 
     const getDownloadURLFromStorage = async (filePath)=>{
