@@ -41,7 +41,7 @@ export const useLoginValidator = (e)=>{
             return expresion1.test(cadena) || expresion2.test(cadena) || expresion3.test(cadena) || expresion4.test(cadena) || expresion5.test(cadena) || expresion6.test(cadena)
         }
 
-        if (regExpCheck(stringSinEspacios) == false){
+        if (regExpCheck(stringSinEspacios) === false){
          setPhoneAlert("wrong format. Insert a US phone number")
         } 
         else return true        
@@ -49,7 +49,7 @@ export const useLoginValidator = (e)=>{
     
     
     const mailValidator = (mail)=>{
-        if (mail == ""){
+        if (mail === ""){
             setMailAlert("insert a valid e-mail address"); 
             return            
         } 

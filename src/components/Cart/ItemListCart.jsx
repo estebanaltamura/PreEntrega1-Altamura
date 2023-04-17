@@ -11,10 +11,10 @@ export const ItemListCart = ()=> {
 
     useEffect(()=>{
         //itemsCartAdded.length > 0 && setTotalCart()
-        if (itemsCartAdded.length ==  0){
+        if (itemsCartAdded.length ===  0){
             setTotalCart(0)
         } 
-        if (itemsCartAdded.length ==  1){
+        if (itemsCartAdded.length ===  1){
             setTotalCart(itemsCartAdded[0].subTotal)
         } 
         if (itemsCartAdded.length >  1){

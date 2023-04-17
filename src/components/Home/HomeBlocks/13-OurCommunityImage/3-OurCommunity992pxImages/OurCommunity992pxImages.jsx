@@ -1,6 +1,4 @@
 import "./OurCommunity992pxImages.css"
-import { BsChevronCompactLeft } from "react-icons/bs"
-import { BsChevronCompactRight } from "react-icons/bs"
 
 export const OurCommunity992pxImages = ()=>{
     return(

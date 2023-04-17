@@ -7,7 +7,7 @@ export const OrderItem = ({product})=> {
                 <span className="customOrderQuantityTitle orderCustomSpan">Quantity</span>
                 <span className="customOrderPriceTitle orderCustomSpan">Price</span>
                 <span className="customOrderSubTotalTitle orderCustomSpan">Subtotal</span>
-                <img className="customOrderImage" src={product.images[0]} />
+                <img className="customOrderImage" src={product.images[0]} alt="backpack" />
                 <span className="customOrderName orderCustomSpan">{product.name}</span>
                 <span className="customOrderQuantity orderCustomSpan">{product.quantity}</span>
                 <span className="customOrderPrice orderCustomSpan">{product.price}</span>

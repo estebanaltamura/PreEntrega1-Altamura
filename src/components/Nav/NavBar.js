@@ -19,7 +19,7 @@ export const NavBar =()=>{
 
     
     useEffect(()=>{
-        const quantityItems = itemsCartAdded.length > 1 ? itemsCartAdded.reduce((accumulator, partial)=>{return accumulator+partial.quantity},0) : itemsCartAdded.length == 1 ? itemsCartAdded[0].quantity : 0
+        const quantityItems = itemsCartAdded.length > 1 ? itemsCartAdded.reduce((accumulator, partial)=>{return accumulator+partial.quantity},0) : itemsCartAdded.length === 1 ? itemsCartAdded[0].quantity : 0
         setTotalQuantityItemsCart(quantityItems)
     },[itemsCartAdded]) 
 
@@ -38,16 +38,16 @@ export const NavBar =()=>{
                     <NavLink to ="/cart">
                         <BsCart4 className="carro" /> 
                     </NavLink>
-                    {totalQuantityItemsCart ==0 ? null : 
-                        totalQuantityItemsCart ==1 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple1 className="quantityIcon" /></NavLink> : 
-                        totalQuantityItemsCart ==2 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple2 className="quantityIcon"   /></NavLink> : 
-                        totalQuantityItemsCart ==3 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple3 className="quantityIcon"   /></NavLink> : 
-                        totalQuantityItemsCart ==4 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple4 className="quantityIcon"   /></NavLink> : 
-                        totalQuantityItemsCart ==5 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple5 className="quantityIcon"   /></NavLink> : 
-                        totalQuantityItemsCart ==6 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple6 className="quantityIcon"   /></NavLink> : 
-                        totalQuantityItemsCart ==7 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple7 className="quantityIcon"   /></NavLink> : 
-                        totalQuantityItemsCart ==8 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple8 className="quantityIcon"   /></NavLink> : 
-                        totalQuantityItemsCart ==9 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple9 className="quantityIcon"   /></NavLink> : 
+                    {totalQuantityItemsCart === 0 ? null : 
+                        totalQuantityItemsCart === 1 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple1 className="quantityIcon" /></NavLink> : 
+                        totalQuantityItemsCart === 2 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple2 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart === 3 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple3 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart === 4 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple4 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart === 5 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple5 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart === 6 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple6 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart === 7 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple7 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart === 8 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple8 className="quantityIcon"   /></NavLink> : 
+                        totalQuantityItemsCart === 9 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple9 className="quantityIcon"   /></NavLink> : 
                         <NavLink className="quantityLink" to ="/cart"><TbPlus /> <TbBoxMultiple9 className="quantityIcon" /></NavLink>
                     }
                     

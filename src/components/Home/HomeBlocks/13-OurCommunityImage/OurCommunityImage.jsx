@@ -1,6 +1,4 @@
 import "./OurCommunityImage.css"
-import { BsChevronCompactLeft } from "react-icons/bs"
-import { BsChevronCompactRight } from "react-icons/bs"
 import { OurCommunityMobileImages } from "./1-OurComunnityMobileImages/OurComunnityMobileImages"
 import { OurCommunityTabletImages } from "./2-OurCommunityTabletImages/OurCommunityTabletImages"
 import { OurCommunity992pxImages } from "./3-OurCommunity992pxImages/OurCommunity992pxImages"
@@ -24,4 +22,3 @@ export const OurCommunityImage = ()=>{
     )
 }
 
-{/**/ }

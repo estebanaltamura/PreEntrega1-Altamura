@@ -2,27 +2,35 @@ import { useContext, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../Contexts/CartContextProvider"
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider"
+import { BsFillTrashFill } from "react-icons/bs";
 import "./CartItemsContainer.css"
+
 
 import { ItemListCart } from "./ItemListCart"
 
 export const CartItemsContainer = ()=>{
 
-    const { itemsCartAdded } = useContext(CartContext)
+    const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
     const { isLoading, setIsLoading } = useContext(isLoadingContext)
     const mainContainerCart = useRef()
    
+    const onEmptyCartClickHandler = ()=> setItemsCartAdded([])
+
+
     useEffect(()=>{
+    
         setIsLoading(true)
         window.scroll({
             top: 0,
             left: 0,
             behavior: "instant"
         })       
+        //eslint-disable-next-line
     },[])
 
     useEffect(()=>{
-        (!isLoading && itemsCartAdded.length > 0) && mainContainerCart.current.classList.replace("hidden", "mainContainerCart")        
+        (!isLoading && itemsCartAdded.length > 0) && mainContainerCart.current.classList.replace("hidden", "mainContainerCart")     
+        //eslint-disable-next-line   
     },[isLoading])
 
     return(
@@ -35,7 +43,9 @@ export const CartItemsContainer = ()=>{
                                 <ItemListCart />
                             </div>
 
-                            <div className="paymentButtonsContainer">                                
+                            <button onClick={onEmptyCartClickHandler} className="emptyCart"><BsFillTrashFill />Empty Cart</button> 
+
+                            <div className="paymentButtonsContainer">                                                               
                                 <h4>Credit card payments</h4>
                                 <Link className="botonesCarro MPButton" to="/Payment">
                                     <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="" />
@@ -69,3 +79,5 @@ export const CartItemsContainer = ()=>{
         </>
     )
 }
+
+//

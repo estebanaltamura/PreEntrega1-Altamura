@@ -30,12 +30,13 @@ export const HomeContainer = ()=>{
     useLayoutEffect(()=>{
         setIsLoading(true)
         window.scrollTo(0,0)   
+        //eslint-disable-next-line 
     }, [])
 
   
     const onLoadHandler = (e)=>{
         componentsLoaded.current.push(e.target.classList[0])
-        const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element == "coleccionesImagenes" || element == "portadaMobile" || element == "portada375" || element == "portadaDesktop")
+        const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
         if(componentsLoadedFiltered.length){
             mainContainer.current.classList.replace("hiddenHome", "mainContainer")
             spinner.current.classList.replace("spinnerContainer", "hidden")
@@ -43,10 +44,7 @@ export const HomeContainer = ()=>{
         } 
         
     }
-               
-
-
-
+    
     return(
         <>
         

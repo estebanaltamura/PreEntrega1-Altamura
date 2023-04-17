@@ -22,7 +22,7 @@ export const ItemListContainer = ()=>{
             const queryCollection = collection(queryDoc, idCollection)
             const queryFilter = query(queryCollection, orderBy("id"), where("isActive", "==", true))          
             getDocs(queryFilter).then( res=> {
-                setCollectionData(res.docs.length == 0 ? history("/home") :res.docs.map(product=>product.data())) 
+                setCollectionData(res.docs.length === 0 ? history("/home") :res.docs.map(product=>product.data())) 
                 setIsLoading(false)
             })
                        
@@ -39,6 +39,7 @@ export const ItemListContainer = ()=>{
             behavior: "instant"
         })
         getCollectionData(idCollection) 
+        //eslint-disable-next-line 
     },[idCollection])
 
    
@@ -47,7 +48,7 @@ export const ItemListContainer = ()=>{
 
     return(        
         <main className="itemListContainer">
-            {isLoading == true ? 
+            {isLoading === true ? 
                 <div className="spinnerContainer" >
                         <Spinner animation="border" role="status" className="spinner">
                         </Spinner> 

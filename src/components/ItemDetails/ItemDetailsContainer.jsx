@@ -36,7 +36,7 @@ const collectionData = async (idProduct, idCollection)=>{
 
 useEffect(()=>{
     collectionData(idProduct, idCollection)    
-    
+    //eslint-disable-next-line  
 },[idProduct])
 
 useEffect(()=>{
@@ -45,12 +45,13 @@ useEffect(()=>{
         left: 0,
         behavior: "instant"
     })     
+      
 },[])
 
     return(
         
         <div className="ItemDetailsContainer">
-            {isLoading == true ? 
+            {isLoading === true ? 
                 <div className="spinnerContainer" >
                     <Spinner animation="border" role="status" className="spinner">
                     </Spinner> 

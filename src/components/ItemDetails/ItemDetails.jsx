@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useContext, useState, useRef, useEffect } from "react"
 import { CartContext } from "../Contexts/CartContextProvider"
 import { AiOutlinePlusSquare, AiOutlineMinusSquare} from "react-icons/ai";
@@ -24,21 +24,21 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
   },[])
 
 
-  const onClickATChandler = ()=>{    
+  const addToCart = ()=>{    
     //buscar repetidos
     const indexOfRepeatedProduct = (itemsCartAdded)=>{
-        return itemsCartAdded.findIndex((producto)=>producto.id==productData.id)     
+        return itemsCartAdded.findIndex((producto)=>producto.id === productData.id)      
     }
 
     //Si hay articulos en el carro evaluar si el nuevo es repetido
-    if (itemsCartAdded.length == 0){
+    if (itemsCartAdded.length === 0){
       productData.quantity = quantity
       productData.subTotal = productData.price * productData.quantity
       setItemsCartAdded([productData, ...itemsCartAdded])
     }
 
     if (itemsCartAdded.length > 0){
-      if (indexOfRepeatedProduct(itemsCartAdded) == -1){
+      if (indexOfRepeatedProduct(itemsCartAdded) === -1){
         productData.quantity = quantity
         productData.subTotal = productData.price * productData.quantity
         setItemsCartAdded([productData, ...itemsCartAdded])
@@ -46,7 +46,7 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
       
       else{
         const itemsCartAddedUpdated = itemsCartAdded.map((product, index)=>{
-          if (index == indexOfRepeatedProduct(itemsCartAdded)){
+          if (index === indexOfRepeatedProduct(itemsCartAdded)){
             const repeatedProductUpdate1 = {...product, quantity: product.quantity + quantity}
             const repeatedProductUpdate2 = { ...repeatedProductUpdate1, subTotal: product.price * repeatedProductUpdate1.quantity}
             return {...repeatedProductUpdate2}
@@ -58,8 +58,20 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
       }
     }
 
+    
+  }
+
+  const onClickATChandler = ()=>{
+    addToCart()
     history("/cart")
   }
+
+  const onClickBINhandler = ()=>{
+    addToCart()
+    history("/customOrder")
+  }
+
+  
   
     return(
         <>
@@ -68,7 +80,7 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
             <div className="carousel-inner">
               {
                 images.map((image, index)=>{
-                  return (index == 0 ?
+                  return (index === 0 ?
                   <div className="carousel-item active" key={index}>
                     <img id="carrousel1" src={image} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
                   </div>
@@ -102,8 +114,10 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
                 <AiOutlinePlusSquare className="quantityModifiers" onClick={()=>setQuantity(quantity+1)}/>
             </div>
         </div>
-        <button  className="botonATC" onClick={onClickATChandler}>Agregar al carrito</button>
-        <button className="botonComprar">Comprar</button>
+        <button className="botonATC" onClick={onClickATChandler}>Add to Cart</button>        
+        <button className="botonComprar" onClick={onClickBINhandler} >Buy it Now</button>
+        
+        
         <h3 className="tituloDescripcion">Descripcion</h3>
         <p className="descripcion">{description}</p>
         </>

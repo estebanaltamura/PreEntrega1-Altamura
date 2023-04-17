@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Pandora Mochilas
+## Resumen
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pandora Mochilas es un ecommerce simulado de mochilas desarrollado en React que integra todos los procesos menos la integración con un medio de pago.
 
-## Available Scripts
+## Características
+*Persiste los datos del carro de compras en el local storage para poder recuperar la información ante una recarga o cierre de la página. El evento que dispara la carga de datos al storage es el unload y en el load se descargan. Mientras la página está en uso con normalidad no se persisten los datos del carro en el storage. Si en un contexto global
 
-In the project directory, you can run:
+*Se usaron métodos para que las imágenes no carguen una a una sino que el usuario vea las imágenes aparecer en un solo momento
 
-### `npm start`
+*Mientras se espera que todo esté cargado para mostrarle al usuario se utilizaron estados loading para colocar un spinner en el proceso
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*Hay un contexto global para los artículos agregados al carrito
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*Las imágenes están hosteadas en un storage de imágenes
 
-### `npm test`
+*Tanto los productos con todas sus características y rutas a recursos como las órdenes, se persisten en Firebase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*Se crearon dos escenarios para la finalización de una compra. El pago con tarjeta en el cual como última pantalla muestra el objeto que se le pasaría a MercadoPago en el caso que este proyecto hubiese montado un servidor y se hubiese integrado MercadoPago y la otra opción es una opción custom en el cual hay que dejar los datos para que el vendedor luego lo contacte, en el cual el ecommerce persiste en Firebase todos los productos de la transacción más los datos que completó el usuario en el formulario en una orden.
 
-### `npm run build`
+## Dependencias (ademas de las dependecias basicas de npx create-react-app en su version 18.2.0)
+- React-router-dom: 6.8.1
+- Firebase: 9.18.0
+- React-bootstrap: 2.7.2
+- React-icons: 4.7.1
+- Sweetalert2: 11.7.3
+- Sweetalert2-react-content: 5.0.7
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalación
+* Clona el repositorio a tu máquina local
+* Abre la carpeta del proyecto en tu terminal
+* Ejecuta el comando npm install para instalar todas las dependencias
+* Ejecuta el comando npm start para iniciar la aplicación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contribución
+Las contribuciones son bienvenidas. Si quieres contribuir a este proyecto, por favor sigue los siguientes pasos:
 
-### `npm run eject`
+* Haz un fork de este repositorio
+* Crea una nueva rama (git checkout -b feature)
+* Haz tus cambios y guarda las modificaciones (git commit -am 'Add some feature')
+* Empuja los cambios a la rama (git push origin feature)
+* Abre un pull request
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más información.

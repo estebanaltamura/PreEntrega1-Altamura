@@ -1,6 +1,6 @@
 import { useLoginValidator } from "./useLoginValidator"
-import { getFirestore, collection, addDoc, getDocs, getDoc, where, orderBy, query } from "firebase/firestore";
-import { useContext, useState } from "react";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
+import { useContext } from "react";
 import { CartContext } from "../Contexts/CartContextProvider";
 import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
 import { TbHelp } from "react-icons/tb";
@@ -44,9 +44,9 @@ export const Form = ()=>{
                     lastOrderIdNumber++
                 }
                 
-                addDoc(queryCollection, {orderId: lastOrderIdNumber || 1, fullname: fullNameValue,  phoneNumber: phoneValue, isActive: true, email: mailValue, ...itemsCartAdded}).then(res=>{
+                addDoc(queryCollection, {internalOrderId: lastOrderIdNumber || 1, fullname: fullNameValue,  phoneNumber: phoneValue, isActive: true, email: mailValue, ...itemsCartAdded}).then(res=>{
                    setItemsCartAdded([])
-                   history(`/orderCreated/${lastOrderIdNumber || 1}`)   
+                   history(`/orderCreated/${res.id || 1}`)   
                    setIsLoading(false)                
                 }).catch(error=>{
                     setIsLoading(false)  

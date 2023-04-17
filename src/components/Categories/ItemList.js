@@ -9,11 +9,10 @@ export const ItemList = ({ collectionProducts, collectionName})=>{
 
     const onLoadItemHandler = (e)=> {
         const itemClass = e.target.classList[0]
-        if (itemClass == "imagenCard1" || itemClass == "imagenCard2" || itemClass == "imagenCard3" || itemClass == "imagenCard4" || itemClass == "imagenCard5" ||  itemClass == "imagenCard6"){
+        if (itemClass === "imagenCard1" || itemClass === "imagenCard2" || itemClass === "imagenCard3" || itemClass === "imagenCard4" || itemClass === "imagenCard5" ||  itemClass === "imagenCard6"){
             itemsLoaded.current.push(itemClass.current)
         }
-        itemsLoaded.current.length == 6 && itemListElement.current.classList.replace("hidden", "itemList")
-        console.log(itemsLoaded.current.length == 6)
+        itemsLoaded.current.length === 6 && itemListElement.current.classList.replace("hidden", "itemList")
     }
 
     return(
