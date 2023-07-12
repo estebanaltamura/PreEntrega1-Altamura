@@ -31,8 +31,7 @@ export const ItemList = ({ collectionProducts, collectionName})=>{
                                                                                     || element === "imagenCard6")
 
         console.log(componentsLoadedFiltered.length)
-        if(componentsLoadedFiltered.length === 6){ 
-            console.log("6ddd")
+        if(componentsLoadedFiltered.length === 6){             
             setIsLoading(false)
         }        
 
