@@ -27,13 +27,6 @@ export const Home = ()=>{
 
   useEffect(()=>{    
     window.scrollTo(0,0)       
-
-    // const timeOut = setTimeout(()=>{
-    //   console.log("pasaron 2 segundos")
-    //   setIsLoading(false)        
-    // }, 2000)   
-
-    // return ()=> clearTimeout(timeOut)
   }, [])
 
   
@@ -42,7 +35,7 @@ export const Home = ()=>{
     componentsLoaded.current.push(elementJustLoaded)     
 
     const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
-    
+    console.log(componentsLoadedFiltered)
     if(componentsLoadedFiltered.length === 4){ 
       setIsLoading(false)
     }        

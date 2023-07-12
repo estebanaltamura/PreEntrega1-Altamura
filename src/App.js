@@ -1,18 +1,18 @@
 import { useEffect, useContext } from 'react';
 import { CartContext } from './Contexts/CartContextProvider';
 
-import { Home } from './pages/Home/Home';
+import { Home } from './pages/home/Home';
 
 
 import { NavBar } from './components/Nav/NavBar';
 import { ItemListContainer } from './components/Categories/ItemListContainer';
 import { ItemDetailsContainer } from './components/ItemDetails/ItemDetailsContainer';
-import { CartItemsContainer } from './components/Cart/CartItemsContainer'
+import { CartItemsContainer } from './pages/Cart/CartItemsContainer';
 import { Payment } from './components/Payment/Payment';
 import { We } from './pages/We/We';
 import { ContactUs } from './components/ContactUs/ContactUs';
 import { Footer } from './components/Footer/Footer';
-import { CustomOrder } from './components/CustomOrder/CustomOrder';
+import { CustomOrder } from './pages/customOrder/CustomOrder';
 import { OrderCreated } from './components/OrderCreated/OrderCreated';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
