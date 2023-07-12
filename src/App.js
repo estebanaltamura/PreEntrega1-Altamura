@@ -33,9 +33,9 @@ function App() {
     }
     
     window.addEventListener("unload", beforeUnloadHandler)
-   
-    return ()=>{
-      window.removeEventListener("unload", beforeUnloadHandler)      
+   //
+    return ()=>{ 
+      window.removeEventListener("unload", beforeUnloadHandler)          
     }    
   })
 
