@@ -1,11 +1,14 @@
 import { useEffect, useContext } from 'react';
 import { CartContext } from './Contexts/CartContextProvider';
+
+import { Home } from './pages/Home/Home';
+
+
 import { NavBar } from './components/Nav/NavBar';
 import { ItemListContainer } from './components/Categories/ItemListContainer';
 import { ItemDetailsContainer } from './components/ItemDetails/ItemDetailsContainer';
 import { CartItemsContainer } from './components/Cart/CartItemsContainer'
 import { Payment } from './components/Payment/Payment';
-import { Home } from './pages/Home/Home';
 import { We } from './pages/We/We';
 import { ContactUs } from './components/ContactUs/ContactUs';
 import { Footer } from './components/Footer/Footer';

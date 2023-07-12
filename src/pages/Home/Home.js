@@ -47,8 +47,7 @@ export const Home = ()=>{
   return(
     <>        
       <div ref={spinner} className="spinnerContainer" >
-                            <Spinner animation="border" role="status" className="spinner">
-                            </Spinner> 
+        <Spinner animation="border" role="status" className="spinner"></Spinner> 
       </div>            
                 
       <div ref={mainContainer} className="hiddenHome" onLoad={onLoadHandler}>
