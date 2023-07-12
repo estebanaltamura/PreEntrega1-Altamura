@@ -50,6 +50,7 @@ export const Home = ()=>{
     const elementJustLoaded = e.target.classList[0]
     componentsLoaded.current.push(elementJustLoaded)     
     const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
+    console.log(componentsLoadedFiltered.length)
     if(componentsLoadedFiltered.length === 4){ 
       setIsLoading(false)
     }        
