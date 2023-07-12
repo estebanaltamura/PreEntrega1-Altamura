@@ -11,11 +11,7 @@
     grid-template-rows: auto 30px auto 30px 0px 30px 10px auto 20px 35px 10px 44px 10px 44px 30px 30px 30px auto 30px;
     grid-template-areas: "carrusel" "vacio1" "titulo" "precio" "vacio2" "reviews" "vacio3" "nopesticidas" "vacio9" "quantityInput" "vacio4" "botonATC" "vacio5" "botonComprar" "vacio6" "tituloDescripcion" "vacio7" "descripcion" "vacio8"; }
    
-.spinnerContainer{
-    position: absolute;
-    top: calc(50% - 17px);
-    right: calc(50% - 17px);
-}
+
 
 .quantityInputContainer{
     grid-area: quantityInput;

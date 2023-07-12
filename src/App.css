@@ -24,3 +24,9 @@ a:hover{
 h1, h2, h3, h4, h5,h6, p, a , span, button{
     font-family: Lato, sans-serif;
 }
+
+.spinnerContainer{
+    position: absolute;
+    top: calc(50vh - 17px);
+    right: calc(50vw + 17px);
+}

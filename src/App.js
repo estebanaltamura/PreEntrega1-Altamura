@@ -2,10 +2,10 @@ import { useEffect, useContext } from 'react';
 import { CartContext } from './Contexts/CartContextProvider';
 
 import { Home } from './pages/home/Home';
+import { Collection } from './pages/collections/Collection';
 
 
 import { NavBar } from './components/Nav/NavBar';
-import { ItemListContainer } from './components/Categories/ItemListContainer';
 import { ItemDetailsContainer } from './components/ItemDetails/ItemDetailsContainer';
 import { CartItemsContainer } from './pages/Cart/CartItemsContainer';
 import { Payment } from './components/Payment/Payment';
@@ -45,7 +45,7 @@ function App() {
           <Routes>
               <Route path="*" element = {<Home />}/>
               <Route path="/home" element = {<Home />}/>
-              <Route path="/collections/:idCollection" element = {<ItemListContainer />}/>
+              <Route path="/collections/:idCollection" element = {<Collection />}/>
               <Route path="/We" element = {<We />}/>
               <Route path="/ContactUs" element = {<ContactUs />}/>
               <Route path="/products/:idCollection/:idProduct" element = {<ItemDetailsContainer />}/>
