@@ -25,32 +25,24 @@ export const Home = ()=>{
   const componentsLoaded = useRef([])
     
 
-  useEffect(()=>{
-    
-    window.scrollTo(0,0)   
-    //eslint-disable-next-line
+  useEffect(()=>{    
+    window.scrollTo(0,0)       
 
-    const loadPageTimeOut = ()=>{
-      const timeOut = setTimeout(()=>{
-        console.log("pasaron 2 segundos")
-        setIsLoading(false)
-        clearTimeout(timeOut)
-      }, 2000)
-      
-    }
-    
-    
-    window.addEventListener("DOMContentLoaded", loadPageTimeOut)
+    // const timeOut = setTimeout(()=>{
+    //   console.log("pasaron 2 segundos")
+    //   setIsLoading(false)        
+    // }, 2000)   
 
-    return ()=> window.removeEventListener("DOMContentLoaded", loadPageTimeOut)
+    // return ()=> clearTimeout(timeOut)
   }, [])
 
   
   const onLoadHandler = (e)=>{    
     const elementJustLoaded = e.target.classList[0]
     componentsLoaded.current.push(elementJustLoaded)     
+
     const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
-    console.log(componentsLoadedFiltered.length)
+    
     if(componentsLoadedFiltered.length === 4){ 
       setIsLoading(false)
     }        
