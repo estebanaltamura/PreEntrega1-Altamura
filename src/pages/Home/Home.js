@@ -1,4 +1,4 @@
-import { useLayoutEffect, useContext, useRef } from "react"
+import { useEffect, useContext, useRef } from "react"
 import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 import { CoverImage } from "../../components/HomeBlocks/1-CoverImage/CoverImage";
 import { CollectionsTitle } from "../../components/HomeBlocks/2-CollectionsTitle/CollectionsTitle"
@@ -21,31 +21,36 @@ import "./Home.css"
 
 export const Home = ()=>{
 
-  const { isLoading, setIsLoading } = useContext(IsLoadingContext)
-  const mainContainer = useRef()
-  const spinner = useRef()
+  const { isLoading, setIsLoading } = useContext(IsLoadingContext)  
   const componentsLoaded = useRef([])
     
 
-  useLayoutEffect(()=>{
+  useEffect(()=>{
     
     window.scrollTo(0,0)   
-    //eslint-disable-next-line 
+    //eslint-disable-next-line
+
+    const loadPageTimeOut = ()=>{
+      const timeOut = setTimeout(()=>{
+        setIsLoading(false)
+      }, 2000)
+      clearTimeout(timeOut)
+    }
+    
+    
+    window.addEventListener("DOMContentLoaded", loadPageTimeOut)
+
+    return ()=> window.removeEventListener("DOMContentLoaded", loadPageTimeOut)
   }, [])
 
   
-  const onLoadHandler = (e)=>{
-    //console.log("ooo")
-     componentsLoaded.current.push(e.target.classList[0])
-     console.log(componentsLoaded.current)
-     const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
-     console.log(componentsLoadedFiltered.length)
-     if(componentsLoadedFiltered.length === 4){
-          console.log("cargo los cuatro")
-    //   mainContainer.current.classList.replace("hiddenHome", "mainContainer")
-    //   spinner.current.classList.replace("spinnerContainer", "hidden")
-        setIsLoading(false)
-     }        
+  const onLoadHandler = (e)=>{    
+    const elementJustLoaded = e.target.classList[0]
+    componentsLoaded.current.push(elementJustLoaded)     
+    const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
+    if(componentsLoadedFiltered.length === 4){ 
+      setIsLoading(false)
+    }        
   }
     
   return(
