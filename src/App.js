@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { CartContext } from './Contexts/CartContextProvider';
 
-import { Home } from './pages/home/Home';
+import { Home } from './pages/Home/Home';
 import { Collection } from './pages/collections/Collection';
 
 
