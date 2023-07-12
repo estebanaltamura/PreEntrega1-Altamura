@@ -32,9 +32,11 @@ export const Home = ()=>{
 
     const loadPageTimeOut = ()=>{
       const timeOut = setTimeout(()=>{
+        console.log("pasaron 2 segundos")
         setIsLoading(false)
+        clearTimeout(timeOut)
       }, 2000)
-      clearTimeout(timeOut)
+      
     }
     
     
