@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { CartContext } from "../Contexts/CartContextProvider"
+import { CartContext } from "../../Contexts/CartContextProvider"
 import "./CustomOrderItemListTotal.css"
 
 

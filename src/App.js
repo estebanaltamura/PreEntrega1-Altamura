@@ -1,11 +1,11 @@
 import { useEffect, useContext } from 'react';
-import { CartContext } from './components/Contexts/CartContextProvider';
+import { CartContext } from './Contexts/CartContextProvider';
 import { NavBar } from './components/Nav/NavBar';
 import { ItemListContainer } from './components/Categories/ItemListContainer';
 import { ItemDetailsContainer } from './components/ItemDetails/ItemDetailsContainer';
 import { CartItemsContainer } from './components/Cart/CartItemsContainer'
 import { Payment } from './components/Payment/Payment';
-import { HomeContainer } from './components/Home/HomeContainer/HomeContainer';
+import { Home } from './pages/Home/Home';
 import { We } from './components/We/We';
 import { ContactUs } from './components/ContactUs/ContactUs';
 import { Footer } from './components/Footer/Footer';
@@ -40,8 +40,8 @@ function App() {
         <>
           <NavBar />
           <Routes>
-              <Route path="*" element = {<HomeContainer />}/>
-              <Route path="/home" element = {<HomeContainer />}/>
+              <Route path="*" element = {<Home />}/>
+              <Route path="/home" element = {<Home />}/>
               <Route path="/collections/:idCollection" element = {<ItemListContainer />}/>
               <Route path="/We" element = {<We />}/>
               <Route path="/ContactUs" element = {<ContactUs />}/>

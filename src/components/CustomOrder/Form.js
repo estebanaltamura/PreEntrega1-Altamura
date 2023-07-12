@@ -1,8 +1,8 @@
 import { useLoginValidator } from "./useLoginValidator"
 import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
 import { useContext } from "react";
-import { CartContext } from "../Contexts/CartContextProvider";
-import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
+import { CartContext } from "../../Contexts/CartContextProvider";
+import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 import { TbHelp } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
@@ -14,7 +14,7 @@ export const Form = ()=>{
 
     const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useLoginValidator()
     const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
-    const {setIsLoading} = useContext(isLoadingContext)
+    const {setIsLoading} = useContext(IsLoadingContext)
 
     const history = useNavigate()
     const MySwal = withReactContent(Swal)

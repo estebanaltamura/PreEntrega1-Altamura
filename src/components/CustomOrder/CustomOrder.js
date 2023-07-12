@@ -1,7 +1,7 @@
 import { Form } from "./Form"
 import { useContext, useEffect } from "react";
-import { CartContext } from "../Contexts/CartContextProvider";
-import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
+import { CartContext } from "../../Contexts/CartContextProvider";
+import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 import { OrderItemListContainer } from "./OrderItemListContainer";
 import Spinner from 'react-bootstrap/Spinner';
 import "./CustomOrder.css"
@@ -9,7 +9,7 @@ import "./CustomOrder.css"
 export const CustomOrder = ()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
-    const { isLoading } = useContext(isLoadingContext)
+    const { isLoading } = useContext(IsLoadingContext)
 
     useEffect(()=>{
         window.scroll({

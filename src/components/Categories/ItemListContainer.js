@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import {useParams, useNavigate} from 'react-router-dom';
 import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
-import { isLoadingContext } from "../Contexts/IsLoadingContextProvider";
+import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 import Spinner from 'react-bootstrap/Spinner';
 import { ItemList } from "./ItemList";
 import "./ItemListContainer.css"
@@ -10,7 +10,7 @@ export const ItemListContainer = ()=>{
 
     const {idCollection} = useParams() 
     const [collectionData, setCollectionData] = useState([])
-    const {isLoading, setIsLoading} = useContext(isLoadingContext)
+    const {isLoading, setIsLoading} = useContext(IsLoadingContext)
     const history = useNavigate()
 
 

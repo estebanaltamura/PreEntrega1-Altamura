@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useContext } from "react"; 
 import { NavLink, useLocation } from "react-router-dom";
-import { CartContext } from "../Contexts/CartContextProvider";
+import { CartContext } from "../../Contexts/CartContextProvider";
 import { BsCart4 } from "react-icons/bs";
 import { TbBoxMultiple1, TbBoxMultiple2, TbBoxMultiple3, TbBoxMultiple4, TbBoxMultiple5, TbBoxMultiple6, TbBoxMultiple7, TbBoxMultiple8, TbBoxMultiple9, TbPlus } from "react-icons/tb";
 import "./NavBar.css"
