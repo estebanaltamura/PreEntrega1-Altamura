@@ -21,54 +21,59 @@ import "./Home.css"
 
 export const Home = ()=>{
 
-  const { setIsLoading } = useContext(IsLoadingContext)
+  const { isLoading, setIsLoading } = useContext(IsLoadingContext)
   const mainContainer = useRef()
   const spinner = useRef()
   const componentsLoaded = useRef([])
     
 
   useLayoutEffect(()=>{
-    setIsLoading(true)
+    
     window.scrollTo(0,0)   
     //eslint-disable-next-line 
   }, [])
 
   
   const onLoadHandler = (e)=>{
-    componentsLoaded.current.push(e.target.classList[0])
-    const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
-    if(componentsLoadedFiltered.length){
-      mainContainer.current.classList.replace("hiddenHome", "mainContainer")
-      spinner.current.classList.replace("spinnerContainer", "hidden")
-      setIsLoading(false)
-    }        
+    //console.log("ooo")
+     componentsLoaded.current.push(e.target.classList[0])
+     console.log(componentsLoaded.current)
+     const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
+     console.log(componentsLoadedFiltered.length)
+     if(componentsLoadedFiltered.length === 4){
+          console.log("cargo los cuatro")
+    //   mainContainer.current.classList.replace("hiddenHome", "mainContainer")
+    //   spinner.current.classList.replace("spinnerContainer", "hidden")
+        setIsLoading(false)
+     }        
   }
     
   return(
-    <>        
-      <div ref={spinner} className="spinnerContainer" >
-        <Spinner animation="border" role="status" className="spinner"></Spinner> 
-      </div>            
-                
-      <div ref={mainContainer} className="hiddenHome" onLoad={onLoadHandler}>
-        <CoverImage />
-        <CollectionsTitle  />
-        <Collection1  /> 
-        <Collection1Title  /> 
-        <Collection2 /> 
-        <Collection2Title /> 
-        <Collection3 /> 
-        <Collection3Title /> 
-        <WeParagraphTitle /> 
-        <WeParagraph1 /> 
-        <WeParagraph2 /> 
-        <OurCommunityTitle /> 
-        <OurCommunityImage /> 
-        <FoundationImage /> 
-        <FoundationParagraph1 /> 
-        <FoundationParagraph2 />            
-      </div>
-            
+    <>             
+      <div className="homeContainer">
+        <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
+          <Spinner animation="border" role="status" className="spinner"></Spinner> 
+        </div>     
+
+        <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler}>
+          <CoverImage />
+          <CollectionsTitle  />
+          <Collection1  /> 
+          <Collection1Title  /> 
+          <Collection2 /> 
+          <Collection2Title /> 
+          <Collection3 /> 
+          <Collection3Title /> 
+          <WeParagraphTitle /> 
+          <WeParagraph1 /> 
+          <WeParagraph2 /> 
+          <OurCommunityTitle /> 
+          <OurCommunityImage /> 
+          <FoundationImage /> 
+          <FoundationParagraph1 /> 
+          <FoundationParagraph2 />            
+        </div>        
+      </div>             
     </>
   ) 
 } 

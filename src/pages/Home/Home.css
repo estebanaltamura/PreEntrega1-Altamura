@@ -1,32 +1,13 @@
-.hiddenHome{
-    position: relative;
-    display: none;
-    min-height: 100vh;
+.homeContainer{
+    width: 100%;
+    height: 100%;
 }
 
 .hidden{
     display: none;
-   
 }
 
-.fofo{
-    height: 100vh;
-
-}
-.mainContainerHidden {
-    display: none;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding-top: 56px;
-    margin: 0 auto;
-    padding: 0 15px;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-    gap: none;
-    grid-template-areas: "portada" "titulocolecciones" "imagencoleccion1" "titulocoleccion1" "imagencoleccion2" "titulocoleccion2" "imagencoleccion3" "titulocoleccion3" "tituloNosotrosPortada" "parrafoNosotros1" "parrafoNosotros2" "ourCommunity" "fotosuso" "imagenFundacion" "textoFundacion1" "textoFundacion2"; }
-
-
-.mainContainer {
+.homeGrid {
     display: grid;
     position: relative;
     width: 100%;
@@ -39,7 +20,7 @@
     grid-template-areas: "portada" "titulocolecciones" "imagencoleccion1" "titulocoleccion1" "imagencoleccion2" "titulocoleccion2" "imagencoleccion3" "titulocoleccion3" "tituloNosotrosPortada" "parrafoNosotros1" "parrafoNosotros2" "ourCommunity" "fotosuso" "imagenFundacion" "textoFundacion1" "textoFundacion2"; }
 
     @media screen and (min-width: 768px) {
-        .mainContainer {
+        .mainGrid {
             grid-template-columns: 15px 1fr 1fr 15px;
             grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
             padding: 0 15px;
@@ -48,7 +29,7 @@
     }
 
     @media screen and (min-width: 992px) {
-        .mainContainer {
+        .mainGrid {
             grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 30px;
             grid-template-rows: auto 100px auto 40px auto auto auto 60px auto auto 40px auto 70px 50px;
             gap: 10px;
@@ -57,7 +38,7 @@
     }
 
     @media screen and (min-width: 1200px) {
-        .mainContainer {
+        .mainGrid {
             max-width: 1200px;
             grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 30px;
             grid-template-rows: auto 100px auto 40px auto auto auto 60px auto auto 40px auto 70px 50px;
