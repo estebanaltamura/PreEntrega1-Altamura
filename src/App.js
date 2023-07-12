@@ -6,7 +6,7 @@ import { ItemDetailsContainer } from './components/ItemDetails/ItemDetailsContai
 import { CartItemsContainer } from './components/Cart/CartItemsContainer'
 import { Payment } from './components/Payment/Payment';
 import { Home } from './pages/Home/Home';
-import { We } from './components/We/We';
+import { We } from './pages/We/We';
 import { ContactUs } from './components/ContactUs/ContactUs';
 import { Footer } from './components/Footer/Footer';
 import { CustomOrder } from './components/CustomOrder/CustomOrder';
