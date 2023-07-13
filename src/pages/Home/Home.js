@@ -21,23 +21,21 @@ import "./Home.css"
 
 export const Home = ()=>{
 
+  useEffect(()=>{
+    console.log("rendereo home")
+  },[])
+
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)  
   const componentsLoaded = useRef([])
-    
-
-  useEffect(()=>{  
-    setIsLoading(true)  
-    window.scrollTo(0,0)       
-  }, [])
-
   
   const onLoadHandler = (e)=>{    
+    setIsLoading(true)
     const elementJustLoaded = e.target.classList[0]
     componentsLoaded.current.push(elementJustLoaded)     
 
     const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
-    console.log(componentsLoadedFiltered)
-    if(componentsLoadedFiltered.length === 4){ 
+    
+    if(componentsLoadedFiltered.length === 4){        
       setIsLoading(false)
     }        
   }

@@ -1,5 +1,6 @@
-import { memo, useContext, useRef, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { NoFlashOfUnloadedContentInCollectionContext } from "../../Contexts/NoFlashOfUnloadedContentInCollectionContextProvider";
+import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 
 import { Link, useParams } from "react-router-dom";
 import "./CollectionItem.css"
@@ -8,33 +9,35 @@ import "./CollectionItem.css"
 export const CollectionItem = ({image, name, price, id, index})=>{ 
     
     const { imagesLoadedCounter, setImagesLoadedCounter } = useContext(NoFlashOfUnloadedContentInCollectionContext)
+    const { setIsLoading } = useContext(IsLoadingContext)
     
-    const counter = useRef()
-    const onOff = useRef()
+    
 
     useEffect(()=>{
         
 
-        onOff.current = imagesLoadedCounter.onOff
-        counter.current = imagesLoadedCounter.counter
+       
+        //console.log(counter.current)
 
-        console.log(counter.current)
-
-        imagesLoadedCounter.counter === 6 && setImagesLoadedCounter(()=>({"onOff": "off", "counter": 0})) 
-        console.log(imagesLoadedCounter.counter)
+        if(imagesLoadedCounter.counter === 6){
+            console.log("deberia parar")
+            setImagesLoadedCounter(()=>({"onOff": "off", "counter": 0})) 
+            //setIsLoading(false)
+        } 
+        
     },[imagesLoadedCounter])
 
     const {idCollection} = useParams()   
 
     const onLoadImageHandler = (e)=>{
         
-    //imagesLoadedCounter.counter === 6 
+        
 
         const elementJustLoaded = e.target.classList[0]
         
         
         
-        if(onOff.current === "on" && counter.current <6){
+        if(imagesLoadedCounter.onOff === "on" && imagesLoadedCounter.counter <6){
             
             if(elementJustLoaded === "imagenCard1" 
             || elementJustLoaded === "imagenCard2" 
@@ -43,8 +46,10 @@ export const CollectionItem = ({image, name, price, id, index})=>{
             || elementJustLoaded === "imagenCard5" 
             || elementJustLoaded === "imagenCard6"){
                 
-                console.log("entro")
-                setImagesLoadedCounter((imagesLoadedCounter)=>({"onOff": "on", "counter": (imagesLoadedCounter.counter + 1)})) 
+                //console.log(elementJustLoaded, "contador antes", )
+                
+                
+                setImagesLoadedCounter((imagesLoadedCounter)=>{return({"onOff": "on", "counter":  imagesLoadedCounter.counter + 1})})
                 
             }
         }

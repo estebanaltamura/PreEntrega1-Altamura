@@ -18,6 +18,7 @@ export const Collection = ()=>{
 
   const getCollectionData = async (idCollection)=>{
     try {  
+      
       const db = getFirestore() 
       const queryDoc = doc(db, "products", "backpack collections")
       const queryCollection = collection(queryDoc, idCollection)
@@ -32,13 +33,14 @@ export const Collection = ()=>{
     }       
   };
 
-  useEffect(()=>{       
+  useEffect(()=>{           
     window.scroll({
       top: 0,
       left: 0,
       behavior: "instant"
     })
-    getCollectionData(idCollection)     
+    getCollectionData(idCollection)    
+    setIsLoading(true) 
     //eslint-disable-next-line 
   },[idCollection])
 
