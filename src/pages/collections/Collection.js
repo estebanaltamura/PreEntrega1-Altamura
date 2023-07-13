@@ -42,9 +42,7 @@ export const Collection = ()=>{
     //eslint-disable-next-line 
   },[idCollection])
 
-  useEffect(()=>{
-    setIsLoading(true) 
-  },[])
+  
     
 
   return(        

@@ -16,7 +16,9 @@ export const CollectionItemList = ({ collectionProducts, collectionName, visivil
     //     setImagesLoadedCounter({"onOff": "on", "counter": 0})        
     // },[])
 
-    
+    useEffect(()=>{
+        setIsLoading(true) 
+    },[])
   
 
     return(
