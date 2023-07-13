@@ -39,8 +39,7 @@ export const Collection = ()=>{
       left: 0,
       behavior: "instant"
     })
-    getCollectionData(idCollection)    
-    setIsLoading(true) 
+    getCollectionData(idCollection)      
     //eslint-disable-next-line 
   },[idCollection])
 

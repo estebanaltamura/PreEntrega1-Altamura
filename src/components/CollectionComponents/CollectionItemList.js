@@ -12,9 +12,10 @@ export const CollectionItemList = ({ collectionProducts, collectionName, visivil
 
     
 
-    // useEffect(()=>{
+    /useEffect(()=>{
+        setIsLoading(true)
     //     console.log("rendereo coleccion", collectionProducts, isLoading, visivilityClass)        
-    // },[])
+    },[])
   
 
     return(
