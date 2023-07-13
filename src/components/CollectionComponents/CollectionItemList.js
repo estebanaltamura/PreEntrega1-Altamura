@@ -12,9 +12,9 @@ export const CollectionItemList = ({ collectionProducts, collectionName, visivil
 
     
 
-    /useEffect(()=>{
-        setIsLoading(true)
-    //     console.log("rendereo coleccion", collectionProducts, isLoading, visivilityClass)        
+    useEffect(()=>{
+        //setIsLoading(true)
+         console.log("rendereo coleccion", collectionProducts, isLoading, visivilityClass)        
     },[])
   
 
