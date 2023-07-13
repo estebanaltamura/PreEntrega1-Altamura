@@ -17,7 +17,6 @@ root.render(
       <ScreenWidthContextProvider>
         <CartContextProvider>        
           <IsLoadingContextProvider>
-
             <App />        
           </IsLoadingContextProvider>
         </CartContextProvider>

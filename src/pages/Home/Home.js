@@ -25,7 +25,8 @@ export const Home = ()=>{
   const componentsLoaded = useRef([])
     
 
-  useEffect(()=>{    
+  useEffect(()=>{  
+    setIsLoading(true)  
     window.scrollTo(0,0)       
   }, [])
 
