@@ -10,7 +10,7 @@ import "./CollectionItemList.css"
 export const CollectionItemList = ({ collectionProducts, collectionName, visivilityClass })=>{ 
     
     // const { imagesLoadedCounter, setImagesLoadedCounter } = useContext(NoFlashOfUnloadedContentInCollectionContext)
-    // const { setIsLoading } = useContext(IsLoadingContext)
+     const { setIsLoading } = useContext(IsLoadingContext)
 
     // useEffect(()=>{
     //     setImagesLoadedCounter({"onOff": "on", "counter": 0})        
