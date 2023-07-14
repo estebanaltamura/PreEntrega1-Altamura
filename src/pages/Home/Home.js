@@ -1,5 +1,6 @@
-import { useEffect, useContext, useRef } from "react"
+import { useEffect, useContext, useRef, useState } from "react"
 import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
+import { ScreenWidthContext } from "../../Contexts/ScreenWidthContextProvider";
 import { CoverImage } from "../../components/HomeBlocks/1-CoverImage/CoverImage";
 import { CollectionsTitle } from "../../components/HomeBlocks/2-CollectionsTitle/CollectionsTitle"
 import { Collection1 } from "../../components/HomeBlocks/3-Collection1/Collection1"
@@ -21,21 +22,81 @@ import "./Home.css"
 
 export const Home = ()=>{
 
-  useEffect(()=>{
-    console.log("rendereo home")
-  },[])
-
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)  
+  const { screenWidth, setScreenWidth } = useContext(ScreenWidthContext)
   const componentsLoaded = useRef([])
-  
-  const onLoadHandler = (e)=>{    
-    setIsLoading(true)
-    const elementJustLoaded = e.target.classList[0]
-    componentsLoaded.current.push(elementJustLoaded)     
+  const [ veryImportantComponentsLoaded, setVeryImportantComponentsLoaded] = useState(false)
 
-    const componentsLoadedFiltered = componentsLoaded.current.filter(element=>element === "coleccionesImagenes" || element === "portadaMobile" || element === "portada375" || element === "portadaDesktop")
+  const veryImportantComponentsLoadedRef = useRef()
+
+  const previousScreenWidthRef = useRef([])
+
+  useEffect(()=>{
     
-    if(componentsLoadedFiltered.length === 4){        
+    previousScreenWidthRef.current.push(screenWidth)
+    //console.log(previousScreenWidthRef.current[previousScreenWidthRef.current.length -1])
+
+    const currentWidth  = previousScreenWidthRef.current[previousScreenWidthRef.current.length -1]
+    const lastWidth     = previousScreenWidthRef.current[previousScreenWidthRef.current.length -2]
+
+    if(currentWidth === 375 &&
+      lastWidth     === 374){
+       //Carga imagen 375
+       setIsLoading(true)
+      }
+    
+    if(currentWidth === 374 &&
+      lastWidth     === 375){
+      //Carga imagen mobile
+      setIsLoading(true)
+    }
+    
+    if(currentWidth === 768 &&
+      lastWidth     === 767){
+      //Carga imagen desktop
+      setIsLoading(true)
+     }
+   
+    if(currentWidth === 767 &&
+      lastWidth     === 768){
+      console.log("767 a 768")
+      //Carga imagen 375
+      setIsLoading(true)
+   }
+   
+  },[screenWidth])
+
+  useEffect(()=>{
+    veryImportantComponentsLoadedRef.current = veryImportantComponentsLoaded
+    console.log("valor del ref", veryImportantComponentsLoadedRef.current)
+  },[veryImportantComponentsLoaded])
+
+
+
+  
+
+  const onLoadHandler = (e)=>{    
+    setIsLoading(true) // ver por que cuando actualiza portada loading true cuando ya esta cargada
+    const elementJustLoaded = e.target.classList[0]    
+    
+    if(elementJustLoaded === "coleccionesImagenes"){      
+      componentsLoaded.current.push(elementJustLoaded)      
+    }
+    else if(elementJustLoaded === "portadaMobile" ||  elementJustLoaded === "portada375" ||  elementJustLoaded === "portadaDesktop"){
+      
+      
+      
+      if(componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop") === -1){        
+        componentsLoaded.current.push(elementJustLoaded)
+      }
+      else{
+        componentsLoaded.current[componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop")] = elementJustLoaded
+      } 
+    }   
+    
+    console.log("ultimo", elementJustLoaded, componentsLoaded.current.length)
+    if(componentsLoaded.current.length === 4){    
+      setVeryImportantComponentsLoaded(true)    
       setIsLoading(false)
     }        
   }
@@ -47,7 +108,7 @@ export const Home = ()=>{
           <Spinner animation="border" role="status" className="spinner"></Spinner> 
         </div>     
 
-        <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler}>
+        <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler} >
           <CoverImage />
           <CollectionsTitle  />
           <Collection1  /> 

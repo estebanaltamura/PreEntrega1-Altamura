@@ -21,6 +21,8 @@ import './App.css';
 function App() {
 
   const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
+
+
   
   useEffect(()=>{
     const beforeUnloadHandler = ()=>{  
