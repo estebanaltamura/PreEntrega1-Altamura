@@ -23,6 +23,9 @@ function App() {
   const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
 
 
+  useEffect(()=>{
+    console.log("app monto")
+  },[])
   
   useEffect(()=>{
     const beforeUnloadHandler = ()=>{  

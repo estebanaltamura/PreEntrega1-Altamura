@@ -30,6 +30,10 @@ export const Home = ()=>{
   const previousScreenWidthRef = useRef([])
 
   useEffect(()=>{
+    console.log("monto home")
+  },[])
+
+  useEffect(()=>{
     if(previousScreenWidthRef.current.length < 2){
       previousScreenWidthRef.current.push(screenWidth)
     }
@@ -43,25 +47,25 @@ export const Home = ()=>{
 
     if(currentWidth > 374 &&
       lastWidth     < 375){       
-       console.log("de mobile a 375")
+       //console.log("de mobile a 375")
        setIsLoading(true)
       }
     
     if(currentWidth < 375 &&
       lastWidth     > 374){      
-      console.log("de 375 a mobile")
+      //console.log("de 375 a mobile")
       setIsLoading(true)
     }
     
     if(currentWidth > 767 &&
       lastWidth     < 768){      
-      console.log("de 375 a desktop")
+      //console.log("de 375 a desktop")
       setIsLoading(true)
      }
    
     if(currentWidth < 768 &&
       lastWidth     > 767){
-      console.log("de desktop a 375")      
+      //console.log("de desktop a 375")      
       setIsLoading(true)
    }
    
@@ -69,21 +73,21 @@ export const Home = ()=>{
   
 
   const onLoadHandler = (e)=>{    
-    setIsLoading(true) // ver por que cuando actualiza portada loading true cuando ya esta cargada
+    console.log("cargado componente")
+    //setIsLoading(true) 
     const elementJustLoaded = e.target.classList[0]    
     
     if(elementJustLoaded === "coleccionesImagenes"){      
       componentsLoaded.current.push(elementJustLoaded)      
     }
-    else if(elementJustLoaded === "portadaMobile" ||  elementJustLoaded === "portada375" ||  elementJustLoaded === "portadaDesktop"){
-      
-      
+    else if(elementJustLoaded === "portadaMobile" ||  elementJustLoaded === "portada375" ||  elementJustLoaded === "portadaDesktop"){      
       
       if(componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop") === -1){        
         componentsLoaded.current.push(elementJustLoaded)
       }
       else{
-        componentsLoaded.current[componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop")] = elementJustLoaded
+        const portadaIndex = componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop") 
+        componentsLoaded.current[portadaIndex] = elementJustLoaded
       } 
     }       
    

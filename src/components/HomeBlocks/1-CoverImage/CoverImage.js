@@ -9,7 +9,7 @@ export const CoverImage = ()=>{
   const { screenWidth } = useContext(ScreenWidthContext)  
   
   useEffect(()=>{
-    //console.log("coverimage DOMcontentLoaded")
+    console.log(" cover monto ")
   },[])
 
   return(
