@@ -39,30 +39,32 @@ export const Home = ()=>{
     const currentWidth  = previousScreenWidthRef.current[previousScreenWidthRef.current.length -1]
     const lastWidth     = previousScreenWidthRef.current[previousScreenWidthRef.current.length -2]
 
-    if(currentWidth === 375 &&
-      lastWidth     === 374){
+    //console.log(currentWidth, lastWidth)
+
+    if(currentWidth > 374 &&
+      lastWidth     < 375){
        //Carga imagen 375
-       console.log("de 375 a 374")
+       console.log("de mobile a 375")
        setIsLoading(true)
       }
     
-    if(currentWidth === 374 &&
-      lastWidth     === 375){
+    if(currentWidth < 374 &&
+      lastWidth     > 375){
       //Carga imagen mobile
-      console.log("de 374 a 375")
+      console.log("de 375 a mobile")
       setIsLoading(true)
     }
     
-    if(currentWidth === 768 &&
-      lastWidth     === 767){
+    if(currentWidth > 767 &&
+      lastWidth     < 768){
       //Carga imagen desktop
-      console.log("de 768 a 767")
+      console.log("de 375 a desktop")
       setIsLoading(true)
      }
    
-    if(currentWidth === 767 &&
-      lastWidth     === 768){
-      console.log("de 767 a 768")
+    if(currentWidth < 767 &&
+      lastWidth     > 768){
+      console.log("de desktop a 375")
       //Carga imagen 375
       setIsLoading(true)
    }
@@ -71,7 +73,7 @@ export const Home = ()=>{
 
   useEffect(()=>{
     veryImportantComponentsLoadedRef.current = veryImportantComponentsLoaded
-    console.log("valor del ref", veryImportantComponentsLoadedRef.current)
+    //console.log("valor del ref", veryImportantComponentsLoadedRef.current)
   },[veryImportantComponentsLoaded])
 
 
@@ -97,7 +99,7 @@ export const Home = ()=>{
       } 
     }   
     
-    console.log("ultimo", elementJustLoaded, componentsLoaded.current.length)
+    //console.log("ultimo", elementJustLoaded, componentsLoaded.current.length)
     if(componentsLoaded.current.length === 4){    
       setVeryImportantComponentsLoaded(true)    
       setIsLoading(false)
