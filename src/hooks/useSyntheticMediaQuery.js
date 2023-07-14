@@ -1,21 +1,6 @@
-import { useRef } from "react"
-
-export const useSyntheticMediaQuery = ()=>{
-
- 
-  const previousScreenWidthRef = useRef([])
+export const useSyntheticMediaQuery = ()=>{  
     
-  const wasTriggeredMediaQuery = (width)=>{
-    if(previousScreenWidthRef.current.length < 2){
-      previousScreenWidthRef.current.push(width)
-    }
-    else{
-      previousScreenWidthRef.current[0] = previousScreenWidthRef.current[1]
-      previousScreenWidthRef.current[1] = width
-    }       
-
-    const currentWidth  = previousScreenWidthRef.current[1]
-    const lastWidth     = previousScreenWidthRef.current[0]    
+  const wasTriggeredMediaQuery = (currentWidth, lastWidth)=>{   
 
     if(currentWidth  > 374 &&
        lastWidth     < 375){         
@@ -38,13 +23,9 @@ export const useSyntheticMediaQuery = ()=>{
    }      
 
    else return false
-  }
-    
-       
-     
+  }    
 
-
-    return({
-      wasTriggeredMediaQuery
-    })
+  return({
+    wasTriggeredMediaQuery
+  })
 }

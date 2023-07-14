@@ -32,10 +32,28 @@ export const Home = ()=>{
     
   const { wasTriggeredMediaQuery } = useSyntheticMediaQuery()
   
+  const currentAndPreviousWidthRef = useRef([])
+
 
   useEffect(()=>{
-    wasTriggeredMediaQuery(screenWidth) && console.log("disparo media query")
-    wasTriggeredMediaQuery(screenWidth) && setIsLoading(true)
+
+    if(currentAndPreviousWidthRef.current.length < 2){
+      currentAndPreviousWidthRef.current.push(screenWidth)
+    }
+    else{
+      currentAndPreviousWidthRef.current[0] = currentAndPreviousWidthRef.current[1]
+      currentAndPreviousWidthRef.current[1] = screenWidth
+    }       
+
+    const currentWidth  = currentAndPreviousWidthRef.current[1]
+    const lastWidth     = currentAndPreviousWidthRef.current[0]    
+
+
+
+    //console.log("disparo media query", wasTriggeredMediaQuery(currentWidth, lastWidth))
+    wasTriggeredMediaQuery(currentWidth, lastWidth) === true && setIsLoading(true)
+
+    //wasTriggeredMediaQuery(screenWidth) && 
   },[screenWidth])    
 
   const onLoadHandler = (e)=>{    
@@ -56,7 +74,7 @@ export const Home = ()=>{
     }
 
     isVeryImportantComponent(elementJustLoaded) && componentsLoaded.current.push(elementJustLoaded)
-    console.log(componentsLoaded.current.length)
+    
     componentsLoaded.current.length === 4 && setIsLoading(false)     
   }
     
