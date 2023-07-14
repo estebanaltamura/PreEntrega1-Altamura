@@ -39,7 +39,7 @@ export const Home = ()=>{
   const veryImportantComponentsLoadedRef  = useRef([])     
   
   useEffect(()=>{
-    // Charge of cover image when media query changes
+    // Set isLoading false when media query changes until useVeryImportantComponentsLoad detects that new cover image loaded and set isLoading false  
     const [ currentWidth, lastWidth ] = getCurrentAndLastWidth(currentAndLastWidthRef.current, screenWidth)      
     wasTriggeredMediaQuery(currentWidth, lastWidth) === true && setIsLoading(true)    
   },[screenWidth])    
