@@ -1,6 +1,5 @@
-import { useEffect, useContext } from 'react';
-import { CartContext } from './Contexts/CartContextProvider';
-
+import { useEffect } from 'react';
+import { useRecoverDataCartFromLocalStorage } from './hooks/useRecoverDataCartFromLocalStorage';
 import { Home } from './pages/Home/Home';
 import { Collection } from './pages/collections/Collection';
 
@@ -20,29 +19,12 @@ import './App.css';
 
 function App() {
 
-  const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
-
-
-  useEffect(()=>{
-    console.log("app monto")
+  const { recoverCartDataFromLocalStorage } = useRecoverDataCartFromLocalStorage()
+    
+  useEffect(()=>{        
+    recoverCartDataFromLocalStorage()      
   },[])
   
-  useEffect(()=>{
-    const beforeUnloadHandler = ()=>{  
-      itemsCartAdded.length > 0 && localStorage.setItem("itemsCartAdded", JSON.stringify(itemsCartAdded))          
-    }   
-    
-    if (localStorage.getItem("itemsCartAdded")){
-      setItemsCartAdded(JSON.parse(localStorage.getItem("itemsCartAdded")))
-      localStorage.removeItem("itemsCartAdded")
-    }
-    
-    window.addEventListener("unload", beforeUnloadHandler)
-   //
-    return ()=>{ 
-      window.removeEventListener("unload", beforeUnloadHandler)          
-    }    
-  })
 
   return (
         <>

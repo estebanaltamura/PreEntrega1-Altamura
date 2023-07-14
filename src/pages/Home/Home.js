@@ -1,6 +1,9 @@
 import { useEffect, useContext, useRef } from "react"
 import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 import { ScreenWidthContext } from "../../Contexts/ScreenWidthContextProvider";
+import { useSyntheticMediaQuery } from "../../hooks/useSyntheticMediaQuery";
+
+
 import { CoverImage } from "../../components/HomeBlocks/1-CoverImage/CoverImage";
 import { CollectionsTitle } from "../../components/HomeBlocks/2-CollectionsTitle/CollectionsTitle"
 import { Collection1 } from "../../components/HomeBlocks/3-Collection1/Collection1"
@@ -17,8 +20,8 @@ import { OurCommunityImage } from "../../components/HomeBlocks/13-OurCommunityIm
 import { FoundationImage } from "../../components/HomeBlocks/14-FoundationImage/FoundationImage"
 import { FoundationParagraph1 } from "../../components/HomeBlocks/15-FoundationParagraph1/FoundationParagraph1"
 import { FoundationParagraph2 } from "../../components/HomeBlocks/16-FoundationParagraph2/FoundationParagraph2"
-import { Ellipsis, Default } from 'react-spinners-css';
-import Spinner from 'react-bootstrap/Spinner';
+
+import { Ellipsis } from 'react-spinners-css';
 import "./Home.css"
 
 export const Home = ()=>{
@@ -26,74 +29,35 @@ export const Home = ()=>{
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)  
   const { screenWidth } = useContext(ScreenWidthContext)
   const componentsLoaded = useRef([])  
-
-  const previousScreenWidthRef = useRef([])
-
-  useEffect(()=>{
-    console.log("monto home")
-  },[])
-
-  useEffect(()=>{
-    if(previousScreenWidthRef.current.length < 2){
-      previousScreenWidthRef.current.push(screenWidth)
-    }
-    else{
-      previousScreenWidthRef.current[0] = previousScreenWidthRef.current[1]
-      previousScreenWidthRef.current[1] = screenWidth
-    }       
-
-    const currentWidth  = previousScreenWidthRef.current[1]
-    const lastWidth     = previousScreenWidthRef.current[0]    
-
-    if(currentWidth > 374 &&
-      lastWidth     < 375){       
-       //console.log("de mobile a 375")
-       setIsLoading(true)
-      }
     
-    if(currentWidth < 375 &&
-      lastWidth     > 374){      
-      //console.log("de 375 a mobile")
-      setIsLoading(true)
-    }
-    
-    if(currentWidth > 767 &&
-      lastWidth     < 768){      
-      //console.log("de 375 a desktop")
-      setIsLoading(true)
-     }
-   
-    if(currentWidth < 768 &&
-      lastWidth     > 767){
-      //console.log("de desktop a 375")      
-      setIsLoading(true)
-   }
-   
-  },[screenWidth])  
+  const { wasTriggeredMediaQuery } = useSyntheticMediaQuery()
   
 
+  useEffect(()=>{
+    wasTriggeredMediaQuery(screenWidth) && console.log("disparo media query")
+    wasTriggeredMediaQuery(screenWidth) && setIsLoading(true)
+  },[screenWidth])    
+
   const onLoadHandler = (e)=>{    
-    console.log("cargado componente")
     //setIsLoading(true) 
     const elementJustLoaded = e.target.classList[0]    
     
-    if(elementJustLoaded === "coleccionesImagenes"){      
-      componentsLoaded.current.push(elementJustLoaded)      
-    }
-    else if(elementJustLoaded === "portadaMobile" ||  elementJustLoaded === "portada375" ||  elementJustLoaded === "portadaDesktop"){      
-      
-      if(componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop") === -1){        
-        componentsLoaded.current.push(elementJustLoaded)
-      }
-      else{
-        const portadaIndex = componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop") 
-        componentsLoaded.current[portadaIndex] = elementJustLoaded
+    const isVeryImportantComponent = (elementJustLoaded)=>{
+      if(elementJustLoaded === "coleccionesImagenes"){
+        return true
       } 
-    }       
-   
-    if(componentsLoaded.current.length === 4){         
-      setIsLoading(false)
-    }        
+      else if(elementJustLoaded === "portadaMobile" ||  elementJustLoaded === "portada375" ||  elementJustLoaded === "portadaDesktop"){      
+        if(componentsLoaded.current.some((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop")){
+          return false
+        }
+        else return true
+      }  
+      return false         		
+    }
+
+    isVeryImportantComponent(elementJustLoaded) && componentsLoaded.current.push(elementJustLoaded)
+    console.log(componentsLoaded.current.length)
+    componentsLoaded.current.length === 4 && setIsLoading(false)     
   }
     
   return(
