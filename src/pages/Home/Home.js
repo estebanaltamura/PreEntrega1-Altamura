@@ -42,24 +42,27 @@ export const Home = ()=>{
     if(currentWidth === 375 &&
       lastWidth     === 374){
        //Carga imagen 375
+       console.log("de 375 a 374")
        setIsLoading(true)
       }
     
     if(currentWidth === 374 &&
       lastWidth     === 375){
       //Carga imagen mobile
+      console.log("de 374 a 375")
       setIsLoading(true)
     }
     
     if(currentWidth === 768 &&
       lastWidth     === 767){
       //Carga imagen desktop
+      console.log("de 768 a 767")
       setIsLoading(true)
      }
    
     if(currentWidth === 767 &&
       lastWidth     === 768){
-      console.log("767 a 768")
+      console.log("de 767 a 768")
       //Carga imagen 375
       setIsLoading(true)
    }
