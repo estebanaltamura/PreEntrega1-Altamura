@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef, useState } from "react"
+import { useEffect, useContext, useRef } from "react"
 import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 import { ScreenWidthContext } from "../../Contexts/ScreenWidthContextProvider";
 import { CoverImage } from "../../components/HomeBlocks/1-CoverImage/CoverImage";
@@ -23,61 +23,48 @@ import "./Home.css"
 export const Home = ()=>{
 
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)  
-  const { screenWidth, setScreenWidth } = useContext(ScreenWidthContext)
-  const componentsLoaded = useRef([])
-  const [ veryImportantComponentsLoaded, setVeryImportantComponentsLoaded] = useState(false)
-
-  const veryImportantComponentsLoadedRef = useRef()
+  const { screenWidth } = useContext(ScreenWidthContext)
+  const componentsLoaded = useRef([])  
 
   const previousScreenWidthRef = useRef([])
 
   useEffect(()=>{
-    
-    previousScreenWidthRef.current.push(screenWidth)
-    //console.log(previousScreenWidthRef.current[previousScreenWidthRef.current.length -1])
+    if(previousScreenWidthRef.current.length < 2){
+      previousScreenWidthRef.current.push(screenWidth)
+    }
+    else{
+      previousScreenWidthRef.current[0] = previousScreenWidthRef.current[1]
+      previousScreenWidthRef.current[1] = screenWidth
+    }       
 
-    const currentWidth  = previousScreenWidthRef.current[previousScreenWidthRef.current.length -1]
-    const lastWidth     = previousScreenWidthRef.current[previousScreenWidthRef.current.length -2]
-
-    //console.log(currentWidth, lastWidth)
+    const currentWidth  = previousScreenWidthRef.current[1]
+    const lastWidth     = previousScreenWidthRef.current[0]    
 
     if(currentWidth > 374 &&
-      lastWidth     < 375){
-       //Carga imagen 375
+      lastWidth     < 375){       
        console.log("de mobile a 375")
        setIsLoading(true)
       }
     
-    if(currentWidth < 374 &&
-      lastWidth     > 375){
-      //Carga imagen mobile
+    if(currentWidth < 375 &&
+      lastWidth     > 374){      
       console.log("de 375 a mobile")
       setIsLoading(true)
     }
     
     if(currentWidth > 767 &&
-      lastWidth     < 768){
-      //Carga imagen desktop
+      lastWidth     < 768){      
       console.log("de 375 a desktop")
       setIsLoading(true)
      }
    
-    if(currentWidth < 767 &&
-      lastWidth     > 768){
-      console.log("de desktop a 375")
-      //Carga imagen 375
+    if(currentWidth < 768 &&
+      lastWidth     > 767){
+      console.log("de desktop a 375")      
       setIsLoading(true)
    }
    
-  },[screenWidth])
-
-  useEffect(()=>{
-    veryImportantComponentsLoadedRef.current = veryImportantComponentsLoaded
-    //console.log("valor del ref", veryImportantComponentsLoadedRef.current)
-  },[veryImportantComponentsLoaded])
-
-
-
+  },[screenWidth])  
   
 
   const onLoadHandler = (e)=>{    
@@ -97,11 +84,9 @@ export const Home = ()=>{
       else{
         componentsLoaded.current[componentsLoaded.current.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop")] = elementJustLoaded
       } 
-    }   
-    
-    //console.log("ultimo", elementJustLoaded, componentsLoaded.current.length)
-    if(componentsLoaded.current.length === 4){    
-      setVeryImportantComponentsLoaded(true)    
+    }       
+   
+    if(componentsLoaded.current.length === 4){         
       setIsLoading(false)
     }        
   }
