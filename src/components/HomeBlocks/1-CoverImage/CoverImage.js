@@ -1,17 +1,10 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { ScreenWidthContext } from "../../../Contexts/ScreenWidthContextProvider"
-import { v4 as randomId } from 'uuid'
-
-
 import "./CoverImage.css"
 
 export const CoverImage = ()=>{
 
-  const { screenWidth } = useContext(ScreenWidthContext)  
-  
-  useEffect(()=>{
-    console.log(" cover monto ")
-  },[])
+  const { screenWidth } = useContext(ScreenWidthContext)   
   
   return(
     <>

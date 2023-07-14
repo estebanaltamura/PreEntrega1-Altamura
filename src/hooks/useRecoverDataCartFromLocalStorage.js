@@ -6,8 +6,7 @@ export const useRecoverDataCartFromLocalStorage = ()=>{
 
   const { setItemsCartAdded } = useContext(CartContext)
 
-	const recoverCartDataFromLocalStorage = ()=>{
-		console.log("recupero")
+	const recoverCartDataFromLocalStorage = ()=>{		
 		if (localStorage.getItem("itemsCartAdded")){
 			const cartData = localStorage.getItem("itemsCartAdded")
 			setItemsCartAdded(JSON.parse(cartData))

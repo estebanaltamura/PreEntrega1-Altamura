@@ -1,7 +1,7 @@
 import { useEffect, useContext, useRef } from "react"
 import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
 import { ScreenWidthContext } from "../../Contexts/ScreenWidthContextProvider";
-import { useSyntheticMediaQuery } from "../../hooks/useSyntheticMediaQuery";
+import { useSyntheticMediaQueries } from "../../hooks/useSyntheticMediaQueries";
 import { useVeryImportantComponentsLoad } from "../../hooks/useVeryImportantComponentsLoad";
 import { CoverImage } from "../../components/HomeBlocks/1-CoverImage/CoverImage";
 import { CollectionsTitle } from "../../components/HomeBlocks/2-CollectionsTitle/CollectionsTitle"
@@ -26,17 +26,20 @@ export const Home = ()=>{
 
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)  
   const { screenWidth } = useContext(ScreenWidthContext)
-  const { wasTriggeredMediaQuery } = useSyntheticMediaQuery()  
+  
+  const { wasTriggeredMediaQuery,
+          getCurrentAndLastWidth
+        } = useSyntheticMediaQueries()  
+  
   const { isVeryImportantComponent, 
-          isAllVeryImportantComponentLoaded,
-          getCurrentAndLastWidth          
-         } = useVeryImportantComponentsLoad()
+          isAllVeryImportantComponentLoaded                    
+        } = useVeryImportantComponentsLoad()
 
   const currentAndLastWidthRef            = useRef([])
   const veryImportantComponentsLoadedRef  = useRef([])     
   
   useEffect(()=>{
-    // Cover image charge when media query changes
+    // Charge of cover image when media query changes
     const [ currentWidth, lastWidth ] = getCurrentAndLastWidth(currentAndLastWidthRef.current, screenWidth)      
     wasTriggeredMediaQuery(currentWidth, lastWidth) === true && setIsLoading(true)    
   },[screenWidth])    
