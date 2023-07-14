@@ -3,7 +3,6 @@ import { useRecoverDataCartFromLocalStorage } from './hooks/useRecoverDataCartFr
 import { Home } from './pages/Home/Home';
 import { Collection } from './pages/collections/Collection';
 
-
 import { NavBar } from './components/Nav/NavBar';
 import { ItemDetailsContainer } from './components/ItemDetails/ItemDetailsContainer';
 import { CartItemsContainer } from './pages/Cart/CartItemsContainer';
