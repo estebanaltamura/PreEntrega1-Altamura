@@ -17,6 +17,7 @@ import { OurCommunityImage } from "../../components/HomeBlocks/13-OurCommunityIm
 import { FoundationImage } from "../../components/HomeBlocks/14-FoundationImage/FoundationImage"
 import { FoundationParagraph1 } from "../../components/HomeBlocks/15-FoundationParagraph1/FoundationParagraph1"
 import { FoundationParagraph2 } from "../../components/HomeBlocks/16-FoundationParagraph2/FoundationParagraph2"
+import { Ellipsis, Default } from 'react-spinners-css';
 import Spinner from 'react-bootstrap/Spinner';
 import "./Home.css"
 
@@ -95,7 +96,7 @@ export const Home = ()=>{
     <>             
       <div className="homeContainer">
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
-          <Spinner animation="border" role="status" className="spinner"></Spinner> 
+          <Ellipsis animation="border" role="status" className="spinner" color="#5c5c5c" size={70}></Ellipsis> 
         </div>     
 
         <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler} >

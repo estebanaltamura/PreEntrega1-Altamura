@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5,h6, p, a , span, button{
 
 .spinnerContainer{
     position: absolute;
-    top: calc(50vh - 17px);
-    right: calc(50vw + 17px);
+    width: 70px;
+    height: 70px;
+    top: calc(50vh - 35px);
+    right: calc(50vw - 35px);
 }
+
+
