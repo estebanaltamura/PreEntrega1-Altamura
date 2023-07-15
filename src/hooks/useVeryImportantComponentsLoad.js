@@ -13,13 +13,13 @@ export const useVeryImportantComponentsLoad = ()=>{
     return false         		
   }
 
-  const isAllVeryImportantComponentLoaded = (veryImportantComponentsLoaded)=>{    
+  const areAllVeryImportantComponentLoaded = (veryImportantComponentsLoaded)=>{    
     if(veryImportantComponentsLoaded.length === 4) return true
     else return false
   }  
     
   return({
     isVeryImportantComponent,
-    isAllVeryImportantComponentLoaded       
+    areAllVeryImportantComponentLoaded       
   })
 }

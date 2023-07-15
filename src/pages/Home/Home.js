@@ -32,14 +32,14 @@ export const Home = ()=>{
         } = useSyntheticMediaQueries()  
   
   const { isVeryImportantComponent, 
-          isAllVeryImportantComponentLoaded                    
+          areAllVeryImportantComponentLoaded                    
         } = useVeryImportantComponentsLoad()
 
   const currentAndLastWidthRef            = useRef([])
   const veryImportantComponentsLoadedRef  = useRef([])     
   
   useEffect(()=>{
-    // Set isLoading false when media query changes until useVeryImportantComponentsLoad detects that new cover image loaded and set isLoading false  
+    // Set isLoading true when media query changes  
     const [ currentWidth, lastWidth ] = getCurrentAndLastWidth(currentAndLastWidthRef.current, screenWidth)      
     wasTriggeredMediaQuery(currentWidth, lastWidth) === true && setIsLoading(true)    
   },[screenWidth])    
@@ -48,7 +48,7 @@ export const Home = ()=>{
     // Set isLoading false when 4 very important components are loaded. Main cover image and 3 collection cover images 
     const elementJustLoaded = e.target.classList[0]  
     isVeryImportantComponent(elementJustLoaded, veryImportantComponentsLoadedRef.current) && veryImportantComponentsLoadedRef.current.push(elementJustLoaded)    
-    isAllVeryImportantComponentLoaded(veryImportantComponentsLoadedRef.current) && setIsLoading(false)        
+    //areAllVeryImportantComponentLoaded(veryImportantComponentsLoadedRef.current) && setIsLoading(false)        
   }
     
   return(
