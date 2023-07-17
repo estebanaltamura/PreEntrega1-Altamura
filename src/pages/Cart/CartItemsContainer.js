@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
-import { CartContext } from "../../Contexts/CartContextProvider"
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
+import { CartContext } from "../../contexts/CartContextProvider"
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsFillTrashFill } from "react-icons/bs";
 import { getUrl } from "../../mercadopago";
 import "./CartItemsContainer.css"

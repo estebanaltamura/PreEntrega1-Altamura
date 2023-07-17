@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { CartContextProvider } from './Contexts/CartContextProvider'; 
-import { IsLoadingContextProvider } from './Contexts/IsLoadingContextProvider';
-import { ScreenWidthContextProvider } from './Contexts/ScreenWidthContextProvider';
+import { CartContextProvider } from './contexts/CartContextProvider'; 
+import { IsLoadingContextProvider } from './contexts/IsLoadingContextProvider';
+import { ScreenWidthContextProvider } from './contexts/ScreenWidthContextProvider';
 import { initFireBase } from './firebase/config';
 import App from './App';
 import './index.css';

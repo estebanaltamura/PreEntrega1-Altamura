@@ -2,9 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import {useParams, useNavigate} from 'react-router-dom';
 import { v4 as randomId } from 'uuid'
 import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
-import { NoFlashOfUnloadedContentInCollectionContextProvider } from "../../Contexts/NoFlashOfUnloadedContentInCollectionContextProvider";
-import { CollectionItemList } from "../../components/CollectionComponents/CollectionItemList";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
+import { NoFlashOfUnloadedContentInCollectionContextProvider } from "../../contexts/NoFlashOfUnloadedContentInCollectionContextProvider";
+import { CollectionItemList } from "../../components/collectionComponents/CollectionItemList";
 import Spinner from 'react-bootstrap/Spinner';
 import "./Collection.css"
 
@@ -31,7 +31,7 @@ export const Collection = ()=>{
     catch (error) {
       console.error(error);
     }       
-  };
+  }; 
 
   useEffect(()=>{           
     window.scroll({

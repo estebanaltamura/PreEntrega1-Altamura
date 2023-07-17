@@ -1,8 +1,8 @@
 import { useLoginValidator } from "./useLoginValidator"
 import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
 import { useContext } from "react";
-import { CartContext } from "../../Contexts/CartContextProvider";
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
+import { CartContext } from "../../contexts/CartContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { TbHelp } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'

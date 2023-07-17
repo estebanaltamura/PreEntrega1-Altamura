@@ -1,7 +1,7 @@
 import "./ItemListCart.css"
 import { ItemCart } from "./ItemCart"
 import { useContext, useEffect, useState } from "react"
-import { CartContext } from "../../Contexts/CartContextProvider"
+import { CartContext } from "../../contexts/CartContextProvider"
 
 export const ItemListCart = ()=> {
 

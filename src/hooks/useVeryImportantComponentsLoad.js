@@ -17,9 +17,17 @@ export const useVeryImportantComponentsLoad = ()=>{
     if(veryImportantComponentsLoaded.length === 4) return true
     else return false
   }  
+
+  const removeCoverImageOfveryImportantComponentsLoadedRef = (veryImportantComponentsLoaded)=>{
+    const indexOfCoverImageToRemove = veryImportantComponentsLoaded.findIndex((element)=>element === "portadaMobile" ||  element === "portada375" ||  element === "portadaDesktop")
+    veryImportantComponentsLoaded[indexOfCoverImageToRemove] = undefined
+    const veryImportantComponentsLoadedWhitoutOldCoverImage = veryImportantComponentsLoaded.filter(VIC=> VIC !== undefined)
+    return veryImportantComponentsLoadedWhitoutOldCoverImage
+  }
     
   return({
     isVeryImportantComponent,
-    areAllVeryImportantComponentLoaded       
+    areAllVeryImportantComponentLoaded,
+    removeCoverImageOfveryImportantComponentsLoadedRef      
   })
 }

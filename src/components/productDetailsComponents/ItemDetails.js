@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useContext, useState, useRef, useEffect } from "react"
-import { CartContext } from "../../Contexts/CartContextProvider";
+import { CartContext } from "../../contexts/CartContextProvider";
 import { AiOutlinePlusSquare, AiOutlineMinusSquare} from "react-icons/ai";
 import "./ItemDetails.css"
 

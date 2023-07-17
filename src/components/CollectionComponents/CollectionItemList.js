@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
-import { NoFlashOfUnloadedContentInCollectionContextProvider } from "../../Contexts/NoFlashOfUnloadedContentInCollectionContextProvider";
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
+import { NoFlashOfUnloadedContentInCollectionContextProvider } from "../../contexts/NoFlashOfUnloadedContentInCollectionContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { v4 as randomId } from 'uuid'
 import { CollectionItem } from "./CollectionItem";
 import "./CollectionItemList.css"
@@ -8,7 +8,7 @@ import "./CollectionItemList.css"
 export const CollectionItemList = ({ collectionProducts, collectionName, visivilityClass })=>{ 
     
     // const { imagesLoadedCounter, setImagesLoadedCounter } = useContext(NoFlashOfUnloadedContentInCollectionContext)
-     const { setIsLoading, isLoading } = useContext(IsLoadingContext)
+     const { isLoading } = useContext(IsLoadingContext)
 
     
 

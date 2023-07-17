@@ -1,4 +1,4 @@
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider"
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider"
 import { useContext } from "react"
 import "./Footer.css"
 

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
-import { NoFlashOfUnloadedContentInCollectionContext } from "../../Contexts/NoFlashOfUnloadedContentInCollectionContextProvider";
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
+import { NoFlashOfUnloadedContentInCollectionContext } from "../../contexts/NoFlashOfUnloadedContentInCollectionContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 
 import { Link, useParams } from "react-router-dom";
 import "./CollectionItem.css"
@@ -8,16 +8,10 @@ import "./CollectionItem.css"
 
 export const CollectionItem = ({image, name, price, id, index})=>{ 
     
-    const { imagesLoadedCounter, setImagesLoadedCounter } = useContext(NoFlashOfUnloadedContentInCollectionContext)
-    const { setIsLoading } = useContext(IsLoadingContext)
-    
-    
+    const { imagesLoadedCounter, setImagesLoadedCounter } = useContext(NoFlashOfUnloadedContentInCollectionContext)    
 
-    useEffect(()=>{
+    useEffect(()=>{           
         
-
-       
-        //console.log(counter.current)
 
         if(imagesLoadedCounter.counter === 6){
             console.log("deberia parar")
@@ -29,12 +23,9 @@ export const CollectionItem = ({image, name, price, id, index})=>{
 
     const {idCollection} = useParams()   
 
-    const onLoadImageHandler = (e)=>{
-        
-        
+    const onLoadImageHandler = (e)=>{        
 
-        const elementJustLoaded = e.target.classList[0]
-        
+        const elementJustLoaded = e.target.classList[0]   
         
         
         if(imagesLoadedCounter.onOff === "on" && imagesLoadedCounter.counter <6){

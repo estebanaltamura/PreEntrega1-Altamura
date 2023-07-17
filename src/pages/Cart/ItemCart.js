@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react"
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
-import { CartContext } from "../../Contexts/CartContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
+import { CartContext } from "../../contexts/CartContextProvider";
 import Spinner from 'react-bootstrap/Spinner';
 import "./ItemCart.css"
 

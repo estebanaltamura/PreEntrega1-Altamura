@@ -1,7 +1,7 @@
 import { Form } from "./Form"
 import { useContext, useEffect } from "react";
-import { CartContext } from "../../Contexts/CartContextProvider";
-import { IsLoadingContext } from "../../Contexts/IsLoadingContextProvider";
+import { CartContext } from "../../contexts/CartContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { OrderItemListContainer } from "./OrderItemListContainer";
 import Spinner from 'react-bootstrap/Spinner';
 import "./CustomOrder.css"
