@@ -17,10 +17,11 @@ export const URLchangesContextProvider = ( {children} )=>{
     const urlLastPartclean = urlLastPart.replaceAll("%20", " ")
     console.log(urlLastPartclean)
     setCurrentLastPartOfURL(urlLastPartclean)    
+    
   },[url])
 
   useEffect(()=>{
-    setIsLoading(true)
+    //setIsLoading(true)
   },[currentLastPartOfURL])
 
 

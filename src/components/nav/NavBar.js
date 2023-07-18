@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useContext } from "react"; 
 import { NavLink, useLocation } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsCart4 } from "react-icons/bs";
 import { TbBoxMultiple1, TbBoxMultiple2, TbBoxMultiple3, TbBoxMultiple4, TbBoxMultiple5, TbBoxMultiple6, TbBoxMultiple7, TbBoxMultiple8, TbBoxMultiple9, TbPlus } from "react-icons/tb";
 import "./NavBar.css"
@@ -9,6 +10,7 @@ import "./NavBar.css"
 export const NavBar =()=>{
 
     const { itemsCartAdded } = useContext(CartContext)
+    const { setIsLoading } = useContext(IsLoadingContext)
     const [totalQuantityItemsCart, setTotalQuantityItemsCart] = useState(0)
     const URLPath = useLocation()
     const togglerButtonMenu = useRef()
@@ -56,7 +58,7 @@ export const NavBar =()=>{
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink className="nav-link active link" aria-current="page" to ="/home">Home</NavLink>
+                            <NavLink className="nav-link active link" aria-current="page" to ="/home" onClick={()=>setIsLoading(true)}>Home</NavLink>
                         </li>
                         <li className="nav-item dropdown">
                             <div className="nav-link dropdown-toggle link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,20 +66,20 @@ export const NavBar =()=>{
                             </div>
                                 <ul className="dropdown-menu">
                                     <li> 
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks">Urban backpacks</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks" onClick={()=>setIsLoading(true)}>Urban backpacks</NavLink>
                                     </li>
                                                                
                                     <li> 
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks">Travel backpacks</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks" onClick={()=>setIsLoading(true)}>Travel backpacks</NavLink>
                                     </li>
 
                                     <li>
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks">Climbing backpacks</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks" onClick={()=>setIsLoading(true)}>Climbing backpacks</NavLink>
                                     </li>
                                  </ul>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/collections/New arrivals - Backpacks">New arrivals</NavLink>
+                            <NavLink className="link" to = "/collections/New arrivals - Backpacks" onClick={()=>setIsLoading(true)}>New arrivals</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="link" to = "/aboutUs">We</NavLink>
