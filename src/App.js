@@ -9,7 +9,7 @@ import { NavBar } from './components/nav/NavBar';
 import { ItemDetailsContainer } from './components/productDetailsComponents/ItemDetailsContainer';
 import { CartItemsContainer } from './pages/cart/CartItemsContainer';
 import { Payment } from './components/payment/Payment';
-import { We } from './pages/we/We';
+import { AboutUs } from './pages/we/AboutUs';
 import { ContactUs } from './pages/contactUs/ContactUs';
 import { Footer } from './components/footer/Footer';
 import { CustomOrder } from './pages/customOrder/CustomOrder';
@@ -18,7 +18,7 @@ import './App.css';
 
 
 function App() { 
-
+ 
   const { recoverCartDataFromLocalStorage } = useRecoverDataCartFromLocalStorage()
 
 
@@ -46,8 +46,8 @@ function App() {
               <Route path="/collections/Travel backpacks"         element = {<Collection key="TravelBackpacks"/>}/>
               <Route path="/collections/Climbing backpacks"       element = {<Collection key="ClimbingBackpacks"/>}/>
               <Route path="/collections/New arrivals - Backpacks" element = {<Collection key="NewArrivalsCollection"/>}/>              
-              <Route path="/We" element = {<We />}/>
-              <Route path="/ContactUs" element = {<ContactUs />}/>
+              <Route path="/aboutUs" element = {<AboutUs />}/>
+              <Route path="/contactUs" element = {<ContactUs />}/>
               <Route path="/products/:idCollection/:idProduct" element = {<ItemDetailsContainer />}/>
               <Route path="/cart" element = {<CartItemsContainer />}/>
               <Route path="/customOrder" element = {<CustomOrder />}/>

@@ -11,7 +11,7 @@ export const CollectionItemList = ({ collectionProducts, collectionName, visibil
       {collectionProducts.map((product, index)=>
         <CollectionItem 
         key={randomId()} 
-          id={product.id} 
+          id={product.id}  
         index={index} 
         name={product.name} 
         image={product.images[0]} 

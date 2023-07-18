@@ -4,12 +4,13 @@ import { v4 as randomId } from 'uuid'
 import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { CollectionItemList } from "../../components/collectionComponents/CollectionItemList";
+import { URLchangesContext } from "../../contexts/URLchangesContextProvider";
 import Spinner from '../../assets/spinner.gif';
-import { Player } from '@lottiefiles/react-lottie-player';
 import "./Collection.css"
 
 export const Collection = ()=>{
-  const { isLoading, setIsLoading } = useContext(IsLoadingContext)  
+  const { isLoading, setIsLoading } = useContext(IsLoadingContext)
+  const { currentLastPartOfURL } = useContext(URLchangesContext)  
   const [ collectionData, setCollectionData ] = useState([])
   const [ collectionName, setCollectionName ] = useState(null)
 
@@ -18,17 +19,12 @@ export const Collection = ()=>{
 
   const VIIcounterRef = useRef(0)
 
-  useEffect(()=>{
-    const urlInParts = url.pathname.split("/")
-    const urlLastPart = urlInParts[urlInParts.length - 1]
-    const urlLastPartclean = urlLastPart.replaceAll("%20", " ")
-    console.log(urlLastPartclean)
-    setCollectionName(urlLastPartclean)
-    //console.log(urlLastPartclean)
-  },[url])
+  useEffect(()=>{    
+    setCollectionName(currentLastPartOfURL)    
+  },[currentLastPartOfURL])
 
   useEffect(()=>{        
-    setIsLoading(true)
+    //setIsLoading(true)
 
     window.scroll({
       top: 0,
@@ -79,15 +75,7 @@ export const Collection = ()=>{
   return(        
     <main className="itemListContainer" onLoad={onLoadHandler}>      
       <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
-        <img src={Spinner} />  
-        {/* <Player
-          autoplay
-          loop          
-          speed= '2'         
-          src="https://lottie.host/bc11eea0-68fb-4a16-8247-b1a418f3c5ed/OlFoga7EfH.json"
-          style={{ height: '180px', width: '180px'}}
-          >          
-        </Player>        */}
+        <img src={Spinner} />        
       </div>       
        
       <CollectionItemList       

@@ -59,7 +59,7 @@ export const NavBar =()=>{
                             <NavLink className="nav-link active link" aria-current="page" to ="/home">Home</NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <div className="nav-link dropdown-toggle link" role="button" data-bs-toggle="dropdown" aria-expanded="false" to = "/lineaUrbana">
+                            <div className="nav-link dropdown-toggle link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Collections
                             </div>
                                 <ul className="dropdown-menu">
@@ -80,10 +80,10 @@ export const NavBar =()=>{
                             <NavLink className="link" to = "/collections/New arrivals - Backpacks">New arrivals</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/We">We</NavLink>
+                            <NavLink className="link" to = "/aboutUs">We</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/ContactUs">Contact Us</NavLink>
+                            <NavLink className="link" to = "/contactUs">Contact Us</NavLink>
                         </li>
                     </ul>
                     <NavLink to ="/cart">
