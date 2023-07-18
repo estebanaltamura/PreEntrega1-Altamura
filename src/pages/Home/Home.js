@@ -80,7 +80,7 @@ export const Home = ()=>{
             style={{ height: '180px', width: '180px'}}
             >            
           </Player> */} 
-        </div>     
+        </div>      
 
         <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler} >
           <CoverImage />
