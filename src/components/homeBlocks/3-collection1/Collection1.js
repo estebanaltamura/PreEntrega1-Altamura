@@ -7,4 +7,4 @@ export const Collection1 = ()=>{
             <img className="coleccionesImagenes" loading="eager" src="https://i.postimg.cc/mgJZC1Vt/urban-home.jpg" alt="imagen collecion 1" />
         </Link>
     )
-}
+}  

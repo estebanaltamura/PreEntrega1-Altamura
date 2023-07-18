@@ -16,7 +16,7 @@ import { OrderCreated } from './components/orderCreated/OrderCreated';
 import './App.css';
 
 
-function App() { 
+function App() {  
  
   const { recoverCartDataFromLocalStorage } = useRecoverDataCartFromLocalStorage()
     

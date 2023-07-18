@@ -15,13 +15,30 @@ export const NavBar =()=>{
   const [totalQuantityItemsCart, setTotalQuantityItemsCart] = useState(0)    
   const togglerButtonMenu = useRef()    
 
-  const onClickNavItemHandler = ()=>{
+  const onClickNavLinkHandler = ()=>{
     setIsLoading(true)
   }
     
-  const onBlurHandler = (e)=>{
-    !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()
-  }
+  useEffect(()=>{
+
+    const headerLostFocus = (event)=>{      
+      const parentClass = event.target.parentNode.classList[0]   
+
+      if( parentClass !== "nav-item"         && 
+          parentClass !== "container-fluid"  && 
+          parentClass !== "navbar-toggler"   &&
+          parentClass !== "corousel"         
+        ){          
+          !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()
+      }                   
+    }
+
+    window.addEventListener("click", headerLostFocus)
+
+    return ()=> window.removeEventListener("click", headerLostFocus)
+  },[])
+
+
 
   useEffect(()=>{
     !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()               
@@ -34,7 +51,7 @@ export const NavBar =()=>{
   },[itemsCartAdded])
     
   return(
-    <header onBlur={onBlurHandler}>
+    <header>
       <nav className="navbar navbar-expand-lg contenedorMenu">
         <div className="container-fluid menuExpandible">
           
@@ -42,7 +59,7 @@ export const NavBar =()=>{
             <span className="navbar-toggler-icon"></span>
           </button>
           
-          <NavLink className="link logoLink" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavItemHandler}>
+          <NavLink className="link logoLink" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavLinkHandler}>
             <h1 className="logo">PANDORA</h1>
           </NavLink>                        
           
@@ -67,7 +84,7 @@ export const NavBar =()=>{
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li className="nav-item">
-                  <NavLink className="nav-link active link" aria-current="page" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavItemHandler}>Home</NavLink>
+                  <NavLink className="nav-link active link" aria-current="page" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavLinkHandler}>Home</NavLink>
                 </li>
 
                 <li className="nav-item dropdown">
@@ -76,27 +93,27 @@ export const NavBar =()=>{
                   </div>
                   <ul className="dropdown-menu">
                     <li> 
-                      <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks" onClick={onClickNavItemHandler}>Urban backpacks</NavLink>
+                      <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks" onClick={onClickNavLinkHandler}>Urban backpacks</NavLink>
                     </li>                                                               
                     <li> 
-                      <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks" onClick={onClickNavItemHandler}>Travel backpacks</NavLink>
+                      <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks" onClick={onClickNavLinkHandler}>Travel backpacks</NavLink>
                     </li>
                     <li>
-                      <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks" onClick={onClickNavItemHandler}>Climbing backpacks</NavLink>
+                      <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks" onClick={onClickNavLinkHandler}>Climbing backpacks</NavLink>
                     </li>
                   </ul>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink className="link" to = "/collections/New arrivals - Backpacks" onClick={onClickNavItemHandler}>New arrivals</NavLink>
+                  <NavLink className="link" to = "/collections/New arrivals - Backpacks" onClick={onClickNavLinkHandler}>New arrivals</NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink className="link" to = "/aboutUs" onClick={onClickNavItemHandler}>About Us</NavLink>
+                  <NavLink className="link" to = "/aboutUs" onClick={onClickNavLinkHandler}>About Us</NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink className="link" to = "/contactUs" onClick={onClickNavItemHandler}>Contact Us</NavLink>
+                  <NavLink className="link" to = "/contactUs" onClick={onClickNavLinkHandler}>Contact Us</NavLink>
                 </li>
             </ul>
                     
