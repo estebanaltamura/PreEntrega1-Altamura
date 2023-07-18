@@ -39,4 +39,4 @@ export const OrderCreated = ()=>{
             <h3>{`Redirenting to home page in 5 seconds`}</h3>            
         </div>
     )
-}
+} 
