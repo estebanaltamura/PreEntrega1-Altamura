@@ -14,8 +14,7 @@ export const URLchangesContextProvider = ( {children} )=>{
   useEffect(()=>{
     const urlInParts = url.pathname.split("/")
     const urlLastPart = urlInParts[urlInParts.length - 1]
-    const urlLastPartclean = urlLastPart.replaceAll("%20", " ")
-    console.log(urlLastPartclean)
+    const urlLastPartclean = urlLastPart.replaceAll("%20", " ")    
     setCurrentLastPartOfURL(urlLastPartclean)    
     
   },[url])

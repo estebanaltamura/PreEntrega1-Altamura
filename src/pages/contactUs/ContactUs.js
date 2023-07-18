@@ -6,15 +6,10 @@ import "./ContactUs.css"
 export const ContactUs = ()=>{    
   const { setIsLoading } = useContext(IsLoadingContext)
     
+
   useEffect(()=>{
-    const onLoadHandler = ()=>{
-      setIsLoading(false)
-    }
-
-    window.addEventListener("load", onLoadHandler)
-    return ()=> window.removeEventListener("load", onLoadHandler)
-  },[])
-
+    setIsLoading(false)
+  },[]) 
 
   return(
     <main className="contactUsmainContainer">
