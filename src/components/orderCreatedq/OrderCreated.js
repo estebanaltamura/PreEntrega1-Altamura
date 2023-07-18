@@ -28,7 +28,7 @@ export const OrderCreated = ()=>{
         //eslint-disable-next-line 
     },[])
 
-    return(
+    return( 
         <div className="orderCreatedContainer" >
 
             <h3>{`Order number ${orderId} created`}</h3>
