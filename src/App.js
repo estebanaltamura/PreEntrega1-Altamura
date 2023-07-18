@@ -9,7 +9,7 @@ import { NavBar } from './components/nav/NavBar';
 import { ItemDetailsContainer } from './components/productDetailsComponents/ItemDetailsContainer';
 import { CartItemsContainer } from './pages/cart/CartItemsContainer';
 import { Payment } from './components/payment/Payment';
-import { We } from './pages/We/We';
+import { We } from './pages/we/We';
 import { ContactUs } from './pages/contactUs/ContactUs';
 import { Footer } from './components/footer/Footer';
 import { CustomOrder } from './pages/customOrder/CustomOrder';
