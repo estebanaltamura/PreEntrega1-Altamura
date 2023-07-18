@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { ScreenWidthContext } from "../../../contextsa/ScreenWidthContextProvider"
+import { ScreenWidthContext } from "../../../contexts/ScreenWidthContextProvider"
 import "./CoverImage.css"
 
 export const CoverImage = ()=>{

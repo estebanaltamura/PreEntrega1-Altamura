@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { ScreenWidthContext } from "../../../contextsa/ScreenWidthContextProvider"
+import { ScreenWidthContext } from "../../../contexts/ScreenWidthContextProvider"
 import { OurCommunityMobileImages } from "./1-ourComunnityMobileImages/OurComunnityMobileImages"
 import { OurCommunityTabletImages } from "./2-ourCommunityTabletImages/OurCommunityTabletImages"
 import { OurCommunity992pxImages } from "./3-ourCommunity992pxImages/OurCommunity992pxImages"

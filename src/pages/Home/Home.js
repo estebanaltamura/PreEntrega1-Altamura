@@ -1,6 +1,6 @@
 import { useEffect, useContext, useRef } from "react"
-import { IsLoadingContext } from "../../contextsa/IsLoadingContextProvider";
-import { ScreenWidthContext } from "../../contextsa/ScreenWidthContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
+import { ScreenWidthContext } from "../../contexts/ScreenWidthContextProvider";
 import { useSyntheticMediaQueries } from "../../hooks/useSyntheticMediaQueries";
 import { useVeryImportantComponentsLoad } from "../../hooks/useVeryImportantComponentsLoad";
 
