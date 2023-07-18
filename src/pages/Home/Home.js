@@ -72,7 +72,7 @@ export const Home = ()=>{
       <div className="homeContainer">
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
           <img src={Spinner} />      
-          {/* <Player
+          {/* <Player  
             autoplay   
             loop          
             speed= '2'         
