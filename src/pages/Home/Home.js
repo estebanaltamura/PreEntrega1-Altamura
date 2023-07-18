@@ -79,7 +79,7 @@ export const Home = ()=>{
             src="https://lottie.host/bc11eea0-68fb-4a16-8247-b1a418f3c5ed/OlFoga7EfH.json"
             style={{ height: '180px', width: '180px'}}
             >            
-          </Player> */}
+          </Player> */} 
         </div>     
 
         <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler} >
