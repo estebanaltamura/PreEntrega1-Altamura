@@ -71,7 +71,7 @@ export const Home = ()=>{
     <>             
       <div className="homeContainer">
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
-          <img src={Spinner} />    
+          <img src={Spinner} />      
           {/* <Player
             autoplay   
             loop          
