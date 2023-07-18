@@ -20,7 +20,8 @@ import { OurCommunityImage } from "../../components/homeBlocks/13-ourCommunityIm
 import { FoundationImage } from "../../components/homeBlocks/14-foundationImage/FoundationImage"
 import { FoundationParagraph1 } from "../../components/homeBlocks/15-foundationParagraph1/FoundationParagraph1";
 import { FoundationParagraph2 } from "../../components/homeBlocks/16-foundationParagraph2/FoundationParagraph2";
-import PulseLoader from "react-spinners/PulseLoader";
+import Spinner from '../../assets/spinner.gif';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 
 import "./Home.css"
@@ -40,7 +41,11 @@ export const Home = ()=>{
         } = useVeryImportantComponentsLoad()
 
   const currentAndLastWidthRef            = useRef([])
-  const veryImportantComponentsLoadedRef  = useRef([])    
+  const veryImportantComponentsLoadedRef  = useRef([])   
+  
+  useEffect(()=>{      
+    setIsLoading(true)   
+  },[])     
   
   useEffect(()=>{      
     isLoading === false && window.scrollTo(0, 0);   
@@ -65,8 +70,16 @@ export const Home = ()=>{
   return(
     <>             
       <div className="homeContainer">
-        <div className={isLoading === true ? "spinnerContainer" : "hidden"} >          
-          <PulseLoader color="#5c5c5c" speedMultiplier={0.5}/>
+        <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
+          <img src={Spinner} />    
+          {/* <Player
+            autoplay
+            loop          
+            speed= '2'         
+            src="https://lottie.host/bc11eea0-68fb-4a16-8247-b1a418f3c5ed/OlFoga7EfH.json"
+            style={{ height: '180px', width: '180px'}}
+            >            
+          </Player> */}
         </div>     
 
         <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler} >
