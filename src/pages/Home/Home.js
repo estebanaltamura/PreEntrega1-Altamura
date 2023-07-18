@@ -73,7 +73,7 @@ export const Home = ()=>{
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
           <img src={Spinner} />    
           {/* <Player
-            autoplay
+            autoplay   
             loop          
             speed= '2'         
             src="https://lottie.host/bc11eea0-68fb-4a16-8247-b1a418f3c5ed/OlFoga7EfH.json"
