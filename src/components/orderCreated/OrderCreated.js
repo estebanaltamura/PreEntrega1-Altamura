@@ -37,6 +37,6 @@ export const OrderCreated = ()=>{
             <h3>{`In 24-48 hours we are going to contact you for payment details and delivery`}</h3>
             <br/> 
             <h3>{`Redirenting to home page in 5 seconds`}</h3>            
-        </div>
+        </div> 
     )
 } 
