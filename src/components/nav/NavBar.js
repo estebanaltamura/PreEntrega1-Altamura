@@ -42,7 +42,7 @@ export const NavBar =()=>{
             <span className="navbar-toggler-icon"></span>
           </button>
           
-          <NavLink className="link logoLink" to ="/home">
+          <NavLink className="link logoLink" to ="/home" onClick={onClickNavItemHandler}>
             <h1 className="logo">PANDORA</h1>
           </NavLink>                        
           
