@@ -42,7 +42,7 @@ export const NavBar =()=>{
             <span className="navbar-toggler-icon"></span>
           </button>
           
-          <NavLink className="link logoLink" to ="/home" onClick={onClickNavItemHandler}>
+          <NavLink className="link logoLink" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavItemHandler}>
             <h1 className="logo">PANDORA</h1>
           </NavLink>                        
           
@@ -67,7 +67,7 @@ export const NavBar =()=>{
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li className="nav-item">
-                  <NavLink className="nav-link active link" aria-current="page" to ="/home" onClick={onClickNavItemHandler}>Home</NavLink>
+                  <NavLink className="nav-link active link" aria-current="page" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavItemHandler}>Home</NavLink>
                 </li>
 
                 <li className="nav-item dropdown">
