@@ -25,7 +25,9 @@ export const NavBar =()=>{
         setTotalQuantityItemsCart(quantityItems)
     },[itemsCartAdded]) 
 
-   
+   const onClickHandler = ()=>{
+    setIsLoading(true)
+   }
     
     return(
         <header >
@@ -58,7 +60,7 @@ export const NavBar =()=>{
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink className="nav-link active link" aria-current="page" to ="/home" onClick={()=>setIsLoading(true)}>Home</NavLink>
+                            <NavLink className="nav-link active link" aria-current="page" onClick={onClickHandler} to ="/home" >Home</NavLink>
                         </li>
                         <li className="nav-item dropdown">
                             <div className="nav-link dropdown-toggle link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -66,20 +68,20 @@ export const NavBar =()=>{
                             </div>
                                 <ul className="dropdown-menu">
                                     <li> 
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks" onClick={()=>setIsLoading(true)}>Urban backpacks</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks" onClick={onClickHandler}>Urban backpacks</NavLink>
                                     </li>
                                                                
                                     <li> 
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks" onClick={()=>setIsLoading(true)}>Travel backpacks</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks" onClick={onClickHandler}>Travel backpacks</NavLink>
                                     </li>
 
                                     <li>
-                                        <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks" onClick={()=>setIsLoading(true)}>Climbing backpacks</NavLink>
+                                        <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks" onClick={onClickHandler}>Climbing backpacks</NavLink>
                                     </li>
                                  </ul>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="link" to = "/collections/New arrivals - Backpacks" onClick={()=>setIsLoading(true)}>New arrivals</NavLink>
+                            <NavLink className="link" to = "/collections/New arrivals - Backpacks" onClick={onClickHandler}>New arrivals</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="link" to = "/aboutUs">We</NavLink>
