@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom"
+import { useContext } from "react"
+import {Link} from "react-router-dom"
+import { IsLoadingContext } from "../../../contexts/IsLoadingContextProvider"
 import "./Collection3Title.css"
 
 export const Collection3Title = ()=>{
-    return(
-        <Link to="/collections/Climbing backpacks" className="coleccionesTexto titulocoleccion3">
-            <h3>Climbing</h3>
-        </Link>
-    )
-}
+
+  const { setIsLoading } = useContext(IsLoadingContext)
+
+  const onClickLinkHandler = ()=>{
+    setIsLoading(true)
+  }
+
+  return(
+    <Link className="coleccionesTexto titulocoleccion3"  to="/collections/Climbing backpacks" onClick={onClickLinkHandler}>
+      <h3>Climbing</h3>
+    </Link>
+  )
+} 

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useContext } from "react"; 
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContextProvider";
-import { URLchangesContext } from "../../contexts/URLchangesContextProvider";
+import { URLDataContext } from "../../contexts/URLDataContextProvider";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsCart4 } from "react-icons/bs";
 import { TbBoxMultiple1, TbBoxMultiple2, TbBoxMultiple3, TbBoxMultiple4, TbBoxMultiple5, TbBoxMultiple6, TbBoxMultiple7, TbBoxMultiple8, TbBoxMultiple9, TbPlus } from "react-icons/tb";
@@ -9,11 +9,14 @@ import "./NavBar.css"
  
 export const NavBar =()=>{
 
-  const { itemsCartAdded } = useContext(CartContext)    
-  const { currentLastPartOfURL } = useContext(URLchangesContext)
-  const { setIsLoading } = useContext(IsLoadingContext)
+  const { itemsCartAdded }  = useContext(CartContext)    
+  const { currentURL }      = useContext(URLDataContext)
+  const { setIsLoading }    = useContext(IsLoadingContext)
+
   const [totalQuantityItemsCart, setTotalQuantityItemsCart] = useState(0)    
+  
   const togglerButtonMenu = useRef()    
+
 
   const onClickNavLinkHandler = ()=>{
     setIsLoading(true)
@@ -36,13 +39,7 @@ export const NavBar =()=>{
     window.addEventListener("click", headerLostFocus)
 
     return ()=> window.removeEventListener("click", headerLostFocus)
-  },[])
-
-
-
-  useEffect(()=>{
-    !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()               
-  },[currentLastPartOfURL])
+  },[]) 
 
     
   useEffect(()=>{
@@ -59,8 +56,11 @@ export const NavBar =()=>{
             <span className="navbar-toggler-icon"></span>
           </button>
           
-          <NavLink className="link logoLink" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavLinkHandler}>
-            <h1 className="logo">PANDORA</h1>
+          <NavLink 
+            className="link logoLink" 
+            to ="/home" 
+            onClick={currentURL.section === "home" ? null : onClickNavLinkHandler}>
+              <h1 className="logo">PANDORA</h1>
           </NavLink>                        
           
           <NavLink to ="/cart">
@@ -79,12 +79,18 @@ export const NavBar =()=>{
             totalQuantityItemsCart === 9 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple9 className="quantityIcon"   /></NavLink> : 
             <NavLink className="quantityLink" to ="/cart"><TbPlus /> <TbBoxMultiple9 className="quantityIcon" /></NavLink>
           }                   
-                
+                 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li className="nav-item">
-                  <NavLink className="nav-link active link" aria-current="page" to ="/home" onClick={currentLastPartOfURL === "home" ? null : onClickNavLinkHandler}>Home</NavLink>
+                  <NavLink 
+                    className="nav-link active link" 
+                    aria-current="page" 
+                    to ="/home" 
+                    onClick={currentURL.section === "home" ? null : onClickNavLinkHandler}>
+                      Home
+                  </NavLink>
                 </li>
 
                 <li className="nav-item dropdown">
@@ -93,27 +99,57 @@ export const NavBar =()=>{
                   </div>
                   <ul className="dropdown-menu">
                     <li> 
-                      <NavLink className="link desplegableMenuItem" to = "/collections/Urban backpacks" onClick={onClickNavLinkHandler}>Urban backpacks</NavLink>
+                      <NavLink 
+                        className="link desplegableMenuItem" 
+                        to = "/collections/Urban backpacks" 
+                        onClick={(currentURL.section === "collections" && currentURL.subSection) === "Urban backpacks" ? null : onClickNavLinkHandler}>
+                          Urban backpacks
+                      </NavLink>
                     </li>                                                               
                     <li> 
-                      <NavLink className="link desplegableMenuItem" to = "/collections/Travel backpacks" onClick={onClickNavLinkHandler}>Travel backpacks</NavLink>
+                      <NavLink 
+                        className="link desplegableMenuItem" 
+                        to = "/collections/Travel backpacks" 
+                        onClick={(currentURL.section === "collections" && currentURL.subSection) === "Travel backpacks" ? null : onClickNavLinkHandler}>
+                          Travel backpacks
+                      </NavLink>
                     </li>
                     <li>
-                      <NavLink className="link desplegableMenuItem" to = "/collections/Climbing backpacks" onClick={onClickNavLinkHandler}>Climbing backpacks</NavLink>
+                      <NavLink 
+                        className="link desplegableMenuItem" 
+                        to = "/collections/Climbing backpacks" 
+                        onClick={(currentURL.section === "collections" && currentURL.subSection) === "Climbing backpacks" ? null : onClickNavLinkHandler}>
+                          Climbing backpacks
+                      </NavLink>
                     </li>
                   </ul>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink className="link" to = "/collections/New arrivals - Backpacks" onClick={onClickNavLinkHandler}>New arrivals</NavLink>
+                  <NavLink 
+                    className="link" 
+                    to = "/collections/New arrivals - Backpacks" 
+                    onClick={(currentURL.section === "collections" && currentURL.subSection) === "New arrivals - Backpacks" ? null : onClickNavLinkHandler}>
+                      New arrivals
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink className="link" to = "/aboutUs" onClick={onClickNavLinkHandler}>About Us</NavLink>
+                  <NavLink 
+                    className="link" 
+                    to = "/aboutUs" 
+                    onClick={currentURL.section === "aboutUs" ? null : onClickNavLinkHandler}>
+                      About Us
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink className="link" to = "/contactUs" onClick={onClickNavLinkHandler}>Contact Us</NavLink>
+                  <NavLink 
+                    className="link" 
+                    to = "/contactUs" 
+                    onClick={currentURL.section === "constactUs" ? null : onClickNavLinkHandler}>
+                      Contact Us
+                  </NavLink>
                 </li>
             </ul>
                     

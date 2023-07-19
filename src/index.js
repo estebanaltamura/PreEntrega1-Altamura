@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { CartContextProvider } from './contexts/CartContextProvider'; 
 import { IsLoadingContextProvider } from './contexts/IsLoadingContextProvider';
 import { ScreenWidthContextProvider } from './contexts/ScreenWidthContextProvider';
-import { URLchangesContextProvider } from './contexts/URLchangesContextProvider';
+import { URLDataContextProvider } from './contexts/URLDataContextProvider';
 import { initFireBase } from './firebase/config';
 import App from './App';
 import './index.css';
@@ -18,9 +18,9 @@ root.render(
       <ScreenWidthContextProvider>
         <CartContextProvider>        
           <IsLoadingContextProvider>
-            <URLchangesContextProvider>
+            <URLDataContextProvider>
               <App />        
-            </URLchangesContextProvider>
+            </URLDataContextProvider>
           </IsLoadingContextProvider>
         </CartContextProvider>
       </ScreenWidthContextProvider>
