@@ -56,3 +56,4 @@ export default App;
 // Analizar hacer custom hooks para home, collection y navBar
 // bajar el footer en cart y contactUs para que quede fuera de vista
 // Tamaño del menu, separacion entre secciones
+   
