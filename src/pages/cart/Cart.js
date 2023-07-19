@@ -23,7 +23,7 @@ export const Cart = ()=>{
 
     const classOfElementJustLoaded = e.target.classList[0]
 
-    const arecartItemLoaded = (classOfElementJustLoaded)=>{
+    const areCartItemLoaded = (classOfElementJustLoaded)=>{
       if(itemsCartAdded.length > 0){
         if(classOfElementJustLoaded  === "imagenCartItem"){
           cartItemQuantityLoadedRef.current += 1
@@ -35,8 +35,17 @@ export const Cart = ()=>{
       }  
     }
     
-    arecartItemLoaded(classOfElementJustLoaded)  
+    areCartItemLoaded(classOfElementJustLoaded)  
   }
+
+  const onClickHandler = (e)=>{
+    console.log(e.target.parentNode.id)
+  }
+
+
+
+
+
 
   useEffect(()=>{    
     
@@ -59,7 +68,7 @@ export const Cart = ()=>{
               <img src={Spinner} />           
             </div> 
 
-            <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler}>
+            <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler} onClick={onClickHandler}>
               <div className="contenedorItems redondeado">
                 <CartItemsList />
               </div>

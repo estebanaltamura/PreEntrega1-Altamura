@@ -6,12 +6,11 @@ import "./CartItemsList.css"
 
 export const CartItemsList = ()=> {
 
-  const {itemsCartAdded} = useContext(CartContext)
-  const { screenWidth }  = useContext(ScreenWidthContext)
+  const { itemsCartAdded }  = useContext(CartContext)
+  const { screenWidth }     = useContext(ScreenWidthContext)
   const [totalCart, setTotalCart] = useState([])
 
-  useEffect(()=>{
-    //itemsCartAdded.length > 0 && setTotalCart()
+  useEffect(()=>{    
     if (itemsCartAdded.length ===  0){
       setTotalCart(0)
     } 
