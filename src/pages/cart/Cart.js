@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../contexts/CartContextProvider"
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsFillTrashFill } from "react-icons/bs";
-import { ItemListCart } from "../../components/cartComponents/ItemListCart";
+import { CartItemsList } from "../../components/cartComponents/CartItemsList"
 import { getUrl } from "../../mercadopago";
 import Spinner from '../../assets/spinner.gif';
 import "./Cart.css"
@@ -12,11 +12,33 @@ export const Cart = ()=>{
 
   const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)
+
+  const cartItemQuantityLoadedRef = useRef(0)
+
  
    
   const onEmptyCartClickHandler = ()=> setItemsCartAdded([])
 
-  useEffect(()=>{
+  const cartItemLoadHandler = (e)=>{
+
+    const classOfElementJustLoaded = e.target.classList[0]
+
+    const arecartItemLoaded = (classOfElementJustLoaded)=>{
+      if(itemsCartAdded.length > 0){
+        if(classOfElementJustLoaded  === "imagenCartItem"){
+          cartItemQuantityLoadedRef.current += 1
+         }
+        if(cartItemQuantityLoadedRef.current === itemsCartAdded.length){          
+          setIsLoading(false)
+          cartItemQuantityLoadedRef.current = 0
+        }       
+      }  
+    }
+    
+    arecartItemLoaded(classOfElementJustLoaded)  
+  }
+
+  useEffect(()=>{    
     
     itemsCartAdded.length === 0 && setIsLoading(false)
     
@@ -33,13 +55,13 @@ export const Cart = ()=>{
       {
         itemsCartAdded.length > 0 ?
           <>  
-            <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
+            <div className={isLoading === true ? "spinnerContainer" : "hidden"}>      
               <img src={Spinner} />           
             </div> 
 
-            <main className={isLoading === true ? "hidden" : "mainContainerCart"}>
+            <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler}>
               <div className="contenedorItems redondeado">
-                <ItemListCart />
+                <CartItemsList />
               </div>
 
               <button onClick={onEmptyCartClickHandler} className="emptyCart"><BsFillTrashFill />Empty Cart</button> 

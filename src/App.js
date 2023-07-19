@@ -54,3 +54,5 @@ export default App;
 // No cierra el menu ante cambio de paginas y clickeo afuera del area. chequear
 // Hacer full responsive home y colecciones
 // Analizar hacer custom hooks para home, collection y navBar
+// bajar el footer en cart y contactUs para que quede fuera de vista
+// Tamaño del menu, separacion entre secciones
