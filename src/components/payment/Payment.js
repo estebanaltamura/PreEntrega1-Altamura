@@ -6,10 +6,10 @@ import "./Payment.css"
 
 export const Payment = ()=>{
 
-    const { itemsCartAdded } = useContext(CartContext)
+    const { cartItems } = useContext(CartContext)
 
-    const adjustObjectToSendToMP = (itemsCartAdded)=>{
-        return itemsCartAdded.map((product)=>{
+    const adjustObjectToSendToMP = (cartItems)=>{
+        return cartItems.map((product)=>{
             return {name: product.name, description: product.shortDescription, price: product.price, image: product.images[0], quantity: product.quantity, subTotal: product.subTotal}
         })
     }
@@ -19,9 +19,9 @@ export const Payment = ()=>{
             <div className="paymentGridContainer redondeado">
                 <h3 className="tituloParaspanInfoParaMp">OBJECT TO MERCADOPAGO API</h3>
                 <div className="objectToMPContainer">
-                    {itemsCartAdded.length === 0   ? 
+                    {cartItems.length === 0   ? 
                     "No items in the cart"         : 
-                    adjustObjectToSendToMP(itemsCartAdded).map((product, index)=>{
+                    adjustObjectToSendToMP(cartItems).map((product, index)=>{
                         return <p key={index}>{JSON.stringify(product)}<br /><br /></p> 
                     })
                     }

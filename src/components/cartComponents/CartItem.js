@@ -5,53 +5,13 @@ import "./CartItem.css"
 
 export const CartItem = ({product, index})=> {
 
-  //const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
-  const { screenWidth }                     = useContext(ScreenWidthContext)  
-  
-  // const indexOfProductToUpdate = (itemsCartAdded, e)=>{
-  //   return itemsCartAdded.findIndex((product)=>product.id === Number(e.target.parentNode.id))     
-  // }
+  const { cartItems }     = useContext(CartContext)
+  const { screenWidth }   = useContext(ScreenWidthContext)   
 
-  // const onClickHandlerMoreQuantity = (e)=>{
-  //   const itemsCartAddedUpdated = itemsCartAdded.map((product, index)=>{
-  //     if (index === indexOfProductToUpdate(itemsCartAdded,e)){
-  //       const quantityUpdated1 = {...product, quantity: product.quantity + 1}
-  //       const quantityUpdated2 = { ...quantityUpdated1, subTotal: quantityUpdated1.quantity * product.price}
-  //       return {...quantityUpdated2}
-  //     }
-  //     else return {...product} 
-  //   })
-
-  //   setItemsCartAdded(itemsCartAddedUpdated)
-  // }
-
-  // const onClickHandlerlessQuantity = (e)=>{        
-  //   const itemsCartAddedUpdated1 = itemsCartAdded.map((product, index)=>{
-  //     if (index === indexOfProductToUpdate(itemsCartAdded,e)){
-  //       if (product.quantity >= 2){
-  //         const quantityUpdated1 = {...product, quantity: product.quantity - 1}
-  //         const quantityUpdated2 = { ...quantityUpdated1, subTotal: quantityUpdated1.quantity * product.price}                    
-  //         return {...quantityUpdated2}
-  //       }
-  //       else{return null}
-  //     }
-  //     else return {...product}
-  //   })
-
-  //   const itemsCartAddedUpdated2 = itemsCartAddedUpdated1.filter(producto=>{return producto !== null})        
-  //   setItemsCartAdded(itemsCartAddedUpdated2)
-  // }
-
-  // const onClickHandlerRemove = (e)=>{        
-  //   const itemsCartAddedUpdated = itemsCartAdded.filter((product, index)=>{
-  //     return index !== indexOfProductToUpdate(itemsCartAdded, e) && product
-  //   })
-  //   setItemsCartAdded(itemsCartAddedUpdated)
-  // }
 
   return(            
     <>
-      {
+      { 
         screenWidth > 768 ?
           <div className="item" id={product.id}>
             <img  className="imagenCartItem" src={product.images[0]} alt= "A model using a backpack backpack" />

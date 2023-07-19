@@ -21,9 +21,6 @@ import { FoundationImage } from "../../components/homeBlocks/14-foundationImage/
 import { FoundationParagraph1 } from "../../components/homeBlocks/15-foundationParagraph1/FoundationParagraph1";
 import { FoundationParagraph2 } from "../../components/homeBlocks/16-foundationParagraph2/FoundationParagraph2";
 import Spinner from '../../assets/spinner.gif';
-
-
-
 import "./Home.css"
 
 export const Home = ()=>{

@@ -5,13 +5,13 @@ import "./CustomOrderItemListTotal.css"
 
 export const CustomOrderItemListTotal = ()=> {
 
-    const { itemsCartAdded } = useContext(CartContext)
+    const { cartItems } = useContext(CartContext)
 
     return(
         <>
             <div className="customOrderItemTotal">
                 <span className="customOrderTotalTitle">TOTAL</span>
-                <span className="customOrderTotal">{itemsCartAdded.reduce((accumulator, partial)=>accumulator + partial.subTotal, 0)}</span>
+                <span className="customOrderTotal">{cartItems.reduce((accumulator, partial)=>accumulator + partial.subTotal, 0)}</span>
             </div>
 
     </>

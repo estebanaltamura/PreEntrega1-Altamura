@@ -4,12 +4,12 @@ import { CartContext } from "../contexts/CartContextProvider"
 
 export const useRecoverDataCartFromLocalStorage = ()=>{
 
-  const { setItemsCartAdded } = useContext(CartContext)
+  const { dispatch } = useContext(CartContext)
 
 	const recoverCartDataFromLocalStorage = ()=>{		
 		if (localStorage.getItem("itemsCartAdded")){
-			const cartData = localStorage.getItem("itemsCartAdded")
-			setItemsCartAdded(JSON.parse(cartData))
+			const cartData = localStorage.getItem("itemsCartAdded")            
+			dispatch({type: "RECOVER_DATA", dataRecoveredFromLocalStorage: JSON.parse(cartData)})
 			localStorage.removeItem("itemsCartAdded")
 		}
 	}	

@@ -6,21 +6,20 @@ import "./CartItemsList.css"
 
 export const CartItemsList = ()=> {
 
-  const { itemsCartAdded }  = useContext(CartContext)
+  const { cartItems }       = useContext(CartContext)
   const { screenWidth }     = useContext(ScreenWidthContext)
   const [totalCart, setTotalCart] = useState([])
 
   useEffect(()=>{    
-    if (itemsCartAdded.length ===  0){
+    if (cartItems.length ===  0){
       setTotalCart(0)
     } 
-    if (itemsCartAdded.length ===  1){
-      setTotalCart(itemsCartAdded[0].subTotal)
-    } 
-    if (itemsCartAdded.length >  1){
-      setTotalCart(itemsCartAdded.reduce((acumulador, elemento)=>{return acumulador + elemento.subTotal}, 0))
-    }             
-  },[itemsCartAdded])
+    else{
+      const cartItemsSubTotalByProduct = cartItems.map(item=>item.price * item.quantity)
+      const subTotal = cartItemsSubTotalByProduct.reduce((accumalator, currentValue)=>accumalator + currentValue)
+      setTotalCart(subTotal)
+    }
+  },[cartItems])
 
 
 
@@ -39,7 +38,7 @@ export const CartItemsList = ()=> {
 
             
       {
-        itemsCartAdded.map((product, index)=>{
+        cartItems.map((product, index)=>{
           return <CartItem product={product} index={index} key={index}/>
         })
       }

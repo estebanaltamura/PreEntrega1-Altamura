@@ -5,17 +5,15 @@ import "./OrderItemList.css"
 
 export const OrderItemList = ()=> {
 
-    const { itemsCartAdded } = useContext(CartContext)
+  const { cartItems } = useContext(CartContext)
 
-
-    return(
-        <div className="orderItemList">
-            <>
-                {
-
-                    itemsCartAdded.map((product, index)=>{ return <OrderItem product={product} key={index} />} )
-                }
-            </>
-        </div>
-    )
+  return(
+    <div className="orderItemList">
+      <>
+        {
+          cartItems.map((product, index)=>{ return <OrderItem product={product} key={index} />} )
+        }
+      </>
+    </div>
+  )
 }

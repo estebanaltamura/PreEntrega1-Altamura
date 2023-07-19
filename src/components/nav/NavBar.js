@@ -9,14 +9,13 @@ import "./NavBar.css"
  
 export const NavBar =()=>{
 
-  const { itemsCartAdded }  = useContext(CartContext)    
+  const { cartItems }       = useContext(CartContext)    
   const { currentURL }      = useContext(URLDataContext)
   const { setIsLoading }    = useContext(IsLoadingContext)
 
   const [totalQuantityItemsCart, setTotalQuantityItemsCart] = useState(0)    
   
-  const togglerButtonMenu = useRef()    
-
+  const togglerButtonMenu = useRef() 
 
   const onClickNavLinkHandler = ()=>{
     setIsLoading(true)
@@ -45,10 +44,10 @@ export const NavBar =()=>{
     !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()
   },[currentURL])
     
-  useEffect(()=>{
-    const quantityItems = itemsCartAdded.length > 1 ? itemsCartAdded.reduce((accumulator, partial)=>{return accumulator+partial.quantity},0) : itemsCartAdded.length === 1 ? itemsCartAdded[0].quantity : 0
+  useEffect(()=>{    
+    const quantityItems = cartItems.length > 1 ? cartItems.reduce((accumulator, partial)=>{return accumulator+partial.quantity},0) : cartItems.length === 1 ? cartItems[0].quantity : 0
     setTotalQuantityItemsCart(quantityItems)
-  },[itemsCartAdded])
+  },[cartItems])
     
   return(
     <header>

@@ -8,7 +8,7 @@ import "./CustomOrder.css"
 
 export const CustomOrder = ()=>{
 
-    const { itemsCartAdded } = useContext(CartContext)
+    const { cartItems } = useContext(CartContext)
     const { isLoading } = useContext(IsLoadingContext)
 
     useEffect(()=>{
@@ -31,7 +31,7 @@ export const CustomOrder = ()=>{
                     :
                     <>
                         <Form />
-                        {itemsCartAdded.length > 0 && <OrderItemListContainer />}       
+                        {cartItems.length > 0 && <OrderItemListContainer />}       
                     </>
                 }
             </>

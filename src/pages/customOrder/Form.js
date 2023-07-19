@@ -13,7 +13,7 @@ import "./Form.css"
 export const Form = ()=>{
 
     const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useLoginValidator()
-    const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
+    const { cartItems, dispatch } = useContext(CartContext)
     const {setIsLoading} = useContext(IsLoadingContext)
 
     const history = useNavigate()
@@ -44,8 +44,8 @@ export const Form = ()=>{
                     lastOrderIdNumber++
                 }
                 
-                addDoc(queryCollection, {internalOrderId: lastOrderIdNumber || 1, fullname: fullNameValue,  phoneNumber: phoneValue, isActive: true, email: mailValue, ...itemsCartAdded}).then(res=>{
-                   setItemsCartAdded([])
+                addDoc(queryCollection, {internalOrderId: lastOrderIdNumber || 1, fullname: fullNameValue,  phoneNumber: phoneValue, isActive: true, email: mailValue, ...cartItems}).then(res=>{
+                   dispatch({type: "CLEAR_CART"})
                    history(`/orderCreated/${res.id || 1}`)   
                    setIsLoading(false)                
                 }).catch(error=>{
