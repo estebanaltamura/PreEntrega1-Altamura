@@ -152,7 +152,9 @@ export const NavBar =()=>{
                   </NavLink>
                 </li>
             </ul>
-                    
+            <NavLink to ="/cart">
+              <BsCart4 className="carroDesktop" /> 
+            </NavLink>                    
           </div>
         </div>
       </nav>

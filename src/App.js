@@ -6,7 +6,7 @@ import { Collection } from './pages/collections/Collection';
 
 import { NavBar } from './components/nav/NavBar';
 import { ItemDetailsContainer } from './components/productDetailsComponents/ItemDetailsContainer';
-import { CartItemsContainer } from './pages/cart/CartItemsContainer';
+import { Cart } from './pages/cart/Cart';
 import { Payment } from './components/payment/Payment';
 import { AboutUs } from './pages/aboutUs/AboutUs';
 import { ContactUs } from './pages/contactUs/ContactUs';
@@ -14,6 +14,7 @@ import { Footer } from './components/footer/Footer';
 import { CustomOrder } from './pages/customOrder/CustomOrder';
 import { OrderCreated } from './components/orderCreated/OrderCreated';
 import './App.css';
+
 
 
 function App() {  
@@ -37,7 +38,7 @@ function App() {
         <Route path="/aboutUs"                                  element = {<AboutUs />}/>
         <Route path="/contactUs"                                element = {<ContactUs />}/>
         <Route path="/products/:idCollection/:idProduct"        element = {<ItemDetailsContainer />}/>
-        <Route path="/cart"                                     element = {<CartItemsContainer />}/>
+        <Route path="/cart"                                     element = {<Cart />}/>
         <Route path="/customOrder"                              element = {<CustomOrder />}/>
         <Route path="/orderCreated/:orderId"                    element = {<OrderCreated />}/>
         <Route path="/payment"                                  element = {<Payment />}/>
@@ -48,3 +49,8 @@ function App() {
 }
 
 export default App;
+
+
+// No cierra el menu ante cambio de paginas y clickeo afuera del area. chequear
+// Hacer full responsive home y colecciones
+// Analizar hacer custom hooks para home, collection y navBar
