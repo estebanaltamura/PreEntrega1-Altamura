@@ -31,8 +31,8 @@ export const NavBar =()=>{
           parentClass !== "container-fluid"  && 
           parentClass !== "navbar-toggler"   &&
           parentClass !== "corousel"         
-        ){          
-          !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()
+        ){               
+            !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()
       }                   
     }
 
@@ -40,7 +40,10 @@ export const NavBar =()=>{
 
     return ()=> window.removeEventListener("click", headerLostFocus)
   },[]) 
-
+  
+  useEffect(()=>{
+    !togglerButtonMenu.current.className.includes("collapsed") && togglerButtonMenu.current.click()
+  },[currentURL])
     
   useEffect(()=>{
     const quantityItems = itemsCartAdded.length > 1 ? itemsCartAdded.reduce((accumulator, partial)=>{return accumulator+partial.quantity},0) : itemsCartAdded.length === 1 ? itemsCartAdded[0].quantity : 0
@@ -63,7 +66,7 @@ export const NavBar =()=>{
               <h1 className="logo">PANDORA</h1>
           </NavLink>                        
           
-          <NavLink to ="/cart">
+          <NavLink to ="/cart" onClick={currentURL.section === "cart" ? null : onClickNavLinkHandler}>
             <BsCart4 className="carro" /> 
           </NavLink>
           
@@ -147,13 +150,14 @@ export const NavBar =()=>{
                   <NavLink 
                     className="link" 
                     to = "/contactUs" 
-                    onClick={currentURL.section === "constactUs" ? null : onClickNavLinkHandler}>
+                    onClick={currentURL.section === "contactUs" ? null : onClickNavLinkHandler}>
                       Contact Us
                   </NavLink>
                 </li>
             </ul>
-            <NavLink to ="/cart">
-              <BsCart4 className="carroDesktop" /> 
+            <NavLink to ="/cart" onClick={currentURL.section === "cart" ? null : onClickNavLinkHandler}>
+              <BsCart4 className="carroDesktop"/> 
+                
             </NavLink>                    
           </div>
         </div>

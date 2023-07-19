@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useContext, useState, useRef, useEffect } from "react"
 import { CartContext } from "../../contexts/CartContextProvider";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { AiOutlinePlusSquare, AiOutlineMinusSquare} from "react-icons/ai";
 import "./ItemDetails.css"
 
@@ -11,6 +12,7 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
   const history = useNavigate()
   const nextButtonCarrousel = useRef()
   const {itemsCartAdded, setItemsCartAdded} = useContext(CartContext)
+  const { setIsLoading } = useContext(IsLoadingContext)
   const [quantity, setQuantity] = useState(1)
   
 
@@ -62,11 +64,13 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
   }
 
   const onClickATChandler = ()=>{
+    setIsLoading(true)
     addToCart()
     history("/cart")
   }
 
   const onClickBINhandler = ()=>{
+    setIsLoading(true)
     addToCart()
     history("/customOrder")
   }

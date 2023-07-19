@@ -1,23 +1,25 @@
-import { useContext, useEffect, useRef } from "react"
+import { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../contexts/CartContextProvider"
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsFillTrashFill } from "react-icons/bs";
 import { ItemListCart } from "../../components/cartComponents/ItemListCart";
 import { getUrl } from "../../mercadopago";
+import Spinner from '../../assets/spinner.gif';
 import "./Cart.css"
 
 export const Cart = ()=>{
 
   const { itemsCartAdded, setItemsCartAdded } = useContext(CartContext)
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)
-  const mainContainerCart = useRef()
+ 
    
   const onEmptyCartClickHandler = ()=> setItemsCartAdded([])
 
   useEffect(()=>{
     
-    setIsLoading(true)
+    itemsCartAdded.length === 0 && setIsLoading(false)
+    
     window.scroll({
       top: 0,
       left: 0,
@@ -26,19 +28,16 @@ export const Cart = ()=>{
         //eslint-disable-next-line
   },[])
 
-  useEffect(()=>{
-    
-    (!isLoading && itemsCartAdded.length > 0) && mainContainerCart.current.classList.replace("hidden", "mainContainerCart")     
-    //eslint-disable-next-line   
-  },[isLoading])
-
   return(
     <>  
       {
         itemsCartAdded.length > 0 ?
           <>  
-           
-            <main ref={mainContainerCart} className="hidden">
+            <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
+              <img src={Spinner} />           
+            </div> 
+
+            <main className={isLoading === true ? "hidden" : "mainContainerCart"}>
               <div className="contenedorItems redondeado">
                 <ItemListCart />
               </div>
@@ -66,8 +65,8 @@ export const Cart = ()=>{
 
                                             :
 
-          <>
-            <main className="mainContainerCart">
+          <>            
+            <main className="mainContainerCart" >
               <div className="paymentButtonsContainer">
                 <h3>Your cart is currently empty</h3>
                 <Link className="botonesCarro" to="/home">CONTINUE SHOPPING</Link>                    
