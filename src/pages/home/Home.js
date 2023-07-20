@@ -3,7 +3,6 @@ import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { ScreenWidthContext } from "../../contexts/ScreenWidthContextProvider";
 import { useSyntheticMediaQueries } from "../../hooks/useSyntheticMediaQueries";
 import { useVeryImportantComponentsLoad } from "../../hooks/useVeryImportantComponentsLoad";
-
 import { CoverImage } from "../../components/homeBlocks/1-coverImage/CoverImage";
 import { CollectionsTitle } from "../../components/homeBlocks/2-collectionsTitle/CollectionsTitle"
 import { Collection1 } from "../../components/homeBlocks/3-collection1/Collection1"

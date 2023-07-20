@@ -17,7 +17,6 @@ export const Collection = ()=>{
 
   const history = useNavigate()
   const VIIcounterRef = useRef(0)
-
   
   const getCollectionData = async (idCollection)=>{
     try {        

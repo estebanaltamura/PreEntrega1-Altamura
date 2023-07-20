@@ -9,9 +9,7 @@ export const CartItemsList = ()=> {
 
   const { cartItems }       = useContext(CartContext)
   const { screenWidth }     = useContext(ScreenWidthContext)
-  const [ totalCart, setTotalCart ] = useState([])
-
-  
+  const [ totalCart, setTotalCart ] = useState([])  
 
   useEffect(()=>{    
     if (cartItems.length ===  0){

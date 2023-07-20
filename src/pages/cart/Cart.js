@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useReducer } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../contexts/CartContextProvider"
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
@@ -9,7 +9,6 @@ import { getUrl } from "../../mercadopago";
 import Spinner from '../../assets/spinner.gif';
 import "./Cart.css"
 
-
 export const Cart = ()=>{
 
   const { cartItems, dispatch  } = useContext(CartContext)
@@ -17,12 +16,9 @@ export const Cart = ()=>{
 
   const cartItemQuantityLoadedRef = useRef(0)
 
-  const onEmptyCartClickHandler = ()=> dispatch({type: "CLEAR_CART"})
- 
-  
+  const onEmptyCartClickHandler = ()=> dispatch({type: "CLEAR_CART"})  
   
   const cartItemLoadHandler = (e)=>{
-
     const classOfElementJustLoaded = e.target.classList[0]
 
     const areCartItemLoaded = (classOfElementJustLoaded)=>{
@@ -40,27 +36,20 @@ export const Cart = ()=>{
     areCartItemLoaded(classOfElementJustLoaded)  
   }
 
-
   const onClickHandler = (event)=>{
     const id = event.target.parentNode.id
-    if(!isNaN(id)){  
-      console.log(event.target.id)    
+    if(!isNaN(id)){          
       event.target.id === "lessQuantityIcon"  && dispatch({type: "SUBTRACT_ITEM", id})
       event.target.id === "moreQuantityIcon"  && dispatch({type: "ADD_ITEM", id})  
       event.target.id === "removeIcon"        && dispatch({type: "REMOVE_ITEM", id})
-
     }
   }
-
 
   const onCLickContinueButtonHandler = ()=>{
     setIsLoading(true)
   }
 
-
-
-  useEffect(()=>{   
-    
+  useEffect(()=>{       
     //cartItems.length === 0 && setIsLoading(false)
     
     window.scroll({
@@ -105,8 +94,7 @@ export const Cart = ()=>{
               </div>
             </main>
           </>
-      }
-            
+      }            
     </>
   )
 }

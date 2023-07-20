@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useRecoverDataCartFromLocalStorage } from './hooks/useRecoverDataCartFromLocalStorage';
 import { Home } from './pages/home/Home';
 import { Collection } from './pages/collections/Collection';
-
 import { NavBar } from './components/nav/NavBar';
 import { ItemDetailsContainer } from './components/productDetailsComponents/ItemDetailsContainer';
 import { Cart } from './pages/cart/Cart';
@@ -47,7 +46,7 @@ function App() {
     </>   
   );
 }
-
+ 
 export default App;
 
 
@@ -56,4 +55,7 @@ export default App;
 // Analizar hacer custom hooks para home, collection y navBar
 // bajar el footer en cart y contactUs para que quede fuera de vista
 // Tamaño del menu, separacion entre secciones
+
+
+// acomodar product, custom order
    
