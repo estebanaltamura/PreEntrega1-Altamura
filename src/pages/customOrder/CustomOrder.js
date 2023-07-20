@@ -1,42 +1,42 @@
-import { Form } from "./Form"
 import { useContext, useEffect } from "react";
 import { CartContext } from "../../contexts/CartContextProvider";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
-import { OrderItemListContainer } from "./OrderItemListContainer";
-import Spinner from 'react-bootstrap/Spinner';
+import { FormCustomOrder } from "../../components/customOrderComponents/formCustomOrderComponents/FormCustomOrder";
+import { CustomOrderSummary } from "../../components/customOrderComponents/customOrderSummary/CustomOrderSummary";
+import Spinner from '../../assets/spinner.gif';
 import "./CustomOrder.css"
 
 export const CustomOrder = ()=>{
 
-    const { cartItems } = useContext(CartContext)
-    const { isLoading } = useContext(IsLoadingContext)
+  const { cartItems } = useContext(CartContext)
+  const { isLoading } = useContext(IsLoadingContext)
 
-    useEffect(()=>{
-        window.scroll({
-            top: 0,
-            left: 0,
-            behavior: "instant"
-        })
-    },[])
-    return(
-        <div className="mainContainerCustomOrder">
-
-            <>
-                {
-                    isLoading ?
-                        <div className="spinnerContainer" >
-                            <Spinner animation="border" role="status" className="spinner">
-                            </Spinner> 
-                        </div> 
-                    :
-                    <>
-                        <Form />
-                        {cartItems.length > 0 && <OrderItemListContainer />}       
-                    </>
-                }
-            </>
-                
-        </div>
-
-    )
+  useEffect(()=>{
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "instant"
+    })
+  },[])
+    
+  return(
+    <div className="mainContainerCustomOrder">
+      <>
+        <FormCustomOrder />
+        <CustomOrderSummary />
+      </>                
+    </div>
+  )
 }
+
+// {
+//   isLoading ?
+//     <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
+//       <img src={Spinner} />        
+//     </div>   
+//             :
+//     <>
+//       <FormCustomOrder />
+//       {cartItems.length > 0 && <CustomOrderSummary />}       
+//     </>
+// }

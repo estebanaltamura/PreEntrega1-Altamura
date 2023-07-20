@@ -4,17 +4,17 @@ import { useRecoverDataCartFromLocalStorage } from './hooks/useRecoverDataCartFr
 import { Home } from './pages/home/Home';
 import { Collection } from './pages/collections/Collection';
 import { NavBar } from './components/nav/NavBar';
-import { ItemDetailsContainer } from './components/productDetailsComponents/ItemDetailsContainer';
+import { ProductDetailsContainer } from './pages/products/ProductDetailsContainer';
 import { Cart } from './pages/cart/Cart';
 import { Payment } from './components/payment/Payment';
 import { AboutUs } from './pages/aboutUs/AboutUs';
 import { ContactUs } from './pages/contactUs/ContactUs';
 import { Footer } from './components/footer/Footer';
 import { CustomOrder } from './pages/customOrder/CustomOrder';
+
+
 import { OrderCreated } from './components/orderCreated/OrderCreated';
 import './App.css';
-
-
 
 function App() {  
  
@@ -36,7 +36,7 @@ function App() {
         <Route path="/collections/New arrivals - Backpacks"     element = {<Collection key="NewArrivalsCollection"/>}/>              
         <Route path="/aboutUs"                                  element = {<AboutUs />}/>
         <Route path="/contactUs"                                element = {<ContactUs />}/>
-        <Route path="/products/:idCollection/:idProduct"        element = {<ItemDetailsContainer />}/>
+        <Route path="/products/:idCollection/:idProduct"        element = {<ProductDetailsContainer />}/>
         <Route path="/cart"                                     element = {<Cart />}/>
         <Route path="/customOrder"                              element = {<CustomOrder />}/>
         <Route path="/orderCreated/:orderId"                    element = {<OrderCreated />}/>
@@ -57,5 +57,5 @@ export default App;
 // Tamaño del menu, separacion entre secciones
 
 
-// acomodar product, custom order
+// acomodar product, custom order, spinner
    

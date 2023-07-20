@@ -3,9 +3,9 @@ import { useContext, useState, useRef, useEffect } from "react"
 import { CartContext } from "../../contexts/CartContextProvider";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { AiOutlinePlusSquare, AiOutlineMinusSquare} from "react-icons/ai";
-import "./ItemDetails.css"
+import "./ProductDetails.css"
 
-export const ItemDetails = ({name, price, images, description, productData})=>{
+export const ProductDetails = ({name, price, images, description, productData})=>{
   
   const { dispatch}       = useContext(CartContext)
   const { setIsLoading }  = useContext(IsLoadingContext)
@@ -13,8 +13,7 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
   const [quantity, setQuantity] = useState(1)
 
   const history = useNavigate()
-  const nextButtonCarrousel = useRef()
-  
+  const nextButtonCarrousel = useRef()  
 
   useEffect(()=>{
     const interval = setTimeout(()=>nextButtonCarrousel.current.click(), 2500)
@@ -43,9 +42,7 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
       quantity: quantity
     })    
     history("/cart")
-  }
-
-  
+  }  
   
   return(
     <>
@@ -94,6 +91,6 @@ export const ItemDetails = ({name, price, images, description, productData})=>{
         
       <h3 className="tituloDescripcion">Descripcion</h3>
       <p className="descripcion">{description}</p>
-        </>
-    )
+    </>
+  )
 }

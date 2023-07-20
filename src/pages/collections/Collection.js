@@ -62,7 +62,7 @@ export const Collection = ()=>{
   },[currentURL])
 
   useEffect(()=>{       
-
+ 
     window.scroll({
       top: 0,
       left: 0,

@@ -1,12 +1,11 @@
 import {useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import Spinner from 'react-bootstrap/Spinner';
 import { getFirestore, doc, collection, getDocs, where, query } from "firebase/firestore"; 
-import { ItemDetails } from "./ItemDetails.js";
-import "./ItemDetailsContainer.css"
+import { ProductDetails } from '../../components/productDetailsComponents/ProductDetails';
+import Spinner from '../../assets/spinner.gif';
+import "./ProductDetailsContainer.css"
 
-
-export const ItemDetailsContainer = ()=>{
+export const ProductDetailsContainer = ()=>{
 
   const {idProduct, idCollection} = useParams() 
   const [productData, setProductData] = useState({})
@@ -47,12 +46,11 @@ export const ItemDetailsContainer = ()=>{
   return(        
     <div className="ItemDetailsContainer">
       {isLoading === true ? 
-        <div className="spinnerContainer" >
-          <Spinner animation="border" role="status" className="spinner">
-          </Spinner> 
-        </div> 
+        <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
+          <img src={Spinner} />        
+        </div>       
               : 
-        <ItemDetails name={productData.name} price={productData.price} images={productData.images} description={productData.longDescription} productData={productData}/>
+        <ProductDetails name={productData.name} price={productData.price} images={productData.images} description={productData.longDescription} productData={productData}/>
       }
     </div>     
   )   

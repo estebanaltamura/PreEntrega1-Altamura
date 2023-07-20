@@ -65,9 +65,9 @@ export const Cart = ()=>{
       {         
         cartItems.length > 0  ?
           <>  
-            <div className={isLoading === true ? "spinnerContainer" : "hidden"}>      
-              <img src={Spinner} />           
-            </div> 
+            <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
+              <img src={Spinner} />        
+            </div>      
 
             <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler} onClick={onClickHandler}>              
               <div className="contenedorItems redondeado">

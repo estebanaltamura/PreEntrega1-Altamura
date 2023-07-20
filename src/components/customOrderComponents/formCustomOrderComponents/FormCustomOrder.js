@@ -1,18 +1,18 @@
-import { useLoginValidator } from "./useLoginValidator"
+
 import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "firebase/firestore";
 import { useContext } from "react";
-import { CartContext } from "../../contexts/CartContextProvider";
-import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
+import { useFormInfoValidator} from '../../../hooks/useFormInfoValidator'
+import { CartContext } from "../../../contexts/CartContextProvider";
+import { IsLoadingContext } from "../../../contexts/IsLoadingContextProvider";
 import { TbHelp } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
-
 import withReactContent from 'sweetalert2-react-content'
-import "./Form.css"
+import "./FormCustomOrder.css"
 
-export const Form = ()=>{
+export const FormCustomOrder = ()=>{
 
-    const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useLoginValidator()
+    const { fullNameValidator, telephoneValidator,  mailValidator, resetAlerts, fullNameAlert, phoneAlert, mailAlert } = useFormInfoValidator()
     const { cartItems, dispatch } = useContext(CartContext)
     const {setIsLoading} = useContext(IsLoadingContext)
 

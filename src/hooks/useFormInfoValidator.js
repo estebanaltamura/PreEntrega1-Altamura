@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const useLoginValidator = (e)=>{
+export const useFormInfoValidator = (e)=>{
     
     const [fullNameAlert, setFullNameAlert] = useState("")
     const [mailAlert, setMailAlert] = useState("")

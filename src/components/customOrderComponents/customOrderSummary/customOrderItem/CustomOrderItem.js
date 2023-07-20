@@ -1,6 +1,6 @@
-import "./OrderItem.css"
+import "./CustomOrderItem.css"
 
-export const OrderItem = ({product})=> {
+export const CustomOrderItem = ({product})=> {
     return (
         <>
             <div className="customOrderItem">
