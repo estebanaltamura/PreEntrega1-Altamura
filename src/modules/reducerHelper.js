@@ -32,7 +32,7 @@ const removeItem = (cartItems, index)=>{
   return cartItemsCopy
 }
 
-const addToCart = (cartItems, index, quantity)=>{
+const addToCartRepeatedItem = (cartItems, index, quantity)=>{
   const cartItemsCopy = [...cartItems] 
   const currentQuantity = cartItemsCopy[index].quantity
   cartItemsCopy[index] = {...cartItemsCopy[index], quantity: currentQuantity + quantity, subTotal: cartItemsCopy[index].price * (currentQuantity + quantity)}
@@ -46,7 +46,7 @@ export const reducerHelper = {
   "removeItem"        : removeItem,
   "addQuantity"       : addQuantity,
   "subtractQuantity"  : subtractQuantity,
-  "addToCart"         : addToCart
+  "addToCart"         : addToCartRepeatedItem
 }
 
   

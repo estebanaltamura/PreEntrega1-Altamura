@@ -3,7 +3,8 @@ import { Link } from "react-router-dom"
 import { CartContext } from "../../contexts/CartContextProvider"
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsFillTrashFill } from "react-icons/bs";
-import { CartItemsList } from "../../components/cartComponents/CartItemsList"
+import { CartItemsList } from "../../components/cartComponents/cartItemsListComponents/CartItemsList";
+import { PaymentOptions } from "../../components/cartComponents/paymentOptions/PaymentOptions";
 import { getUrl } from "../../mercadopago";
 import Spinner from '../../assets/spinner.gif';
 import "./Cart.css"
@@ -17,7 +18,7 @@ export const Cart = ()=>{
   const cartItemQuantityLoadedRef = useRef(0)
 
   const onEmptyCartClickHandler = ()=> dispatch({type: "CLEAR_CART"})
-
+ 
   
   
   const cartItemLoadHandler = (e)=>{
@@ -72,38 +73,25 @@ export const Cart = ()=>{
 
   return(
     <> 
-      { 
-        
-        
+      {         
         cartItems.length > 0  ?
           <>  
             <div className={isLoading === true ? "spinnerContainer" : "hidden"}>      
               <img src={Spinner} />           
             </div> 
 
-            <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler} onClick={onClickHandler}>
+            <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler} onClick={onClickHandler}>              
               <div className="contenedorItems redondeado">
                 <CartItemsList />
               </div>
 
-              <button onClick={onEmptyCartClickHandler} className="emptyCart"><BsFillTrashFill />Empty Cart</button> 
+              <button onClick={onEmptyCartClickHandler} className="emptyCartButton"><BsFillTrashFill />Empty Cart</button> 
 
-              <div className="paymentButtonsContainer">                                                               
-                <h4>Credit card payments</h4>
-                <Link className="botonesCarro MPButton" to="/payment">
-                  <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="" />
-                  CONTINUE TO CHECKOUT
-                </Link>
-
-                <h4>Bank transfer payment method</h4>
-                <Link className="botonesCarro customOrderButton" to="/customOrder">                                    
-                  CREATE CUSTOM ORDER
-                </Link>
+              <PaymentOptions />
+                                    
+              <div className="lineCart"></div>
                 
-                <div className="line"></div>
-                
-                <Link className="botonesCarro" to="/home" onClick={onCLickContinueButtonHandler}>CONTINUE SHOPPING</Link>                                 
-              </div>
+              <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>CONTINUE SHOPPING</Link>                                 
             </main>
           </>
 
@@ -113,7 +101,7 @@ export const Cart = ()=>{
             <main className="mainContainerCart" >
               <div className="paymentButtonsContainer">
                 <h3>Your cart is currently empty</h3>
-                <Link className="botonesCarro" to="/home" onClick={onCLickContinueButtonHandler}>CONTINUE SHOPPING</Link>                    
+                <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>CONTINUE SHOPPING</Link>                    
               </div>
             </main>
           </>

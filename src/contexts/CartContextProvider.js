@@ -22,7 +22,7 @@ const reducer = (cartItems, action)=>{
       const id            = action.item.id  
       const index         = reducerHelper.findIndexOfById(cartItems, action.item.id)
       const quantity      = action.quantity       
-      return reducerHelper.isItemRepeated(cartItems, id) ? reducerHelper.addToCart(cartItems, index, quantity) : [...cartItems, newItemToAdd]
+      return reducerHelper.isItemRepeated(cartItems, id) ? reducerHelper.addToCartRepeatedItem(cartItems, index, quantity) : [...cartItems, newItemToAdd]
     }
      
     case types.ADD_ITEM:{

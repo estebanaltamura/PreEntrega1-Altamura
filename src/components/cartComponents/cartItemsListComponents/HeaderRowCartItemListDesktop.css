@@ -1,0 +1,23 @@
+.itemHeader {
+  display: grid;
+  width: 100%;
+  height: 50px;
+  grid-template-columns: 120px 1fr 100px 100px 80px 100px 50px;
+  grid-template-rows: 50px;
+  grid-template-areas: "vacio productNameHeaderCart priceHeaderCart quantityHeaderCart quantityHeaderModifier subTotalHeaderCart eliminarItemHeader";
+  border-bottom: 3px solid black;
+  text-align: center;
+  align-items: center;
+  font-size: 15px; }
+  
+.productNameHeaderCart {
+  grid-area: productNameHeaderCart; } 
+  
+.priceHeaderCart {
+  grid-area: priceHeaderCart; }
+  
+.quantityHeaderCart {
+  grid-area: quantityHeaderCart; }
+  
+.subTotalHeaderCart {
+  grid-area: subTotalHeaderCart; }
