@@ -1,19 +1,19 @@
 .customOrderItemTotal{
-    display: grid;
-    align-items: center;
-    text-align: center;
-    height: 30px;
-    width: 100%;
-    grid-template-columns: 100px 1fr 1fr 1fr;
-    grid-template-rows: 30px;
-    grid-template-areas: "empty empty title total";
+  display: grid;
+  align-items: center;
+  text-align: center;
+  height: 30px;
+  width: 100%;
+  grid-template-columns: 100px 1fr 1fr 1fr;
+  grid-template-rows: 30px;
+  grid-template-areas: "empty empty title total";
 }
 
 .customOrderTotal{
-    width: 100%;
-    grid-area: total;
+  width: 100%;
+  grid-area: total;
 }
 
 .customOrderTotalTitle{
-    grid-area: title;
+  grid-area: title;
 }

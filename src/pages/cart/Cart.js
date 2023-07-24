@@ -5,7 +5,7 @@ import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsFillTrashFill } from "react-icons/bs";
 import { CartItemsList } from "../../components/cartComponents/cartItemsListComponents/CartItemsList";
 import { PaymentOptions } from "../../components/cartComponents/paymentOptions/PaymentOptions";
-import { getUrl } from "../../mercadopago";
+import { getUrl } from "../../services/useMercadoPagoService";
 import Spinner from '../../assets/spinner.gif';
 import "./Cart.css"
 
