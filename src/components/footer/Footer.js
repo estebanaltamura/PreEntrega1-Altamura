@@ -45,7 +45,7 @@ export const Footer = () => {
 
         <a
           className="footerContact  footerGit"
-          href="https://github.com/estebanaltamura/flixfinder"
+          href="https://github.com/estebanaltamura/pandoraBackpacks"
           target="_blank"
         >
           <FiGithub className="footerGitIcon" />
@@ -56,7 +56,7 @@ export const Footer = () => {
 
         <a
           className="footerContact  footerLinkedin"
-          href="https://www.linkedin.com/in/andr%C3%A9s-altamura-51a55721b/"
+          href="https://www.linkedin.com/in/andres-altamura/"
           target="_blank"
         >
           <AiOutlineLinkedin className="footerLinkedinIcon" />
@@ -66,7 +66,7 @@ export const Footer = () => {
         <span className="footerDivider">|</span>
 
         <a
-          className="footerContact  footerCV"
+          className="footerContact footerCV"
           href="https://drive.google.com/file/d/1mtmtr9O5xsUEh-rHeL2pf0NyAr5msYuc/view?usp=sharing"
           target="_blank"
         >
