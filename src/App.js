@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { IsLoadingContext } from './contexts/IsLoadingContextProvider';
 import { useRecoverDataCartFromLocalStorage } from './hooks/useRecoverDataCartFromLocalStorage';
 import { Home } from './pages/home/Home';
 import { Collection } from './pages/collections/Collection';
@@ -11,13 +12,11 @@ import { AboutUs } from './pages/aboutUs/AboutUs';
 import { ContactUs } from './pages/contactUs/ContactUs';
 import { Footer } from './components/footer/Footer';
 import { CustomOrder } from './pages/customOrder/CustomOrder';
-
-
 import { OrderCreated } from './components/orderCreated/OrderCreated';
 import './App.css';
 
 function App() {  
- 
+  const { isLoading } = useContext(IsLoadingContext) 
   const { recoverCartDataFromLocalStorage } = useRecoverDataCartFromLocalStorage()
     
   useEffect(()=>{        
@@ -42,7 +41,7 @@ function App() {
         <Route path="/orderCreated/:orderId"                    element = {<OrderCreated />}/>
         <Route path="/payment"                                  element = {<Payment />}/>
       </Routes>
-      <Footer />
+      {!isLoading && <Footer />}
     </>   
   );
 }

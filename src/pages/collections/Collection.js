@@ -36,7 +36,7 @@ export const Collection = ()=>{
   }; 
   
   const onLoadHandler = (e)=>{
-    const elementJustLoaded = e.target.classList[0] 
+    const elementJustLoaded = e.target.classList.value.includes('imagenCard') &&  e.target.classList[0]    
 
     if(VIIcounterRef.current < 6){      
       if (elementJustLoaded === "imagenCard1" ||
