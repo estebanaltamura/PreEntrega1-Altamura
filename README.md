@@ -8,13 +8,13 @@ Pandora Mochilas es un ecommerce simulado de mochilas desarrollado en React. Pre
 https://www.pandorabackpacks.online
 
 ### Características Principales:
-* E-Commerce Completo: Venta integral de mochilas con carrito de compras.
+* E-Commerce Completo: Experiencia integral de compra con carrito de compras.
 * Integración con MercadoPago: Proceso de pago integrado con MercadoPago, con credenciales de prueba para testear.
-* Formulario de Orden Personalizada: El usuario puede proporcionar datos a través de un formulario. Estos datos, junto con la orden de compra, son persistidos en Firestore, * permitiendo al vendedor contactarse posteriormente para completar la transacción.
+* Formulario de Orden Personalizada: El usuario puede proporcionar datos a través de un formulario. Estos datos, junto con la orden de compra, son persistidos en Firestore, permitiendo al vendedor contactarse posteriormente para completar la transacción.
 * Experiencia de Usuario Optimizada: Atención especial en garantizar que nunca se muestren imágenes en proceso de carga o contenido desordenado. Un spinner aparece hasta que todo el contenido esté completamente cargado y renderizado.
 * Persistencia de Carrito: Los productos añadidos al carrito se almacenan en un contexto global y en el local storage. Esto asegura que el carrito se recupere incluso después de cerrar el navegador.
 * Servidor con NodeJS: Desarrollado para interactuar con la API de MercadoPago, implementado en una instancia EC2 de AWS.
-* ersistencia de Datos en Firestore: Los datos del formulario de contacto y la información de la orden de compra son almacenados en Firestore.
+* Persistencia de Datos en Firestore: Los datos del formulario de contacto y la información de la orden de compra son almacenados en Firestore.
 
 
 ### Tecnologías y Dependencias 📦
