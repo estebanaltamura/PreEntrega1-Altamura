@@ -1,46 +1,47 @@
-# Pandora Mochilas
-## Resumen
-
-Pandora Mochilas es un ecommerce simulado de mochilas desarrollado en React que integra todos los procesos menos la integración con un medio de pago.
-
-## Características
-*Persiste los datos del carro de compras en el local storage para poder recuperar la información ante una recarga o cierre de la página. El evento que dispara la carga de datos al storage es el unload y en el load se descargan. Mientras la página está en uso con normalidad no se persisten los datos del carro en el storage. Si en un contexto global
-
-*Se usaron métodos para que las imágenes no carguen una a una sino que el usuario vea las imágenes aparecer en un solo momento
-
-*Mientras se espera que todo esté cargado para mostrarle al usuario se utilizaron estados loading para colocar un spinner en el proceso
-
-*Hay un contexto global para los artículos agregados al carrito
-
-*Las imágenes están hosteadas en un storage de imágenes
-
-*Tanto los productos con todas sus características y rutas a recursos como las órdenes, se persisten en Firebase
-
-*Se crearon dos escenarios para la finalización de una compra. El pago con tarjeta en el cual como última pantalla muestra el objeto que se le pasaría a MercadoPago en el caso que este proyecto hubiese montado un servidor y se hubiese integrado MercadoPago y la otra opción es una opción custom en el cual hay que dejar los datos para que el vendedor luego lo contacte, en el cual el ecommerce persiste en Firebase todos los productos de la transacción más los datos que completó el usuario en el formulario en una orden.
-
-## Dependencias (ademas de las dependecias basicas de npx create-react-app en su version 18.2.0)
-- React-router-dom: 6.8.1
-- Firebase: 9.18.0
-- React-bootstrap: 2.7.2
-- React-icons: 4.7.1
-- Sweetalert2: 11.7.3
-- Sweetalert2-react-content: 5.0.7
+### Pandora Backpacks 🎒
 
 
-## Instalación
-* Clona el repositorio a tu máquina local
-* Abre la carpeta del proyecto en tu terminal
-* Ejecuta el comando npm install para instalar todas las dependencias
-* Ejecuta el comando npm start para iniciar la aplicación
+Descripción:  
+Pandora Mochilas es un ecommerce simulado de mochilas desarrollado en React. Presenta un formulario de contacto cuyos datos se persisten en Firestore y el proceso de pago está integrado con MercadoPago.
 
-## Contribución
-Las contribuciones son bienvenidas. Si quieres contribuir a este proyecto, por favor sigue los siguientes pasos:
+### Visitar sitio web 🌐
+https://www.pandorabackpacks.online
 
-* Haz un fork de este repositorio
-* Crea una nueva rama (git checkout -b feature)
-* Haz tus cambios y guarda las modificaciones (git commit -am 'Add some feature')
-* Empuja los cambios a la rama (git push origin feature)
-* Abre un pull request
+### Características Principales:
+* E-Commerce Completo: Venta integral de mochilas con carrito de compras.
+* Integración con MercadoPago: Proceso de pago integrado con MercadoPago, con credenciales de prueba para testear.
+* Formulario de Orden Personalizada: El usuario puede proporcionar datos a través de un formulario. Estos datos, junto con la orden de compra, son persistidos en Firestore, * permitiendo al vendedor contactarse posteriormente para completar la transacción.
+* Experiencia de Usuario Optimizada: Atención especial en garantizar que nunca se muestren imágenes en proceso de carga o contenido desordenado. Un spinner aparece hasta que todo el contenido esté completamente cargado y renderizado.
+* Persistencia de Carrito: Los productos añadidos al carrito se almacenan en un contexto global y en el local storage. Esto asegura que el carrito se recupere incluso después de cerrar el navegador.
+* Servidor con NodeJS: Desarrollado para interactuar con la API de MercadoPago, implementado en una instancia EC2 de AWS.
+* ersistencia de Datos en Firestore: Los datos del formulario de contacto y la información de la orden de compra son almacenados en Firestore.
 
-## Licencia
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más información.
+
+### Tecnologías y Dependencias 📦
+React 18.2
+react-router-dom
+Firebase (Firestore)
+Bootstrap
+react-icons
+uuid
+sweetalert2
+react-copy-to-clipboard
+
+
+### Instalación y Uso 🚀
+Clonar el repositorio:
+* git clone https://github.com/estebanaltamura/pandoraBackpacks.git
+
+* Navegar al directorio del proyecto:
+cd pandoraBackpacks
+
+* Instalar las dependencias:
+npm install
+
+* Ejecutar en modo desarrollo:
+npm start
+
+Nota: La aplicación debería abrirse en tu navegador predeterminado en la dirección http://localhost:3000/
+
+Licencia 📜
+Este proyecto se encuentra bajo la licencia MIT.

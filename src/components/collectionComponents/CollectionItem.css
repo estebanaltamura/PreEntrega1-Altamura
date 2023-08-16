@@ -31,9 +31,7 @@
   font-weight: bold; 
   text-align: center; 
   top: 3px;
-  left: 7px;
- 
-  
+  left: 7px;  
   margin: auto;   
 }
   
@@ -56,13 +54,13 @@
   display: grid;
   width: 100%;
   height: auto;
-  border: 1px solid black;
+  border: 1px solid #bdbdbd;
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
   color: black;
   margin: auto;
-  box-shadow: 1px 0px 4px 0px black;
+  box-shadow: 2px 3px 10px 0px black;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 20px;
 }
