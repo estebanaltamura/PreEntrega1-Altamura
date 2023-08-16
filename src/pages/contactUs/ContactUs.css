@@ -1,43 +1,137 @@
 .contactUsmainContainer{
-    min-height: calc(100vh - 170px);
-    width: 100%;
+    padding-top: 76px;
+    min-height: calc(100vh - 160px);
+    height: fit-content;
+    width: 100%;  
+     
+}
+
+.tituloContacto{
+    display: flex;
+    justify-content: center;    
+}
+
+.byPhoneContainer{
+    display: grid;
+    width: 250px;
+    grid-template-rows: 40px 50px 30px 30px;
+    margin: 30px auto 30px;
     
 }
 
-.contactUsContainer {
+.byPhoneTitle{
+    margin: auto;
+    font-family: Poppins;
+    text-align: center; 
+}
+
+.contactTimeRange{
+    margin: auto;
+    font-family: Poppins; 
+    text-align: center; 
+}
+
+.phoneNumber{
+    margin: auto;
+    font-weight: bold;
+    font-family: Poppins; 
+    text-align: center; 
+}
+
+.phoneIcon{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+
+.byMailContainer{
     display: grid;
+    width: 250px;
+    grid-template-rows: 40px 50px 30px 30px;
+    margin: 0 auto 30px;
+}
+
+.byMailTitle{
+    margin: auto;
+    font-family: Poppins; 
+    text-align: center; 
+}
+
+.byMailMessage{
+    margin: auto;
+    font-family: Poppins;
+    text-align: center;  
+}
+
+.mail{
+    margin: auto;
+    font-weight: bold;
+    font-family: Poppins; 
+    text-align: center; 
+}
+
+.mailIcon{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+
+.byChatContainer{
+    display: grid;
+    width: 250px;
+    grid-template-rows: 40px 50px 50px 70px;
+    margin: 0 auto 30px;
+}
+
+.byMailTitle{
+    margin: auto;
+    font-family: Poppins; 
+    text-align: center; 
+}
+
+.byMailMessage{
+    margin: auto;
+    font-family: Poppins; 
+    text-align: center; 
+}
+
+
+
+.chatIcon{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.chatButton{
+    display: flex;
     position: relative;
     width: 100%;
-    padding-top: 56px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    grid-template-rows: auto 50px auto auto 30px 30px 50px;
-    grid-template-areas: "titulo" "vacio1" "textoContactUs1" "textoContactUs2" "textoContactUs3" "textoContactUs4" "vacio2"; }
-  
-.tituloContacto {
+    height: 50px;
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    overflow: hidden;
-    font-size: 30px;
-    grid-area: titulo; }
-  
-.textoContacto1, .textoContacto2, .textoContacto3, .textoContacto4 {
-    text-align: left;
-    font-size: 18px;
-    text-align: justify;
-    grid-area: texto;
-    font-family: raleway;
-    font-weight: 600;
-    margin: 0 auto; }
+    border: 1px solid #4c4c4c;
+    border-radius: 10px;
+    font-family: Poppins; 
+    text-align: center; 
+}
 
-.textoContacto1 {
-    grid-area: textoContactUs1; }
-      
-.textoContacto2 {
-    grid-area: textoContactUs2; }
-      
-.textoContacto3 {
-    grid-area: textoContactUs3; }
-      
-.textoContacto4 {
-    grid-area: textoContactUs4; }
+.chatButtonIcon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+}
+
+
+
+
+
+@media screen and (min-width: 1050px) {
+    .contactUsmainContainer{
+        min-height: calc(100vh - 60px);        
+    }
+}

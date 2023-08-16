@@ -1,3 +1,7 @@
+footer a:hover{
+  color: white;
+}
+
 .footerContainer {
   position: relative;
   display: flex;

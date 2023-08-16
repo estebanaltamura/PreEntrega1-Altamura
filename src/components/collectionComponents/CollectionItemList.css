@@ -7,9 +7,9 @@
     position: relative;
     overflow: hidden;
     top: 0px;
-    width: calc(fit-content + 40px);
-    margin: 25px auto 50px auto;
-    padding: 0 20px;
+    width: calc(fit-content + 40px);    
+    margin: 25px auto 0 auto;
+    padding: 0 20px 30px 20px;
     gap: 20px;
     grid-template-columns: minmax(100%, 290px);
     grid-auto-rows: auto;

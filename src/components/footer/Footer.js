@@ -23,7 +23,7 @@ export const Footer = () => {
   };
 
   return (
-    <div className="footerContainer">
+    <footer className="footerContainer">
       <div className="line"></div>
       <div className="contactFooterGrid">
         {isCopyingEmailFooter == false ? (
@@ -74,6 +74,6 @@ export const Footer = () => {
           Curriculum Vitae
         </a>
       </div>
-    </div>
+    </footer>
   );
 };
