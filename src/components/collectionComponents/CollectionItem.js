@@ -1,9 +1,21 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { Link } from "react-router-dom";
 import "./CollectionItem.css"
 
 export const CollectionItem = ({image, name, price, id, index, collectionName })=>{     
+
+  const { setIsLoading } = useContext(IsLoadingContext)
+  const history = useNavigate()
+
+  const cardClickHandler = ()=>{
+    setIsLoading(true)
+    history(`/products/${collectionName}/${id}`)
+  }
+
   return(
-    <Link className={`card card${index+1}`} to={`/products/${collectionName}/${id}`}>
+    <div className={`card card${index+1}`} onClick={cardClickHandler}>
       <img className={`imagenCard${index + 1} imagenCard`} src={image} alt="foto"></img>
       <div className="infoCardContainer">
         <p className={`tituloCard${index + 1} tituloCard`}>{name}</p>
@@ -11,7 +23,7 @@ export const CollectionItem = ({image, name, price, id, index, collectionName })
           <p className={`precioCard${index + 1} precioCard`}>{`u$d ${price}`}</p> 
         </div>        
       </div>      
-    </Link>            
+    </div>            
   )
 }
 

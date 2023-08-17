@@ -64,15 +64,12 @@ header{
 .quantityLink{
     position: absolute;
     top: 30px;
-    right: 42px;
+    right: 38px;
     color: rgb(245, 153, 33);
     
 }
 
-.quantityIcon{
-    width:27px;
-    height:27px;
-}
+
 
 
 .desplegableMenuItem{    
@@ -81,13 +78,18 @@ header{
     width: fit-content;
 }
 
+.quantityIcon{
+    width:22px;
+    height:22px;
+}
+
 .quantityIconplus{
     position: absolute;
-    top: 34px;
-    right: 68px;
+    top: 8px;
+    right: 24px;
     color: rgb(73, 73, 73);
-    width:18px;
-    height:18px;
+    width:11px;
+    height:11px;
 }
 
 

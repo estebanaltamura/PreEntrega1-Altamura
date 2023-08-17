@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider"
 import Spinner from '../../assets/spinner.gif';
 import "./AboutUs.css"
@@ -6,9 +6,11 @@ import "./AboutUs.css"
 export const AboutUs = ()=>{
   const { setIsLoading, isLoading } = useContext(IsLoadingContext)
  
-  const onLoadHandler = ()=>{
+  
+
+  useEffect(()=>{
     setIsLoading(false)
-  }    
+  },[])
 
   return(
     <>
@@ -16,10 +18,16 @@ export const AboutUs = ()=>{
         <img src={Spinner} />           
       </div>      
           
-      <main className={isLoading === false ? "mainNosotros" : "hidden"} onLoad={onLoadHandler}>
-        <h2 className="tituloNosotros">About Us</h2>
-        <p className="textoNosotros">We have been the best of friends for over ten years and have discovered a shared passion for creativity. We are very different but at the same time very similar. In the year 2020, after many days of sharing dreams and ideas, we made the decision to work together to pursue a common goal: PANDORA. In a moment of uncertainty, crisis and change, we put ourselves together, we put our brains to work and from that will came this small venture that we want to share with all of you.</p>
-        <img className="imagenFundadores" src="https://i.postimg.cc/pXPmLj1v/aboutUs.jpg" alt="Imagen de una mujer y un hombre que son los fundadores de pandora. Estan sonriendo para la foto con una pared colorida de fondo" />
+      <main className={isLoading === false ? "mainNosotros" : "hidden"}>
+        <h2 className="aboutUsTitle">About Us</h2>
+        <h3 className="subTitle1">Our Story</h3>
+        <p className="aboutUsP1 aboutUsP">In the heart of the urban hustle and bustle, two passionate individuals came together with a dream in 2009. A dream to revolutionize the way people carried their worlds on their backs. That dream led to the inception of Pandora Backpacks. We, the co-founders, embarked on this exciting journey, uniting our shared passion and commitment to quality.</p>
+        <p className="aboutUsP2 aboutUsP">Over the years, our days have been fueled by the relentless pursuit of excellence. Not just to sell backpacks, but to deliver an experience, to offer a blend of style and functionality, and to build a brand that resonates with passion, purpose, and performance.</p>
+        <p className="aboutUsP3 aboutUsP">Our commitment goes beyond just our products. We believe in giving back and contributing positively to our community. Every purchase, every feedback, every interaction with our brand plays a part in shaping our narrative, and we're thankful for the trust and love we've received from our customers.</p>
+        <h3 className="subTitle2">Unparalleled Technology</h3>
+        <p className="aboutUsP4 aboutUsP">At Pandora Backpacks, we're not just about aesthetics; the science behind our products sets us apart. Every thread, zipper, and pocket is a testament to the advanced technology we employ. Our unique backpack technology ensures each product stands tall in terms of resistance and durability. But strength isn't the only virtue we vouch for.</p>
+        <p className="aboutUsP5 aboutUsP">In our commitment to the planet, we've ensured that our manufacturing processes are environmentally friendly, leading to products that are as kind to nature as they are tough against wear and tear.</p>
+        <p className="aboutUsP6 aboutUsP"> With high-performance metrics driving our design and manufacturing processes, we ensure that every Pandora Backpack not only looks good but also stands the test of time, adventures, and memories you'd build along the way. Choose Pandora, where innovation meets passion.</p>
       </main>    
     </>
   )

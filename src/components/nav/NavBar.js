@@ -4,7 +4,18 @@ import { CartContext } from "../../contexts/CartContextProvider";
 import { URLDataContext } from "../../contexts/URLDataContextProvider";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsCart4 } from "react-icons/bs";
-import { TbBoxMultiple1, TbBoxMultiple2, TbBoxMultiple3, TbBoxMultiple4, TbBoxMultiple5, TbBoxMultiple6, TbBoxMultiple7, TbBoxMultiple8, TbBoxMultiple9, TbPlus } from "react-icons/tb";
+import backPackCartIcon from '../../assets/backPackCartIcon.svg'
+import number1CartIcon from '../../assets/number1CartIcon.svg'
+import number2CartIcon from '../../assets/number2CartIcon.svg'
+import number3CartIcon from '../../assets/number3CartIcon.svg'
+import number4CartIcon from '../../assets/number4CartIcon.svg'
+import number5CartIcon from '../../assets/number5CartIcon.svg'
+import number6CartIcon from '../../assets/number6CartIcon.svg'
+import number7CartIcon from '../../assets/number7CartIcon.svg'
+import number8CartIcon from '../../assets/number8CartIcon.svg'
+import number9CartIcon from '../../assets/number9CartIcon.svg'
+import moreCartIcon from '../../assets/moreCartIcon.svg'
+
 import "./NavBar.css"
  
 export const NavBar =()=>{
@@ -66,20 +77,20 @@ export const NavBar =()=>{
           </NavLink>                        
           
           <NavLink to ="/cart" onClick={currentURL.section === "cart" ? null : onClickNavLinkHandler}>
-            <BsCart4 className="carro" /> 
+            <img src={backPackCartIcon} className="carro" /> 
           </NavLink>
           
           {totalQuantityItemsCart === 0 ? null : 
-            totalQuantityItemsCart === 1 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple1 className="quantityIcon" /></NavLink> : 
-            totalQuantityItemsCart === 2 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple2 className="quantityIcon"   /></NavLink> : 
-            totalQuantityItemsCart === 3 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple3 className="quantityIcon"   /></NavLink> : 
-            totalQuantityItemsCart === 4 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple4 className="quantityIcon"   /></NavLink> : 
-            totalQuantityItemsCart === 5 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple5 className="quantityIcon"   /></NavLink> : 
-            totalQuantityItemsCart === 6 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple6 className="quantityIcon"   /></NavLink> : 
-            totalQuantityItemsCart === 7 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple7 className="quantityIcon"   /></NavLink> : 
-            totalQuantityItemsCart === 8 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple8 className="quantityIcon"   /></NavLink> : 
-            totalQuantityItemsCart === 9 ? <NavLink className="quantityLink" to ="/cart"><TbBoxMultiple9 className="quantityIcon"   /></NavLink> : 
-            <NavLink className="quantityLink" to ="/cart"><TbPlus /> <TbBoxMultiple9 className="quantityIcon" /></NavLink>
+            totalQuantityItemsCart === 1 ? <NavLink className="quantityLink" to ="/cart"><img src={number1CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 2 ? <NavLink className="quantityLink" to ="/cart"><img src={number2CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 3 ? <NavLink className="quantityLink" to ="/cart"><img src={number3CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 4 ? <NavLink className="quantityLink" to ="/cart"><img src={number4CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 5 ? <NavLink className="quantityLink" to ="/cart"><img src={number5CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 6 ? <NavLink className="quantityLink" to ="/cart"><img src={number6CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 7 ? <NavLink className="quantityLink" to ="/cart"><img src={number7CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 8 ? <NavLink className="quantityLink" to ="/cart"><img src={number8CartIcon} className="quantityIcon"></img></NavLink> : 
+            totalQuantityItemsCart === 9 ? <NavLink className="quantityLink" to ="/cart"><img src={number9CartIcon} className="quantityIcon"></img></NavLink> : 
+            <NavLink className="quantityLink" to ="/cart"><img src={moreCartIcon} className="quantityIconplus"></img><img src={number9CartIcon} className="quantityIcon"></img></NavLink>
           }                   
                  
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -155,7 +166,7 @@ export const NavBar =()=>{
                 </li>
             </ul>
             <NavLink to ="/cart" onClick={currentURL.section === "cart" ? null : onClickNavLinkHandler}>
-              <BsCart4 className="carroDesktop"/> 
+              <img src={backPackCartIcon} className="carroDesktop"/> 
                 
             </NavLink>                    
           </div>

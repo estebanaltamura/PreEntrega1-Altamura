@@ -1,70 +1,13 @@
-.ItemDetailsContainer {
-    display: grid;
-    position: relative;
+.ItemDetailsContainer{
+    padding: 56px 20px 50px 20px;
+    min-height: calc(100vh - 60px);
     width: 100%;
-    max-width: 480px;
-    min-height: 100vh;
-    padding: 56px 20px 0 20px;
-       
-    margin: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 30px auto 30px 0px 30px 10px auto 20px 35px 10px 44px 10px 44px 30px 30px 30px auto 30px;
-    grid-template-areas: "carrusel" "vacio1" "titulo" "precio" "vacio2" "reviews" "vacio3" "nopesticidas" "vacio9" "quantityInput" "vacio4" "botonATC" "vacio5" "botonComprar" "vacio6" "tituloDescripcion" "vacio7" "descripcion" "vacio8"; }
-   
-
-
-.quantityInputContainer{
-    grid-area: quantityInput;
-    display: flex;
-    width: 100%;
-    max-width: 440px;
-    height: 100%;
-    
-    
-    
-}
-
-.quantityInputGrid{
-    display: grid;
-    text-align: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: 44px 1fr 44px;
-    grid-template-areas: "lessQuantityButton quantityLabel moreQuantityButton";
-}
-
-.quantityModifiers{
-    width: 38px;
-    height: 38px;
 }
 
 
-@media screen and (min-width: 768px){
-    .quantityInputContainer{   
-        padding: 0 20px;        
-        max-width: none;      
-    }
-} 
-
-@media screen and (min-width: 768px) {
-    .ItemDetailsContainer {
-        max-width: none;
-        width: 768px;
-        overflow: hidden;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0px 60px 30px 0px 20px auto 44PX 44px 9px 44px 20px 30px 20px auto 30px;
-        grid-template-areas: "carrusel vacio1" "carrusel titulo" "carrusel precio" "carrusel vacio2" "carrusel reviews" "carrusel nopesticidas" "carrusel quantityInput" "carrusel botonATC" "carrusel vacio5" "carrusel botonComprar" "vacio6 vacio6" "tituloDescripcion tituloDescripcion" "vacio7 vacio7" "descripcion descripcion" "vacio8 vacio8"; }
-      
-}
-
-@media screen and (min-width: 1200px) {
-    .ItemDetailsContainer {
-        max-width: none;
-        width: 1200px;
-        overflow: hidden;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0px 60px 30px 0px 20px 30px auto 30PX 56px 44px 22px 54px 20px 54px 20px 30px 20px auto 30px;
-        grid-template-areas: "carrusel vacio1" "carrusel titulo" "carrusel precio" "carrusel vacio2" "carrusel reviews" "carrusel vacio3" "carrusel nopesticidas" "carrusel vacio4" "carrusel algo" "carrusel quantityInput" "carrusel vacio5" "carrusel botonATC" "carrusel vacio6" "carrusel botonComprar" "vacio7 vacio7" "tituloDescripcion tituloDescripcion" "vacio8 vacio8" "descripcion descripcion" "vacio9 vacio9"; } 
-}
+@media screen and (min-width: 1050px) {
+  .ItemDetailsContainer {    
+    padding: 56px 20px 50px 20px; 
+    min-height: calc(100vh - 60px); 
+  }  
+}  

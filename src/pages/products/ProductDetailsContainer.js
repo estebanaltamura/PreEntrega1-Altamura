@@ -1,28 +1,24 @@
-import {useParams } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useParams } from 'react-router-dom';
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { getFirestore, doc, collection, getDocs, where, query } from "firebase/firestore"; 
 import { ProductDetails } from '../../components/productDetailsComponents/ProductDetails';
 import Spinner from '../../assets/spinner.gif';
 import "./ProductDetailsContainer.css"
 
 export const ProductDetailsContainer = ()=>{
-
+  const { isLoading } = useContext(IsLoadingContext)
   const {idProduct, idCollection} = useParams() 
-  const [productData, setProductData] = useState({})
-  const [isLoading, setIsLoading] = useState(true)
-
+  const [productData, setProductData] = useState(null)
 
   const collectionData = async (idProduct, idCollection)=>{
-    try{
-      setIsLoading(true) 
+    try{       
       const db = getFirestore()
       const queryDoc = doc(db, "products", "backpack collections")        
       const queryCollection = collection(queryDoc, idCollection)
       const queryFilter = query(queryCollection, where("id", "==", Number(idProduct)))
-      getDocs(queryFilter).then( res=>{
-        setProductData( res.docs[0].data())
-        Array.isArray(res.docs[0].data().images) && setIsLoading(false)
-      })
+      const productDataResponse = await getDocs(queryFilter)        
+      setProductData(productDataResponse.docs[0].data())      
     }  
 
     catch (error) {
@@ -44,14 +40,14 @@ export const ProductDetailsContainer = ()=>{
   },[])
 
   return(        
-    <div className="ItemDetailsContainer">
-      {isLoading === true ? 
+    <div className="ItemDetailsContainer">      
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
           <img src={Spinner} />        
         </div>       
               : 
-        <ProductDetails name={productData.name} price={productData.price} images={productData.images} description={productData.longDescription} productData={productData}/>
-      }
+        {
+          productData !== null &&  <ProductDetails name={productData.name} price={productData.price} images={productData.images} description={productData.longDescription} productData={productData}/>
+        }       
     </div>     
   )   
 }

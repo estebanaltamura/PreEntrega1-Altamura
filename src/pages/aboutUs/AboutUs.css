@@ -1,29 +1,31 @@
-.mainNosotros {
-  display: grid;
-  position: relative;
-  width: 100%;
-  top: 95px;
-  padding: 0 15px;
-  max-width: 1200px;
-  min-height: 100vh;
+.mainNosotros {  
   margin: 0 auto;
-  grid-template-rows: auto 30px auto 50px auto 50px;
-  grid-template-areas: "tituloNosotros" "vacio1" "textoNosotros" "vacio2" "imagenFundadores" "vacio3"; }
+  padding: 76px 20px 50px 20px;
+  width: 100%;
+  max-width: 1000px;
+  height: fit-content;
+  min-height: calc(100vh - 160px); 
+}
 
-.tituloNosotros {
-  margin: auto;
-  overflow: hidden;
-  grid-area: tituloNosotros;
-  font-size: 30px; }
-              
-.textoNosotros {
-  margin: auto;
-  font-size: 18px;
-  text-align: justify;
-  grid-area: textoNosotros; }
-              
-.imagenFundadores {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 700px;
-  grid-area: imagenFundadores; }
+
+.aboutUsTitle{
+  text-align: center;
+}
+
+.subTitle1{
+  margin-top: 30px;
+}
+
+.subTitle2{
+  margin-top: 40px;
+}
+
+.aboutUsP2, .aboutUsP3, .aboutUsP5, .aboutUsP6{
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 1050px) {
+  .mainNosotros {     
+    min-height: calc(100vh - 60px); 
+  }  
+}   
