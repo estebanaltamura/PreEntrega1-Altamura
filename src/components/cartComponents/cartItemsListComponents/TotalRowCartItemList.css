@@ -3,28 +3,44 @@
     justify-content: flex-end;
     text-align: center;
     align-items: center;
-    grid-template-columns: 120px 1fr 100px 100px 80px 100px 50px;
+    grid-template-columns: 120px 120px 1fr 120px;
     grid-template-rows: 50px;
-    grid-template-areas: "vacio vacio vacio vacio totalCartTitle totalCartNumber vacio1"; }
+    grid-template-areas: "totalCartTitle totalCartNumber . emptyCart"; }
 
 .totalCartContainerMobile {
-    display: grid;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 0 auto;
-    grid-template-columns: 1fr 100px;
-    grid-template-rows: 50px;
-    grid-template-areas: "totalCartTitle totalCartNumber"; }
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 15px auto 0 auto;
+  grid-template-columns: 130px auto 1fr 120px;
+  grid-template-rows: 50px;
+  grid-template-areas: "totalCartTitle totalCartNumber . emptyCart"; 
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.emptyCartButton{
+  border: none;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+	height: 100%;
+  align-items: center;
+  justify-content: space-around;
+ 	background-color: white;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	grid-area: emptyCart;
+}
       
 .totalCartTitle {
     grid-area: totalCartTitle;
-    font-size: 24px;
-    font-style: italic;
+    font-size: 20px;    
     font-weight: 700; }
       
 .totalCartNumber {
     grid-area: totalCartNumber;
     font-weight: 700;
-    font-size: 18px; }
+    font-size: 20px; }

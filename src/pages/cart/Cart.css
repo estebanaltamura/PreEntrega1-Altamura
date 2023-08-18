@@ -21,16 +21,7 @@
 
 
 
-.emptyCartButton{
-    border: none;
-    display: flex;
-    margin: 0 auto;
-    width: 105px;
-    align-items: center;
-    justify-content: space-around;
-    color: rgb(255, 47, 47);
-    margin-top: 25px;
-}
+
 
 .continueShoppingButton {
     position: relative;

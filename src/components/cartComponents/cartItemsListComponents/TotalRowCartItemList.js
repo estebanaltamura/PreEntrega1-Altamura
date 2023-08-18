@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../../contexts/CartContextProvider";
 import { BsFillTrashFill } from "react-icons/bs";
+import emptyCartButton from '../../../assets/emptyCartButton.svg'
 import "./TotalRowCartItemList.css"
 
 export const TotalRowCartItemList = ({totalCart})=>{
@@ -9,11 +10,11 @@ export const TotalRowCartItemList = ({totalCart})=>{
   const onEmptyCartClickHandler = ()=> dispatch({type: "CLEAR_CART"}) 
 
 
-  return(
+  return( 
     <div id="totalCart" className={window.innerWidth > 768 ? "totalCartContainer" : "totalCartContainerMobile"}> 
       <span className="totalCartTitle">TOTAL</span>
       <span className="totalCartNumber" id="totalCartNumber">{`$${totalCart}`}</span>
-      <button onClick={onEmptyCartClickHandler} className="emptyCartButton"><BsFillTrashFill />Empty Cart</button> 
+      <button onClick={onEmptyCartClickHandler} className="emptyCartButton"><img src={emptyCartButton} /></button> 
     </div>
   )
 } 
