@@ -22,13 +22,13 @@ export const PaymentOptions = ()=>{
 
   return(
 		<div className="paymentButtonsContainer">                                                               
-      <h4>Credit card payments</h4>
+      <h4 className="paymentsOptionsMessages">Credit card payments</h4>
       <button className="paymentOptionsButton MPButton" onClick={MPButtonOnclickHandler} >
         <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="" />
         CONTINUE TO CHECKOUT
       </button>
 
-      <h4>Bank transfer payment method</h4>
+      <h4 className="paymentsOptionsMessages">Bank transfer payment method</h4>
       <Link className="paymentOptionsButton customOrderButton" to="/customOrder">                                    
         CREATE CUSTOM ORDER
       </Link>

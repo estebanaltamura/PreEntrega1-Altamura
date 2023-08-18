@@ -13,7 +13,7 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin: 15px auto 0 auto;
+  margin: 7px auto 0 auto;
   grid-template-columns: 130px auto 1fr 120px;
   grid-template-rows: 50px;
   grid-template-areas: "totalCartTitle totalCartNumber . emptyCart"; 

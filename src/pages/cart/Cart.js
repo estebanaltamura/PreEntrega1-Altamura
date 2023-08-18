@@ -4,6 +4,7 @@ import { CartContext } from "../../contexts/CartContextProvider"
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { CartItemsList } from "../../components/cartComponents/cartItemsListComponents/CartItemsList";
 import { PaymentOptions } from "../../components/cartComponents/paymentOptions/PaymentOptions";
+import backIcon from '../../assets/backIcon.svg'
 import Spinner from '../../assets/spinner.gif';
 import "./Cart.css"
 
@@ -54,18 +55,21 @@ export const Cart = ()=>{
               <img src={Spinner} />        
             </div>      
 
-            <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler}>              
+            <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler}>   
+
+              <h2 className='myCartTitle'>My cart</h2>           
               <div className="contenedorItems">
                 <CartItemsList />
-              </div>
+              </div>      
 
-              
+              <p className='cartMessage'>To check out please select a payment method</p> 
 
-              <PaymentOptions />
-                                    
-              <div className="lineCart"></div>
+              <PaymentOptions />      
                 
-              <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>CONTINUE SHOPPING</Link>                                 
+              <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>
+                <img className="backIconContinue" src={backIcon} />
+                CONTINUE SHOPPING
+              </Link>                                 
             </main>
           </>
 
