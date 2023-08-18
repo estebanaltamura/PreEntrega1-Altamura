@@ -43,8 +43,7 @@ export const ProductDetailsContainer = ()=>{
     <div className="ItemDetailsContainer">      
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
           <img src={Spinner} />        
-        </div>       
-              : 
+        </div>               
         {
           productData !== null &&  <ProductDetails name={productData.name} price={productData.price} images={productData.images} description={productData.longDescription} productData={productData}/>
         }       
