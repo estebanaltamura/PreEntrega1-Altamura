@@ -18,7 +18,7 @@ h2, h3, p {
   margin: auto;
   width: 100%;  
   height: 465px;
-  grid-template-rows: 45px 30px 60px 140px 120px 70px;
+  grid-template-rows: 45px 30px 60px 140px 120px 50px;
   grid-template-columns: 1fr;
   grid-template-areas: "title" "review" "price" "banner" "addToCartControls" "buyItNowButton";
   grid-area: details;
@@ -176,9 +176,9 @@ h2, h3, p {
 
   .productDetailsGrid {     
     display: grid;    
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     width: 720px;
-    height: 360px;
+    height: 360px;    
     grid-template-columns: 360px 360px;
     grid-template-rows: 360px;
     grid-template-areas: "carrousel details";
@@ -211,6 +211,7 @@ h2, h3, p {
   }    
   
   .lineProductDetails{    
+    display: flex;
     width: calc(100% - 24px);    
   }
 
@@ -281,8 +282,7 @@ h2, h3, p {
   
 @media screen and (min-width: 1200px) {
   .productDetailsGrid {     
-    display: grid;    
-    margin: 0 auto;
+    display: grid;       
     width: 1000px;
     height: 500px;
     grid-template-columns: 500px 500px;
@@ -321,7 +321,7 @@ h2, h3, p {
   } 
 
   .ecologyBanner{
-    top: 17px;
+    top: 14px;
     height: 110px;
   }  
 
