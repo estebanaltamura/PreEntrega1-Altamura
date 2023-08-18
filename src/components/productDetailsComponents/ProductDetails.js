@@ -45,8 +45,7 @@ export const ProductDetails = ({name, price, images, description, productData})=
       type: "ADD_TO_CART",
       item: {...productData},
       quantity: quantity
-    })    
-    history("/cart")
+    })     
   }
 
   const onClickBINhandler = ()=>{

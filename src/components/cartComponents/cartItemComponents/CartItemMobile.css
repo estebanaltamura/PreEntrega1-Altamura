@@ -1,31 +1,91 @@
 .itemMobile {
   display: grid;
   width: 100%;
+  margin-top: 7px;
   flex-wrap: wrap;
   flex-direction: column;
   height: fit-content;
   align-items: center;
   justify-content: center;
-  grid-template-columns: 100px 1fr 35px 35px 35px 1fr 100px;
-  grid-template-rows: 25px 25px 50px 1px 35px;
-  grid-template-areas: "imagenCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem vacio1" "imagenCartItem subTituloCartItem subTituloCartItem subTituloCartItem subTituloCartItem subTituloCartItem vacio1" "imagenCartItem vacio4 minusQuantity quantityCartItem moreQuantity vacio2 subTotalCartItem" "line line line line line line line" "removeItemIcon vacio3 vacio3 vacio3 vacio3 vacio3 vacio3";
-  border-bottom: 2px solid #6c6c6c;
+  grid-template-columns: 130px 1fr 70px;
+  grid-template-rows: 60px 30px 40px;
+  grid-template-areas:  "imagenCartItem tituloCartItem moreQuantity" 
+                        "imagenCartItem priceCartItem quantityCartItem" 
+                        "imagenCartItem removeItemIcon minusQuantity";
+  border: 1px solid #6c6c6c;
+  border-radius: 10px;
   text-align: center;
   font-size: 16px; }
 
 .imagenCartItem {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   grid-area: imagenCartItem;
   margin: 0 auto;
-  width: 80px; }
+  width: 130px; }
+
+.tituloCartItem{
+  width: 100%;  
+  font-size: 20px;
+  font-family: Poppins;
+  font-weight: 700;
+  text-align: left;
+  line-height: 30px;
+  max-height: 60px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  word-wrap:break-word;   
+ 
+   
+  grid-area: tituloCartItem;
+}
+
+.priceCartItem{
+  text-align: left;
   
-.tituloCartItem, .subTituloCartItem {
-  text-align: center;
-  height: 24px;
-  width: 100%;
-  overflow: hidden; }
+  font-size: 19px;
+  font-weight: 700;
+  grid-area: priceCartItem;
+}
+
+.removeItemCartContainer{
+  display: flex;   
+  cursor: pointer; 
+}
+
+.removeText { 
+  position: relative;
+  left: 2px;   
+  font-size: 15px;
+  grid-area: removeItemIcon;  
+}
+
+.removeIcon{
+  position: relative;
+  top: 2px;
+  width: 17px;
+  height: 17px;
+}
+
+.moreQuantityIcon {
+  grid-area: moreQuantity;
+  cursor: pointer;
+  margin: 0 auto;
+  width: 27px;
+  height: 27px; }
   
-.tituloCartItem {
-  grid-area: tituloCartItem; }
+.lessQuantityIcon {
+  grid-area: minusQuantity;
+  cursor: pointer;
+  margin: 0 auto;
+  width: 27px;
+  height: 27px; }
+
+  
+
   
 .subTituloCartItem {
   grid-area: subTituloCartItem; }
@@ -39,37 +99,16 @@
 .quantityCartItem {
   grid-area: quantityCartItem; }
   
-.moreQuantityIcon {
-  grid-area: moreQuantity;
-  cursor: pointer;
-  margin: 0 auto;
-  width: 14px;
-  height: 14px; }
-  
-.lessQuantityIcon {
-  grid-area: minusQuantity;
-  cursor: pointer;
-  margin: 0 auto;
-  width: 14px;
-  height: 14px; }
+
   
 .subTotalCartItem {
   grid-area: subTotalCartItem;
   font-size: 20px; }
   
-.removeIcon {
-  display: flex;
-  width: 25px;
-  height: 25px;
-  justify-content: right;
-  grid-area: removeItemIcon;
-  cursor: pointer; }
+
   
 .lineCartItemMobile {
   grid-area: line;
   width: 100%;
   border-top: 1px solid #6c6c6c; }
   
-.removeIconMobile {
-  grid-area: removeItemIcon;
-  padding-left: 16px; }

@@ -3,9 +3,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    height: fit-content;
+    min-height: calc(100vh - 160px);
     width:100%;
-    padding: 106px 15px 0 15px;
+    padding: 106px 5px 0 5px;
 }
 
 .contenedorItems {
@@ -16,13 +17,9 @@
     height: fit-content;
     flex-wrap: wrap;
     flex-direction: column;
-    border: 1px solid black;
 }
 
-.redondeado {
-    border-radius: 4px;
-    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.75);
-}
+
 
 .emptyCartButton{
     border: none;
@@ -66,3 +63,10 @@
     margin: 0 auto;
     border: 1px solid #4C4C4C;  
 }
+
+@media screen and (min-width: 1050px) {
+  .mainContainerCart {    
+    padding: 106px 15px 0 15px;
+    min-height: calc(100vh - 60px); 
+  }  
+  }  

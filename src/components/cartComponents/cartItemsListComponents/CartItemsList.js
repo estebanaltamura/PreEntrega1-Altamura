@@ -3,7 +3,7 @@ import { CartContext } from "../../../contexts/CartContextProvider"
 import { ScreenWidthContext } from "../../../contexts/ScreenWidthContextProvider";
 import { HeaderRowCartItemListDesktop } from "./HeaderRowCartItemListDesktop";
 import { CartItem } from '../cartItemComponents/CartItem'
-import { TotalRowCartItemListDesktop } from "./TotalRowCartItemListDesktop";
+import { TotalRowCartItemList } from "./TotalRowCartItemList";
 
 export const CartItemsList = ()=> {
 
@@ -35,7 +35,7 @@ export const CartItemsList = ()=> {
         })
       }           
             
-      <TotalRowCartItemListDesktop totalCart={totalCart}/>             
+      <TotalRowCartItemList totalCart={totalCart}/>             
     </>
   )
 }
