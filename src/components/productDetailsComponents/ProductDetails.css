@@ -1,16 +1,52 @@
-h2, p {
+h2, h3, p {
   padding: 0;
-  margin: 0; }
-  
+  margin: 0; 
+}
 
+.productDetailsGrid {     
+  display: grid;    
+  margin: 0 auto;
+  width: 100%;  
+  grid-template-rows: 500px 500px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "carrousel" "details";
+}  
+
+.detailsGrid{
+  display: grid;
+  margin: auto;
+  width: 100%;  
+  grid-template-rows: 45px 30px 60px 140px 2px 100px 2px 100px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "title" "review" "price" "banner" "line1" "addToCartControls" "line2" "buyItNowButton";
+  grid-area: details;
+}
+
+.ATCcontrolsGrid{
+  display: grid;
+  width: 500px;
+  padding-left: 20px;
+  grid-template-rows: 50px 100px;
+  grid-template-areas: "lessQuantity quantity moreQuantity" "ATCbutton";
+  grid-area: addToCartControls;
+}
+
+.carrusel {  
+  border: 1px solid #C6B2F7;
+  width: 100%;
+  grid-area: carrousel; 
+}
+
+
+  
 .titulo {  
   width: fit-content;
   height: 40px;
   font-size: 38px;
-  font-weight: 400;
-  padding: 0 30px;
+  font-weight: 400;  
   grid-area: title;
 }
+
 
 .reviewContainer{
   display:flex;
@@ -21,8 +57,7 @@ h2, p {
 .reviewStars{
   display: flex;
   margin: auto 0;
-  height: 20px;
-  padding: 0 10px 0 30px;   
+  height: 20px;     
 }
 
 .reviewText{
@@ -31,17 +66,13 @@ h2, p {
   font-weight: 700;
 }
 
-
 .precio {
   display: flex;
   align-items: center;
   font-size: 30px;
-  font-weight: 700;
-  padding: 0 30px;
+  font-weight: 700; 
   grid-area: price; 
 }
-
-
 
 .lessQuantity{
   margin: auto;
@@ -58,8 +89,6 @@ h2, p {
   cursor: pointer;
   grid-area: moreQuantity;
 }
-
-
 
 .botonATC {
   margin: auto;
@@ -83,31 +112,17 @@ h2, p {
   font-size: 30px;
   font-weight: 500;
 }
-.quantityModifiers{
-  width: 30px;
-  height: 30px;
-}
-  
-.carrusel {
-  border: 1px solid #C6B2F7;
-  grid-area: carrousel; 
-}
 
+  
 .carousel-item img {
-  max-height: 448px;
+  max-height: none;
 } 
 
 .ecologyBanner {
   display: flex;
-  position: relative;
-  top: 10px;  
-  width: 340px;  
-  padding: 0 30px;
+  position: relative;    
   grid-area: banner; }
   
-
-  
-
   
 .botonComprar {
   color: black;
@@ -131,24 +146,139 @@ h2, p {
   
 .tituloDescripcion {
   margin: 0 auto;
-  grid-area: tituloDescripcion; }
+  grid-area: tituloDescripcion; 
+}
   
-.descripcion {
-  font-family: Poppins;
+.tituloDescripcion{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.descripcion{
+  font-size: 20px;
   font-weight: 400;
-  font-size: 16px;
+  line-height: 30px;
+  margin-top: 15px;
   text-align: justify;
-  grid-area: descripcion; }
+  grid-area: descripcion; 
+}
 
+.descriptionContainer{
+  width: 100%;  
+  margin: 20px auto 0 auto;
+}
+@media screen and (min-width: 768px) {
 
+  .productDetailsGrid {     
+    display: grid;    
+    margin: 0 auto;
+    width: 720px;
+    height: 360px;
+    grid-template-columns: 360px 360px;
+    grid-template-rows: 360px;
+    grid-template-areas: "carrousel details";
+  }  
 
+  .detailsGrid{
+    display: grid;
+    margin: auto 0;
+    width: 360px;
+    height: 360px;
+    grid-template-rows: 30px 40px 40px 110px 2px 70px 2px 66px;
+    grid-template-columns: 360px;
+    grid-template-areas: "title" "review" "price" "banner" "line1" "addToCartControls" "line2" "buyItNowButton";
+    grid-area: details;
+  }
+
+  .ATCcontrolsGrid{
+    display: grid;
+    width: 360px;
+    height: 70px;
+    padding-left: 20px;
+    grid-template-columns: 33px 40px 33px 234px;
+    grid-template-rows: 70px;
+    grid-template-areas: "lessQuantity quantity moreQuantity ATCbutton";
+    grid-area: addToCartControls;
+  }
+
+  .carrusel img{
+    max-height: 358px;
+  }    
+  
+  .lineProductDetails{    
+    width: calc(100% - 24px);    
+  }
+
+  .titulo {     
+    font-size: 30px;   
+  }
+
+  .reviewStars{   
+    padding: 0 10px 0 20px;   
+  }  
+
+  .reviewText{    
+    top: 10px;    
+  }
+
+  .ecologyBanner{
+    top: 10px;
+    height: 80px;
+  }
+
+  .ecologyBanner, .titulo, .precio{   
+    padding: 0 20px;
+  }
+
+  .lessQuantity{
+    width: 30px;
+    height: 33px;
+  }
+
+  .moreQuantity{
+    width: 30px;
+    height: 33px;
+  }
+
+  .quantity{
+    font-size: 25px;   
+  }
+
+  .botonATC {
+    margin-right: 0;  
+    width: 210px;
+    height: 45px;    
+  }
+
+  .botonComprar { 
+    margin-bottom: 0px;
+    margin-right: 0;     
+    height: 45px;
+    width: calc(100% - 20px);    
+  }
+  
+  .descriptionContainer{ 
+    width: 720px;    
+    margin: 40px auto 0 auto;
+  }
+
+  .tituloDescripcion{
+    font-size: 23px;   
+  }
+  
+  .descripcion{
+    margin-top: 10px;
+    font-size: 16px;    
+  }
+  
+}
   
 @media screen and (min-width: 1200px) {
   .productDetailsGrid {     
     display: grid;    
     margin: 0 auto;
     width: 1000px;
-    height: 500;
+    height: 500px;
     grid-template-columns: 500px 500px;
     grid-template-rows: 500px;
     grid-template-areas: "carrousel details";
@@ -158,8 +288,8 @@ h2, p {
     display: grid;
     margin: auto;
     width: 500px;
-    height: 479px;
-    grid-template-rows: 45px 30px 60px 140px 2px 100px 2px 100px;
+    height: 500px;
+    grid-template-rows: 50px 40px 60px 166px 2px 100px 2px 80px;
     grid-template-columns: 500px;
     grid-template-areas: "title" "review" "price" "banner" "line1" "addToCartControls" "line2" "buyItNowButton";
     grid-area: details;
@@ -168,34 +298,61 @@ h2, p {
   .ATCcontrolsGrid{
     display: grid;
     width: 500px;
+    height: 100px;
     padding-left: 20px;
     grid-template-columns: 45px 50px 45px 340px;
+    grid-template-rows: 100px;
     grid-template-areas: "lessQuantity quantity moreQuantity ATCbutton";
     grid-area: addToCartControls;
   }
 
-  .carrusel {
-    width: 500px;
-    height: 500px;
+  .carrusel img{
+    max-height: 498px;
   }
 
-  .descriptionContainer{
-    width: 1000px;
-    margin: 40px auto;
+  .lineProductDetails{    
+    width: calc(100% - 44px);    
+  } 
 
+  .ecologyBanner{
+    top: 17px;
+    height: 110px;
+  }  
+
+  .titulo {     
+    font-size: 38px;   
+  }    
+  
+  .lessQuantity{
+    width: 37px;
+    height: 40px;
   }
 
-  .tituloDescripcion{
-    font-size: 30px;
-    font-weight: 500;
+  .moreQuantity{
+    width: 37px;
+    height: 40px;
   }
 
-  .descripcion{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    margin-top: 15px;
+  .quantity{
+    font-size: 30px;   
   }
+
+  .botonATC {  
+    margin: auto;
+    width: 294px;
+    height: 56px;    
+  }
+
+  .botonComprar {  
+    margin-bottom: 0px ; 
+    margin-right: auto;
+    height: 56px;
+    width: calc(100% - 40px);    
+  }
+
+  .descriptionContainer{ 
+    width: 1000px;     
+  } 
 }  
 
 
