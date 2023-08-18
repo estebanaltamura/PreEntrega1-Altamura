@@ -24,18 +24,15 @@ export const ProductDetails = ({name, price, images, description, productData})=
   const history = useNavigate()
   const nextButtonCarrousel = useRef()  
 
-  useEffect(()=>{
-    
-    const starsOptionRandom = Math.ceil((Math.random()/2)*10)
-    console.log('primer render', starsOptionRandom)
+  useEffect(()=>{    
+    const starsOptionRandom = Math.ceil((Math.random()/2)*10)    
     starsOptionRandom === 1 && setStarsOption(star1)
     starsOptionRandom === 2 && setStarsOption(star2)
     starsOptionRandom === 3 && setStarsOption(star3)
     starsOptionRandom === 4 && setStarsOption(star4)
     starsOptionRandom === 5 && setStarsOption(star5)
 
-    setReviewQuantity(`${Math.ceil((Math.random())*500)}`)
-   
+    setReviewQuantity(`${Math.ceil((Math.random())*500)}`)  
 
     const interval = setTimeout(()=>nextButtonCarrousel.current.click(), 2500)    
     return ()=> clearTimeout(interval)    

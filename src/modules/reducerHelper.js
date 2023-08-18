@@ -41,12 +41,12 @@ const addToCartRepeatedItem = (cartItems, index, quantity)=>{
 
 
 export const reducerHelper = {
-  "isItemRepeated"    : isItemRepeated,
-  "findIndexOfById"   : findIndexOfById,
-  "removeItem"        : removeItem,
-  "addQuantity"       : addQuantity,
-  "subtractQuantity"  : subtractQuantity,
-  "addToCart"         : addToCartRepeatedItem
+  "isItemRepeated"        : isItemRepeated,
+  "findIndexOfById"       : findIndexOfById,
+  "removeItem"            : removeItem,
+  "addQuantity"           : addQuantity,
+  "subtractQuantity"      : subtractQuantity,
+  "addToCartRepeatedItem" : addToCartRepeatedItem
 }
 
   

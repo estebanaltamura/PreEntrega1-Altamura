@@ -1,5 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
-import { reducerHelper } from "../modules/reducerHelper";
+import { reducerHelper } from '../modules/reducerHelper'
 
 export const CartContext = createContext([])
 
@@ -14,7 +14,7 @@ const types = Object.freeze({
 
 const initialValue = []
 
-const reducer = (cartItems, action)=>{ 
+const reducer = (cartItems, action)=>{  
 
   switch(action.type){
     case types.ADD_TO_CART:{
