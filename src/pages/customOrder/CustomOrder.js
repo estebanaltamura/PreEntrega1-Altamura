@@ -28,15 +28,3 @@ export const CustomOrder = ()=>{
     </div>
   )
 }
-
-// {
-//   isLoading ?
-//     <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
-//       <img src={Spinner} />        
-//     </div>   
-//             :
-//     <>
-//       <FormCustomOrder />
-//       {cartItems.length > 0 && <CustomOrderSummary />}       
-//     </>
-// }

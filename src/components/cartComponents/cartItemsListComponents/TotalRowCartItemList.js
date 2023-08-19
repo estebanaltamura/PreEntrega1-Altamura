@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { CartContext } from "../../../contexts/CartContextProvider";
-import { BsFillTrashFill } from "react-icons/bs";
 import emptyCartButton from '../../../assets/emptyCartButton.svg'
 import "./TotalRowCartItemList.css"
 

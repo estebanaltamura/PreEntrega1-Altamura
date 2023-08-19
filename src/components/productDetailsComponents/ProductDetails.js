@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 import { useContext, useState, useRef, useEffect } from "react"
 import { CartContext } from "../../contexts/CartContextProvider";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
-import { AiOutlinePlusSquare, AiOutlineMinusSquare} from "react-icons/ai";
 import ecologyBanner from '../../assets/ecologyBanner.svg'
 import star1 from '../../assets/star1.svg' 
 import star2 from '../../assets/star2.svg' 

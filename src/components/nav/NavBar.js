@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContextProvider";
 import { URLDataContext } from "../../contexts/URLDataContextProvider";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
-import { BsCart4 } from "react-icons/bs";
 import backPackCartIcon from '../../assets/backPackCartIcon.svg'
 import number1CartIcon from '../../assets/number1CartIcon.svg'
 import number2CartIcon from '../../assets/number2CartIcon.svg'
@@ -15,7 +14,6 @@ import number7CartIcon from '../../assets/number7CartIcon.svg'
 import number8CartIcon from '../../assets/number8CartIcon.svg'
 import number9CartIcon from '../../assets/number9CartIcon.svg'
 import moreCartIcon from '../../assets/moreCartIcon.svg'
-
 import "./NavBar.css"
  
 export const NavBar =()=>{
