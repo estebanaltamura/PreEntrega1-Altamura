@@ -1,3 +1,13 @@
+
+p{
+  user-select: text;
+  cursor: text;
+}
+
+.copied{
+  color: rgb(223, 73, 46);
+}
+
 .mercadoPagoTutorialContainer{
   margin: 0 auto;
   padding: 76px 20px 0 20px;
@@ -20,16 +30,18 @@
   margin-top: 10px;
 }
 
-.optionsMessage1, .optionsMessage2{
-  margin-top: 15px;
-  padding-left: 20px;
+.message1, .message2{
+  margin-top: 50px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .creditCardGrid{
   display: grid;
   width: 210px;
   height: fit-content; 
-  grid-template-rows: 362px 2px 362px 2px 362px;
+  grid-template-rows: 440px 2px 440px 2px 440px;
   grid-template-columns: 1fr;
   grid-template-areas: "mastercard" "linea1" "visa" "linea2" "amex";
   margin: 0 auto;
@@ -76,7 +88,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 40px 40px 33px 30px 33px 30px;
   grid-template-areas: "icon" "cardType" "byUserUserHeader" "byIUserUserInfo" "byUserPassHeader" "byUserPassInfo";
-  margin: 30px auto 30px;
+  margin: 5px auto 30px;
   grid-area: user;
 }
 
@@ -114,10 +126,10 @@
 .mastercardContainer, .visaContainer, .amexContainer{
   display: grid;
   width: 100%;
-  height: 332px;
+  height: 440px;
   grid-template-columns: 1fr;
-  grid-template-rows: 40px 40px 33px 30px 33px 30px 33px 30px 33px 30px;
-  grid-template-areas: "icon" "cardType" "byCardNameHeader" "byCardNameInfo" "byCardNumberHeader" "byCardNumberInfo" "byCardCaducidadHeader" "byCardCaducidadInfo" "byCardCodigoHeader" "byCardCodigoInfo";
+  grid-template-rows: 40px 40px 33px 30px 33px 30px 33px 30px 33px 30px 33px 30px;
+  grid-template-areas: "icon" "cardType" "byCardNameHeader" "byCardNameInfo" "byCardDocumentoHeader" "byCardDocumentoInfo" "byCardNumberHeader" "byCardNumberInfo" "byCardCaducidadHeader" "byCardCaducidadInfo" "byCardCodigoHeader" "byCardCodigoInfo";
   margin: 15px auto 15px;
 }
 
@@ -151,6 +163,17 @@
 .byCardNameInfo{  
   margin: auto;
   grid-area: byCardNameInfo;  
+}
+
+.byCardDocumentoHeader{
+  margin: auto auto 0 auto;
+  height: 21px;
+  grid-area: byCardDocumentoHeader;  
+}
+
+.byCardDocumentoInfo{
+  margin: auto;
+  grid-area: byCardDocumentoInfo; 
 }
 
 .byCardNumberHeader{
@@ -224,8 +247,8 @@
     display: grid;
     width: fit-content;
     height: fit-content;
-    margin: 30px auto 30px auto;
-    grid-template-rows: 350px;
+    margin: 5px auto 30px auto;
+    grid-template-rows: 440px;
     grid-template-columns: 330px 2px 330px 2px 330px;
     grid-template-areas: "mastercard linea1 visa linea2 amex";
   } 

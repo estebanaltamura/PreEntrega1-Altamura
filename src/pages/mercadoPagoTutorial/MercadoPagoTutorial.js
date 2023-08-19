@@ -11,12 +11,20 @@ import './MercadoPagoTutorial.css'
 
 
 export const MercadoPagoTutorial = ()=>{
-  const [ MPButtonText, setMPButtonText ] = useState('CONTINUE TO CHECKOUT')
+  const [ MPButtonText, setMPButtonText ] = useState('CONTINUE TO CHECKOUT')  
   const { setIsLoading } = useContext(IsLoadingContext)
   const { cartItems } = useContext(CartContext)
   const { getUrl }    = useMercadoPagoService()
 
   
+
+  const copyButtonClickHandler = (event)=>{
+    event.target.classList.add('copied')
+    const timeOut = setTimeout(()=>{
+      event.target.classList.remove('copied')
+      clearTimeout(timeOut)
+    }, 1000)
+  }
 
   const MPButtonOnclickHandler = async ()=>{
     setMPButtonText('REDIRECTING...')
@@ -27,21 +35,19 @@ export const MercadoPagoTutorial = ()=>{
     }
     else{
       setMPButtonText('CONTINUE TO CHECKOUT')
-    }
-    
+    }    
   }  
 
 
   return(
     <main className="mercadoPagoTutorialContainer">      
       <h2 className="tituloMercadoPagoTutorial">Tutorial de pago con Mercado Pago en modo test</h2>
-      <p className="parrafo1">Si llegaste hasta acá es por que estas viendo mi portfolio asi que primero, gracias.</p>
-      <p className="parrafo2">Segundo, si querés probar pagar al ser un entorno de prueba de Mercado Pago, te voy a dar dos formas para que hagas un pago en modo test.</p>
-      <p className="parrafo3">Una vez que hacés click en pagar con Mercado Pago, se abrirá una nueva pestaña y ésta quedará abierta para que puedas copiar y pegar los datos que necesites</p>
-      <p className="parrafo4">Si queres usar la opcion utilizando el login, vas a tener que desloguearte de tu cuenta de MP (en caso de que estes logueado) para poder loguearte con las credenciales de prueba dispuestas abajo u otra opcion es utilizar la pagina en modo incognito.</p>
-      <p className="optionsMessage1"><b>Con login:</b> usando nombre de usuario y contraseña de prueba (que dejo abajo) vas a poder ingresar y pagar con dinero de esa cuenta de prueba.</p>
-      
-      
+      <p className="parrafo1">Si llegaste hasta acá es por que estas viendo mi portfolio, asi que primero, gracias.</p>
+      <p className="parrafo2">Segundo, si querés probar pagar, al ser un entorno de prueba de Mercado Pago, te tenes que loguear en el mismo proceso de pago con las credenciales que estan debajo.</p>
+      <p className="parrafo3">Una vez que hacés click en pagar con Mercado Pago, se abrirá una nueva pestaña y ésta pestaña que estas visualizando, quedará abierta para que puedas copiar y pegar los datos que necesites</p>
+      <p className="parrafo4">Una vez que te logueaste en el proceso de pago con las credenciales que estan debajo, tenes la posibilidad de pagar con dinero en cuenta o con tarjeta de credito, cuyos datos dejo tambien debajo.</p>
+
+      <p className="message1">Credenciales de prueba:</p>
 
       <div className="byUserMP">          
           <BsKey className="cardIcon" />
@@ -49,20 +55,20 @@ export const MercadoPagoTutorial = ()=>{
           <p className="byUserUserHeader">User:</p>
           <p className="byUserUserInfo">
             TESTUSER16074738
-            <CopyToClipboard text="TESTUSER16074738">
-              <AiFillCopy className="copyIcon" />
+            <CopyToClipboard text="TESTUSER16074738" >
+              <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler}/>
             </CopyToClipboard>    
           </p>
           <p className="byUserPassHeader">Password:</p>
           <p className="byUserPassInfo">
             X7QYHp06uC
-            <CopyToClipboard text="X7QYHp06uC">
-              <AiFillCopy className="copyIcon" />
+            <CopyToClipboard text="X7QYHp06uC" >
+              <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler}/>
             </CopyToClipboard>    
           </p>          
         </div>
 
-        <p className="optionsMessage2"><b>Con tarjeta de crédito:</b> Te dejo los datos de 3 tarjetas de crédito, podés usar la que quieras:</p>
+        <p className="message2">Tarjetas de credito:</p>
 
         <div className="creditCardGrid">
           <div className="mastercardContainer">          
@@ -72,7 +78,14 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardNameInfo">
               APRO
               <CopyToClipboard text="APRO">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler}/>
+              </CopyToClipboard>    
+            </p>
+            <p className="byCardDocumentoHeader">nombre completo:</p>
+            <p className="byCardDocumentoInfo">
+              12345678
+              <CopyToClipboard text="12345678">
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler}/>
               </CopyToClipboard>    
             </p>
 
@@ -80,7 +93,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardNumberInfo">
               5031755734530604
               <CopyToClipboard text="5031755734530604">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler}/>
               </CopyToClipboard>    
             </p>
 
@@ -88,7 +101,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardCaducidadInfo">
               11/25
               <CopyToClipboard text="11/25">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler}/>
               </CopyToClipboard>    
             </p>
 
@@ -96,7 +109,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardCodigoInfo">
               123
               <CopyToClipboard text="123">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler}/>
               </CopyToClipboard>    
             </p>
           </div>
@@ -110,7 +123,14 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardNameInfo">
               APRO
               <CopyToClipboard text="APRO">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
+              </CopyToClipboard>    
+            </p>
+            <p className="byCardDocumentoHeader">nombre completo:</p>
+            <p className="byCardDocumentoInfo">
+              12345678
+              <CopyToClipboard text="12345678">
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
 
@@ -118,7 +138,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardNumberInfo">
               4509953566233704
               <CopyToClipboard text="4509953566233704">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
 
@@ -126,7 +146,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardCaducidadInfo">
               11/25
               <CopyToClipboard text="11/25">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
 
@@ -134,7 +154,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardCodigoInfo">
               123
               <CopyToClipboard text="123">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
           </div>
@@ -148,7 +168,15 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardNameInfo">
               APRO
               <CopyToClipboard text="APRO">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
+              </CopyToClipboard>    
+            </p>
+
+            <p className="byCardDocumentoHeader">nombre completo:</p>
+            <p className="byCardDocumentoInfo">
+              12345678
+              <CopyToClipboard text="12345678">
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
 
@@ -156,7 +184,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardNumberInfo">
               371180303257522
               <CopyToClipboard text="371180303257522">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
 
@@ -164,7 +192,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardCaducidadInfo">
               11/25
               <CopyToClipboard text="11/25">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
 
@@ -172,7 +200,7 @@ export const MercadoPagoTutorial = ()=>{
             <p className="byCardCodigoInfo">
               1234
               <CopyToClipboard text="1234">
-                <AiFillCopy className="copyIcon" />
+                <AiFillCopy className="copyIcon" onClick={copyButtonClickHandler} />
               </CopyToClipboard>    
             </p>
           </div>        
