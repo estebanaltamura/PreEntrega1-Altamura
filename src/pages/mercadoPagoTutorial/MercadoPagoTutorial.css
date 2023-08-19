@@ -209,12 +209,12 @@ p{
   grid-area: byCardCodigoInfo;   
 }
 
-.MPButtonTutorial { 
+.tutorialButton { 
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px auto 50px auto;
+  margin: 10px auto 10px auto;
   top: 0px;
   width: 100%;
   max-width: 350px;
@@ -226,15 +226,38 @@ p{
   font-weight: 600;
   font-family: montserrat, sans-serif, Arial, Helvetica, sans-serif;
   box-shadow: 0 0 0 #fff;    
+  
+}
+
+.mpButton{
+  margin-top: 70px;
   background-color: #009EE3;
 }
 
-.MPButtonTutorial:active{
+.continueButton{
+  background-color:  white;
+  color: black;
+  border: 1px solid #a5a5a5;
+  margin-bottom: 70px;
+}
+
+.mpButton:active{
   color: white;
 }
 
-.MPButtonTutorial:visited{
+.mpButton:visited{
   color: white;
+}
+
+.mpButton:hover{
+  color: white;
+}
+
+.backIconContinueTutorial{
+  position: absolute;
+  left: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 

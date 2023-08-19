@@ -7,6 +7,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { AiFillCopy } from "react-icons/ai";
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { BsKey } from "react-icons/bs";
+import backIcon from '../../assets/backIcon.svg'
 import './MercadoPagoTutorial.css'
 
 
@@ -31,21 +32,25 @@ export const MercadoPagoTutorial = ()=>{
     const urlToRedirect = await getUrl(cartItems);
     if(urlToRedirect){
       window.open(urlToRedirect.urlPayment)
-      setMPButtonText('REDIRECTED')
+      setMPButtonText('MAKE ANOTHER PAYMENT')
     }
     else{
       setMPButtonText('CONTINUE TO CHECKOUT')
     }    
   }  
 
+  const onCLickContinueButtonHandler = ()=>{
+    setIsLoading(true)
+  }
+
 
   return(
     <main className="mercadoPagoTutorialContainer">      
-      <h2 className="tituloMercadoPagoTutorial">Tutorial de pago con Mercado Pago en modo test</h2>
+      <h2 className="tituloMercadoPagoTutorial">Tutorial de pago con mercadopago en modo test</h2>
       <p className="parrafo1">Si llegaste hasta acá es por que estas viendo mi portfolio, asi que primero, gracias.</p>
-      <p className="parrafo2">Segundo, si querés probar pagar, al ser un entorno de prueba de Mercado Pago, te tenes que loguear en el mismo proceso de pago con las credenciales que estan debajo.</p>
-      <p className="parrafo3">Una vez que hacés click en pagar con Mercado Pago, se abrirá una nueva pestaña y ésta pestaña que estas visualizando, quedará abierta para que puedas copiar y pegar los datos que necesites</p>
-      <p className="parrafo4">Una vez que te logueaste en el proceso de pago con las credenciales que estan debajo, tenes la posibilidad de pagar con dinero en cuenta o con tarjeta de credito, cuyos datos dejo tambien debajo.</p>
+      <p className="parrafo2">Segundo, si querés probar pagar, al ser un entorno de prueba de Mercado Pago, te tenes que loguear en el mismo proceso de pago con las credenciales que estan debajo. Es posible que tengas que desloguearte de tu cuenta (en caso de que estes logueado).</p>
+      <p className="parrafo3">Una vez que hacés click en pagar con Mercado Pago, se abrirá una nueva pestaña y ésta pestaña que estas visualizando, quedará abierta para que puedas copiar y pegar los datos que necesites.</p>
+      <p className="parrafo4">Una vez que te logueaste en el proceso de pago con las credenciales que estan debajo, tenés la posibilidad de pagar con dinero en cuenta o con tarjeta de credito, cuyos datos dejo tambien debajo.</p>
 
       <p className="message1">Credenciales de prueba:</p>
 
@@ -206,25 +211,15 @@ export const MercadoPagoTutorial = ()=>{
           </div>        
         </div> 
 
-        <Link className="MPButtonTutorial" onClick={MPButtonOnclickHandler}>
+        <Link className="tutorialButton mpButton" onClick={MPButtonOnclickHandler}>
           <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="" />
           {MPButtonText}
-        </Link>    
+        </Link> 
+
+        <Link className="tutorialButton continueButton" to="/home" onClick={onCLickContinueButtonHandler}>
+          <img className="backIconContinueTutorial" src={backIcon} />
+          CONTINUE SHOPPING
+        </Link>             
     </main>
   )
 }
-
-
-
-
-
-
-
-  
-// <div className="byPhoneContainer">
-//           <img src={phoneIcon} className="phoneIcon"></img>
-//           <h3 className="byPhoneTitle">BY PHONE</h3>
-//           <p className="contactTimeRange">Monday to friday 9am to 5pm</p>
-//           <p className="phoneNumber">+549 113 765 9503</p>
-//         </div>
-
