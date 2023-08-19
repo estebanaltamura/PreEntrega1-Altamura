@@ -17,10 +17,8 @@ export const ProductDetails = ({name, price, images, description, productData})=
   const [ starsOption, setStarsOption ] = useState(null)
   const [ reviewQuantity, setReviewQuantity ] = useState(null)
   const { dispatch}       = useContext(CartContext)
-  const { setIsLoading }  = useContext(IsLoadingContext)
-
+  const { isLoading, setIsLoading }  = useContext(IsLoadingContext)
   const [quantity, setQuantity] = useState(1)
-
   const history = useNavigate()
   const nextButtonCarrousel = useRef()  
 
@@ -39,8 +37,6 @@ export const ProductDetails = ({name, price, images, description, productData})=
   },[])
 
   const onClickATChandler = ()=>{
-    setIsLoading(true)
-
     dispatch({
       type: "ADD_TO_CART",
       item: {...productData},
@@ -61,7 +57,7 @@ export const ProductDetails = ({name, price, images, description, productData})=
   
   return(
     <>
-      <div className='productDetailsGrid'>
+      <div className={isLoading ? 'hidden' : 'productDetailsGrid'}>
         <div id="carouselExampleControls" className="carrusel carousel slide" data-bs-ride="carousel">
             
             <div className="carousel-inner">
@@ -69,11 +65,11 @@ export const ProductDetails = ({name, price, images, description, productData})=
                 images.map((image, index)=>{
                   return (index === 0   ?
                     <div className="carousel-item active" key={index}>
-                        <img id="carrousel1" src={image} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
+                        <img src={image} id="firstSlideImage" className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
                     </div>
                                         :
                     <div className="carousel-item" key={index}>
-                      <img id="carrousel1" src={image} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
+                      <img src={image} className="d-block w-100" alt="Mochila de modelo llamado Anti Gravity 65L color verde de tamaño grande 65 litros con precio 21000 pesos" />
                     </div>)
                 })
               }              
@@ -121,7 +117,7 @@ export const ProductDetails = ({name, price, images, description, productData})=
         </div>
       </div>       
         
-      <div className="descriptionContainer">
+      <div className={isLoading ? 'hidden' : "descriptionContainer"}>
         <h3 className="tituloDescripcion">Descripcion</h3>
         <p className="descripcion">{description}</p>
       </div>

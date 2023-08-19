@@ -79,7 +79,10 @@ export const Cart = ()=>{
             <main className="mainContainerCart" >
               <div className="paymentButtonsContainer">
                 <h3>Your cart is currently empty</h3>
-                <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>CONTINUE SHOPPING</Link>                    
+                <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>
+                  <img className="backIconContinue" src={backIcon} />
+                  CONTINUE SHOPPING
+                </Link>                                 
               </div>
             </main>
           </>

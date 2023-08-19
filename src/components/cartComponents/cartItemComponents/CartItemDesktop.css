@@ -1,20 +1,22 @@
 .itemDesktop {
   display: grid;
   width: 100%;
+  margin-top: 7px;
   height: fit-content;
   align-items: center;
   justify-content: center;
-  grid-template-columns: 120px 1fr 100px 100px 80px 100px 50px;
-  grid-template-rows: 68px 68px;
-  grid-template-areas: "imagenCartItem tituloCartItem priceCartItem quantityCartItem moreQuantity subTotalCartItem removeItemIcon" "imagenCartItem tituloCartItem priceCartItem quantityCartItem minusQuantity subTotalCartItem removeItemIcon";
-  border-bottom: 2px solid black;
+  grid-template-columns: 140px 1fr 100px 40px 40px 40px 100px 120px;
+  grid-template-rows: 140;
+  grid-template-areas: "imagenCartItem tituloCartItem priceCartItem minusQuantity quantityCartItem moreQuantity subTotalCartItem removeItemIcon";
+  border: 1px solid black;
+  border-radius: 10px;
   text-align: center;
   font-size: 16px; }
 
 .imagenCartItem {
   grid-area: imagenCartItem;
   margin: 0 auto;
-  width: 80px; }
+  width: 140px; }
   
 .tituloCartItem, .subTituloCartItem {
   text-align: center;
@@ -28,7 +30,8 @@
 .subTituloCartItem {
   grid-area: subTituloCartItem; }
   
-.priceCartItem {
+.priceCartItemDesktop {
+  margin: auto;
   grid-area: priceCartItem; }
   
 .descripcionCartItem {

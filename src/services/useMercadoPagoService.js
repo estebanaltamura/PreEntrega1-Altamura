@@ -1,6 +1,3 @@
-import { CartContext } from "../contexts/CartContextProvider"
-
-
 export const useMercadoPagoService = ()=>{
   
   const getUrl = async (items)=>{
@@ -11,9 +8,9 @@ export const useMercadoPagoService = ()=>{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // Agrega cualquier otra cabecera requerida
+          
         },
-        mode: 'cors', // Habilita el modo CORS 
+        mode: 'cors', 
   
         
         body: JSON.stringify({
@@ -24,8 +21,7 @@ export const useMercadoPagoService = ()=>{
     const json = await data.json()
     return json
   }
-
-  
+    
   return({
     getUrl
   })

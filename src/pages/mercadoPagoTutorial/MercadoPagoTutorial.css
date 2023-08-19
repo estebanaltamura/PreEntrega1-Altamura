@@ -1,0 +1,247 @@
+.mercadoPagoTutorialContainer{
+  margin: 0 auto;
+  padding: 76px 20px 0 20px;
+  min-height: calc(100vh - 160px);
+  height: fit-content;
+  width: 100%; 
+  max-width: 1050px;  
+}
+
+.tituloMercadoPagoTutorial{
+  text-align: center;
+  font-size: 22px;    
+}
+
+.parrafo1{
+  margin-top: 20px;
+}
+
+.parrafo2, .parrafo3, .parrafo4{
+  margin-top: 10px;
+}
+
+.optionsMessage1, .optionsMessage2{
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.creditCardGrid{
+  display: grid;
+  width: 210px;
+  height: fit-content; 
+  grid-template-rows: 362px 2px 362px 2px 362px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "mastercard" "linea1" "visa" "linea2" "amex";
+  margin: 0 auto;
+}
+
+.lineTutorialMp1, .lineTutorialMp2, .lineTutorialMp3{
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  border: 1px solid black;
+}
+
+.lineTutorialMp1{
+  grid-area: linea1;
+}
+
+.lineTutorialMp2{
+  grid-area: linea2;
+}
+
+.lineTutorialMp3{
+  grid-area: linea3;
+}
+.cardIcon{
+  width: 38px;
+  height: 38px;
+  margin: auto;
+  grid-area: icon;
+}
+
+.copyIcon{
+  position: relative;
+  width: 18px;
+  height: 18px;
+  top: -3px;
+  left: 2px;
+}
+
+
+.byUserMP{
+  display: grid;
+  width: 100%;
+  height: 206px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 40px 33px 30px 33px 30px;
+  grid-template-areas: "icon" "cardType" "byUserUserHeader" "byIUserUserInfo" "byUserPassHeader" "byUserPassInfo";
+  margin: 30px auto 30px;
+  grid-area: user;
+}
+
+.byUserTitle{
+  margin: auto;
+  font-family: Poppins;
+  font-size: 26px; 
+  text-align: center; 
+  grid-area: cardType;
+}
+
+.byUserUserHeader{
+  margin: auto auto 0 auto;
+  height: 21px;
+  grid-area: byUserUserHeader;  
+}
+
+.byUserUserInfo{  
+  margin: auto;
+  grid-area: byIUserUserInfo;  
+}
+
+.byUserPassHeader{
+  margin: auto auto 0 auto;
+  height: 21px;
+  grid-area: byUserPassHeader;  
+}
+
+.byUserPassInfo{
+  margin: auto;
+  grid-area: byUserPassInfo;  
+}
+
+
+.mastercardContainer, .visaContainer, .amexContainer{
+  display: grid;
+  width: 100%;
+  height: 332px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 40px 33px 30px 33px 30px 33px 30px 33px 30px;
+  grid-template-areas: "icon" "cardType" "byCardNameHeader" "byCardNameInfo" "byCardNumberHeader" "byCardNumberInfo" "byCardCaducidadHeader" "byCardCaducidadInfo" "byCardCodigoHeader" "byCardCodigoInfo";
+  margin: 15px auto 15px;
+}
+
+.mastercardContainer{
+  grid-area: mastercard;
+}
+
+.visaContainer{
+  grid-area: visa;
+} 
+
+.amexContainer{
+  grid-area: amex;
+}
+
+
+.byCardTitle{
+  margin: auto;
+  font-family: Poppins;
+  font-size: 26px; 
+  text-align: center; 
+  grid-area: cardType;
+}
+
+.byCardNameHeader{
+  margin: auto auto 0 auto;
+  height: 21px;
+  grid-area: byCardNameHeader;  
+}
+
+.byCardNameInfo{  
+  margin: auto;
+  grid-area: byCardNameInfo;  
+}
+
+.byCardNumberHeader{
+  margin: auto auto 0 auto;
+  height: 21px;
+  grid-area: byCardNumberHeader;  
+}
+
+.byCardNumberInfo{
+  margin: auto; 
+  grid-area: byCardNumberInfo;  
+}
+
+.byCardCaducidadHeader{
+  margin: auto auto 0 auto;
+  height: 21px;  
+  grid-area: byCardCaducidadHeader;  
+}
+
+.byCardCaducidadInfo{
+  margin: auto; 
+  grid-area: byCardCaducidadInfo;   
+}
+
+.byCardCodigoHeader{
+  margin: auto auto 0 auto;
+  height: 21px;
+  grid-area: byCardCodigoHeader;  
+}
+
+.byCardCodigoInfo{
+  margin: auto;
+  grid-area: byCardCodigoInfo;   
+}
+
+.MPButtonTutorial { 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 50px auto;
+  top: 0px;
+  width: 100%;
+  max-width: 350px;
+  height: 45px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px; 
+  font-weight: 600;
+  font-family: montserrat, sans-serif, Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 0 #fff;    
+  background-color: #009EE3;
+}
+
+.MPButtonTutorial:active{
+  color: white;
+}
+
+.MPButtonTutorial:visited{
+  color: white;
+}
+
+
+@media screen and (min-width: 1050px) {
+  .mercadoPagoTutorialContainer{       
+    min-height: calc(100vh - 60px);        
+  }
+
+  .creditCardGrid{
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    margin: 30px auto 30px auto;
+    grid-template-rows: 350px;
+    grid-template-columns: 330px 2px 330px 2px 330px;
+    grid-template-areas: "mastercard linea1 visa linea2 amex";
+  } 
+  
+  .lineTutorialMp1{
+    grid-area: linea1;
+  }
+  
+  .lineTutorialMp2{
+    grid-area: linea2;
+  }
+  
+  .lineTutorialMp1, .lineTutorialMp2{
+    margin: auto;
+    width: 2px;
+    height: 80%;
+    border: 1px solid black;
+  }
+}   

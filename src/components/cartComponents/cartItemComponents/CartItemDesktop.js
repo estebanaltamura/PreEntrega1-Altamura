@@ -1,16 +1,38 @@
+import { useContext } from 'react'
+import { CartContext } from '../../../contexts/CartContextProvider'
+import deleteIcon from '../../../assets/deleteIcon.svg'
+import moreQuantityCartIcon from '../../../assets/moreQuantityCartIcon.svg'
+import lessQuantityCartIcon from '../../../assets/lessQuantityCartIcon.svg'
 import "./CartItemDesktop.css"
 
-export const CartItemDesktop = ({product})=>{
+export const CartItemDesktop = ({product})=>{ 
+  const { dispatch } = useContext(CartContext)
+
+  const removeItemClickHandler = (id)=>{  
+    dispatch({type: "REMOVE_ITEM", id})
+  }
+
+  const moreQuantityClickHandler = (id)=>{
+    dispatch({type: "ADD_ITEM", id})
+  }
+
+  const lessQuantityClickHandler = (id)=>{
+    dispatch({type: "SUBTRACT_ITEM", id})
+  }
+
   return(
     <div className="itemDesktop" id={product.id}>
       <img  className="imagenCartItem" src={product.images[0]} alt= "A model using a backpack backpack" />
       <span className="tituloCartItem">{product.name}</span>
-      <span className="priceCartItem">{`$${product.price}`}</span>
+      <span className="priceCartItemDesktop">{`$${product.price}`}</span>
       <span className="quantityCartItem">{product.quantity}</span>
-      <img  className="moreQuantityIcon"  id="moreQuantityIcon" src="https://i.postimg.cc/285Ct7K1/icons8-plus-48.png" alt= "button to increase quantity" />
-      <img  className="lessQuantityIcon"  id="lessQuantityIcon" src="https://i.postimg.cc/C5hwSGM6/icons8-minus-48.png" alt= "button to decrease quantity" />
+      <img  className="moreQuantityIcon" src={moreQuantityCartIcon} alt= "button to increase quantity" onClick={()=>moreQuantityClickHandler(product.id)}/>
+      <img  className="lessQuantityIcon" src={lessQuantityCartIcon} alt= "button to decrease quantity" onClick={()=>lessQuantityClickHandler(product.id)} />
       <span className="subTotalCartItem">{`$${product.subTotal}`}</span>
-      <img  className="removeIcon"  id="removeIcon" src="https://i.postimg.cc/prsRTmpV/icons8-multiply-64.png" alt= "button to remove item" />
+      <div className='removeItemCartContainer' onClick={()=>removeItemClickHandler(product.id)}>
+        <img className='removeIcon' src={deleteIcon}/>
+        <span className="removeText">Remove item</span>      
+      </div>
     </div>
   )
 }

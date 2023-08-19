@@ -1,32 +1,14 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom"
-import { useMercadoPagoService } from "../../../services/useMercadoPagoService";
-import { CartContext } from "../../../contexts/CartContextProvider";
 import "./PaymentOptions.css"
 
-
-
-
 export const PaymentOptions = ()=>{
-
-  const { cartItems } = useContext(CartContext)
-  const { getUrl }    = useMercadoPagoService()
-
-  
-
-  const MPButtonOnclickHandler = async ()=>{
-    const urlToRedirect = await getUrl(cartItems);
-    console.log(urlToRedirect.urlPayment)
-    window.open(urlToRedirect.urlPayment)
-  }
-
   return(
 		<div className="paymentButtonsContainer">                                                               
       <h4 className="paymentsOptionsMessages">Credit card payments</h4>
-      <button className="paymentOptionsButton MPButton" onClick={MPButtonOnclickHandler} >
+      <Link className="paymentOptionsButton MPButton" to='/mercadoPagoTutorial'>
         <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="" />
         CONTINUE TO CHECKOUT
-      </button>
+      </Link>
 
       <h4 className="paymentsOptionsMessages">Bank transfer payment method</h4>
       <Link className="paymentOptionsButton customOrderButton" to="/customOrder">                                    

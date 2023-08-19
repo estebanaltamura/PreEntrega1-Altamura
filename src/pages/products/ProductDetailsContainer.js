@@ -7,7 +7,7 @@ import Spinner from '../../assets/spinner.gif';
 import "./ProductDetailsContainer.css"
 
 export const ProductDetailsContainer = ()=>{
-  const { isLoading } = useContext(IsLoadingContext)
+  const { isLoading, setIsLoading } = useContext(IsLoadingContext)
   const {idProduct, idCollection} = useParams() 
   const [productData, setProductData] = useState(null)
 
@@ -26,6 +26,10 @@ export const ProductDetailsContainer = ()=>{
     }   
   };
 
+  const onLoadHandler = (e)=>{    
+    e.target.id === 'firstSlideImage' && setIsLoading(false)
+  }
+
   useEffect(()=>{
     collectionData(idProduct, idCollection)    
     //eslint-disable-next-line  
@@ -37,10 +41,10 @@ export const ProductDetailsContainer = ()=>{
       left: 0,
       behavior: "instant"
     })       
-  },[])
+  },[])  
 
-  return(        
-    <div className="ItemDetailsContainer">      
+  return(         
+    <div className="ItemDetailsContainer" onLoad={onLoadHandler} >      
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
           <img src={Spinner} />        
         </div>               

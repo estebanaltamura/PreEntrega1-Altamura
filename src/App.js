@@ -7,12 +7,12 @@ import { Collection } from './pages/collections/Collection';
 import { NavBar } from './components/nav/NavBar';
 import { ProductDetailsContainer } from './pages/products/ProductDetailsContainer';
 import { Cart } from './pages/cart/Cart';
-import { Payment } from './components/payment/Payment';
 import { AboutUs } from './pages/aboutUs/AboutUs';
 import { ContactUs } from './pages/contactUs/ContactUs';
 import { Footer } from './components/footer/Footer';
 import { CustomOrder } from './pages/customOrder/CustomOrder';
 import { OrderCreated } from './components/orderCreated/OrderCreated';
+import { MercadoPagoTutorial } from './pages/mercadoPagoTutorial/MercadoPagoTutorial';
 import './App.css';
 
 function App() {  
@@ -38,8 +38,8 @@ function App() {
         <Route path="/products/:idCollection/:idProduct"        element = {<ProductDetailsContainer />}/>
         <Route path="/cart"                                     element = {<Cart />}/>
         <Route path="/customOrder"                              element = {<CustomOrder />}/>
-        <Route path="/orderCreated/:orderId"                    element = {<OrderCreated />}/>
-        <Route path="/payment"                                  element = {<Payment />}/>
+        <Route path="/orderCreated/:orderId"                    element = {<OrderCreated />}/>        
+        <Route path="/mercadoPagoTutorial"                      element = {<MercadoPagoTutorial />}/>
       </Routes>
       {!isLoading && <Footer />}
     </>   
