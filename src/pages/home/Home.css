@@ -1,47 +1,46 @@
 .homeContainer{
-    width: 100%;
-    height: 100%;
-    padding-top: 56px;
+  width: 100%;
+  height: 100%;
+  padding-top: 56px;
 }
 
 .hidden{
-    display: none;
+  display: none;
 }
 
 .homeGrid {
-    display: grid;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;    
-    margin: 0 auto;
-    padding: 0 15px;
+  display: grid;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;    
+  margin: 0 auto;
+  padding: 0 15px;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  gap: none;
+  grid-template-areas: "portada" "titulocolecciones" "imagencoleccion1" "titulocoleccion1" "imagencoleccion2" "titulocoleccion2" "imagencoleccion3" "titulocoleccion3" "tituloNosotrosPortada" "parrafoNosotros1" "parrafoNosotros2" "ourCommunity" "fotosuso" "imagenFundacion" "textoFundacion1" "textoFundacion2"; }
+
+@media screen and (min-width: 768px) {
+  .homeGrid {
+    grid-template-columns: 15px 1fr 1fr 15px;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-    gap: none;
-    grid-template-areas: "portada" "titulocolecciones" "imagencoleccion1" "titulocoleccion1" "imagencoleccion2" "titulocoleccion2" "imagencoleccion3" "titulocoleccion3" "tituloNosotrosPortada" "parrafoNosotros1" "parrafoNosotros2" "ourCommunity" "fotosuso" "imagenFundacion" "textoFundacion1" "textoFundacion2"; }
+    padding: 0 15px;
+    gap: 10px;
+    grid-template-areas: "portada portada portada portada" "paddingleft titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 paddingright" "paddingleft imagencoleccion2 imagencoleccion2 paddingright" "paddingleft titulocoleccion2 titulocoleccion2 paddingright" "paddingleft imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion3 titulocoleccion3 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 paddingright" "paddingleft parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso2 paddingright" "paddingleft fotosuso3 fotosuso4 paddingright" "paddingleft imagenFundacion textoFundacion1 paddingright" "paddingleft imagenFundacion textoFundacion2 paddingright"; }
+  }
 
-    @media screen and (min-width: 768px) {
-        .homeGrid {
-            grid-template-columns: 15px 1fr 1fr 15px;
-            grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-            padding: 0 15px;
-            gap: 10px;
-            grid-template-areas: "portada portada portada portada" "paddingleft titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 paddingright" "paddingleft imagencoleccion2 imagencoleccion2 paddingright" "paddingleft titulocoleccion2 titulocoleccion2 paddingright" "paddingleft imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion3 titulocoleccion3 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 paddingright" "paddingleft parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso2 paddingright" "paddingleft fotosuso3 fotosuso4 paddingright" "paddingleft imagenFundacion textoFundacion1 paddingright" "paddingleft imagenFundacion textoFundacion2 paddingright"; }
-    }
+@media screen and (min-width: 992px) {
+  .homeGrid {
+    grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    grid-template-rows: auto 100px auto 40px auto auto auto 60px auto auto 40px auto 70px 50px;
+    gap: 10px;
+    grid-template-areas: "portada portada portada portada portada portada portada portada" "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright"  "paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso3 fotosuso3 paddingright" "paddingleft fotosuso4 fotosuso4 fotosuso5 fotosuso5 fotosuso6 fotosuso6 paddingright" "paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 paddingright" "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright"; }
+}
 
-    @media screen and (min-width: 992px) {
-        .homeGrid {
-            grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 30px;
-            grid-template-rows: auto 100px auto 40px auto auto auto 60px auto auto 40px auto 70px 50px;
-            gap: 10px;
-            grid-template-areas: "portada portada portada portada portada portada portada portada" "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright"  "paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso3 fotosuso3 paddingright" "paddingleft fotosuso4 fotosuso4 fotosuso5 fotosuso5 fotosuso6 fotosuso6 paddingright" "paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 paddingright" "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright"; }
-          
-    }
-
-    @media screen and (min-width: 1200px) {
-        .homeGrid {
-            max-width: 1200px;
-            grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 30px;
-            grid-template-rows: auto 100px auto 40px auto auto auto 60px auto auto 40px auto 70px 50px;
-            gap: 10px;
-            grid-template-areas: "portada portada portada portada portada portada portada portada portada portada portada portada portada portada" "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 titulocoleccion3 titulocoleccion3 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright" "paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso2 fotosuso3 fotosuso3 fotosuso3 fotosuso4 fotosuso4 fotosuso4 paddingright" "paddingleft fotosuso5 fotosuso5 fotosuso5 fotosuso6 fotosuso6 fotosuso6 fotosuso7 fotosuso7 fotosuso7 fotosuso8 fotosuso8 fotosuso8 paddingright" "paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 paddingright" "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright"; }
-    }
+@media screen and (min-width: 1200px) {
+  .homeGrid {
+    max-width: 1200px;
+    grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    grid-template-rows: auto 100px auto 40px auto auto auto 60px auto auto 40px auto 70px 50px;
+    gap: 10px;
+    grid-template-areas: "portada portada portada portada portada portada portada portada portada portada portada portada portada portada" "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 titulocoleccion3 titulocoleccion3 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright" "paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso2 fotosuso3 fotosuso3 fotosuso3 fotosuso4 fotosuso4 fotosuso4 paddingright" "paddingleft fotosuso5 fotosuso5 fotosuso5 fotosuso6 fotosuso6 fotosuso6 fotosuso7 fotosuso7 fotosuso7 fotosuso8 fotosuso8 fotosuso8 paddingright" "paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 paddingright" "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright"; }
+}

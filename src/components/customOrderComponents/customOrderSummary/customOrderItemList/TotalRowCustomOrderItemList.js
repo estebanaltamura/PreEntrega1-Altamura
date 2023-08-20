@@ -2,7 +2,6 @@ import { useContext } from "react"
 import { CartContext } from "../../../../contexts/CartContextProvider"
 import "./TotalRowCustomOrderItemList.css"
 
-
 export const TotalRowCustomOrderItemList = ()=> {
   const { cartItems } = useContext(CartContext)
 

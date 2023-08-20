@@ -4,7 +4,6 @@ import emptyCartButton from '../../../assets/emptyCartButton.svg'
 import "./TotalRowCartItemList.css"
 
 export const TotalRowCartItemList = ({totalCart})=>{
-
   const { dispatch  } = useContext(CartContext)
   const onEmptyCartClickHandler = ()=> dispatch({type: "CLEAR_CART"}) 
 

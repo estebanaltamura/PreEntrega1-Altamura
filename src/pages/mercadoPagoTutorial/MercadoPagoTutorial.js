@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider"
 import { CartContext } from "../../contexts/CartContextProvider";
-import { useMercadoPagoService } from "../../services/useMercadoPagoService";
+import { useMercadoPagoService } from "../../services/external/useMercadoPagoService";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { AiFillCopy } from "react-icons/ai";
 import { AiOutlineCreditCard } from "react-icons/ai";
@@ -15,9 +15,7 @@ export const MercadoPagoTutorial = ()=>{
   const [ MPButtonText, setMPButtonText ] = useState('CONTINUE TO CHECKOUT')  
   const { setIsLoading } = useContext(IsLoadingContext)
   const { cartItems } = useContext(CartContext)
-  const { getUrl }    = useMercadoPagoService()
-
-  
+  const { getUrl }    = useMercadoPagoService()  
 
   const copyButtonClickHandler = (event)=>{
     event.target.classList.add('copied')
@@ -42,7 +40,6 @@ export const MercadoPagoTutorial = ()=>{
   const onCLickContinueButtonHandler = ()=>{
     setIsLoading(true)
   }
-
 
   return(
     <main className="mercadoPagoTutorialContainer">      

@@ -5,7 +5,6 @@ import { CollectionItem } from "./CollectionItem";
 import "./CollectionItemList.css"
 
 export const CollectionItemList = ({ collectionProducts, collectionName, visibility })=>{ 
-
   const { isLoading } = useContext(IsLoadingContext)
   return(   
     <>            
@@ -25,6 +24,3 @@ export const CollectionItemList = ({ collectionProducts, collectionName, visibil
     </>
   )
 }  
-
-
-

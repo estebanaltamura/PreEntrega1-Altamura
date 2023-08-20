@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 export const URLDataContext = createContext(null)
 
 export const URLDataContextProvider = ( {children} )=>{
-
   const [ currentURL, setCurrentURL ] = useState({}) 
   const url = useLocation()
 

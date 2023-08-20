@@ -6,7 +6,6 @@ import { CartItem } from '../cartItemComponents/CartItem'
 import { TotalRowCartItemList } from "./TotalRowCartItemList";
 
 export const CartItemsList = ()=> {
-
   const { cartItems }       = useContext(CartContext)
   const { screenWidth }     = useContext(ScreenWidthContext)
   const [ totalCart, setTotalCart ] = useState([])  

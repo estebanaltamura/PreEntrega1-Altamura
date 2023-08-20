@@ -11,7 +11,7 @@ import { AboutUs } from './pages/aboutUs/AboutUs';
 import { ContactUs } from './pages/contactUs/ContactUs';
 import { Footer } from './components/footer/Footer';
 import { CustomOrder } from './pages/customOrder/CustomOrder';
-import { OrderCreated } from './components/orderCreated/OrderCreated';
+import { OrderCreated } from './pages/orderCreated/OrderCreated';
 import { MercadoPagoTutorial } from './pages/mercadoPagoTutorial/MercadoPagoTutorial';
 import './App.css';
 
@@ -46,15 +46,4 @@ function App() {
   );
 }
  
-export default App;
-
-
-// No cierra el menu ante cambio de paginas y clickeo afuera del area. chequear
-// Hacer full responsive home y colecciones
-// Analizar hacer custom hooks para home, collection y navBar
-// bajar el footer en cart y contactUs para que quede fuera de vista
-// Tamaño del menu, separacion entre secciones
-
-
-// acomodar product, custom order, spinner
-   
+export default App;  

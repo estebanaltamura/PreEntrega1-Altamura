@@ -17,7 +17,6 @@ import moreCartIcon from '../../assets/moreCartIcon.svg'
 import "./NavBar.css"
  
 export const NavBar =()=>{
-
   const { cartItems }       = useContext(CartContext)    
   const { currentURL }      = useContext(URLDataContext)
   const { setIsLoading }    = useContext(IsLoadingContext)

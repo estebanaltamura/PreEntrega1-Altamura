@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
-import { getFirestore, doc, collection, getDocs, where, query } from "firebase/firestore"; 
+import { useGetProductDetailsData } from "../../services/internal/useGetProductDetailsData";
 import { ProductDetails } from '../../components/productDetailsComponents/ProductDetails';
 import Spinner from '../../assets/spinner.gif';
 import "./ProductDetailsContainer.css"
@@ -10,28 +10,20 @@ export const ProductDetailsContainer = ()=>{
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)
   const {idProduct, idCollection} = useParams() 
   const [productData, setProductData] = useState(null)
-
-  const collectionData = async (idProduct, idCollection)=>{
-    try{       
-      const db = getFirestore()
-      const queryDoc = doc(db, "products", "backpack collections")        
-      const queryCollection = collection(queryDoc, idCollection)
-      const queryFilter = query(queryCollection, where("id", "==", Number(idProduct)))
-      const productDataResponse = await getDocs(queryFilter)        
-      setProductData(productDataResponse.docs[0].data())      
-    }   
-
-    catch (error) {
-      console.error(error);
-    }   
-  };
+  const { getProductDetailsData } = useGetProductDetailsData()
+  const history = useNavigate()
 
   const onLoadHandler = (e)=>{    
     e.target.id === 'firstSlideImage' && setIsLoading(false)
   }
 
+  const getProductDetailsDataHandler = async()=>{
+    const getProductDetailsDataResponse = await getProductDetailsData(idProduct, idCollection)
+    getProductDetailsDataResponse ? setProductData(getProductDetailsDataResponse) : history('/home')
+  }
+
   useEffect(()=>{
-    collectionData(idProduct, idCollection)    
+    getProductDetailsDataHandler(idProduct, idCollection)           
     //eslint-disable-next-line  
   },[idProduct])
 

@@ -1,16 +1,9 @@
-import { useContext, useEffect } from "react";
-import { CartContext } from "../../contexts/CartContextProvider";
-import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
+import { useEffect } from "react";
 import { FormCustomOrder } from "../../components/customOrderComponents/formCustomOrderComponents/FormCustomOrder";
 import { CustomOrderSummary } from "../../components/customOrderComponents/customOrderSummary/CustomOrderSummary";
-import Spinner from '../../assets/spinner.gif';
 import "./CustomOrder.css"
 
 export const CustomOrder = ()=>{
-
-  const { cartItems } = useContext(CartContext)
-  const { isLoading } = useContext(IsLoadingContext)
-
   useEffect(()=>{
     window.scroll({
       top: 0,

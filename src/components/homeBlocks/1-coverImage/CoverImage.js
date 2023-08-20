@@ -3,7 +3,6 @@ import { ScreenWidthContext } from "../../../contexts/ScreenWidthContextProvider
 import "./CoverImage.css"
 
 export const CoverImage = ()=>{
-
   const { screenWidth } = useContext(ScreenWidthContext)   
   
   return(

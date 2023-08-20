@@ -1,9 +1,9 @@
 .itemListContainer{
-    display: flex;
-    flex-direction: column;    
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;    
-    padding-top: 56px;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;    
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;    
+  padding-top: 56px;
+  min-height: 100vh;
 }

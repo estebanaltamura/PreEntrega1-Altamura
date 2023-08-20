@@ -1,37 +1,37 @@
 .titulonovedadescolecciones {   
-    font-size: 20px;    
-    margin: 30px auto 0 auto; }
+  font-size: 20px;    
+  margin: 30px auto 0 auto; }
 
 .itemList {
-    display: grid;
-    position: relative;
-    overflow: hidden;
-    top: 0px;
-    width: calc(fit-content + 40px);    
-    margin: 25px auto 0 auto;
-    padding: 0 20px 30px 20px;
-    gap: 20px;
-    grid-template-columns: minmax(100%, 290px);
-    grid-auto-rows: auto;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  top: 0px;
+  width: calc(fit-content + 40px);    
+  margin: 25px auto 0 auto;
+  padding: 0 20px 30px 20px;
+  gap: 20px;
+  grid-template-columns: minmax(100%, 290px);
+  grid-auto-rows: auto;
 }
   
 @media screen and (min-width: 676px) {
-    .itemList {
-        grid-template-columns: repeat(2, 290px);
-        grid-auto-rows: auto;
-        gap: 25px; }
+  .itemList {
+    grid-template-columns: repeat(2, 290px);
+    grid-auto-rows: auto;
+    gap: 25px; }
 }
 
 @media screen and (min-width: 992px) {
-    .itemList {
-        grid-template-columns: repeat(3, 290px);
-        grid-auto-rows: auto;
-        gap: 30px; } 
+  .itemList {
+    grid-template-columns: repeat(3, 290px);
+    grid-auto-rows: auto;
+    gap: 30px; } 
 }
 
 @media screen and (min-width: 1300px) {
-    .itemList {
-        grid-template-columns: repeat(4, 290px);
-        grid-auto-rows: auto;
-        gap: 30px; }
+  .itemList {
+    grid-template-columns: repeat(4, 290px);
+    grid-auto-rows: auto;
+    gap: 30px; }
 }

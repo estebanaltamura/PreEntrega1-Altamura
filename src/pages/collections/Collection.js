@@ -1,25 +1,21 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import { v4 as randomId } from 'uuid'
-import { useGetCollectionData } from "../../services/internal/useGetCollectionData";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
-import { CollectionItemList } from "../../components/collectionComponents/CollectionItemList";
 import { URLDataContext } from "../../contexts/URLDataContextProvider";
+import { useGetCollectionData } from "../../services/internal/useGetCollectionData";
+import { CollectionItemList } from "../../components/collectionComponents/CollectionItemList";
 import Spinner from '../../assets/spinner.gif';
 import "./Collection.css"
 
 export const Collection = ()=>{
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)
   const { currentURL }              = useContext(URLDataContext)  
-
   const [ collectionData, setCollectionData ] = useState([])
   const [ collectionName, setCollectionName ] = useState(null)  
-
   const { getCollectionData } = useGetCollectionData()
   const history = useNavigate()
-  const VIIcounterRef = useRef(0)
-  
-  
+  const VIIcounterRef = useRef(0)  
   
   const onLoadHandler = (e)=>{
     const elementJustLoaded = e.target.classList.value.includes('imagenCard') &&  e.target.classList[0]    
@@ -48,18 +44,18 @@ export const Collection = ()=>{
   }
 
   useEffect(()=>{  
-    const { section , subSection } = currentURL   
-    section === "collections" && setCollectionName(subSection)        
-  },[currentURL])
-
-  useEffect(()=>{       
- 
+    const { section , subSection } = currentURL  
+    
     window.scroll({
       top: 0,
       left: 0,
       behavior: "instant"
     })
 
+    section === "collections" && setCollectionName(subSection)        
+  },[currentURL])
+
+  useEffect(()=>{       
     collectionName !== null &&  getDataHandler(collectionName)     
     //eslint-disable-next-line 
   },[collectionName])

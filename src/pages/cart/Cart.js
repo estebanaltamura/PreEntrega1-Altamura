@@ -9,7 +9,7 @@ import Spinner from '../../assets/spinner.gif';
 import "./Cart.css"
 
 export const Cart = ()=>{
-  const { cartItems, dispatch  } = useContext(CartContext)
+  const { cartItems } = useContext(CartContext)
   const { isLoading, setIsLoading } = useContext(IsLoadingContext)
   const cartItemQuantityLoadedRef = useRef(0)   
   
@@ -26,8 +26,7 @@ export const Cart = ()=>{
           cartItemQuantityLoadedRef.current = 0
         }       
       }  
-    }
-    
+    }    
     areCartItemLoaded(classOfElementJustLoaded)  
   }
 
@@ -35,15 +34,13 @@ export const Cart = ()=>{
     setIsLoading(true)
   }
 
-  useEffect(()=>{       
-    //cartItems.length === 0 && setIsLoading(false)
-    
+  useEffect(()=>{           
     window.scroll({
       top: 0,
       left: 0,
       behavior: "instant"
     })       
-        //eslint-disable-next-line
+    //eslint-disable-next-line
   },[])
 
   return(
@@ -90,4 +87,3 @@ export const Cart = ()=>{
     </>
   )
 }
-

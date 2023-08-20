@@ -1,48 +1,47 @@
 .paymentButtonsContainer{
-    margin: 15px auto 0 auto;
-    width: 100%;    
-    max-width: 320px;
-    height: fit-content;
+  margin: 15px auto 0 auto;
+  width: 100%;    
+  max-width: 320px;
+  height: fit-content;
 }
 
 .paymentOptionsButton {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0px;
-    width: 100%;
-    height: 45px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    color: white;
-    background-color: black;
-    font-weight: 600;
-    font-family: montserrat, sans-serif, Arial, Helvetica, sans-serif;
-    box-shadow: 0 0 0 #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  font-family: montserrat, sans-serif, Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 0 #fff;
 }
 
 .paymentOptionsButton:hover {
-    color: white;
+  color: white;
 }
 
 .paymentsOptionsMessages{
-    font-size: 17px;
-    margin-bottom: 3px;
+  font-size: 17px;
+  margin-bottom: 3px;
 }
 
 .MPButton {    
-    margin-bottom: 25px;
-    background-color: #009EE3;
+  margin-bottom: 25px;
+  background-color: #009EE3;
 }
 
 .customOrderButton{
-    background-color: black;    
+  background-color: black;    
 }
 
 .mercadopagoicono {
-    margin-right: 15px;
-    width: 50px;
+  margin-right: 15px;
+  width: 50px;
 }
-

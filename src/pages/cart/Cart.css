@@ -1,65 +1,65 @@
 .mainContainerCart{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: fit-content;
-    min-height: calc(100vh - 160px);
-    width:100%;
-    padding: 56px 5px 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: fit-content;
+  min-height: calc(100vh - 160px);
+  width:100%;
+  padding: 56px 5px 0 5px;
     
 }
 
 .myCartTitle{
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .contenedorItems {
-    position: relative;
-    display: flex;    
-    width: 100%;
-    max-width: 1050px;
-    height: fit-content;
-    flex-wrap: wrap;
-    flex-direction: column;    
+  position: relative;
+  display: flex;    
+  width: 100%;
+  max-width: 1050px;
+  height: fit-content;
+  flex-wrap: wrap;
+  flex-direction: column;    
 }
 
 .continueShoppingButton {
-    position: relative;
-    display: flex;
-    height: 45px;
-    width: 100%;
-    max-width: 320px ;
-    justify-content: center;
-    align-items: center;
-    margin: 35px auto;
-    top: 0px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    color: black;
-    background-color: white;
-    border: 1px solid #a5a5a5;
-    font-weight: 600;
-    font-family: montserrat, sans-serif, Arial, Helvetica, sans-serif;
-    box-shadow: 0 0 0 #fff;
+  position: relative;
+  display: flex;
+  height: 45px;
+  width: 100%;
+  max-width: 320px ;
+  justify-content: center;
+  align-items: center;
+  margin: 35px auto;
+  top: 0px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  color: black;
+  background-color: white;
+  border: 1px solid #a5a5a5;
+  font-weight: 600;
+  font-family: montserrat, sans-serif, Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 0 #fff;
 }
 
 .backIconContinue{
-    position: absolute;
-    left: 20px;
-    width: 25px;
-    height: 25px;
+  position: absolute;
+  left: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .botonesCarro:hover {
-    color: white;
+  color: white;
 }
 
 .cartMessage{
-    margin-top: 30px;
-    font-size: 15px;
-    font-weight: 700;
+  margin-top: 30px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 1050px) {
@@ -67,4 +67,4 @@
     padding: 56px 15px 0 15px;
     min-height: calc(100vh - 60px); 
   }  
-  }  
+}  

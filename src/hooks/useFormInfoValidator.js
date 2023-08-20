@@ -45,8 +45,7 @@ export const useFormInfoValidator = (e)=>{
       setPhoneAlert("wrong format. Insert a US phone number")
     } 
     else return true        
-  }
-    
+  }    
     
   const mailValidator = (mail)=>{
     const twoDotsRegExp = /\.{2,}/
@@ -77,7 +76,6 @@ export const useFormInfoValidator = (e)=>{
 
     return true
   }
-
         
   const resetAlerts = ()=>{
     setFullNameAlert("");

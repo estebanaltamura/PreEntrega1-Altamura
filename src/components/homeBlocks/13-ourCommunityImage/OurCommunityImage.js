@@ -6,9 +6,7 @@ import { OurCommunity992pxImages } from "./3-ourCommunity992pxImages/OurCommunit
 import { OurCommunityDesktopImages } from "./4-ourCommunityDesktopImages/OurCommunityDesktopImages"
 import "./OurCommunityImage.css"
 
-
-export const OurCommunityImage = ()=>{
-  
+export const OurCommunityImage = ()=>{  
   const { screenWidth } = useContext(ScreenWidthContext)  
 
   return(
@@ -27,4 +25,3 @@ export const OurCommunityImage = ()=>{
     </>
   )
 }
-

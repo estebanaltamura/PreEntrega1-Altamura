@@ -35,8 +35,7 @@ export const useSyntheticMediaQueries = ()=>{
     const lastWidth     = currentAndLastWidth[0]  
     
     return ([ currentWidth, lastWidth ])
-  }        
-
+  }       
 
   return({
       wasTriggeredMediaQuery,

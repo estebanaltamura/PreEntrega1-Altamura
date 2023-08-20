@@ -1,59 +1,57 @@
 .customOrderItem{
-    display: grid;
-    margin-top: -1px;
-    text-align: center;
-    height: 102px;
-    width: 100%;
-    grid-template-columns: 100px 1fr 1fr 1fr;
-    grid-template-rows: 25px 25px 25px 25px;
-    grid-template-areas: "image name name name"
+  display: grid;
+  margin-top: -1px;
+  text-align: center;
+  height: 102px;
+  width: 100%;
+  grid-template-columns: 100px 1fr 1fr 1fr;
+  grid-template-rows: 25px 25px 25px 25px;
+  grid-template-areas: "image name name name"
                         "image name name name"
                         "image quantityTitle priceTitle subTotalTitle "
                         "image quantity price subTotal ";
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .customOrderImage{
-    width: 100%;
-    grid-area: image;
-    border-right: 1px solid black;
+  width: 100%;
+  grid-area: image;
+  border-right: 1px solid black;
 }
 
 .orderCustomSpan{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .customOrderName{    
-    border-bottom: 1px solid black;
-    grid-area: name;
+  border-bottom: 1px solid black;
+  grid-area: name;
 }
 
 .customOrderQuantity{
-    grid-area: quantity;
+  grid-area: quantity;
 }
 
 .customOrderPrice{
-    grid-area: price;
+  grid-area: price;
 }
 
 .customOrderSubTotal{
-    grid-area: subTotal;
+  grid-area: subTotal;
 }
 
 
 .customOrderQuantityTitle{
-    grid-area: quantityTitle;
+  grid-area: quantityTitle;
 }
-
                 
 .customOrderPriceTitle{
-    grid-area: priceTitle;
+  grid-area: priceTitle;
 }
 
 .customOrderSubTotalTitle{
-    grid-area: subTotalTitle;
+  grid-area: subTotalTitle;
 }

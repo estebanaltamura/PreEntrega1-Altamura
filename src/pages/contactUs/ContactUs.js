@@ -8,7 +8,6 @@ import whatsappIcon from '../../assets/whatsappIcon.png'
 import { AiFillCopy } from "react-icons/ai";
 import "./ContactUs.css"
 
-
 export const ContactUs = ()=>{    
   const [ mailText, setMailText ] = useState('esteban.altamura@gmail.com')
   const { setIsLoading } = useContext(IsLoadingContext)

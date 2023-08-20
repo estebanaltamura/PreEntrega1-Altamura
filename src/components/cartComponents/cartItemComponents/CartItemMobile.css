@@ -88,9 +88,6 @@
   margin: 0 auto;
   width: 27px;
   height: 27px; }
-
-  
-
   
 .subTituloCartItem {
   grid-area: subTituloCartItem; }
@@ -104,16 +101,11 @@
 .quantityCartItem {
   grid-area: quantityCartItem; }
   
-
-  
 .subTotalCartItem {
   grid-area: subTotalCartItem;
   font-size: 20px; }
-  
 
-  
 .lineCartItemMobile {
   grid-area: line;
   width: 100%;
   border-top: 1px solid #6c6c6c; }
-  

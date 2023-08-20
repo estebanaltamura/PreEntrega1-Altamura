@@ -1,8 +1,8 @@
 .textoFundacion2 {
-    grid-area: textoFundacion2;
-    overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0 auto 25px auto;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 700; }
+  grid-area: textoFundacion2;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto 25px auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700; }

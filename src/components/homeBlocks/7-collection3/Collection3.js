@@ -4,7 +4,6 @@ import { IsLoadingContext } from "../../../contexts/IsLoadingContextProvider"
 import "./Collection3.css"
 
 export const Collection3 = ()=>{
-
   const { setIsLoading } = useContext(IsLoadingContext)
 
 	const onClickLinkHandler = ()=>{

@@ -1,5 +1,4 @@
-export const useMercadoPagoService = ()=>{
-  
+export const useMercadoPagoService = ()=>{  
   const getUrl = async (items)=>{
     const endPoint = "https://www.encrypted-chat-backend.online:5000/createOrder"
   
@@ -26,15 +25,3 @@ export const useMercadoPagoService = ()=>{
     getUrl
   })
 }
-
-
-    
-
-
-
-
-
-
-
-
-

@@ -4,9 +4,7 @@ import Spinner from '../../assets/spinner.gif';
 import "./AboutUs.css"
 
 export const AboutUs = ()=>{
-  const { setIsLoading, isLoading } = useContext(IsLoadingContext)
- 
-  
+  const { setIsLoading, isLoading } = useContext(IsLoadingContext) 
 
   useEffect(()=>{
     setIsLoading(false)

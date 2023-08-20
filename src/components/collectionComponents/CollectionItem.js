@@ -1,11 +1,9 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
-import { Link } from "react-router-dom";
 import "./CollectionItem.css"
 
-export const CollectionItem = ({image, name, price, id, index, collectionName })=>{     
-
+export const CollectionItem = ({image, name, price, id, index, collectionName })=>{
   const { setIsLoading } = useContext(IsLoadingContext)
   const history = useNavigate()
 
@@ -26,9 +24,3 @@ export const CollectionItem = ({image, name, price, id, index, collectionName })
     </div>            
   )
 }
-
-
-
-
-
-

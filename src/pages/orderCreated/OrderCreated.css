@@ -1,0 +1,31 @@
+.orderCreatedContainer{   
+  padding: 56px 20px;  
+  min-height: calc(100vh - 160px);
+}
+
+.orderCreatedMessagesContainer{
+  margin: 30px auto;
+  text-align: center;
+  width: calc(100% - 40px);
+  max-width: 700px;
+}
+
+.orderCreatedTitle{
+  font-size: 26px;
+  word-wrap: break-word;
+}
+
+.orderCreatedSubtitle{
+  font-size: 20px;
+}
+
+.orderCreatedMessage1, .orderCreatedMessage2{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+
+@media screen and (min-width: 1050px) {
+  .orderCreatedContainer {
+    min-height: calc(100vh - 60px); } 
+}

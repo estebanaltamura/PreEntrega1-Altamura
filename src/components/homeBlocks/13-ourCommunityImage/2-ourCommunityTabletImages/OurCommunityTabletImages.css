@@ -1,20 +1,19 @@
-
 .redondeado {
-    border-radius: 4px;
-    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.75); }
+  border-radius: 4px;
+  box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.75); }
 
 .fotosdeUso1, .fotosdeUso2, .fotosdeUso3, .fotosdeUso4{
-    display: flex;
-    width: 100%; }
+  display: flex;
+  width: 100%; }
 
 .fotosdeUso1 {
-    grid-area: fotosuso1; }
+  grid-area: fotosuso1; }
 
 .fotosdeUso2 {
-    grid-area: fotosuso2; }
+  grid-area: fotosuso2; }
 
 .fotosdeUso3 {
-    grid-area: fotosuso3; }
+  grid-area: fotosuso3; }
 
 .fotosdeUso4 {
-    grid-area: fotosuso4; }
+  grid-area: fotosuso4; }

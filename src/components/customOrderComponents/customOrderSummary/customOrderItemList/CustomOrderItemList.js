@@ -5,7 +5,6 @@ import { CustomOrderItem } from '../customOrderItem/CustomOrderItem'
 import "./CustomOrderItemList.css"
 
 export const CustomOrderItemList = ()=> {
-
   const { cartItems } = useContext(CartContext)
 
   return(

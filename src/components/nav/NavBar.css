@@ -1,106 +1,95 @@
 header{
-    display: flex;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 56px;
-    z-index: 2;
-    background-color: white;   
+  display: flex;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 56px;
+  z-index: 2;
+  background-color: white;   
 }
 
 .contenedorMenu{
-    display:flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;   
-    z-index: 1;  
+  display:flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;   
+  z-index: 1;  
 }
 
 .toggleButton:focus{
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .menuExpandible{    
-    background-color: rgb(255, 255, 255); 
-    z-index: 100;  
+  background-color: rgb(255, 255, 255); 
+  z-index: 100;  
 }
-
-
 
 .link{
-    display: flex;
-    height:100%;
-    width: fit-content;
-    align-items: center;
-    margin: 0 15px;   
+  display: flex;
+  height:100%;
+  width: fit-content;
+  align-items: center;
+  margin: 0 15px;   
 }
 
-
 .carro{
-    display:flex;
-    position: relative;
-    top: -2px;
-    width: 35px;
-    height: 35px;
+  display:flex;
+  position: relative;
+  top: -2px;
+  width: 35px;
+  height: 35px;
 }
 
 .carroDesktop{
-    display: none;
-    position: relative;
-    top: -2px;
-    width: 35px;
-    height: 35px;
+  display: none;
+  position: relative;
+  top: -2px;
+  width: 35px;
+  height: 35px;
 }
 
-
 .logo{
-    margin: 0;
+  margin: 0;
 }
 
 .logoLink{
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .quantityLink{
-    position: absolute;
-    top: 30px;
-    right: 38px;
-    color: rgb(245, 153, 33);
-    
+  position: absolute;
+  top: 30px;
+  right: 38px;
+  color: rgb(245, 153, 33);    
 }
 
-
-
-
 .desplegableMenuItem{    
-    white-space:nowrap;
-    height: 24px;
-    width: fit-content;
+  white-space:nowrap;
+  height: 24px;
+  width: fit-content;
 }
 
 .quantityIcon{
-    width:22px;
-    height:22px;
+  width:22px;
+  height:22px;
 }
 
 .quantityIconplus{
-    position: absolute;
-    top: 8px;
-    right: 24px;
-    color: rgb(73, 73, 73);
-    width:11px;
-    height:11px;
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  color: rgb(73, 73, 73);
+  width:11px;
+  height:11px;
 }
-
-
 
 @media (min-width: 992px) {
-.carro{
-    display: none;
-}
-    
-.carroDesktop{
-    display: flex;
-}
-    
+	.carro{
+		display: none;
+	}
+			
+	.carroDesktop{
+		display: flex;
+	}    
 }
