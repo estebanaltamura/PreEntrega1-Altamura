@@ -1,7 +1,6 @@
 export const useSyntheticMediaQueries = ()=>{  
     
   const wasTriggeredMediaQuery = (currentWidth, lastWidth)=>{   
-
     if(currentWidth > 374 && lastWidth < 375){                  
       return true
     }

@@ -52,7 +52,7 @@ export const MercadoPagoTutorial = ()=>{
       <p className="message1">Credenciales de prueba:</p>
 
       <div className="byUserMP">          
-          <BsKey className="cardIcon" />
+          <BsKey className="mainIcon" />
           <h3 className="byUserTitle">USER Y PASS MP</h3>
           <p className="byUserUserHeader">User:</p>
           <p className="byUserUserInfo">
@@ -74,7 +74,7 @@ export const MercadoPagoTutorial = ()=>{
 
         <div className="creditCardGrid">
           <div className="mastercardContainer">          
-            <AiOutlineCreditCard className="cardIcon" />
+            <AiOutlineCreditCard className="mainIcon" />
             <h3 className="byCardTitle">MASTERCARD</h3>
             <p className="byCardNameHeader">nombre completo:</p>
             <p className="byCardNameInfo">
@@ -119,7 +119,7 @@ export const MercadoPagoTutorial = ()=>{
           <div className='lineTutorialMp1'></div>
 
           <div className="visaContainer">          
-            <AiOutlineCreditCard className="cardIcon" />
+            <AiOutlineCreditCard className="mainIcon" />
             <h3 className="byCardTitle">VISA</h3>
             <p className="byCardNameHeader">nombre completo:</p>
             <p className="byCardNameInfo">
@@ -164,7 +164,7 @@ export const MercadoPagoTutorial = ()=>{
           <div className='lineTutorialMp2'></div>
 
           <div className="amexContainer">          
-            <AiOutlineCreditCard className="cardIcon" />
+            <AiOutlineCreditCard className="mainIcon" />
             <h3 className="byCardTitle">AMEX</h3>
             <p className="byCardNameHeader">nombre completo:</p>
             <p className="byCardNameInfo">

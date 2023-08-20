@@ -1,9 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../contexts/CartContextProvider"
 
-
 export const useRecoverDataCartFromLocalStorage = ()=>{
-
   const { dispatch } = useContext(CartContext)
 
 	const recoverCartDataFromLocalStorage = ()=>{		

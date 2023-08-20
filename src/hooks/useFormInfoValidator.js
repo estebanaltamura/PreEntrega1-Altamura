@@ -1,7 +1,6 @@
 import { useState } from "react"
 
-export const useFormInfoValidator = (e)=>{
-    
+export const useFormInfoValidator = (e)=>{    
   const [fullNameAlert, setFullNameAlert] = useState("")
   const [mailAlert, setMailAlert] = useState("")
   const [phoneAlert, setPhoneAlert] = useState("")

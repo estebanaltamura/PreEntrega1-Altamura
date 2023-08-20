@@ -15,7 +15,6 @@ const types = Object.freeze({
 const initialValue = []
 
 const reducer = (cartItems, action)=>{  
-
   switch(action.type){
     case types.ADD_TO_CART:{
       const newItemToAdd  = {...action.item, quantity: action.quantity, subTotal: action.quantity * action.item.price}

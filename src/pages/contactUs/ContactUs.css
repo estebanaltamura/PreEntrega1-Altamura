@@ -5,6 +5,11 @@
   width: 100%;     
 }
 
+.tituloContacto{
+  display: flex;
+  justify-content: center;    
+}
+
 .contactInfoGrid{
   display: grid;
   width: fit-content;
@@ -21,16 +26,17 @@
   border: 1px solid black;
 }
 
-.tituloContacto{
-  display: flex;
-  justify-content: center;    
-}
-
 .byPhoneContainer{
   display: grid;
   width: 280px;
   grid-template-rows: 40px 50px 45px 45px;
   margin: 30px auto 30px;    
+}
+
+.phoneIcon{
+  width: 30px;
+  height: 30px;
+  margin: auto;
 }
 
 .byPhoneTitle{
@@ -57,12 +63,6 @@
 .phoneNumber::selection{
   color: white;
   background-color: black;
-}
-
-.phoneIcon{
-  width: 30px;
-  height: 30px;
-  margin: auto;
 }
 
 .byMailContainer{
@@ -120,6 +120,12 @@
   margin: 30px auto 30px;
 }
 
+.chatIcon{
+  width: 33px;
+  height: 33px;
+  margin: auto;
+}
+
 .byChatTitle{
   margin: auto;
   font-family: Poppins; 
@@ -130,12 +136,6 @@
   margin: auto;
   font-family: Poppins;
   text-align: center;
-}
-
-.chatIcon{
-  width: 33px;
-  height: 33px;
-  margin: auto;
 }
 
 .chatButton{
@@ -179,4 +179,4 @@
     grid-template-rows: 1fr;
     grid-template-columns: 330px 2px 330px 2px 330px;
   }
-}   
+}  

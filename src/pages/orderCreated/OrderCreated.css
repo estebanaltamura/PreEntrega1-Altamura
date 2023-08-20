@@ -24,7 +24,6 @@
   font-size: 18px;
 }
 
-
 @media screen and (min-width: 1050px) {
   .orderCreatedContainer {
     min-height: calc(100vh - 60px); } 

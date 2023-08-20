@@ -16,13 +16,13 @@ header{
   z-index: 1;  
 }
 
-.toggleButton:focus{
-  box-shadow: none;
-}
-
 .menuExpandible{    
   background-color: rgb(255, 255, 255); 
   z-index: 100;  
+}
+
+.toggleButton:focus{
+  box-shadow: none;
 }
 
 .link{
@@ -33,28 +33,20 @@ header{
   margin: 0 15px;   
 }
 
-.carro{
-  display:flex;
-  position: relative;
-  top: -2px;
-  width: 35px;
-  height: 35px;
-}
-
-.carroDesktop{
-  display: none;
-  position: relative;
-  top: -2px;
-  width: 35px;
-  height: 35px;
+.logoLink{
+  margin-left: 0;
 }
 
 .logo{
   margin: 0;
 }
 
-.logoLink{
-  margin-left: 0;
+.carro{
+  display:flex;
+  position: relative;
+  top: -2px;
+  width: 35px;
+  height: 35px;
 }
 
 .quantityLink{
@@ -68,6 +60,14 @@ header{
   white-space:nowrap;
   height: 24px;
   width: fit-content;
+}
+
+.carroDesktop{
+  display: none;
+  position: relative;
+  top: -2px;
+  width: 35px;
+  height: 35px;
 }
 
 .quantityIcon{

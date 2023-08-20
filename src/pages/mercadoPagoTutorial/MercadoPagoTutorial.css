@@ -1,11 +1,25 @@
-
 p{
   user-select: text;
   cursor: text;
 }
 
 .copied{
-  color: rgb(223, 73, 46);
+  color: #009EE3;
+}
+
+.mainIcon{
+  width: 38px;
+  height: 38px;
+  margin: auto;
+  grid-area: icon;
+}
+
+.copyIcon{
+  position: relative;
+  width: 18px;
+  height: 18px;
+  top: -3px;
+  left: 2px;
 }
 
 .mercadoPagoTutorialContainer{
@@ -36,50 +50,6 @@ p{
   text-align: center;
   font-weight: bold;
 }
-
-.creditCardGrid{
-  display: grid;
-  width: 210px;
-  height: fit-content; 
-  grid-template-rows: 440px 2px 440px 2px 440px;
-  grid-template-columns: 1fr;
-  grid-template-areas: "mastercard" "linea1" "visa" "linea2" "amex";
-  margin: 0 auto;
-}
-
-.lineTutorialMp1, .lineTutorialMp2, .lineTutorialMp3{
-  margin: 0 auto;
-  width: 100%;
-  height: 1px;
-  border: 1px solid black;
-}
-
-.lineTutorialMp1{
-  grid-area: linea1;
-}
-
-.lineTutorialMp2{
-  grid-area: linea2;
-}
-
-.lineTutorialMp3{
-  grid-area: linea3;
-}
-.cardIcon{
-  width: 38px;
-  height: 38px;
-  margin: auto;
-  grid-area: icon;
-}
-
-.copyIcon{
-  position: relative;
-  width: 18px;
-  height: 18px;
-  top: -3px;
-  left: 2px;
-}
-
 
 .byUserMP{
   display: grid;
@@ -122,7 +92,6 @@ p{
   grid-area: byUserPassInfo;  
 }
 
-
 .mastercardContainer, .visaContainer, .amexContainer{
   display: grid;
   width: 100%;
@@ -145,6 +114,34 @@ p{
   grid-area: amex;
 }
 
+.creditCardGrid{
+  display: grid;
+  width: 210px;
+  height: fit-content; 
+  grid-template-rows: 440px 2px 440px 2px 440px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "mastercard" "linea1" "visa" "linea2" "amex";
+  margin: 0 auto;
+}
+
+.lineTutorialMp1, .lineTutorialMp2, .lineTutorialMp3{
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  border: 1px solid black;
+}
+
+.lineTutorialMp1{
+  grid-area: linea1;
+}
+
+.lineTutorialMp2{
+  grid-area: linea2;
+}
+
+.lineTutorialMp3{
+  grid-area: linea3;
+}
 
 .byCardTitle{
   margin: auto;
@@ -225,8 +222,7 @@ p{
   font-size: 15px; 
   font-weight: 600;
   font-family: montserrat, sans-serif, Arial, Helvetica, sans-serif;
-  box-shadow: 0 0 0 #fff;    
-  
+  box-shadow: 0 0 0 #fff;     
 }
 
 .mpButton{
