@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import { v4 as randomId } from 'uuid'
-import { getFirestore, doc, query, where, collection, getDocs, orderBy } from "firebase/firestore"
+import { useGetCollectionData } from "../../services/internal/useGetCollectionData";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { CollectionItemList } from "../../components/collectionComponents/CollectionItemList";
 import { URLDataContext } from "../../contexts/URLDataContextProvider";
@@ -15,25 +15,11 @@ export const Collection = ()=>{
   const [ collectionData, setCollectionData ] = useState([])
   const [ collectionName, setCollectionName ] = useState(null)  
 
+  const { getCollectionData } = useGetCollectionData()
   const history = useNavigate()
   const VIIcounterRef = useRef(0)
   
-  const getCollectionData = async (idCollection)=>{
-    try {        
-      const db = getFirestore() 
-      const queryDoc = doc(db, "products", "backpack collections")
-      const queryCollection = collection(queryDoc, idCollection)
-      const queryFilter = query(queryCollection, orderBy("id"), where("isActive", "==", true))          
-      getDocs(queryFilter).then( res=> {
-        setCollectionData(res.docs.length === 0 ? history("/home") : res.docs.map(product=>product.data()))                 
-      })                       
-    } 
-    
-    catch (error) {
-      console.log("error de request")
-      console.error(error);
-    }       
-  }; 
+  
   
   const onLoadHandler = (e)=>{
     const elementJustLoaded = e.target.classList.value.includes('imagenCard') &&  e.target.classList[0]    
@@ -44,16 +30,21 @@ export const Collection = ()=>{
           elementJustLoaded === "imagenCard3" ||
           elementJustLoaded === "imagenCard4" ||
           elementJustLoaded === "imagenCard5" ||
-          elementJustLoaded === "imagenCard6"){  
+          elementJustLoaded === "imagenCard6"){   
 
             VIIcounterRef.current += 1
       }      
-    }         
+    }       
 
     if(VIIcounterRef.current === 6){      
       VIIcounterRef.current = 0
       setIsLoading(false)
     }     
+  }
+
+  const getDataHandler = async (collectionName)=>{
+    const getCollectionDataResponse = await getCollectionData(collectionName)
+    getCollectionDataResponse ? setCollectionData(getCollectionDataResponse) : history("/home")
   }
 
   useEffect(()=>{  
@@ -69,7 +60,7 @@ export const Collection = ()=>{
       behavior: "instant"
     })
 
-    collectionName !== null && getCollectionData(collectionName)      
+    collectionName !== null &&  getDataHandler(collectionName)     
     //eslint-disable-next-line 
   },[collectionName])
 

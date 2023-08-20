@@ -19,7 +19,7 @@ export const ProductDetailsContainer = ()=>{
       const queryFilter = query(queryCollection, where("id", "==", Number(idProduct)))
       const productDataResponse = await getDocs(queryFilter)        
       setProductData(productDataResponse.docs[0].data())      
-    }  
+    }   
 
     catch (error) {
       console.error(error);
