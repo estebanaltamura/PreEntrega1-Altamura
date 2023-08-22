@@ -45,9 +45,9 @@ export const MercadoPagoTutorial = ()=>{
     <main className="mercadoPagoTutorialContainer">      
       <h2 className="tituloMercadoPagoTutorial">Tutorial de pago con mercadopago en modo test</h2>
       <p className="parrafo1">Si llegaste hasta acá es por que estas viendo mi portfolio, asi que primero, gracias.</p>
-      <p className="parrafo2">Segundo, si querés probar pagar, al ser un entorno de prueba de Mercado Pago, te tenes que loguear en el mismo proceso de pago con las credenciales que estan debajo. Es posible que tengas que desloguearte de tu cuenta (en caso de que estes logueado).</p>
+      <p className="parrafo2">Segundo, si querés probar pagar, al ser un entorno de prueba de Mercado Pago, te tenés que loguear en el mismo proceso de pago con las credenciales que estan debajo. Es posible que tengas que desloguearte de tu cuenta (en caso de que estes logueado) o como segunda opcion podes entrar como incognito desde el celular o la computadora.</p>
       <p className="parrafo3">Una vez que hacés click en pagar con Mercado Pago, se abrirá una nueva pestaña y ésta pestaña que estas visualizando, quedará abierta para que puedas copiar y pegar los datos que necesites.</p>
-      <p className="parrafo4">Una vez que te logueaste en el proceso de pago con las credenciales que estan debajo, tenés la posibilidad de pagar con dinero en cuenta o con tarjeta de credito, cuyos datos dejo tambien debajo.</p>
+      <p className="parrafo4">Luego que te logueaste en el proceso de pago con las credenciales que están debajo, tenés la posibilidad de pagar con dinero en cuenta o con tarjeta de crédito, cuyos datos dejo tambien debajo.</p>
 
       <p className="message1">Credenciales de prueba:</p>
 

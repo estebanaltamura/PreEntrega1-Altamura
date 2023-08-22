@@ -52,27 +52,8 @@
   grid-area: priceCartItem;
 }
 
-.removeItemCartContainer{
-  display: flex;  
-  position: relative;
-  top: 4px; 
-  cursor: pointer; 
-}
-
-.removeText { 
-  position: relative;
-  top: 0;
-  left: 2px;   
-  font-size: 15px;
-  grid-area: removeItemIcon;  
-}
-
-.removeIcon{
-  position: relative;
-  top: 2px;
-  left: 0;
-  width: 17px;
-  height: 17px;
+.quantityCartItem {
+  grid-area: quantityCartItem;
 }
 
 .moreQuantityIcon {
@@ -87,25 +68,29 @@
   cursor: pointer;
   margin: 0 auto;
   width: 27px;
-  height: 27px; }
-  
-.subTituloCartItem {
-  grid-area: subTituloCartItem; }
-  
-.priceCartItem {
-  grid-area: priceCartItem; }
-  
-.descripcionCartItem {
-  grid-area: descripcion; }
-  
-.quantityCartItem {
-  grid-area: quantityCartItem; }
-  
-.subTotalCartItem {
-  grid-area: subTotalCartItem;
-  font-size: 20px; }
+  height: 27px; 
+}  
 
-.lineCartItemMobile {
-  grid-area: line;
-  width: 100%;
-  border-top: 1px solid #6c6c6c; }
+.removeItemCartContainer{
+  display: flex;  
+  position: relative;
+  top: 4px; 
+  cursor: pointer; 
+  grid-area: removeItemIcon;
+}
+  
+.removeIcon{
+  position: relative;
+  top: 2px;
+  left: 0;
+  width: 17px;
+  height: 17px;
+}
+  
+.removeText { 
+  position: relative;
+  top: 0;
+  left: 2px;   
+  font-size: 15px;
+    
+}

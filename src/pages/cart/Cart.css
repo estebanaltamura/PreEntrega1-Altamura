@@ -11,7 +11,8 @@
 }
 
 .myCartTitle{
-  margin-top: 20px;
+  margin-top: 30px;
+  font-size: 25px;
 }
 
 .contenedorItems {
@@ -21,7 +22,8 @@
   max-width: 1050px;
   height: fit-content;
   flex-wrap: wrap;
-  flex-direction: column;    
+  flex-direction: column;
+  margin-top: 15px;   
 }
 
 .cartMessage{

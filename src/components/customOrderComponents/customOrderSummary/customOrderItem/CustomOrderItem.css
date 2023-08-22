@@ -14,16 +14,28 @@
   border-bottom: 1px solid black;
 }
 
-.customOrderImage{
-  width: 100%;
-  grid-area: image;
-  border-right: 1px solid black;
+.customOrderQuantityTitle{
+  grid-area: quantityTitle;
 }
 
 .orderCustomSpan{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+                
+.customOrderPriceTitle{
+  grid-area: priceTitle;
+}
+
+.customOrderSubTotalTitle{
+  grid-area: subTotalTitle;
+}
+
+.customOrderImage{
+  width: 100%;
+  grid-area: image;
+  border-right: 1px solid black;
 }
 
 .customOrderName{    
@@ -41,17 +53,4 @@
 
 .customOrderSubTotal{
   grid-area: subTotal;
-}
-
-
-.customOrderQuantityTitle{
-  grid-area: quantityTitle;
-}
-                
-.customOrderPriceTitle{
-  grid-area: priceTitle;
-}
-
-.customOrderSubTotalTitle{
-  grid-area: subTotalTitle;
 }

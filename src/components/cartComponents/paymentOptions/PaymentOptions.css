@@ -5,6 +5,11 @@
   height: fit-content;
 }
 
+.paymentsOptionsMessages{
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
 .paymentOptionsButton {
   position: relative;
   display: flex;
@@ -27,9 +32,9 @@
   color: white;
 }
 
-.paymentsOptionsMessages{
-  font-size: 17px;
-  margin-bottom: 3px;
+.mercadopagoicono {
+  margin-right: 15px;
+  width: 50px;
 }
 
 .MPButton {    
@@ -39,9 +44,4 @@
 
 .customOrderButton{
   background-color: black;    
-}
-
-.mercadopagoicono {
-  margin-right: 15px;
-  width: 50px;
 }

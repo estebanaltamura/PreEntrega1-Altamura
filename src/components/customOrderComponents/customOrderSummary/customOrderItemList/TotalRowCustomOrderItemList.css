@@ -9,11 +9,11 @@
   grid-template-areas: "empty empty title total";
 }
 
+.customOrderTotalTitle{
+  grid-area: title;
+}
+
 .customOrderTotal{
   width: 100%;
   grid-area: total;
-}
-
-.customOrderTotalTitle{
-  grid-area: title;
 }

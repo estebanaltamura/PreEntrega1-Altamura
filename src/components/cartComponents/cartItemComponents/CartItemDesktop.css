@@ -18,24 +18,18 @@
   margin: 0 auto;
   width: 140px; }
   
-.tituloCartItem, .subTituloCartItem {
+.tituloCartItem {
   text-align: center;
   height: 24px;
   width: 100%;
   overflow: hidden; }
   
 .tituloCartItem {
-  grid-area: tituloCartItem; }
-  
-.subTituloCartItem {
-  grid-area: subTituloCartItem; }
-  
+  grid-area: tituloCartItem; }  
+
 .priceCartItemDesktop {
   margin: auto;
   grid-area: priceCartItem; }
-  
-.descripcionCartItem {
-  grid-area: descripcion; }
   
 .quantityCartItem {
   grid-area: quantityCartItem; }
