@@ -20,7 +20,8 @@ function App() {
   const { recoverCartDataFromLocalStorage } = useRecoverDataCartFromLocalStorage()
     
   useEffect(()=>{        
-    recoverCartDataFromLocalStorage()    
+    recoverCartDataFromLocalStorage() 
+    //eslint-disable-next-line  
   },[])  
 
   return (

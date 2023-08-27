@@ -14,7 +14,7 @@ export const CollectionItem = ({image, name, price, id, index, collectionName })
 
   return(
     <div className={`card card${index+1}`} onClick={cardClickHandler}>
-      <img className={`imagenCard${index + 1} imagenCard`} src={image} alt="foto"></img>
+      <img className={`imagenCard${index + 1} imagenCard`} src={image} alt="item"></img>
       <div className="infoCardContainer">
         <p className={`tituloCard${index + 1} tituloCard`}>{name}</p>
         <div className="precioContainer">

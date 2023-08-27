@@ -30,7 +30,7 @@ export const CartItemDesktop = ({product})=>{
       <img  className="lessQuantityIcon" src={lessQuantityCartIcon} alt= "button to decrease quantity" onClick={()=>lessQuantityClickHandler(product.id)} />
       <span className="subTotalCartItem">{`$${product.subTotal}`}</span>
       <div className='removeItemCartContainer' onClick={()=>removeItemClickHandler(product.id)}>
-        <img className='removeIcon' src={deleteIcon}/>
+        <img className='removeIcon' src={deleteIcon} alt="Remove item icon"/>
         <span className="removeText">Remove item</span>      
       </div>
     </div>

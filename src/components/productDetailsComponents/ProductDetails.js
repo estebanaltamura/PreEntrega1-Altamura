@@ -104,9 +104,9 @@ export const ProductDetails = ({name, price, images, description, productData})=
           <div className="lineProductDetails"></div>
           
           <div className="ATCcontrolsGrid">            
-            <img src={lessQuantity} className="lessQuantity" onClick={()=>quantity > 1 && setQuantity(quantity-1)}/>
+            <img src={lessQuantity} className="lessQuantity" onClick={()=>quantity > 1 && setQuantity(quantity-1)} alt="Less quantity button" />
             <span className="quantity">{quantity}</span>
-            <img src={moreQuantity}  className="moreQuantity" onClick={()=>setQuantity(quantity+1)}/>            
+            <img src={moreQuantity}  className="moreQuantity" onClick={()=>setQuantity(quantity+1)} alt="More quantity button" />            
             <button className="botonATC" onClick={onClickATChandler}>Add to Cart</button> 
           </div>   
 

@@ -12,7 +12,7 @@ export const TotalRowCartItemList = ({totalCart})=>{
     <div id="totalCart" className={window.innerWidth > 768 ? "totalCartContainer" : "totalCartContainerMobile"}> 
       <span className="totalCartTitle">TOTAL</span>
       <span className="totalCartNumber" id="totalCartNumber">{`$${totalCart}`}</span>
-      <button onClick={onEmptyCartClickHandler} className="emptyCartButton"><img src={emptyCartButton} /></button> 
+      <button onClick={onEmptyCartClickHandler} className="emptyCartButton"><img src={emptyCartButton} alt="Empty cart button" /></button> 
     </div>
   )
 } 

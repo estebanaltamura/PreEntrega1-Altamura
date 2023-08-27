@@ -11,8 +11,7 @@ export const useGetProductDetailsData = ()=>{
       return productDataResponse ? productDataResponse.docs[0].data() : false         
     }   
 
-    catch (error) {
-      console.error(error);
+    catch (error) {      
       return false
     }   
   }  

@@ -11,8 +11,7 @@ export const useGetCollectionData = ()=>{
       return collectionDataResponse.docs.length === 0 ? false : collectionDataResponse.docs.map(product=>product.data())                             
     } 
     
-    catch (error) {      
-      console.error(error);
+    catch (error) {       
       return false
     }       
   };

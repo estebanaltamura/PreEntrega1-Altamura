@@ -4,6 +4,7 @@ import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider"
 import { CartContext } from "../../contexts/CartContextProvider";
 import { useMercadoPagoService } from "../../services/external/useMercadoPagoService";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Swal from 'sweetalert2'
 import { AiFillCopy } from "react-icons/ai";
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { BsKey } from "react-icons/bs";
@@ -15,8 +16,8 @@ export const MercadoPagoTutorial = ()=>{
   const [ MPButtonText, setMPButtonText ] = useState('CONTINUE TO CHECKOUT')  
   const { setIsLoading } = useContext(IsLoadingContext)
   const { cartItems } = useContext(CartContext)
-  const { getUrl }    = useMercadoPagoService()  
-
+  const { getUrl }    = useMercadoPagoService() 
+  
   const copyButtonClickHandler = (event)=>{
     event.target.classList.add('copied')
     const timeOut = setTimeout(()=>{
@@ -28,16 +29,22 @@ export const MercadoPagoTutorial = ()=>{
   const MPButtonOnclickHandler = async ()=>{
     setMPButtonText('REDIRECTING...')
     const urlToRedirect = await getUrl(cartItems);
+    
     if(urlToRedirect){
       window.open(urlToRedirect.urlPayment)
       setMPButtonText('MAKE ANOTHER PAYMENT')
     }
     else{
+      Swal.fire({
+        icon: 'error',
+        title: '¡Error!',
+        text: 'Error interacting with Mercado pago'        
+      });
       setMPButtonText('CONTINUE TO CHECKOUT')
     }    
   }  
 
-  const onCLickContinueButtonHandler = ()=>{
+  const onCLickContinueButtonHandler = ()=>{    
     setIsLoading(true)
   }
 
@@ -209,12 +216,12 @@ export const MercadoPagoTutorial = ()=>{
         </div> 
 
         <Link className="tutorialButton mpButton" onClick={MPButtonOnclickHandler}>
-          <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="" />
+          <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="Mercado pago icon" />
           {MPButtonText}
         </Link> 
 
         <Link className="tutorialButton continueButton" to="/home" onClick={onCLickContinueButtonHandler}>
-          <img className="backIconContinueTutorial" src={backIcon} />
+          <img className="backIconContinueTutorial" src={backIcon} alt="Continue shopping button" />
           CONTINUE SHOPPING
         </Link>             
     </main>

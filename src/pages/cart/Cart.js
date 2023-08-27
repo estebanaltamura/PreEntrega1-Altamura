@@ -49,7 +49,7 @@ export const Cart = ()=>{
         cartItems.length > 0  ?
           <>  
             <div className={isLoading === true ? "spinnerContainer" : "hidden"} > 
-              <img src={Spinner} />        
+              <img src={Spinner} alt="Spinner" />        
             </div>      
 
             <main className={isLoading === true ? "hidden" : "mainContainerCart"} onLoad={cartItemLoadHandler}>   
@@ -64,7 +64,7 @@ export const Cart = ()=>{
               <PaymentOptions />      
                 
               <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>
-                <img className="backIconContinue" src={backIcon} />
+                <img className="backIconContinue" src={backIcon} alt="Continue shopping button" />
                 CONTINUE SHOPPING
               </Link>                                 
             </main>
@@ -77,7 +77,7 @@ export const Cart = ()=>{
               <div className="paymentButtonsContainer">
                 <h3>Your cart is currently empty</h3>
                 <Link className="continueShoppingButton" to="/home" onClick={onCLickContinueButtonHandler}>
-                  <img className="backIconContinue" src={backIcon} />
+                  <img className="backIconContinue" src={backIcon} alt="Continue shopping button" />
                   CONTINUE SHOPPING
                 </Link>                                 
               </div>

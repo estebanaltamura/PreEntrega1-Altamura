@@ -25,6 +25,7 @@ export const OrderCreated = ()=>{
 
   useEffect(()=>{
     secondsToRedirect === 0 && history("/home")
+    //eslint-disable-next-line
   },[secondsToRedirect])
 
   return( 

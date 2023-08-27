@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { v4 as randomId } from 'uuid'
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { URLDataContext } from "../../contexts/URLDataContextProvider";
+import Swal from 'sweetalert2'
 import { useGetCollectionData } from "../../services/internal/useGetCollectionData";
 import { CollectionItemList } from "../../components/collectionComponents/CollectionItemList";
 import Spinner from '../../assets/spinner.gif';
@@ -15,7 +16,7 @@ export const Collection = ()=>{
   const [ collectionName, setCollectionName ] = useState(null)  
   const { getCollectionData } = useGetCollectionData()
   const history = useNavigate()
-  const VIIcounterRef = useRef(0)  
+  const VIIcounterRef = useRef(0)   
   
   const onLoadHandler = (e)=>{
     const elementJustLoaded = e.target.classList.value.includes('imagenCard') &&  e.target.classList[0]    
@@ -40,7 +41,17 @@ export const Collection = ()=>{
 
   const getDataHandler = async (collectionName)=>{
     const getCollectionDataResponse = await getCollectionData(collectionName)
-    getCollectionDataResponse ? setCollectionData(getCollectionDataResponse) : history("/home")
+    if(getCollectionDataResponse){
+      setCollectionData(getCollectionDataResponse)
+    }
+    else{
+      Swal.fire({
+        icon: 'error',
+        title: '¡Error!',
+        text: 'Error requesting products'        
+      });
+      history("/home")
+    } 
   }
 
   useEffect(()=>{  
@@ -63,7 +74,7 @@ export const Collection = ()=>{
   return(        
     <main className="itemListContainer" onLoad={onLoadHandler}>      
       <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
-        <img src={Spinner} />        
+        <img src={Spinner} alt="Spinner" />        
       </div>       
        
       <CollectionItemList       

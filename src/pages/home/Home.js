@@ -41,6 +41,7 @@ export const Home = ()=>{
   
   useEffect(()=>{      
     isLoading === false && window.scrollTo(0, 0);   
+    //eslint-disable-next-line
   },[isLoading])     
   
   useEffect(()=>{
@@ -49,7 +50,8 @@ export const Home = ()=>{
     if(wasTriggeredMediaQuery(currentWidth, lastWidth) === true){
       veryImportantComponentsLoadedRef.current = [...removeCoverImageOfveryImportantComponentsLoadedRef(veryImportantComponentsLoadedRef.current)]      
       setIsLoading(true) 
-    }          
+    }  
+    //eslint-disable-next-line        
   },[screenWidth])    
 
   const onLoadHandler = (e)=>{      
@@ -63,7 +65,7 @@ export const Home = ()=>{
     <>             
       <div className="homeContainer">
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
-          <img src={Spinner} />           
+          <img src={Spinner} alt="Spinner" />           
         </div>      
 
         <div className={isLoading === false ? "homeGrid" : "hidden"} onLoad={onLoadHandler} >

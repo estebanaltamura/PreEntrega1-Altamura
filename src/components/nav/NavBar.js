@@ -74,20 +74,20 @@ export const NavBar =()=>{
           </NavLink>                        
           
           <NavLink to ="/cart" onClick={currentURL.section === "cart" ? null : onClickNavLinkHandler}>
-            <img src={backPackCartIcon} className="carro" /> 
+            <img src={backPackCartIcon} className="carro" alt="Cart icon"/> 
           </NavLink>
           
           {totalQuantityItemsCart === 0 ? null : 
-            totalQuantityItemsCart === 1 ? <NavLink className="quantityLink" to ="/cart"><img src={number1CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 2 ? <NavLink className="quantityLink" to ="/cart"><img src={number2CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 3 ? <NavLink className="quantityLink" to ="/cart"><img src={number3CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 4 ? <NavLink className="quantityLink" to ="/cart"><img src={number4CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 5 ? <NavLink className="quantityLink" to ="/cart"><img src={number5CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 6 ? <NavLink className="quantityLink" to ="/cart"><img src={number6CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 7 ? <NavLink className="quantityLink" to ="/cart"><img src={number7CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 8 ? <NavLink className="quantityLink" to ="/cart"><img src={number8CartIcon} className="quantityIcon"></img></NavLink> : 
-            totalQuantityItemsCart === 9 ? <NavLink className="quantityLink" to ="/cart"><img src={number9CartIcon} className="quantityIcon"></img></NavLink> : 
-            <NavLink className="quantityLink" to ="/cart"><img src={moreCartIcon} className="quantityIconplus"></img><img src={number9CartIcon} className="quantityIcon"></img></NavLink>
+            totalQuantityItemsCart === 1 ? <NavLink className="quantityLink" to ="/cart"><img src={number1CartIcon} className="quantityIcon" alt="one products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 2 ? <NavLink className="quantityLink" to ="/cart"><img src={number2CartIcon} className="quantityIcon" alt="two products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 3 ? <NavLink className="quantityLink" to ="/cart"><img src={number3CartIcon} className="quantityIcon" alt="three products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 4 ? <NavLink className="quantityLink" to ="/cart"><img src={number4CartIcon} className="quantityIcon" alt="four products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 5 ? <NavLink className="quantityLink" to ="/cart"><img src={number5CartIcon} className="quantityIcon" alt="five products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 6 ? <NavLink className="quantityLink" to ="/cart"><img src={number6CartIcon} className="quantityIcon" alt="six products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 7 ? <NavLink className="quantityLink" to ="/cart"><img src={number7CartIcon} className="quantityIcon" alt="seven products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 8 ? <NavLink className="quantityLink" to ="/cart"><img src={number8CartIcon} className="quantityIcon" alt="eight products on the cart"></img></NavLink> : 
+            totalQuantityItemsCart === 9 ? <NavLink className="quantityLink" to ="/cart"><img src={number9CartIcon} className="quantityIcon" alt="nine products on the cart"></img></NavLink> : 
+            <NavLink className="quantityLink" to ="/cart"><img src={moreCartIcon} className="quantityIconplus" alt="more than nine products on the cart"></img><img src={number9CartIcon} className="quantityIcon" alt="more than nine products on the cart"></img></NavLink>
           }                   
                  
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -163,7 +163,7 @@ export const NavBar =()=>{
                 </li>
             </ul>
             <NavLink to ="/cart" onClick={currentURL.section === "cart" ? null : onClickNavLinkHandler}>
-              <img src={backPackCartIcon} className="carroDesktop"/> 
+              <img src={backPackCartIcon} className="carroDesktop" alt="Cart icon"/> 
                 
             </NavLink>                    
           </div>

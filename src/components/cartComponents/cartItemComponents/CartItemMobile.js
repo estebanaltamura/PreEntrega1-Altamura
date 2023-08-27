@@ -29,7 +29,7 @@ export const CartItemMobile = ({product})=>{
       <img  className="moreQuantityIcon" src={moreQuantityCartIcon} alt= "button to increase quantity" onClick={()=>moreQuantityClickHandler(product.id)} />
       <img  className="lessQuantityIcon" src={lessQuantityCartIcon} alt= "button to decrease quantity"onClick={()=>lessQuantityClickHandler(product.id)} />
       <div className='removeItemCartContainer' onClick={()=>removeItemClickHandler(product.id)}>
-        <img className='removeIcon' src={deleteIcon}/>
+        <img className='removeIcon' src={deleteIcon} alt="Remove item icon" />
         <span className="removeText">Remove item</span>      
       </div>
     </div>

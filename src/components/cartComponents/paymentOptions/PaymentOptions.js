@@ -6,7 +6,7 @@ export const PaymentOptions = ()=>{
 		<div className="paymentButtonsContainer">                                                               
       <h4 className="paymentsOptionsMessages">Credit card payments</h4>
       <Link className="paymentOptionsButton MPButton" to='/mercadoPagoTutorial'>
-        <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="" />
+        <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" className="mercadopagoicono" alt="Mercado pago icon" />
         CONTINUE TO CHECKOUT
       </Link>
 

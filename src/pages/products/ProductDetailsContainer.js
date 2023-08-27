@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
+import Swal from 'sweetalert2'
 import { useGetProductDetailsData } from "../../services/internal/useGetProductDetailsData";
 import { ProductDetails } from '../../components/productDetailsComponents/ProductDetails';
 import Spinner from '../../assets/spinner.gif';
@@ -19,7 +20,18 @@ export const ProductDetailsContainer = ()=>{
 
   const getProductDetailsDataHandler = async()=>{
     const getProductDetailsDataResponse = await getProductDetailsData(idProduct, idCollection)
-    getProductDetailsDataResponse ? setProductData(getProductDetailsDataResponse) : history('/home')
+    if(getProductDetailsDataResponse){
+      setProductData(getProductDetailsDataResponse)
+    }
+    else{
+      Swal.fire({
+        icon: 'error',
+        title: '¡Error!',
+        text: 'Error requesting products'        
+      });
+      history('/home')
+    }
+      
   }
 
   useEffect(()=>{
@@ -38,7 +50,7 @@ export const ProductDetailsContainer = ()=>{
   return(         
     <div className="ItemDetailsContainer" onLoad={onLoadHandler} >      
         <div className={isLoading === true ? "spinnerContainer" : "hidden"} >
-          <img src={Spinner} />        
+          <img src={Spinner} alt="Spinner" />        
         </div>               
         {
           productData !== null &&  <ProductDetails name={productData.name} price={productData.price} images={productData.images} description={productData.longDescription} productData={productData}/>

@@ -8,12 +8,13 @@ export const AboutUs = ()=>{
 
   useEffect(()=>{
     setIsLoading(false)
+    //eslint-disable-next-line
   },[])
 
   return(
     <>
       <div className={isLoading === true ? "spinnerContainer" : "hidden"} >      
-        <img src={Spinner} />           
+        <img src={Spinner} alt="Spinner" />           
       </div>      
           
       <main className={isLoading === false ? "mainNosotros" : "hidden"}>

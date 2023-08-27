@@ -23,6 +23,7 @@ export const ContactUs = ()=>{
 
   useEffect(()=>{
     setIsLoading(false)
+    //eslint-disable-next-line
   },[]) 
 
   return(
@@ -31,7 +32,7 @@ export const ContactUs = ()=>{
       
       <div className="contactInfoGrid">
         <div className="byPhoneContainer">
-          <img src={phoneIcon} className="phoneIcon"></img>
+          <img src={phoneIcon} className="phoneIcon" alt="Phone icon"></img>
           <h3 className="byPhoneTitle">BY PHONE</h3>
           <p className="contactTimeRange">Monday to friday 9am to 5pm</p>
           <p className="phoneNumber">+549 113 765 9503</p>
@@ -40,7 +41,7 @@ export const ContactUs = ()=>{
         <div className='lineContactUs'></div>
  
         <div className="byMailContainer">
-          <img src={mailIcon} className="mailIcon"></img>
+          <img src={mailIcon} className="mailIcon" alt="Mail icon" ></img>
           <h3 className="byMailTitle">BY MAIL</h3>
           <p className="byMailMessage">Feel free to write us</p>
           <p className="mail">
@@ -54,15 +55,16 @@ export const ContactUs = ()=>{
         <div className='lineContactUs'></div>
 
         <div className="byChatContainer">
-          <img src={chatIcon} className="chatIcon"></img>
+          <img src={chatIcon} className="chatIcon" alt="Chat icon" ></img>
           <h3 className="byChatTitle">LIVE CHAT</h3>    
           <p className="byChatMessage">Chat with a member of our team</p>      
           <a className="chatButton"
             href="https://wa.me/+5491137659503?text=Hi!%20I%20want%20talk%20with%20an%20assistant"
             target='_blank'
+            rel="noopener noreferrer"
             >
             START CHAT
-            <img src={whatsappIcon} className="chatButtonIcon" />
+            <img src={whatsappIcon} className="chatButtonIcon" alt="Whatsapp icon" />
           </a>          
         </div>
       </div>     
