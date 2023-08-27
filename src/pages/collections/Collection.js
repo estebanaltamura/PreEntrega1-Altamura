@@ -48,7 +48,7 @@ export const Collection = ()=>{
       Swal.fire({
         icon: 'error',
         title: '¡Error!',
-        text: 'Error requesting products'        
+        text: 'Error requesting products'         
       });
       history("/home")
     } 

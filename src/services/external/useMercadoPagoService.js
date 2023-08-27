@@ -16,11 +16,11 @@ export const useMercadoPagoService = ()=>{
         })
       })
   
-      if(data.status === 201){
+      if(data.status === 200){
         const json = await data.json()
         return json
       }
-      else throw new Error(`Error interacting with Mercado pago`);   
+      else return false;   
     }
     catch(error){
       return false      
