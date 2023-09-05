@@ -1,7 +1,7 @@
 .card {
   display: grid;
   width: 100%;
-  height: auto;
+  height: 338px;
   border: 1px solid #bdbdbd;
   border-radius: 20px;
   cursor: pointer;
@@ -10,7 +10,8 @@
   margin: auto;
   box-shadow: 2px 3px 10px 0px black;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 20px;
+  grid-template-rows: 288px 28px 22px;
+  grid-template-areas: "photo" "info-card" "empty";
 }
     
 .card:visited {
@@ -23,9 +24,11 @@
   color: black;}
 
 .imagenCard {
-  width: 100%; 
+  width: 288px;
+  height: 288px; 
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  grid-area: photo;
 }
 
 .infoCardContainer{
@@ -35,6 +38,7 @@
   height: fit-content;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  grid-area: info-card;
 }
 
 .tituloCard {
@@ -43,15 +47,15 @@
   font-family: Poppins;
   font-weight: 400;
   line-height: 25px;
-  max-height: 50px;
+  max-height: 25px;
   display: -webkit-box;
-  -webkit-line-clamp: 2; 
+  -webkit-line-clamp: 1; 
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis; 
   word-wrap:break-word;   
   padding-left: 15px;
-  margin: auto;     
+  margin: auto;    
 }
 
 .precioContainer{
@@ -59,7 +63,7 @@
   height: 28px;
   border: 1px solid black;
   border-radius: 20px;
-  padding-right: 13px;
+  padding-right: 13px; 
 }
   
 .precioCard {
