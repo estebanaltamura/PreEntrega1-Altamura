@@ -1,6 +1,7 @@
 export const useMercadoPagoService = () => {
   const getUrl = async (items) => {
-    const endPoint = 'https://www.internal-server-projects:5000/createOrder';
+    const endPoint =
+      'https://www.internal-server-projects.xyz:5000/createOrder';
 
     try {
       const data = await fetch(endPoint, {
