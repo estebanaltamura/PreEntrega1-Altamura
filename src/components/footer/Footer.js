@@ -69,7 +69,7 @@ export const Footer = () => {
 
         <a
           className="footerContact footerCV"
-          href="https://drive.google.com/file/d/19E5Ry7_NDwi5BBaT8rDytLdkAKF2rwyY/view?usp=sharing"
+          href="https://drive.google.com/file/d/1X7VTxJ9HQAAyqZxnQPZNpxsI3RsJtpG7/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
         >
